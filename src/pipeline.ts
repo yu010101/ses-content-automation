@@ -69,9 +69,15 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
 
   // Step 1: Discover trends
   console.log("[1/5] Discovering trends via Grok...");
-  const trends = await discoverTrends();
-  console.log(`Found ${trends.length} trends:`);
-  trends.forEach((t) => console.log(`  - ${t.topic} (${t.relevanceScore.toFixed(2)})`));
+  let trends: Awaited<ReturnType<typeof discoverTrends>> = [];
+  try {
+    trends = await discoverTrends();
+    console.log(`Found ${trends.length} trends:`);
+    trends.forEach((t) => console.log(`  - ${t.topic} (${t.relevanceScore.toFixed(2)})`));
+  } catch (err) {
+    console.log(`  Grok API unavailable (${err instanceof Error ? err.message : err})`);
+    console.log("  Falling back to keyword-only article generation.");
+  }
 
   // Step 2: Generate article
   console.log("\n[2/5] Generating article via Claude...");

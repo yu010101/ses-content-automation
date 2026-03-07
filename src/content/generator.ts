@@ -17,11 +17,11 @@ export async function generateArticle(
 ): Promise<GeneratedArticle> {
   const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
 
-  const trendContext = trends
-    .map(
-      (t) => `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`,
-    )
-    .join("\n");
+  const trendContext = trends.length > 0
+    ? trends
+        .map((t) => `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`)
+        .join("\n")
+    : "（トレンド情報なし - キーワードベースで執筆してください）";
 
   const keywordList = keywords.slice(0, 10).join(", ");
 
