@@ -1,0 +1,23 @@
+name: Zenn Article Push
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "articles/**"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify article format
+        run: |
+          for file in articles/*.md; do
+            if [ -f "$file" ]; then
+              echo "Checking: $file"
+              head -1 "$file" | grep -q "^---" || (echo "Missing frontmatter in $file" && exit 1)
+            fi
+          done
+          echo "All articles valid"

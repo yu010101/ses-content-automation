@@ -1,0 +1,87 @@
+import Anthropic from "@anthropic-ai/sdk";
+import { config } from "../config.js";
+import { ARTICLE_SYSTEM_PROMPT, X_POST_SYSTEM_PROMPT } from "./templates.js";
+import type { TrendResult } from "../trends/grok.js";
+
+export interface GeneratedArticle {
+  title: string;
+  body: string;
+  keywords: string[];
+  summary: string;
+  xPost: string;
+}
+
+export async function generateArticle(
+  trends: TrendResult[],
+  keywords: string[],
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+
+  const trendContext = trends
+    .map(
+      (t) => `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`,
+    )
+    .join("\n");
+
+  const keywordList = keywords.slice(0, 10).join(", ");
+
+  const articleResponse = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 8192,
+    system: ARTICLE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下のトレンドとキーワードに基づいて、SESエンジニア向けの記事を執筆してください。
+
+## 今日のトレンド
+${trendContext}
+
+## ターゲットキーワード
+${keywordList}
+
+以下のJSON形式で返してください:
+{
+  "title": "記事タイトル（SEO最適化）",
+  "body": "記事本文（Markdown形式、5000文字以上）",
+  "keywords": ["キーワード1", "キーワード2", ...],
+  "summary": "記事の要約（200文字以内）"
+}
+
+JSONのみを返してください。`,
+      },
+    ],
+  });
+
+  const articleText =
+    articleResponse.content[0].type === "text"
+      ? articleResponse.content[0].text
+      : "";
+
+  let article: Omit<GeneratedArticle, "xPost">;
+  try {
+    const jsonMatch = articleText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in response");
+    article = JSON.parse(jsonMatch[0]);
+  } catch {
+    throw new Error(`Failed to parse article response: ${articleText.slice(0, 200)}`);
+  }
+
+  // Generate X post
+  const xResponse = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 512,
+    system: X_POST_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下の記事の要約ツイートを作成してください:\n\nタイトル: ${article.title}\n要約: ${article.summary}`,
+      },
+    ],
+  });
+
+  const xPost =
+    xResponse.content[0].type === "text" ? xResponse.content[0].text.trim() : "";
+
+  return { ...article, xPost };
+}

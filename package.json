@@ -1,0 +1,29 @@
+{
+  "name": "ses-content-automation",
+  "version": "1.0.0",
+  "description": "SES content automation: trend discovery, article generation, multi-platform publishing",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "pipeline": "tsx src/index.ts pipeline",
+    "pipeline:dry": "tsx src/index.ts pipeline --dry-run",
+    "publish:qiita": "tsx src/index.ts publish qiita",
+    "publish:zenn": "tsx src/index.ts publish zenn",
+    "publish:x": "tsx src/index.ts publish x",
+    "publish:note": "tsx src/index.ts publish note"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "openai": "^4.77.0",
+    "simple-git": "^3.27.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
