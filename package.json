@@ -13,7 +13,9 @@
     "publish:qiita": "tsx src/index.ts publish qiita",
     "publish:zenn": "tsx src/index.ts publish zenn",
     "publish:x": "tsx src/index.ts publish x",
-    "publish:note": "tsx src/index.ts publish note"
+    "publish:note": "tsx src/index.ts publish note",
+    "test": "tsx src/test-dry-run.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
