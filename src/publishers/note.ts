@@ -1,12 +1,8 @@
 import { formatForNote } from "../content/formatter.js";
+import { isMcpAvailable, mcpCall } from "./mcp-client.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
 
-/**
- * Note publisher - delegates to OpenClaw browser automation.
- * Note does not have a public API, so we output the article
- * to stdout for OpenClaw's browser automation skill to pick up.
- */
 export class NotePublisher implements IPublisher {
   platform = "note";
 
@@ -22,15 +18,34 @@ export class NotePublisher implements IPublisher {
       return { platform: this.platform, success: true, url: "(dry-run)" };
     }
 
-    // Output structured data for OpenClaw browser automation
+    // Try MCP (note-com-mcp) first
+    if (await isMcpAvailable()) {
+      return this.publishViaMcp(title, body);
+    }
+
+    // Fallback: output for OpenClaw browser automation
     const payload = JSON.stringify({ action: "note_publish", title, body });
     console.log(`[Note] OPENCLAW_BROWSER_ACTION:${payload}`);
     console.log(`[Note] Delegated to OpenClaw browser automation`);
-
     return {
       platform: this.platform,
       success: true,
       url: "(pending-browser-automation)",
     };
+  }
+
+  private async publishViaMcp(title: string, body: string): Promise<PublishResult> {
+    try {
+      console.log("[Note] Publishing via MCP (note-com-mcp)...");
+      const result = await mcpCall("post-draft-note", {
+        title,
+        body,
+      });
+      console.log(`[Note] MCP result:`, JSON.stringify(result).slice(0, 200));
+      return { platform: this.platform, success: true, url: "(draft-via-mcp)" };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      return { platform: this.platform, success: false, error: `MCP: ${message}` };
+    }
   }
 }

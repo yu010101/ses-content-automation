@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import { config } from "../config.js";
 import { formatForX } from "../content/formatter.js";
+import { isMcpAvailable, mcpCall } from "./mcp-client.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
 
@@ -64,10 +65,40 @@ export class XPublisher implements IPublisher {
     const text = formatForX(article, articleUrl);
 
     if (dryRun) {
-      console.log(`[X] DRY RUN - Would tweet: "${text}"`);
+      console.log(`[X] DRY RUN - Would tweet: "${text}\n(dry-run)"`);
       return { platform: this.platform, success: true, url: "(dry-run)" };
     }
 
+    // Try MCP (note-com-mcp) first
+    if (await isMcpAvailable()) {
+      return this.publishViaMcp(text);
+    }
+
+    // Fallback to direct OAuth
+    return this.publishViaOAuth(text);
+  }
+
+  private async publishViaMcp(text: string): Promise<PublishResult> {
+    try {
+      console.log("[X] Publishing via MCP (note-com-mcp)...");
+      const result = await mcpCall("cross-post", {
+        platform: "twitter",
+        text,
+      }) as { content?: Array<{ text?: string }>; isError?: boolean };
+      const resultText = JSON.stringify(result).slice(0, 300);
+      console.log(`[X] MCP result:`, resultText);
+      if (result?.isError || resultText.includes("失敗")) {
+        return { platform: this.platform, success: false, error: `MCP: ${resultText}` };
+      }
+      return { platform: this.platform, success: true, url: "(via-mcp)" };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.log(`[X] MCP failed: ${message}, trying OAuth...`);
+      return this.publishViaOAuth(text);
+    }
+  }
+
+  private async publishViaOAuth(text: string): Promise<PublishResult> {
     const url = "https://api.twitter.com/2/tweets";
     const body = JSON.stringify({ text });
     const authHeader = generateOAuthHeader("POST", url, {});
