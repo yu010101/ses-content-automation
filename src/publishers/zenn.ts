@@ -30,7 +30,16 @@ export class ZennPublisher implements IPublisher {
     try {
       mkdirSync(articlesDir, { recursive: true });
       writeFileSync(filePath, content, "utf-8");
+      console.log(`[Zenn] Wrote article: ${filePath}`);
 
+      // In CI, the workflow handles git add/commit/push
+      if (process.env.CI) {
+        const url = `https://zenn.dev/articles/${slug}`;
+        console.log(`[Zenn] CI mode - file written, git push handled by workflow`);
+        return { platform: this.platform, success: true, url };
+      }
+
+      // Local: git commit and push directly
       const git = simpleGit(this.repoRoot);
       await git.add(filePath);
       await git.commit(`Add article: ${article.title}`);

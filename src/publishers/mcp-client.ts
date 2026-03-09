@@ -62,6 +62,8 @@ export async function mcpCall(
 }
 
 export async function isMcpAvailable(): Promise<boolean> {
+  // MCP server is not available in CI environments
+  if (process.env.CI) return false;
   try {
     await mcpInit();
     return true;

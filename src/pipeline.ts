@@ -93,7 +93,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   }
 
   // Step 3: Telegram approval
-  if (!skipApproval && !dryRun) {
+  const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";
+  if (!skipApproval && !dryRun && hasTelegram) {
     console.log("\n[3/5] Sending for Telegram approval...");
     await sendApprovalRequest(article);
     const approved = await waitForApproval();
@@ -103,7 +104,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     }
     console.log("Article approved!");
   } else {
-    console.log("\n[3/5] Skipping approval (dry-run or --skip-approval)");
+    const reason = !hasTelegram ? "no Telegram token" : dryRun ? "dry-run" : "--skip-approval";
+    console.log(`\n[3/5] Skipping approval (${reason})`);
   }
 
   // Step 4: Publish to all platforms
