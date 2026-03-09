@@ -41,9 +41,10 @@ export class ZennPublisher implements IPublisher {
 
       // Local: git commit and push directly
       const git = simpleGit(this.repoRoot);
+      const branch = (await git.branchLocal()).current;
       await git.add(filePath);
       await git.commit(`Add article: ${article.title}`);
-      await git.push("origin", "main");
+      await git.push("origin", branch);
 
       const url = `https://zenn.dev/articles/${slug}`;
       console.log(`[Zenn] Published: ${url}`);

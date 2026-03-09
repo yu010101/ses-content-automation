@@ -1,3 +1,30 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "title": "SESからフリーランスへの完全移行ガイド！準委任契約の基礎から単価交渉まで徹底解説",
+      "date": "2026-03-09T06:10:18.199Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": false,
+          "error": "Missing env: QIITA_ACCESS_TOKEN"
+        },
+        {
+          "platform": "zenn",
+          "success": false,
+          "error": "Pushing to https://github.com/yu010101/ses-content-automation.git\nerror: src refspec main does not match any\nerror: failed to push some refs to 'https://github.com/yu010101/ses-content-automation.git'\n"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "MCP: {\"content\":[{\"type\":\"text\",\"text\":\"twitterへの投稿に失敗しました: Request failed with code 401\"}],\"isError\":true}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "(draft-via-mcp)"
+        }
+      ]
+    }
+  ]
 }
