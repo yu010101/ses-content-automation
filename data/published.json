@@ -25,6 +25,32 @@
           "url": "(draft-via-mcp)"
         }
       ]
+    },
+    {
+      "title": "SES客先常駐から脱却したい！単価アップとフリーランス独立への完全ガイド【2024年最新】",
+      "date": "2026-03-10T01:00:59.024Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/3265bfdc78c635323c63"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260310-ses2024"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401: {\n  \"title\": \"Unauthorized\",\n  \"type\": \"about:blank\",\n  \"status\": 401,\n  \"detail\": \"Unauthorized\"\n}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "(pending-browser-automation)"
+        }
+      ]
     }
   ]
 }
