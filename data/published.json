@@ -103,6 +103,32 @@
           "url": "(draft-via-mcp)"
         }
       ]
+    },
+    {
+      "title": "SES vs フリーランス市場データ徹底分析｜2026年単価相場と転向成功のポイント",
+      "date": "2026-03-11T11:28:44.274Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/9aeb9a0038fa8eadc3ad"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260311-ses-vs-2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "(pending-browser-automation)"
+        }
+      ]
     }
   ]
 }
