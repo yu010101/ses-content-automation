@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
 import { generateArticle } from "./content/generator.js";
+import { insertRelatedLinks } from "./content/internal-links.js";
 import { sendApprovalRequest, waitForApproval } from "./approval/telegram.js";
 import { QiitaPublisher } from "./publishers/qiita.js";
 import { ZennPublisher } from "./publishers/zenn.js";
@@ -89,8 +90,12 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
 
   if (isDuplicate(article.title)) {
     console.log("WARNING: Similar article already published. Regenerating...");
-    // In production, would retry with different angle
   }
+
+  // Insert internal links to past articles
+  article.body = insertRelatedLinks(article.body, article.title);
+  console.log(`Internal links: ${article.body.includes("## 関連記事") ? "added" : "none (first article)"}`);
+
 
   // Step 3: Telegram approval
   const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";

@@ -2,8 +2,8 @@ name: Daily SES Content Pipeline
 
 on:
   schedule:
-    # UTC 0:00 = JST 9:00, weekdays only
-    - cron: "0 0 * * 1-5"
+    # UTC 11:00 = JST 20:00, weekdays only (X golden time)
+    - cron: "0 11 * * 1-5"
   workflow_dispatch:
     inputs:
       dry_run:
