@@ -5,6 +5,7 @@ const testArticle = {
   body: "test",
   keywords: ["SES"],
   summary: "test",
+  articleType: "data-analysis",
   xPost: "SESコンテンツ自動化パイプラインのテスト投稿です。（このツイートはテスト後削除されます） #SES #テスト",
 };
 

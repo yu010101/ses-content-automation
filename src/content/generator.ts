@@ -1,6 +1,11 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { config } from "../config.js";
-import { ARTICLE_SYSTEM_PROMPT, X_POST_SYSTEM_PROMPT } from "./templates.js";
+import {
+  getArticleType,
+  getArticleSystemPrompt,
+  X_POST_SYSTEM_PROMPT,
+} from "./templates.js";
+import type { ArticleType } from "./templates.js";
 import type { TrendResult } from "../trends/grok.js";
 
 export interface GeneratedArticle {
@@ -9,6 +14,7 @@ export interface GeneratedArticle {
   keywords: string[];
   summary: string;
   xPost: string;
+  articleType: string;
 }
 
 export async function generateArticle(
@@ -16,19 +22,28 @@ export async function generateArticle(
   keywords: string[],
 ): Promise<GeneratedArticle> {
   const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+  const articleType: ArticleType = getArticleType();
 
-  const trendContext = trends.length > 0
-    ? trends
-        .map((t) => `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`)
-        .join("\n")
-    : "（トレンド情報なし - キーワードベースで執筆してください）";
+  console.log(`  Article type: ${articleType.name} (${articleType.id})`);
+
+  const trendContext =
+    trends.length > 0
+      ? trends
+          .map(
+            (t) =>
+              `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`,
+          )
+          .join("\n")
+      : "（トレンド情報なし - キーワードベースで執筆してください）";
 
   const keywordList = keywords.slice(0, 10).join(", ");
+
+  const systemPrompt = getArticleSystemPrompt(articleType);
 
   const articleResponse = await client.messages.create({
     model: config.anthropic.model,
     max_tokens: 8192,
-    system: ARTICLE_SYSTEM_PROMPT,
+    system: systemPrompt,
     messages: [
       {
         role: "user",
@@ -37,12 +52,12 @@ export async function generateArticle(
 ## 今日のトレンド
 ${trendContext}
 
-## ターゲットキーワード
+## ターゲットキーワード（全て記事内に自然に含めること）
 ${keywordList}
 
 以下のJSON形式で返してください:
 {
-  "title": "記事タイトル（SEO最適化）",
+  "title": "記事タイトル（SEO最適化、30-50文字）",
   "body": "記事本文（Markdown形式、5000文字以上）",
   "keywords": ["キーワード1", "キーワード2", ...],
   "summary": "記事の要約（200文字以内）"
@@ -58,13 +73,15 @@ JSONのみを返してください。`,
       ? articleResponse.content[0].text
       : "";
 
-  let article: Omit<GeneratedArticle, "xPost">;
+  let article: Omit<GeneratedArticle, "xPost" | "articleType">;
   try {
     const jsonMatch = articleText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error("No JSON found in response");
     article = JSON.parse(jsonMatch[0]);
   } catch {
-    throw new Error(`Failed to parse article response: ${articleText.slice(0, 200)}`);
+    throw new Error(
+      `Failed to parse article response: ${articleText.slice(0, 200)}`,
+    );
   }
 
   // Generate X post
@@ -81,7 +98,9 @@ JSONのみを返してください。`,
   });
 
   const xPost =
-    xResponse.content[0].type === "text" ? xResponse.content[0].text.trim() : "";
+    xResponse.content[0].type === "text"
+      ? xResponse.content[0].text.trim()
+      : "";
 
-  return { ...article, xPost };
+  return { ...article, xPost, articleType: articleType.id };
 }

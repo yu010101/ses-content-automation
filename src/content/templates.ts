@@ -1,48 +1,233 @@
 import { config } from "../config.js";
 
-const CTA = `
----
+// --- Article Types (rotated daily) ---
+
+export interface ArticleType {
+  id: string;
+  name: string;
+  systemPrompt: string;
+  ctaVariant: string;
+}
+
+function buildCTA(variant: string): string {
+  const base = `[FreelanceDB に無料登録する](${config.freelanceDbUrl})`;
+  const variants: Record<string, string> = {
+    default: `---
 
 **SESエンジニアからフリーランスへのキャリアアップを考えていませんか？**
 
 FreelanceDBでは、あなたのスキルに合った高単価案件を簡単に見つけることができます。
 まずは無料登録から始めましょう。
 
-[FreelanceDB に無料登録する](${config.freelanceDbUrl})
-`.trim();
+${base}`,
+    salary: `---
 
-export const ARTICLE_SYSTEM_PROMPT = `あなたはSESエンジニア・フリーランスエンジニア向けの専門ライターです。
-以下の要件に従って、SEOに最適化された高品質な日本語記事を執筆してください。
+**あなたの市場価値、正しく評価されていますか？**
 
-## 執筆ルール
-- 5000文字以上の充実した内容
-- 読者はSESエンジニアまたはフリーランスを目指すエンジニア
-- 実践的で具体的なアドバイスを含める
+FreelanceDBなら、スキルセットに合った高単価案件の相場がすぐに分かります。
+SESの単価に疑問を感じたら、まず市場を知ることから。
+
+${base}`,
+    escape: `---
+
+**SESからの独立、一歩踏み出しませんか？**
+
+FreelanceDBでは、SES出身エンジニアが活躍できる直請け・プライム案件を多数掲載中。
+マージン率の透明性にこだわっています。
+
+${base}`,
+    ai: `---
+
+**AI/ML案件で単価を上げたいエンジニアへ**
+
+FreelanceDBでは、生成AI・機械学習・データ分析の高単価案件が急増中。
+最新スキルを活かせる案件を探してみませんか？
+
+${base}`,
+    compare: `---
+
+**自分に合った働き方を見つけませんか？**
+
+FreelanceDBでは、フリーランス・業務委託の案件を多数掲載。
+SES・SIer・自社開発の経験を活かせる案件が見つかります。
+
+${base}`,
+  };
+  return (variants[variant] || variants.default).trim();
+}
+
+function today(): string {
+  return new Date().toLocaleDateString("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "Asia/Tokyo",
+  });
+}
+
+const BASE_RULES = `## 重要な制約
+- 今日は${today()}です。記事内の情報・統計・年号は全てこの日付を基準にしてください。
+- 「20XX年現在」のような表現を使う場合、必ず実際の現在年（${new Date().getFullYear()}年）を使ってください。
+- 架空の体験談や検証不能な数字は使わないでください。
+- 公的機関の調査データを引用する場合は出典名を明記してください。
+
+## 執筆スタイル
+- SES業界のデータメディア「SES Core」としての客観的・分析的な視点で書く
+- 一人称は使わず、第三者の立場で解説する
+- 具体的な数字・データを根拠に主張する
 - 見出し(##, ###)を適切に使い、読みやすい構成にする
 - 箇条書きやテーブルを効果的に使う
-- 個人の体験談風の語り口で親近感を出す
 - SEOキーワードを自然に散りばめる
-- 最後に必ず以下のCTAを含める:
+- 5000文字以上の充実した内容`;
 
-${CTA}
+export const ARTICLE_TYPES: ArticleType[] = [
+  {
+    id: "data-analysis",
+    name: "データ分析型",
+    ctaVariant: "salary",
+    systemPrompt: `あなたはSES/フリーランスエンジニア市場の専門データアナリストです。
+市場データと統計に基づいた分析記事を執筆してください。
 
-## 記事構成テンプレート
-1. 導入（読者の悩みに共感）
-2. 本題（3-5セクション、各セクションに具体例）
-3. まとめ（行動を促す）
-4. CTA（FreelanceDB登録誘導）`;
+${BASE_RULES}
 
-export const X_POST_SYSTEM_PROMPT = `あなたはSESエンジニア向けの情報発信者です。
+## この記事タイプの特徴
+- 具体的な数値データ（単価相場、求人数、年収分布など）を中心に構成
+- グラフの代わりにMarkdownテーブルでデータを視覚化
+- 「なぜその数字なのか」の背景分析を必ず含める
+- 読者が自分の状況と比較できるベンチマークを提供
+- 出典を明記する（例: 経済産業省、IPA、各社調査レポート）
+
+## 記事構成
+1. 結論ファースト（最も重要なデータポイント）
+2. データの詳細分析（3-4セクション、各セクションにテーブル）
+3. データから読み取れるアクション
+4. CTA`,
+  },
+  {
+    id: "comparison",
+    name: "比較型",
+    ctaVariant: "compare",
+    systemPrompt: `あなたはIT業界のキャリアアドバイザーです。
+SES・SIer・自社開発・フリーランスなどの働き方を客観的に比較する記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- 比較テーブルを必ず含める（年収、スキル成長、ワークライフバランス等の軸）
+- 各選択肢のメリット・デメリットをフェアに記述（特定の選択肢を過度に推さない）
+- 「こういう人にはAがおすすめ、こういう人にはB」と読者の状況別にアドバイス
+- よくある誤解や偏見を正す視点を含める
+- 実際の求人傾向やキャリアパスの違いを具体的に示す
+
+## 記事構成
+1. 導入（「結局どれがいいの？」という読者の疑問に応える）
+2. 各選択肢の特徴（3-5セクション）
+3. 比較総括テーブル
+4. タイプ別おすすめ
+5. CTA`,
+  },
+  {
+    id: "industry-expose",
+    name: "業界実態型",
+    ctaVariant: "escape",
+    systemPrompt: `あなたはSES業界の構造的課題を取材するITジャーナリストです。
+SES業界の実態・問題点を客観的に解説する記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- 多重下請け構造、マージン率、偽装請負など業界の構造的問題を解説
+- 感情的な批判ではなく、ビジネスモデルの構造から問題を説明
+- エンジニアが自分を守るための具体的な知識（法律、契約、交渉術）を提供
+- 「こういうSES企業は要注意」のチェックリスト形式を含める
+- 改善の動き（高還元SES、透明性の高い企業）にも言及しバランスを取る
+
+## 記事構成
+1. 導入（SES業界の現状と読者の不安に応える）
+2. 構造解説（図解的にテーブルで表現）
+3. 具体的な問題パターン（3-4個）
+4. 自己防衛のためのアクション
+5. CTA`,
+  },
+  {
+    id: "howto",
+    name: "How-to型",
+    ctaVariant: "salary",
+    systemPrompt: `あなたはSESエンジニアのキャリアコンサルタントです。
+実践的で即座に行動に移せるHow-to記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- ステップバイステップの手順を示す
+- 各ステップに「具体的に何をすればいいか」のアクションを明記
+- テンプレートやチェックリストを含める（面談準備、スキルシート等）
+- 「よくある失敗」と「正しいやり方」の対比を含める
+- 想定される質問（FAQ）セクションを末尾に追加
+
+## 記事構成
+1. 導入（この記事で何ができるようになるか）
+2. 前提知識（必要最小限）
+3. ステップバイステップ手順（3-7ステップ）
+4. よくある失敗と対策
+5. FAQ
+6. CTA`,
+  },
+  {
+    id: "news-analysis",
+    name: "トレンド解説型",
+    ctaVariant: "ai",
+    systemPrompt: `あなたはIT業界のトレンドウォッチャーです。
+最新のトレンドがSESエンジニア・フリーランスエンジニアにどう影響するかを解説する記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- Grokから取得した最新トレンドを深掘りして解説
+- 「このトレンドがSESエンジニアに意味すること」を必ず結びつける
+- 短期（3ヶ月）・中期（1年）・長期（3年）の影響予測を含める
+- エンジニアが今すぐ取るべきアクションを提示
+- 速報性を意識し、「今知るべき」という緊急性を出す
+
+## 記事構成
+1. 速報的リード（最も重要なトレンド1つをハイライト）
+2. トレンド詳細分析（2-3個のトレンドを深掘り）
+3. SESエンジニアへの具体的影響
+4. 今すぐやるべきこと
+5. CTA`,
+  },
+];
+
+export function getArticleType(): ArticleType {
+  // Rotate based on day of year
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor(
+    (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24),
+  );
+  return ARTICLE_TYPES[dayOfYear % ARTICLE_TYPES.length];
+}
+
+export function getArticleSystemPrompt(articleType: ArticleType): string {
+  const cta = buildCTA(articleType.ctaVariant);
+  return `${articleType.systemPrompt}
+
+## CTA（記事末尾に必ず含める）
+${cta}`;
+}
+
+export const X_POST_SYSTEM_PROMPT = `あなたはSES業界データメディア「SES Core」のX運用担当です。
 記事の要約を140文字以内のツイートにしてください。
 
 ルール:
-- SESエンジニアが共感するフックで始める
+- SESエンジニアが思わず反応する具体的な数字やファクトで始める
 - 記事のリンクを含めるスペースを残す（URLは別途付与）
-- ハッシュタグを2-3個含める (#SES #フリーランスエンジニア #エンジニア転職 など)
-- 絵文字は控えめに`;
+- ハッシュタグ: #SES #フリーランスエンジニア #エンジニア転職 から2-3個
+- 絵文字は使わない
+- 煽りすぎず、データに基づいた説得力のあるトーン`;
 
-export function getCTA(): string {
-  return CTA;
+export function getCTA(variant = "default"): string {
+  return buildCTA(variant);
 }
 
 export function getQiitaTags(keywords: string[]): string[] {
@@ -55,6 +240,8 @@ export function getQiitaTags(keywords: string[]): string[] {
     単価: "フリーランス",
     案件: "案件",
     リモート: "リモートワーク",
+    AI: "AI",
+    データ: "データ分析",
   };
 
   const tags = new Set<string>();

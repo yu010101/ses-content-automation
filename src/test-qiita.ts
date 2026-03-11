@@ -6,6 +6,7 @@ const article = {
   body: "## テスト\nこれはパイプラインの動作確認用テスト記事です。\n\n確認後すぐに削除します。",
   keywords: ["SES", "テスト"],
   summary: "テスト",
+  articleType: "data-analysis",
   xPost: "テスト",
 };
 
