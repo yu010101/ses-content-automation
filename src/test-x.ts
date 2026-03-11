@@ -6,6 +6,7 @@ const testArticle = {
   keywords: ["SES"],
   summary: "test",
   articleType: "data-analysis",
+  xThread: ["ツイート1", "ツイート2", "詳細は記事で"],
   xPost: "SESコンテンツ自動化パイプラインのテスト投稿です。（このツイートはテスト後削除されます） #SES #テスト",
 };
 

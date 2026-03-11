@@ -1,6 +1,5 @@
 import crypto from "node:crypto";
 import { config } from "../config.js";
-import { formatForX } from "../content/formatter.js";
 import { isMcpAvailable, mcpCall } from "./mcp-client.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
@@ -62,65 +61,111 @@ export class XPublisher implements IPublisher {
     dryRun = false,
     articleUrl?: string,
   ): Promise<PublishResult> {
-    const text = formatForX(article, articleUrl);
+    const thread = this.buildThread(article, articleUrl);
 
     if (dryRun) {
-      console.log(`[X] DRY RUN - Would tweet: "${text}\n(dry-run)"`);
+      console.log(`[X] DRY RUN - Thread (${thread.length} tweets):`);
+      thread.forEach((t, i) => console.log(`  [${i + 1}] ${t}`));
       return { platform: this.platform, success: true, url: "(dry-run)" };
     }
 
-    // Try MCP (note-com-mcp) first
+    // Try MCP first (single tweet only)
     if (await isMcpAvailable()) {
-      return this.publishViaMcp(text);
+      const mcpResult = await this.publishViaMcp(thread[0]);
+      if (mcpResult.success) return mcpResult;
     }
 
-    // Fallback to direct OAuth
-    return this.publishViaOAuth(text);
+    // Direct OAuth: post thread
+    return this.publishThread(thread);
+  }
+
+  private buildThread(article: GeneratedArticle, articleUrl?: string): string[] {
+    if (article.xThread && article.xThread.length > 1) {
+      const thread = [...article.xThread];
+      // Append article URL to the last tweet
+      if (articleUrl) {
+        const last = thread.length - 1;
+        thread[last] = `${thread[last]}\n${articleUrl}`;
+      }
+      return thread;
+    }
+
+    // Fallback: single tweet
+    let post = article.xPost;
+    if (articleUrl) {
+      const maxLen = 280 - articleUrl.length - 2;
+      if (post.length > maxLen) {
+        post = post.slice(0, maxLen - 1) + "…";
+      }
+      post = `${post}\n${articleUrl}`;
+    }
+    return [post];
   }
 
   private async publishViaMcp(text: string): Promise<PublishResult> {
     try {
       console.log("[X] Publishing via MCP (note-com-mcp)...");
-      const result = await mcpCall("cross-post", {
+      const result = (await mcpCall("cross-post", {
         platform: "twitter",
         text,
-      }) as { content?: Array<{ text?: string }>; isError?: boolean };
+      })) as { content?: Array<{ text?: string }>; isError?: boolean };
       const resultText = JSON.stringify(result).slice(0, 300);
       console.log(`[X] MCP result:`, resultText);
       if (result?.isError || resultText.includes("失敗")) {
         console.log(`[X] MCP failed, trying direct OAuth...`);
-        return this.publishViaOAuth(text);
+        return { platform: this.platform, success: false, error: "MCP failed" };
       }
       return { platform: this.platform, success: true, url: "(via-mcp)" };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       console.log(`[X] MCP failed: ${message}, trying OAuth...`);
-      return this.publishViaOAuth(text);
+      return { platform: this.platform, success: false, error: message };
     }
   }
 
-  private async publishViaOAuth(text: string): Promise<PublishResult> {
-    const url = "https://api.twitter.com/2/tweets";
-    const body = JSON.stringify({ text });
-    const authHeader = generateOAuthHeader("POST", url, {});
+  private async publishThread(thread: string[]): Promise<PublishResult> {
+    let previousTweetId: string | undefined;
+    let firstTweetUrl = "";
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: authHeader,
-      },
-      body,
-    });
+    for (let i = 0; i < thread.length; i++) {
+      const tweetBody: Record<string, unknown> = { text: thread[i] };
+      if (previousTweetId) {
+        tweetBody.reply = { in_reply_to_tweet_id: previousTweetId };
+      }
 
-    if (!res.ok) {
-      const err = await res.text();
-      return { platform: this.platform, success: false, error: `${res.status}: ${err}` };
+      const url = "https://api.twitter.com/2/tweets";
+      const authHeader = generateOAuthHeader("POST", url, {});
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: authHeader,
+        },
+        body: JSON.stringify(tweetBody),
+      });
+
+      if (!res.ok) {
+        const err = await res.text();
+        const posted = i > 0 ? ` (${i}/${thread.length} tweets posted)` : "";
+        return {
+          platform: this.platform,
+          success: false,
+          error: `${res.status}: ${err}${posted}`,
+        };
+      }
+
+      const data = (await res.json()) as { data: { id: string } };
+      previousTweetId = data.data.id;
+
+      if (i === 0) {
+        firstTweetUrl = `https://x.com/i/status/${data.data.id}`;
+      }
+
+      console.log(`[X] Tweet ${i + 1}/${thread.length} posted`);
     }
 
-    const data = (await res.json()) as { data: { id: string } };
-    const tweetUrl = `https://x.com/i/status/${data.data.id}`;
-    console.log(`[X] Published: ${tweetUrl}`);
-    return { platform: this.platform, success: true, url: tweetUrl };
+    console.log(`[X] Thread published: ${firstTweetUrl}`);
+    return { platform: this.platform, success: true, url: firstTweetUrl };
   }
 }

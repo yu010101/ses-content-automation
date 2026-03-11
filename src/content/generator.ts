@@ -3,7 +3,7 @@ import { config } from "../config.js";
 import {
   getArticleType,
   getArticleSystemPrompt,
-  X_POST_SYSTEM_PROMPT,
+  X_THREAD_SYSTEM_PROMPT,
 } from "./templates.js";
 import type { ArticleType } from "./templates.js";
 import type { TrendResult } from "../trends/grok.js";
@@ -14,6 +14,7 @@ export interface GeneratedArticle {
   keywords: string[];
   summary: string;
   xPost: string;
+  xThread: string[];
   articleType: string;
 }
 
@@ -75,7 +76,7 @@ JSONのみを返してください。`,
       ? articleResponse.content[0].text
       : "";
 
-  let article: Omit<GeneratedArticle, "xPost" | "articleType">;
+  let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType">;
   try {
     const jsonMatch = articleText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error("No JSON found in response");
@@ -86,23 +87,42 @@ JSONのみを返してください。`,
     );
   }
 
-  // Generate X post
+  // Generate X thread (3-5 tweets)
   const xResponse = await client.messages.create({
     model: config.anthropic.model,
-    max_tokens: 512,
-    system: X_POST_SYSTEM_PROMPT,
+    max_tokens: 1024,
+    system: X_THREAD_SYSTEM_PROMPT,
     messages: [
       {
         role: "user",
-        content: `以下の記事の要約ツイートを作成してください:\n\nタイトル: ${article.title}\n要約: ${article.summary}`,
+        content: `以下の記事のXスレッドを作成してください:
+
+タイトル: ${article.title}
+要約: ${article.summary}
+キーワード: ${article.keywords.slice(0, 5).join(", ")}`,
       },
     ],
   });
 
-  const xPost =
+  const xText =
     xResponse.content[0].type === "text"
       ? xResponse.content[0].text.trim()
       : "";
 
-  return { ...article, xPost, articleType: articleType.id };
+  // Parse thread JSON
+  let xThread: string[] = [];
+  let xPost = "";
+  try {
+    const jsonMatch = xText.match(/\[[\s\S]*\]/);
+    if (jsonMatch) {
+      xThread = JSON.parse(jsonMatch[0]);
+      xPost = xThread[0] || "";
+    }
+  } catch {
+    // Fallback: use as single tweet
+    xPost = xText.slice(0, 280);
+    xThread = [xPost];
+  }
+
+  return { ...article, xPost, xThread, articleType: articleType.id };
 }

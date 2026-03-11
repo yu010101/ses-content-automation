@@ -7,6 +7,7 @@ const article = {
   keywords: ["SES", "テスト"],
   summary: "テスト",
   articleType: "data-analysis",
+  xThread: ["ツイート1", "ツイート2", "詳細は記事で"],
   xPost: "テスト",
 };
 
