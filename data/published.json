@@ -77,6 +77,32 @@
           "url": "(pending-browser-automation)"
         }
       ]
+    },
+    {
+      "title": "SES契約の実態とは？年収を上げるためのキャリア戦略を現役エンジニアが解説",
+      "date": "2026-03-11T08:40:42.083Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/8d82c9550c7da188f5fc"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260311-ses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "(draft-via-mcp)"
+        }
+      ]
     }
   ]
 }

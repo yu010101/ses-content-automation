@@ -28,10 +28,29 @@ export function formatForQiita(
   };
 }
 
+const TOPIC_MAP: Record<string, string> = {
+  ses: "ses", エンジニア: "engineer", フリーランス: "freelance",
+  キャリア: "career", 転職: "career", 年収: "salary", 単価: "salary",
+  面談: "interview", 契約: "contract", 副業: "sidejob", スキル: "skills",
+  ai: "ai", 案件: "project", エージェント: "agent", 独立: "freelance",
+  準委任: "contract", 派遣: "staffing", 常駐: "onsite", 開発: "development",
+};
+
+function toEnglishTopics(keywords: string[]): string[] {
+  const topics = new Set<string>();
+  for (const kw of keywords) {
+    const lower = kw.toLowerCase().replace(/\s+/g, "");
+    for (const [jp, en] of Object.entries(TOPIC_MAP)) {
+      if (lower.includes(jp)) { topics.add(en); break; }
+    }
+    if (topics.size >= 5) break;
+  }
+  if (topics.size === 0) topics.add("ses");
+  return [...topics].slice(0, 5);
+}
+
 export function formatForZenn(article: GeneratedArticle): string {
-  const topics = article.keywords
-    .slice(0, 5)
-    .map((k) => k.replace(/\s+/g, "").toLowerCase());
+  const topics = toEnglishTopics(article.keywords);
 
   const frontmatter: ZennFrontmatter = {
     title: article.title.slice(0, 60),
