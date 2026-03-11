@@ -8,7 +8,7 @@ export const config = {
   xai: {
     apiKey: () => env("XAI_API_KEY"),
     baseUrl: "https://api.x.ai/v1",
-    model: "grok-3-mini",
+    model: "grok-4-1-fast-non-reasoning",
   },
   anthropic: {
     apiKey: () => env("ANTHROPIC_API_KEY"),

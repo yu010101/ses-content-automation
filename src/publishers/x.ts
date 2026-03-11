@@ -88,7 +88,8 @@ export class XPublisher implements IPublisher {
       const resultText = JSON.stringify(result).slice(0, 300);
       console.log(`[X] MCP result:`, resultText);
       if (result?.isError || resultText.includes("失敗")) {
-        return { platform: this.platform, success: false, error: `MCP: ${resultText}` };
+        console.log(`[X] MCP failed, trying direct OAuth...`);
+        return this.publishViaOAuth(text);
       }
       return { platform: this.platform, success: true, url: "(via-mcp)" };
     } catch (err) {
