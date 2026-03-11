@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
+import { fetchMarketData, formatMarketContext } from "./trends/market-data.js";
 import { generateArticle } from "./content/generator.js";
 import { insertRelatedLinks } from "./content/internal-links.js";
 import { sendApprovalRequest, waitForApproval } from "./approval/telegram.js";
@@ -80,10 +81,21 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     console.log("  Falling back to keyword-only article generation.");
   }
 
+  // Step 1.5: Fetch market data
+  let marketContext = "";
+  try {
+    console.log("\n[1.5/5] Fetching market data via Grok...");
+    const marketData = await fetchMarketData();
+    marketContext = formatMarketContext(marketData);
+    console.log(`  Sources: ${marketData.sources.length}, Facts: ${marketData.rawFacts.length}`);
+  } catch (err) {
+    console.log(`  Market data unavailable (${err instanceof Error ? err.message : err})`);
+  }
+
   // Step 2: Generate article
   console.log("\n[2/5] Generating article via Claude...");
   const keywords = loadKeywords();
-  const article: GeneratedArticle = await generateArticle(trends, keywords);
+  const article: GeneratedArticle = await generateArticle(trends, keywords, marketContext);
   console.log(`Title: ${article.title}`);
   console.log(`Length: ${article.body.length} chars`);
   console.log(`Keywords: ${article.keywords.join(", ")}`);

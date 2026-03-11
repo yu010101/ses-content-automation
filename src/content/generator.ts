@@ -20,6 +20,7 @@ export interface GeneratedArticle {
 export async function generateArticle(
   trends: TrendResult[],
   keywords: string[],
+  marketContext = "",
 ): Promise<GeneratedArticle> {
   const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
   const articleType: ArticleType = getArticleType();
@@ -54,6 +55,7 @@ ${trendContext}
 
 ## ターゲットキーワード（全て記事内に自然に含めること）
 ${keywordList}
+${marketContext ? `\n${marketContext}` : ""}
 
 以下のJSON形式で返してください:
 {
