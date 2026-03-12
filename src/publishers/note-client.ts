@@ -319,7 +319,13 @@ export class NoteClient {
         throw new Error("Could not find publish proceed button");
       }
 
-      await page.waitForTimeout(2000);
+      // Wait for publish settings page to fully load
+      await page.waitForTimeout(3000);
+      // Log page state for debugging
+      const buttons = await page.$$eval("button", (els) =>
+        els.map((el) => el.textContent?.trim()).filter(Boolean),
+      );
+      console.log(`[Note] Buttons on page: ${JSON.stringify(buttons)}`);
 
       // Set paid settings if needed
       if (isPaid && price > 0) {
@@ -350,27 +356,67 @@ export class NoteClient {
       // Click "投稿する" (final publish)
       const publishTexts = ["投稿する", "投稿", "公開する", "公開"];
       clicked = false;
+
+      // Strategy 1: getByRole with exact match
       for (const text of publishTexts) {
         const btn = page.getByRole("button", { name: text, exact: true });
         if (await btn.isVisible({ timeout: 2000 }).catch(() => false)) {
           await btn.click();
           clicked = true;
-          console.log(`[Note] Clicked "${text}"`);
+          console.log(`[Note] Clicked "${text}" (role exact)`);
           break;
         }
       }
+
+      // Strategy 2: getByRole relaxed
       if (!clicked) {
-        // Try less strict match
         for (const text of publishTexts) {
           const btn = page.getByRole("button", { name: text });
           if (await btn.isVisible({ timeout: 1000 }).catch(() => false)) {
             await btn.click();
             clicked = true;
-            console.log(`[Note] Clicked "${text}" (relaxed)`);
+            console.log(`[Note] Clicked "${text}" (role relaxed)`);
             break;
           }
         }
       }
+
+      // Strategy 3: CSS has-text selectors
+      if (!clicked) {
+        const cssSelectors = [
+          "button:has-text('投稿する')",
+          "button:has-text('公開する')",
+          "button:has-text('投稿')",
+          "[role='button']:has-text('投稿')",
+          "a:has-text('投稿する')",
+        ];
+        for (const sel of cssSelectors) {
+          try {
+            const el = await page.$(sel);
+            if (el && await el.isVisible()) {
+              await el.click();
+              clicked = true;
+              console.log(`[Note] Clicked via CSS: ${sel}`);
+              break;
+            }
+          } catch { /* try next */ }
+        }
+      }
+
+      // Strategy 4: Find by inner text scan
+      if (!clicked) {
+        const allButtons = await page.$$("button");
+        for (const btn of allButtons) {
+          const text = (await btn.textContent())?.trim() ?? "";
+          if (text.includes("投稿") || text.includes("公開する")) {
+            await btn.click();
+            clicked = true;
+            console.log(`[Note] Clicked by text scan: "${text}"`);
+            break;
+          }
+        }
+      }
+
       if (!clicked) {
         throw new Error("Could not find final publish button");
       }
