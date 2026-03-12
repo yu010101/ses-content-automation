@@ -1,6 +1,6 @@
 function env(key: string, fallback?: string): string {
   const val = process.env[key] ?? fallback;
-  if (!val) throw new Error(`Missing env: ${key}`);
+  if (val === undefined) throw new Error(`Missing env: ${key}`);
   return val;
 }
 
