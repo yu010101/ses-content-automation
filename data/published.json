@@ -181,6 +181,32 @@
           "url": "(pending-browser-automation)"
         }
       ]
+    },
+    {
+      "title": "SESからフリーランス転職で年収アップ？2026年最新の働き方比較とキャリア戦略",
+      "date": "2026-03-12T15:46:09.223Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/fdb53bbe89968830ddc8"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260312-ses2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": false,
+          "error": "page.waitForURL: Timeout 15000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================"
+        }
+      ]
     }
   ]
 }
