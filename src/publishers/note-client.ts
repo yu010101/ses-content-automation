@@ -108,6 +108,19 @@ export class NoteClient {
     return this.context;
   }
 
+  private async clickFirst(page: import("playwright").Page, selectors: string[]): Promise<boolean> {
+    for (const sel of selectors) {
+      try {
+        const el = await page.$(sel);
+        if (el && await el.isVisible()) {
+          await el.click();
+          return true;
+        }
+      } catch { /* try next */ }
+    }
+    return false;
+  }
+
   async close(): Promise<void> {
     if (this.browser) {
       await this.browser.close();
@@ -139,25 +152,56 @@ export class NoteClient {
     try {
       // Visit homepage first to establish cookies
       await page.goto("https://note.com", { waitUntil: "domcontentloaded" });
-      await page.waitForTimeout(1000);
+      await page.waitForTimeout(2000);
 
       // Navigate to login
       await page.goto("https://note.com/login", { waitUntil: "domcontentloaded" });
-      await page.waitForSelector("#email", { timeout: 10000 });
+      await page.waitForTimeout(3000);
+
+      // Try multiple selectors for email input
+      const emailSelector = (await page.$("#email"))
+        ?? (await page.$("input[type='email']"))
+        ?? (await page.$("input[name='email']"))
+        ?? (await page.$("input[placeholder*='メール']"));
+      if (!emailSelector) {
+        // Take screenshot for debugging
+        console.log(`[Note] Login page URL: ${page.url()}`);
+        console.log(`[Note] Login page title: ${await page.title()}`);
+        throw new Error("Could not find email input on login page");
+      }
 
       // Type with human-like delays
-      await page.fill("#email", "");
-      await page.type("#email", email, { delay: 50 });
-      await page.fill("#password", "");
-      await page.type("#password", password, { delay: 50 });
+      await emailSelector.fill("");
+      await emailSelector.type(email, { delay: 50 });
 
-      // Click login
-      await page.click(".o-login__button button");
+      const passwordSelector = (await page.$("#password"))
+        ?? (await page.$("input[type='password']"))
+        ?? (await page.$("input[name='password']"));
+      if (!passwordSelector) throw new Error("Could not find password input");
+      await passwordSelector.fill("");
+      await passwordSelector.type(password, { delay: 50 });
 
-      // Wait for redirect away from login page
-      await page.waitForURL((url) => !url.pathname.includes("/login"), {
-        timeout: 15000,
-      });
+      await page.waitForTimeout(500);
+
+      // Click login button - try multiple selectors
+      const loginClicked = await this.clickFirst(page, [
+        ".o-login__button button",
+        "button[type='submit']",
+        "button:has-text('ログイン')",
+        "button:has-text('Login')",
+      ]);
+      if (!loginClicked) throw new Error("Could not find login button");
+
+      // Wait for login: either URL change or session cookie appears
+      try {
+        await page.waitForURL((url) => !url.pathname.includes("/login"), {
+          timeout: 20000,
+        });
+      } catch {
+        // URL might not change. Check for session via cookies instead.
+        console.log("[Note] URL didn't change, checking cookies...");
+        await page.waitForTimeout(5000);
+      }
 
       // Extract cookies
       const allCookies = await ctx.cookies();
