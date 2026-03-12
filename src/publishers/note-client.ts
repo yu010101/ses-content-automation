@@ -280,15 +280,22 @@ export class NoteClient {
       // Intercept responses to capture the publish API result
       page.on("response", async (response) => {
         const url = response.url();
-        if (
-          (url.includes("/api/") && response.request().method() === "PUT") ||
-          (url.includes("/api/") && url.includes("text_notes") && response.request().method() === "POST")
-        ) {
+        const method = response.request().method();
+        if (url.includes("/api/") && url.includes("text_notes") && method === "PUT") {
           try {
-            const json = await response.json();
-            if (json?.data?.key) {
-              const urlname = process.env.NOTE_URLNAME ?? "sescore";
-              publishedUrl = `https://note.com/${urlname}/n/${json.data.key}`;
+            const json = (await response.json()) as { data?: { key?: string; status?: string } };
+            if (json?.data?.key && json?.data?.status === "published") {
+              // Fetch the actual urlname from the note API
+              const noteKey = json.data.key;
+              try {
+                const noteRes = await fetch(`https://note.com/api/v3/notes/${noteKey}`);
+                const noteData = (await noteRes.json()) as { data?: { user?: { urlname?: string } } };
+                const urlname = noteData?.data?.user?.urlname ?? process.env.NOTE_URLNAME ?? "fortune2025";
+                publishedUrl = `https://note.com/${urlname}/n/${noteKey}`;
+              } catch {
+                const urlname = process.env.NOTE_URLNAME ?? "fortune2025";
+                publishedUrl = `https://note.com/${urlname}/n/${noteKey}`;
+              }
             }
           } catch { /* ignore non-JSON */ }
         }
@@ -430,7 +437,7 @@ export class NoteClient {
         if (currentUrl.includes("note.com") && !currentUrl.includes("editor")) {
           publishedUrl = currentUrl;
         } else {
-          const urlname = process.env.NOTE_URLNAME ?? "sescore";
+          const urlname = process.env.NOTE_URLNAME ?? "fortune2025";
           publishedUrl = `https://note.com/${urlname}/n/${key}`;
         }
       }
