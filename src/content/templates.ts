@@ -9,8 +9,19 @@ export interface ArticleType {
   ctaVariant: string;
 }
 
+function buildCtaUrl(variant: string): string {
+  const base = config.freelanceDbUrl;
+  const params = new URLSearchParams({
+    utm_source: "sescore",
+    utm_medium: "article",
+    utm_campaign: variant,
+  });
+  return `${base}?${params.toString()}`;
+}
+
 function buildCTA(variant: string): string {
-  const base = `[FreelanceDB に無料登録する](${config.freelanceDbUrl})`;
+  const url = buildCtaUrl(variant);
+  const base = `[FreelanceDB に無料登録する](${url})`;
   const variants: Record<string, string> = {
     default: `---
 

@@ -24,13 +24,22 @@ function loadKeywords(): string[] {
   const data = JSON.parse(
     readFileSync(join(process.cwd(), "data/keywords.json"), "utf-8"),
   );
-  const all: string[] = [...data.primary, ...data.secondary];
-  // Shuffle and pick 10
-  for (let i = all.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [all[i], all[j]] = [all[j], all[i]];
-  }
-  return all.slice(0, 10);
+  // Always include 2-3 high-conversion keywords for better lead gen
+  const highCv: string[] = data.high_conversion ?? [];
+  const rest: string[] = [...data.primary, ...data.secondary];
+
+  // Shuffle both pools
+  const shuffle = (arr: string[]) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  };
+  shuffle(highCv);
+  shuffle(rest);
+
+  // Pick 3 high-conversion + 7 regular
+  return [...highCv.slice(0, 3), ...rest.slice(0, 7)];
 }
 
 function isDuplicate(title: string): boolean {

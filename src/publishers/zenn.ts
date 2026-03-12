@@ -6,6 +6,9 @@ import { formatForZenn, generateZennSlug } from "../content/formatter.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
 
+// Zenn publish days (0=Sun, 1=Mon, ..., 6=Sat) — limit to 2x/week to avoid ban
+const ZENN_PUBLISH_DAYS = [2, 4]; // Tuesday, Thursday
+
 export class ZennPublisher implements IPublisher {
   platform = "zenn";
 
@@ -15,8 +18,22 @@ export class ZennPublisher implements IPublisher {
     article: GeneratedArticle,
     dryRun = false,
   ): Promise<PublishResult> {
+    // Rate limit: only publish on designated days
+    const today = new Date().getDay();
+    if (!ZENN_PUBLISH_DAYS.includes(today) && !dryRun) {
+      console.log(
+        `[Zenn] Skipping: only publishes on Tue/Thu (today is day ${today})`,
+      );
+      return {
+        platform: this.platform,
+        success: true,
+        url: "(skipped-rate-limit)",
+      };
+    }
+
     const slug = generateZennSlug(article.title);
-    const content = formatForZenn(article);
+    // Save as draft (published: false) — manually publish from Zenn dashboard
+    const content = formatForZenn(article, false);
     const articlesDir = join(this.repoRoot, config.zenn.articlesDir);
     const filePath = join(articlesDir, `${slug}.md`);
 
@@ -30,12 +47,14 @@ export class ZennPublisher implements IPublisher {
     try {
       mkdirSync(articlesDir, { recursive: true });
       writeFileSync(filePath, content, "utf-8");
-      console.log(`[Zenn] Wrote article: ${filePath}`);
+      console.log(`[Zenn] Wrote draft article: ${filePath}`);
 
       // In CI, the workflow handles git add/commit/push
       if (process.env.CI) {
         const url = `https://zenn.dev/articles/${slug}`;
-        console.log(`[Zenn] CI mode - file written, git push handled by workflow`);
+        console.log(
+          `[Zenn] CI mode - draft written, publish manually from dashboard`,
+        );
         return { platform: this.platform, success: true, url };
       }
 
@@ -43,11 +62,14 @@ export class ZennPublisher implements IPublisher {
       const git = simpleGit(this.repoRoot);
       const branch = (await git.branchLocal()).current;
       await git.add(filePath);
-      await git.commit(`Add article: ${article.title}`);
+      await git.commit(`Add Zenn draft: ${article.title}`);
       await git.push("origin", branch);
 
       const url = `https://zenn.dev/articles/${slug}`;
-      console.log(`[Zenn] Published: ${url}`);
+      console.log(`[Zenn] Draft pushed: ${url}`);
+      console.log(
+        `[Zenn] ※ 公開はZennダッシュボードから手動で行ってください`,
+      );
       return { platform: this.platform, success: true, url };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

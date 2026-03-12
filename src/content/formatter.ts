@@ -49,7 +49,10 @@ function toEnglishTopics(keywords: string[]): string[] {
   return [...topics].slice(0, 5);
 }
 
-export function formatForZenn(article: GeneratedArticle): string {
+export function formatForZenn(
+  article: GeneratedArticle,
+  published = true,
+): string {
   const topics = toEnglishTopics(article.keywords);
 
   const frontmatter: ZennFrontmatter = {
@@ -57,7 +60,7 @@ export function formatForZenn(article: GeneratedArticle): string {
     emoji: "💼",
     type: "tech",
     topics,
-    published: true,
+    published,
   };
 
   const fm = Object.entries(frontmatter)
