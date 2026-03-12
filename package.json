@@ -19,9 +19,10 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
+    "node-fetch": "^3.3.2",
     "openai": "^4.77.0",
-    "simple-git": "^3.27.0",
-    "node-fetch": "^3.3.2"
+    "playwright": "^1.58.2",
+    "simple-git": "^3.27.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
