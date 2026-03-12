@@ -155,6 +155,32 @@
           "url": "(pending-browser-automation)"
         }
       ]
+    },
+    {
+      "title": "SES脱出完全ガイド2026年版：フリーランス・自社開発・SIerへの転職比較と成功戦略",
+      "date": "2026-03-12T13:59:05.761Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/8e8b08744e207ac82dc3"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260312-ses2026sier"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "(pending-browser-automation)"
+        }
+      ]
     }
   ]
 }
