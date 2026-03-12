@@ -1,4 +1,6 @@
 import crypto from "node:crypto";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { config } from "../config.js";
 import { isMcpAvailable, mcpCall } from "./mcp-client.js";
 import type { GeneratedArticle } from "../content/generator.js";
@@ -64,8 +66,6 @@ interface XBudget {
 
 function getXBudget(): XBudget {
   try {
-    const { readFileSync } = require("node:fs");
-    const { join } = require("node:path");
     const data: XBudget = JSON.parse(
       readFileSync(join(process.cwd(), X_BUDGET_FILE), "utf-8"),
     );
@@ -78,8 +78,6 @@ function getXBudget(): XBudget {
 }
 
 function saveXBudget(budget: XBudget): void {
-  const { writeFileSync } = require("node:fs");
-  const { join } = require("node:path");
   writeFileSync(
     join(process.cwd(), X_BUDGET_FILE),
     JSON.stringify(budget, null, 2),
