@@ -1,3 +1,4 @@
+import { config } from "../config.js";
 import { getQiitaTags } from "./templates.js";
 import type { GeneratedArticle } from "./generator.js";
 
@@ -6,6 +7,7 @@ export interface QiitaPayload {
   body: string;
   tags: { name: string }[];
   private: boolean;
+  organization_url_name?: string;
 }
 
 export interface ZennFrontmatter {
@@ -20,11 +22,13 @@ export function formatForQiita(
   article: GeneratedArticle,
   isPrivate = false,
 ): QiitaPayload {
+  const orgName = config.qiita.organizationName();
   return {
     title: article.title,
     body: article.body,
     tags: getQiitaTags(article.keywords).map((name) => ({ name })),
     private: isPrivate,
+    ...(orgName ? { organization_url_name: orgName } : {}),
   };
 }
 

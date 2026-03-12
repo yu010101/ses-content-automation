@@ -9,18 +9,19 @@ export interface ArticleType {
   ctaVariant: string;
 }
 
-function buildCtaUrl(variant: string): string {
+function buildCtaUrl(variant: string, articleSlug?: string): string {
   const base = config.freelanceDbUrl;
   const params = new URLSearchParams({
     utm_source: "sescore",
     utm_medium: "article",
     utm_campaign: variant,
+    ...(articleSlug ? { utm_content: articleSlug } : {}),
   });
   return `${base}?${params.toString()}`;
 }
 
-function buildCTA(variant: string): string {
-  const url = buildCtaUrl(variant);
+function buildCTA(variant: string, articleSlug?: string): string {
+  const url = buildCtaUrl(variant, articleSlug);
   const base = `[FreelanceDB に無料登録する](${url})`;
   const variants: Record<string, string> = {
     default: `---
@@ -219,8 +220,8 @@ export function getArticleType(): ArticleType {
   return ARTICLE_TYPES[dayOfYear % ARTICLE_TYPES.length];
 }
 
-export function getArticleSystemPrompt(articleType: ArticleType): string {
-  const cta = buildCTA(articleType.ctaVariant);
+export function getArticleSystemPrompt(articleType: ArticleType, articleSlug?: string): string {
+  const cta = buildCTA(articleType.ctaVariant, articleSlug);
   return `${articleType.systemPrompt}
 
 ## CTA（記事末尾に必ず含める）
@@ -245,8 +246,8 @@ export const X_THREAD_SYSTEM_PROMPT = `あなたはSES業界データメディ�
 
 JSON配列のみを返してください。`;
 
-export function getCTA(variant = "default"): string {
-  return buildCTA(variant);
+export function getCTA(variant = "default", articleSlug?: string): string {
+  return buildCTA(variant, articleSlug);
 }
 
 export function getQiitaTags(keywords: string[]): string[] {
@@ -261,6 +262,19 @@ export function getQiitaTags(keywords: string[]): string[] {
     リモート: "リモートワーク",
     AI: "AI",
     データ: "データ分析",
+    年収: "年収",
+    副業: "副業",
+    独立: "独立",
+    スキル: "スキルアップ",
+    面談: "面接",
+    契約: "契約",
+    派遣: "派遣",
+    常駐: "客先常駐",
+    開発: "開発",
+    TypeScript: "TypeScript",
+    Python: "Python",
+    AWS: "AWS",
+    Docker: "Docker",
   };
 
   const tags = new Set<string>();
@@ -269,5 +283,7 @@ export function getQiitaTags(keywords: string[]): string[] {
       if (kw.includes(key)) tags.add(tag);
     }
   }
+  // Always include SES tag for brand visibility
+  if (!tags.has("SES")) tags.add("SES");
   return [...tags].slice(0, 5);
 }

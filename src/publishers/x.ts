@@ -53,6 +53,40 @@ function generateOAuthHeader(
   return `OAuth ${header}`;
 }
 
+// Free tier: 1,500 tweets/month. Single tweet saves credits vs threads.
+const X_MONTHLY_LIMIT = 1500;
+const X_BUDGET_FILE = "data/x-budget.json";
+
+interface XBudget {
+  month: string; // "2026-03"
+  used: number;
+}
+
+function getXBudget(): XBudget {
+  try {
+    const { readFileSync } = require("node:fs");
+    const { join } = require("node:path");
+    const data: XBudget = JSON.parse(
+      readFileSync(join(process.cwd(), X_BUDGET_FILE), "utf-8"),
+    );
+    const currentMonth = new Date().toISOString().slice(0, 7);
+    if (data.month !== currentMonth) return { month: currentMonth, used: 0 };
+    return data;
+  } catch {
+    return { month: new Date().toISOString().slice(0, 7), used: 0 };
+  }
+}
+
+function saveXBudget(budget: XBudget): void {
+  const { writeFileSync } = require("node:fs");
+  const { join } = require("node:path");
+  writeFileSync(
+    join(process.cwd(), X_BUDGET_FILE),
+    JSON.stringify(budget, null, 2),
+    "utf-8",
+  );
+}
+
 export class XPublisher implements IPublisher {
   platform = "x";
 
@@ -61,7 +95,29 @@ export class XPublisher implements IPublisher {
     dryRun = false,
     articleUrl?: string,
   ): Promise<PublishResult> {
+    // Budget check: conserve credits on free tier
+    const budget = getXBudget();
     const thread = this.buildThread(article, articleUrl);
+    const tweetsNeeded = thread.length;
+
+    if (budget.used + tweetsNeeded > X_MONTHLY_LIMIT && !dryRun) {
+      console.log(
+        `[X] Skipping: monthly budget exhausted (${budget.used}/${X_MONTHLY_LIMIT} used)`,
+      );
+      return {
+        platform: this.platform,
+        success: true,
+        url: "(skipped-budget-limit)",
+      };
+    }
+
+    // If budget is tight (>80%), fall back to single tweet to conserve
+    if (budget.used > X_MONTHLY_LIMIT * 0.8 && thread.length > 1 && !dryRun) {
+      console.log(
+        `[X] Budget tight (${budget.used}/${X_MONTHLY_LIMIT}), posting single tweet instead of thread`,
+      );
+      thread.splice(1); // Keep only first tweet
+    }
 
     if (dryRun) {
       console.log(`[X] DRY RUN - Thread (${thread.length} tweets):`);
@@ -72,11 +128,20 @@ export class XPublisher implements IPublisher {
     // Try MCP first (single tweet only)
     if (await isMcpAvailable()) {
       const mcpResult = await this.publishViaMcp(thread[0]);
-      if (mcpResult.success) return mcpResult;
+      if (mcpResult.success) {
+        budget.used += 1;
+        saveXBudget(budget);
+        return mcpResult;
+      }
     }
 
     // Direct OAuth: post thread
-    return this.publishThread(thread);
+    const result = await this.publishThread(thread);
+    if (result.success) {
+      budget.used += thread.length;
+      saveXBudget(budget);
+    }
+    return result;
   }
 
   private buildThread(article: GeneratedArticle, articleUrl?: string): string[] {

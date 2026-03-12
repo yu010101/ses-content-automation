@@ -17,6 +17,7 @@ export const config = {
   qiita: {
     accessToken: () => env("QIITA_ACCESS_TOKEN"),
     baseUrl: "https://qiita.com/api/v2",
+    organizationName: () => env("QIITA_ORG_NAME", ""),
   },
   x: {
     consumerKey: () => env("X_CONSUMER_KEY"),
