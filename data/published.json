@@ -233,6 +233,32 @@
           "error": "Could not find final publish button"
         }
       ]
+    },
+    {
+      "title": "SESエンジニアの働き方比較【2026年版】フリーランス・自社開発・転職の選択指針",
+      "date": "2026-03-12T22:00:56.148Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/bb25abfa81eb40321423"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/articles/20260312-ses2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n57aa5fcdbd20"
+        }
+      ]
     }
   ]
 }
