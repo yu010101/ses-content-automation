@@ -293,7 +293,7 @@ export class NoteClient {
                 const urlname = noteData?.data?.user?.urlname ?? process.env.NOTE_URLNAME ?? "fortune2025";
                 publishedUrl = `https://note.com/${urlname}/n/${noteKey}`;
               } catch {
-                const urlname = process.env.NOTE_URLNAME ?? "fortune2025";
+                const urlname = process.env.NOTE_URLNAME ?? "sescore";
                 publishedUrl = `https://note.com/${urlname}/n/${noteKey}`;
               }
             }
@@ -437,7 +437,7 @@ export class NoteClient {
         if (currentUrl.includes("note.com") && !currentUrl.includes("editor")) {
           publishedUrl = currentUrl;
         } else {
-          const urlname = process.env.NOTE_URLNAME ?? "fortune2025";
+          const urlname = process.env.NOTE_URLNAME ?? "sescore";
           publishedUrl = `https://note.com/${urlname}/n/${key}`;
         }
       }
