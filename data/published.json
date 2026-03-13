@@ -259,6 +259,32 @@
           "url": "https://note.com/sescore/n/n57aa5fcdbd20"
         }
       ]
+    },
+    {
+      "title": "【2026年最新】SES業界の構造的問題を徹底解説｜多重下請けとマージン率の実態",
+      "date": "2026-03-13T11:27:58.160Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/8165d5559d45275914c5"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "(skipped-rate-limit)"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nd27d09a4cccf"
+        }
+      ]
     }
   ]
 }
