@@ -122,7 +122,6 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   let noteArticle: GeneratedArticle;
   try {
     noteArticle = await generateNoteVariation(article);
-    noteArticle.body = insertRelatedLinks(noteArticle.body, noteArticle.title);
     console.log(`Note title: ${noteArticle.title}`);
   } catch (err) {
     console.log(`  Note variation failed (${err instanceof Error ? err.message : err}), using base`);
@@ -134,7 +133,6 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   let zennArticle: GeneratedArticle;
   try {
     zennArticle = await generateZennVariation(article);
-    zennArticle.body = insertRelatedLinks(zennArticle.body, zennArticle.title);
     console.log(`Zenn variation: ${zennArticle.body.length} chars`);
   } catch (err) {
     console.log(`  Zenn variation failed (${err instanceof Error ? err.message : err}), using base`);
