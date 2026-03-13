@@ -220,13 +220,39 @@ export function getArticleType(): ArticleType {
   return ARTICLE_TYPES[dayOfYear % ARTICLE_TYPES.length];
 }
 
-export function getArticleSystemPrompt(articleType: ArticleType, articleSlug?: string): string {
+export function getArticleSystemPrompt(articleType: ArticleType, articleSlug?: string, includeCta = true): string {
+  if (!includeCta) return articleType.systemPrompt;
   const cta = buildCTA(articleType.ctaVariant, articleSlug);
   return `${articleType.systemPrompt}
 
 ## CTA（記事末尾に必ず含める）
 ${cta}`;
 }
+
+export const NOTE_REWRITE_SYSTEM_PROMPT = `あなたはSESエンジニア向けキャリアメディアのライターです。
+技術記事をnote.com向けに書き直してください。
+
+## リライトルール
+- 元記事の事実・データ・主張はそのまま保持する
+- テーブルやコードブロックは使わず、読みやすい文章に変換する
+- 見出し(##, ###)は使ってよいが、箇条書きは最小限に
+- 「です・ます」調の親しみやすいトーンで書く
+- 読者に語りかけるスタイル（「あなたは〜」「〜ではないでしょうか」）
+- SESエンジニアのキャリアの悩みに寄り添う共感型の導入
+- 具体的なアクションや次のステップを明確に提示
+- タイトルはnote向けに感情に訴えるものに変更（例:「SES3年目で気づいた、年収を上げる唯一の方法」）
+- 記事末尾のCTAは元記事のものをそのまま含める
+- 5000文字以上を維持
+
+以下のJSON形式で返してください:
+{
+  "title": "note向けタイトル",
+  "body": "リライトした本文（Markdown形式）",
+  "summary": "要約（200文字以内）"
+}
+
+JSONのみを返してください。`;
+
 
 export const X_THREAD_SYSTEM_PROMPT = `あなたはSES業界データメディア「SES Core」のX運用担当です。
 記事の内容をXのスレッド形式（3-5ツイート）にまとめてください。

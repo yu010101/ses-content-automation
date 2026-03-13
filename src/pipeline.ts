@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
 import { fetchMarketData, formatMarketContext } from "./trends/market-data.js";
-import { generateArticle } from "./content/generator.js";
+import { generateArticle, generateNoteVariation } from "./content/generator.js";
 import { insertRelatedLinks } from "./content/internal-links.js";
 import { sendApprovalRequest, waitForApproval } from "./approval/telegram.js";
 import { QiitaPublisher } from "./publishers/qiita.js";
@@ -117,6 +117,17 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   article.body = insertRelatedLinks(article.body, article.title);
   console.log(`Internal links: ${article.body.includes("## 関連記事") ? "added" : "none (first article)"}`);
 
+  // Step 2.5: Generate Note-optimized variation
+  console.log("\n[2.5/5] Generating Note variation...");
+  let noteArticle: GeneratedArticle;
+  try {
+    noteArticle = await generateNoteVariation(article);
+    noteArticle.body = insertRelatedLinks(noteArticle.body, noteArticle.title);
+    console.log(`Note title: ${noteArticle.title}`);
+  } catch (err) {
+    console.log(`  Note variation failed (${err instanceof Error ? err.message : err}), using base`);
+    noteArticle = article;
+  }
 
   // Step 3: Telegram approval
   const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";
@@ -134,26 +145,27 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     console.log(`\n[3/5] Skipping approval (${reason})`);
   }
 
-  // Step 4: Publish to all platforms
+  // Step 4: Publish to all platforms (each gets optimized content)
   console.log("\n[4/5] Publishing to platforms...");
-  const publishers = [
-    new QiitaPublisher(),
-    new ZennPublisher(),
-    new XPublisher(),
-    new NotePublisher(),
-  ];
-
   const results: PublishResult[] = [];
   let qiitaUrl: string | undefined;
 
-  for (const pub of publishers) {
+  // Platform → article mapping: Note gets its own variation
+  const publishTasks: Array<{ publisher: QiitaPublisher | ZennPublisher | XPublisher | NotePublisher; content: GeneratedArticle }> = [
+    { publisher: new QiitaPublisher(), content: article },
+    { publisher: new ZennPublisher(), content: article },
+    { publisher: new XPublisher(), content: article },
+    { publisher: new NotePublisher(), content: noteArticle },
+  ];
+
+  for (const { publisher: pub, content } of publishTasks) {
     console.log(`\n  Publishing to ${pub.platform}...`);
     try {
       let result: PublishResult;
       if (pub instanceof XPublisher) {
-        result = await pub.publish(article, dryRun, qiitaUrl);
+        result = await pub.publish(content, dryRun, qiitaUrl);
       } else {
-        result = await pub.publish(article, dryRun);
+        result = await pub.publish(content, dryRun);
       }
       results.push(result);
       if (pub.platform === "qiita" && result.url) {

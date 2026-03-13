@@ -4,6 +4,7 @@ import {
   getArticleType,
   getArticleSystemPrompt,
   X_THREAD_SYSTEM_PROMPT,
+  NOTE_REWRITE_SYSTEM_PROMPT,
 } from "./templates.js";
 import type { ArticleType } from "./templates.js";
 import type { TrendResult } from "../trends/grok.js";
@@ -125,4 +126,59 @@ JSONのみを返してください。`,
   }
 
   return { ...article, xPost, xThread, articleType: articleType.id };
+}
+
+export async function generateNoteVariation(
+  baseArticle: GeneratedArticle,
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+
+  console.log("  Generating Note-optimized variation...");
+
+  const response = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 8192,
+    system: NOTE_REWRITE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下の技術記事をnote.com向けにリライトしてください。
+
+## 元記事タイトル
+${baseArticle.title}
+
+## 元記事本文
+${baseArticle.body}
+
+## キーワード（リライト後も自然に含めること）
+${baseArticle.keywords.join(", ")}`,
+      },
+    ],
+  });
+
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+
+  try {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in Note rewrite response");
+    const rewritten = JSON.parse(jsonMatch[0]) as {
+      title: string;
+      body: string;
+      summary: string;
+    };
+
+    console.log(`  Note title: ${rewritten.title}`);
+    console.log(`  Note length: ${rewritten.body.length} chars`);
+
+    return {
+      ...baseArticle,
+      title: rewritten.title,
+      body: rewritten.body,
+      summary: rewritten.summary,
+    };
+  } catch {
+    console.log("  Note rewrite failed, using base article");
+    return baseArticle;
+  }
 }
