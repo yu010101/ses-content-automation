@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
 import { fetchMarketData, formatMarketContext } from "./trends/market-data.js";
-import { generateArticle, generateNoteVariation } from "./content/generator.js";
+import { generateArticle, generateNoteVariation, generateZennVariation } from "./content/generator.js";
 import { insertRelatedLinks } from "./content/internal-links.js";
 import { sendApprovalRequest, waitForApproval } from "./approval/telegram.js";
 import { QiitaPublisher } from "./publishers/qiita.js";
@@ -129,6 +129,18 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     noteArticle = article;
   }
 
+  // Step 2.6: Generate Zenn CTA-free variation
+  console.log("\n[2.6/5] Generating Zenn variation (CTA-free)...");
+  let zennArticle: GeneratedArticle;
+  try {
+    zennArticle = generateZennVariation(article);
+    zennArticle.body = insertRelatedLinks(zennArticle.body, zennArticle.title);
+    console.log(`Zenn variation: ${zennArticle.body.length} chars`);
+  } catch (err) {
+    console.log(`  Zenn variation failed (${err instanceof Error ? err.message : err}), using base`);
+    zennArticle = article;
+  }
+
   // Step 3: Telegram approval
   const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";
   if (!skipApproval && !dryRun && hasTelegram) {
@@ -153,7 +165,7 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   // Platform → article mapping: Note gets its own variation
   const publishTasks: Array<{ publisher: QiitaPublisher | ZennPublisher | XPublisher | NotePublisher; content: GeneratedArticle }> = [
     { publisher: new QiitaPublisher(), content: article },
-    { publisher: new ZennPublisher(), content: article },
+    { publisher: new ZennPublisher(), content: zennArticle },
     { publisher: new XPublisher(), content: article },
     { publisher: new NotePublisher(), content: noteArticle },
   ];

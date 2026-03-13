@@ -128,6 +128,42 @@ JSONのみを返してください。`,
   return { ...article, xPost, xThread, articleType: articleType.id };
 }
 
+export function generateZennVariation(
+  baseArticle: GeneratedArticle,
+): GeneratedArticle {
+  console.log("  Generating Zenn CTA-free variation...");
+
+  let body = baseArticle.body;
+
+  // Remove CTA sections (--- followed by promotional block at end)
+  body = body.replace(
+    /---\s*\n+\*\*.*(?:FreelanceDB|フリーランスDB|キャリアアップ|市場価値|独立|無料登録).*\*\*[\s\S]*$/,
+    "",
+  );
+
+  // Remove any remaining FreelanceDB links and registration CTAs
+  body = body.replace(/\[.*?FreelanceDB.*?\]\(.*?\)/g, "");
+  body = body.replace(/FreelanceDB\s*(?:に|で|なら|では)[\s\S]*?(?:登録|始めましょう|見つ[けか]る).*$/gm, "");
+
+  // Trim trailing whitespace/newlines
+  body = body.trimEnd();
+
+  // Add a Zenn-friendly closing
+  body += `
+
+---
+
+この記事が参考になったら、ぜひLikeしていただけると励みになります。
+SESエンジニアのキャリアに関する記事を定期的に発信しています。フォローもお待ちしています。`;
+
+  console.log(`  Zenn variation length: ${body.length} chars`);
+
+  return {
+    ...baseArticle,
+    body,
+  };
+}
+
 export async function generateNoteVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
