@@ -5,6 +5,7 @@ import {
   getArticleSystemPrompt,
   X_THREAD_SYSTEM_PROMPT,
   NOTE_REWRITE_SYSTEM_PROMPT,
+  ZENN_AI_REWRITE_SYSTEM_PROMPT,
 } from "./templates.js";
 import type { ArticleType } from "./templates.js";
 import type { TrendResult } from "../trends/grok.js";
@@ -128,40 +129,71 @@ JSONのみを返してください。`,
   return { ...article, xPost, xThread, articleType: articleType.id };
 }
 
-export function generateZennVariation(
+export async function generateZennVariation(
   baseArticle: GeneratedArticle,
-): GeneratedArticle {
-  console.log("  Generating Zenn CTA-free variation...");
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
 
-  let body = baseArticle.body;
+  console.log("  Generating Zenn AI-focused article...");
 
-  // Remove CTA sections (--- followed by promotional block at end)
-  body = body.replace(
-    /---\s*\n+\*\*.*(?:FreelanceDB|フリーランスDB|キャリアアップ|市場価値|独立|無料登録).*\*\*[\s\S]*$/,
-    "",
-  );
+  const response = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 8192,
+    system: ZENN_AI_REWRITE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下のSESエンジニア向け記事をベースに、Zenn向けのAI/技術記事を執筆してください。
 
-  // Remove any remaining FreelanceDB links and registration CTAs
-  body = body.replace(/\[.*?FreelanceDB.*?\]\(.*?\)/g, "");
-  body = body.replace(/FreelanceDB\s*(?:に|で|なら|では)[\s\S]*?(?:登録|始めましょう|見つ[けか]る).*$/gm, "");
+## 元記事タイトル
+${baseArticle.title}
 
-  // Trim trailing whitespace/newlines
-  body = body.trimEnd();
+## 元記事の要約
+${baseArticle.summary}
 
-  // Add a Zenn-friendly closing
-  body += `
+## 元記事のキーワード
+${baseArticle.keywords.join(", ")}`,
+      },
+    ],
+  });
 
----
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
 
-この記事が参考になったら、ぜひLikeしていただけると励みになります。
-SESエンジニアのキャリアに関する記事を定期的に発信しています。フォローもお待ちしています。`;
+  try {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in Zenn rewrite response");
+    const rewritten = JSON.parse(jsonMatch[0]) as {
+      title: string;
+      body: string;
+      summary: string;
+      keywords: string[];
+    };
 
-  console.log(`  Zenn variation length: ${body.length} chars`);
+    console.log(`  Zenn title: ${rewritten.title}`);
+    console.log(`  Zenn length: ${rewritten.body.length} chars`);
 
-  return {
-    ...baseArticle,
-    body,
-  };
+    return {
+      ...baseArticle,
+      title: rewritten.title,
+      body: rewritten.body,
+      summary: rewritten.summary,
+      keywords: rewritten.keywords || baseArticle.keywords,
+      articleType: "zenn-ai",
+    };
+  } catch {
+    console.log("  Zenn AI rewrite failed, falling back to CTA-stripped base");
+    // Fallback: strip CTAs from base article
+    let body = baseArticle.body;
+    body = body.replace(
+      /---\s*\n+\*\*.*(?:FreelanceDB|フリーランスDB|キャリアアップ|市場価値|独立|無料登録).*\*\*[\s\S]*$/,
+      "",
+    );
+    body = body.replace(/\[.*?FreelanceDB.*?\]\(.*?\)/g, "");
+    body = body.trimEnd();
+    body += `\n\n---\n\nこの記事が参考になったら、ぜひLikeしていただけると励みになります。\nAI・機械学習に関する記事を定期的に発信しています。フォローもお待ちしています。`;
+    return { ...baseArticle, body };
+  }
 }
 
 export async function generateNoteVariation(

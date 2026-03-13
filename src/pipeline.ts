@@ -130,10 +130,10 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   }
 
   // Step 2.6: Generate Zenn CTA-free variation
-  console.log("\n[2.6/5] Generating Zenn variation (CTA-free)...");
+  console.log("\n[2.6/5] Generating Zenn AI article...");
   let zennArticle: GeneratedArticle;
   try {
-    zennArticle = generateZennVariation(article);
+    zennArticle = await generateZennVariation(article);
     zennArticle.body = insertRelatedLinks(zennArticle.body, zennArticle.title);
     console.log(`Zenn variation: ${zennArticle.body.length} chars`);
   } catch (err) {

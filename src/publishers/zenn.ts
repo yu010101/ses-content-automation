@@ -51,7 +51,7 @@ export class ZennPublisher implements IPublisher {
 
       // In CI, the workflow handles git add/commit/push
       if (process.env.CI) {
-        const url = `https://zenn.dev/articles/${slug}`;
+        const url = `https://zenn.dev/ailmarketing/articles/${slug}`;
         console.log(
           `[Zenn] CI mode - draft written, publish manually from dashboard`,
         );
@@ -65,7 +65,7 @@ export class ZennPublisher implements IPublisher {
       await git.commit(`Add Zenn draft: ${article.title}`);
       await git.push("origin", branch);
 
-      const url = `https://zenn.dev/articles/${slug}`;
+      const url = `https://zenn.dev/ailmarketing/articles/${slug}`;
       console.log(`[Zenn] Draft pushed: ${url}`);
       console.log(
         `[Zenn] ※ 公開はZennダッシュボードから手動で行ってください`,

@@ -33,11 +33,13 @@ export function formatForQiita(
 }
 
 const TOPIC_MAP: Record<string, string> = {
+  ai: "ai", llm: "llm", gpt: "gpt", claude: "claude", gemini: "gemini",
+  機械学習: "machinelearning", rag: "rag", プロンプト: "prompt",
+  python: "python", typescript: "typescript", openai: "openai",
+  langchain: "langchain", データ: "data", 自動化: "automation",
+  エージェント: "agent", ファインチューニング: "finetuning",
   ses: "ses", エンジニア: "engineer", フリーランス: "freelance",
-  キャリア: "career", 転職: "career", 年収: "salary", 単価: "salary",
-  面談: "interview", 契約: "contract", 副業: "sidejob", スキル: "skills",
-  ai: "ai", 案件: "project", エージェント: "agent", 独立: "freelance",
-  準委任: "contract", 派遣: "staffing", 常駐: "onsite", 開発: "development",
+  キャリア: "career", 転職: "career", 開発: "development",
 };
 
 function toEnglishTopics(keywords: string[]): string[] {
@@ -49,7 +51,7 @@ function toEnglishTopics(keywords: string[]): string[] {
     }
     if (topics.size >= 5) break;
   }
-  if (topics.size === 0) topics.add("ses");
+  if (topics.size === 0) topics.add("ai");
   return [...topics].slice(0, 5);
 }
 
@@ -61,7 +63,7 @@ export function formatForZenn(
 
   const frontmatter: ZennFrontmatter = {
     title: article.title.slice(0, 60),
-    emoji: "💼",
+    emoji: "🤖",
     type: "tech",
     topics,
     published,
@@ -109,5 +111,5 @@ export function generateZennSlug(title: string): string {
     .replace(/\s+/g, "-")
     .toLowerCase()
     .slice(0, 30);
-  return `${date}-${slug || "ses-article"}`;
+  return `${date}-${slug || "ai-article"}`;
 }
