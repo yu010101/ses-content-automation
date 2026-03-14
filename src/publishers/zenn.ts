@@ -1,75 +1,53 @@
 import { simpleGit } from "simple-git";
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { execSync } from "node:child_process";
+import { tmpdir } from "node:os";
 import { config } from "../config.js";
 import { formatForZenn, generateZennSlug } from "../content/formatter.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
 
-// Zenn publish days (0=Sun, 1=Mon, ..., 6=Sat) — limit to 2x/week to avoid ban
-const ZENN_PUBLISH_DAYS = [2, 4]; // Tuesday, Thursday
+const ZENN_REPO = "yu010101/ai-lab-zenn";
+const ZENN_USER = "ailmarketing";
 
 export class ZennPublisher implements IPublisher {
   platform = "zenn";
-
-  constructor(private repoRoot: string = process.cwd()) {}
 
   async publish(
     article: GeneratedArticle,
     dryRun = false,
   ): Promise<PublishResult> {
-    // Rate limit: only publish on designated days
-    const today = new Date().getDay();
-    if (!ZENN_PUBLISH_DAYS.includes(today) && !dryRun) {
-      console.log(
-        `[Zenn] Skipping: only publishes on Tue/Thu (today is day ${today})`,
-      );
-      return {
-        platform: this.platform,
-        success: true,
-        url: "(skipped-rate-limit)",
-      };
-    }
-
     const slug = generateZennSlug(article.title);
-    // Save as draft (published: false) — manually publish from Zenn dashboard
-    const content = formatForZenn(article, false);
-    const articlesDir = join(this.repoRoot, config.zenn.articlesDir);
-    const filePath = join(articlesDir, `${slug}.md`);
+    const content = formatForZenn(article, true);
 
     if (dryRun) {
-      console.log(`[Zenn] DRY RUN - Would create: ${filePath}`);
-      console.log(`[Zenn] Slug: ${slug}`);
+      console.log(`[Zenn] DRY RUN - Slug: ${slug}`);
       console.log(`[Zenn] Content length: ${content.length} chars`);
       return { platform: this.platform, success: true, url: "(dry-run)" };
     }
 
     try {
+      // Clone the Zenn repo to a temp dir, add article, push
+      const tmpDir = join(tmpdir(), `zenn-${Date.now()}`);
+      console.log(`[Zenn] Cloning ${ZENN_REPO}...`);
+      const git = simpleGit();
+      await git.clone(`https://github.com/${ZENN_REPO}.git`, tmpDir);
+
+      const repoGit = simpleGit(tmpDir);
+      const articlesDir = join(tmpDir, "articles");
       mkdirSync(articlesDir, { recursive: true });
+
+      const filePath = join(articlesDir, `${slug}.md`);
       writeFileSync(filePath, content, "utf-8");
-      console.log(`[Zenn] Wrote draft article: ${filePath}`);
+      console.log(`[Zenn] Wrote article: ${slug}.md`);
 
-      // In CI, the workflow handles git add/commit/push
-      if (process.env.CI) {
-        const url = `https://zenn.dev/ailmarketing/articles/${slug}`;
-        console.log(
-          `[Zenn] CI mode - draft written, publish manually from dashboard`,
-        );
-        return { platform: this.platform, success: true, url };
-      }
+      await repoGit.add(filePath);
+      await repoGit.commit(`Add AI article: ${article.title}`);
+      await repoGit.push("origin", "main");
 
-      // Local: git commit and push directly
-      const git = simpleGit(this.repoRoot);
-      const branch = (await git.branchLocal()).current;
-      await git.add(filePath);
-      await git.commit(`Add Zenn draft: ${article.title}`);
-      await git.push("origin", branch);
-
-      const url = `https://zenn.dev/ailmarketing/articles/${slug}`;
-      console.log(`[Zenn] Draft pushed: ${url}`);
-      console.log(
-        `[Zenn] ※ 公開はZennダッシュボードから手動で行ってください`,
-      );
+      const url = `https://zenn.dev/${ZENN_USER}/articles/${slug}`;
+      console.log(`[Zenn] Pushed to ${ZENN_REPO}: ${url}`);
       return { platform: this.platform, success: true, url };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

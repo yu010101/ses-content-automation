@@ -64,14 +64,14 @@ jobs:
           fi
           npx tsx src/index.ts pipeline $FLAGS
 
-      - name: Commit Zenn article & published.json
+      - name: Commit published.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add articles/ data/published.json
+          git add data/published.json
           if git diff --cached --quiet; then
-            echo "No new articles to commit"
+            echo "No changes to commit"
           else
-            git commit -m "Add daily SES article $(date +%Y-%m-%d)"
+            git commit -m "Update published.json $(date +%Y-%m-%d)"
             git push
           fi
