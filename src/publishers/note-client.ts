@@ -121,6 +121,41 @@ export class NoteClient {
     return false;
   }
 
+  private async dismissModal(page: import("playwright").Page): Promise<void> {
+    try {
+      const overlay = await page.$(".ReactModal__Overlay");
+      if (!overlay || !(await overlay.isVisible())) return;
+
+      console.log("[Note] Modal detected, dismissing...");
+
+      // Try close/dismiss buttons in order of likelihood
+      const dismissed = await this.clickFirst(page, [
+        ".ReactModal__Content button:has-text('閉じる')",
+        ".ReactModal__Content button:has-text('あとで')",
+        ".ReactModal__Content button:has-text('後で')",
+        ".ReactModal__Content button:has-text('スキップ')",
+        ".ReactModal__Content button:has-text('キャンセル')",
+        ".ReactModal__Content button:has-text('Close')",
+        ".ReactModal__Content [aria-label='閉じる']",
+        ".ReactModal__Content [aria-label='Close']",
+        // Generic close button (X icon)
+        ".ReactModal__Content button:first-child",
+      ]);
+
+      if (!dismissed) {
+        // Fallback: press Escape to close modal
+        await page.keyboard.press("Escape");
+        console.log("[Note] Pressed Escape to dismiss modal");
+      } else {
+        console.log("[Note] Modal dismissed via button");
+      }
+
+      await page.waitForTimeout(1000);
+    } catch {
+      // Modal handling is best-effort
+    }
+  }
+
   async close(): Promise<void> {
     if (this.browser) {
       await this.browser.close();
@@ -334,6 +369,9 @@ export class NoteClient {
       );
       console.log(`[Note] Buttons on page: ${JSON.stringify(buttons)}`);
 
+      // Dismiss IdentificationModal if it appears (本人確認モーダル)
+      await this.dismissModal(page);
+
       // Set paid settings if needed
       if (isPaid && price > 0) {
         try {
@@ -359,6 +397,9 @@ export class NoteClient {
           console.log(`[Note] Could not set paid options: ${e}`);
         }
       }
+
+      // Dismiss modal again in case it reappeared
+      await this.dismissModal(page);
 
       // Click "投稿する" (final publish)
       const publishTexts = ["投稿する", "投稿", "公開する", "公開"];
