@@ -285,6 +285,32 @@
           "url": "https://note.com/sescore/n/nd27d09a4cccf"
         }
       ]
+    },
+    {
+      "title": "SESからフリーランス転身で単価2倍！2026年最新データで見る独立成功法",
+      "date": "2026-03-16T11:45:29.775Z",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/fa5a0ca2114f4b690fdc"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260316-ai---2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "402: {\"account_id\":2031570857416601606,\"title\":\"CreditsDepleted\",\"detail\":\"Your enrolled account [2031570857416601606] does not have any credits to fulfill this request.\",\"type\":\"https://api.twitter.com/2/problems/credits\"}"
+        },
+        {
+          "platform": "note",
+          "success": false,
+          "error": "Could not find final publish button"
+        }
+      ]
     }
   ]
 }
