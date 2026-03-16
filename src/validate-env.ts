@@ -8,6 +8,7 @@ const checks: [string, () => string][] = [
   ["TELEGRAM_CHAT_ID", config.telegram.chatId],
   ["XAI_API_KEY", config.xai.apiKey],
   ["QIITA_ACCESS_TOKEN", config.qiita.accessToken],
+  ["GITHUB_TOKEN", config.zenn.githubToken],
   ["X_CONSUMER_KEY", config.x.consumerKey],
   ["X_CONSUMER_SECRET", config.x.consumerSecret],
   ["X_ACCESS_TOKEN", config.x.accessToken],

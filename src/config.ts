@@ -32,6 +32,9 @@ export const config = {
   freelanceDbUrl: "https://freelance.radineer.asia/freelance/register",
   zenn: {
     articlesDir: "articles",
+    githubToken: () => env("GITHUB_TOKEN"),
+    repo: "yu010101/ai-lab-zenn",
+    user: "ailmarketing",
   },
 } as const;
 
