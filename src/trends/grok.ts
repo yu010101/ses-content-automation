@@ -19,6 +19,9 @@ export async function discoverTrends(): Promise<TrendResult[]> {
     "フリーランスエンジニア トレンド",
     "IT人材 市場",
     "エンジニア 単価 相場",
+    "AIエージェント 開発",
+    "Claude Code GitHub Copilot",
+    "生成AI 開発 エンジニア",
   ];
 
   const results: TrendResult[] = [];

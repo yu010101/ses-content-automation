@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
 import { fetchMarketData, formatMarketContext } from "./trends/market-data.js";
-import { generateArticle, generateNoteVariation, generateZennVariation } from "./content/generator.js";
+import { generateArticle, generateNoteVariation, generateZennVariation, generateQiitaVariation } from "./content/generator.js";
 import { insertRelatedLinks } from "./content/internal-links.js";
 import { sendApprovalRequest, waitForApproval } from "./approval/telegram.js";
 import { QiitaPublisher } from "./publishers/qiita.js";
@@ -40,6 +40,26 @@ function loadKeywords(): string[] {
 
   // Pick 3 high-conversion + 7 regular
   return [...highCv.slice(0, 3), ...rest.slice(0, 7)];
+}
+
+function loadTechKeywords(): string[] {
+  const data = JSON.parse(
+    readFileSync(join(process.cwd(), "data/keywords.json"), "utf-8"),
+  );
+  const tech: string[] = data.tech_keywords ?? [];
+  const ai: string[] = data.ai_keywords ?? [];
+
+  const shuffle = (arr: string[]) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  };
+  shuffle(tech);
+  shuffle(ai);
+
+  // Pick 5 tech + 5 AI keywords for Qiita/Zenn
+  return [...tech.slice(0, 5), ...ai.slice(0, 5)];
 }
 
 function isDuplicate(title: string): boolean {
@@ -139,6 +159,17 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     zennArticle = article;
   }
 
+  // Step 2.7: Generate Qiita tech variation
+  console.log("\n[2.7/5] Generating Qiita tech article...");
+  let qiitaArticle: GeneratedArticle;
+  try {
+    qiitaArticle = await generateQiitaVariation(article);
+    console.log(`Qiita tech variation: ${qiitaArticle.body.length} chars`);
+  } catch (err) {
+    console.log(`  Qiita tech variation failed (${err instanceof Error ? err.message : err}), using base`);
+    qiitaArticle = article;
+  }
+
   // Step 3: Telegram approval
   const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";
   if (!skipApproval && !dryRun && hasTelegram) {
@@ -162,7 +193,7 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
 
   // Platform → article mapping: Note gets its own variation
   const publishTasks: Array<{ publisher: QiitaPublisher | ZennPublisher | XPublisher | NotePublisher; content: GeneratedArticle }> = [
-    { publisher: new QiitaPublisher(), content: article },
+    { publisher: new QiitaPublisher(), content: qiitaArticle },
     { publisher: new ZennPublisher(), content: zennArticle },
     { publisher: new XPublisher(), content: article },
     { publisher: new NotePublisher(), content: noteArticle },

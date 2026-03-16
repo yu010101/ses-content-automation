@@ -2,10 +2,12 @@ import Anthropic from "@anthropic-ai/sdk";
 import { config } from "../config.js";
 import {
   getArticleType,
+  getQiitaArticleType,
   getArticleSystemPrompt,
   X_THREAD_SYSTEM_PROMPT,
   NOTE_REWRITE_SYSTEM_PROMPT,
   ZENN_AI_REWRITE_SYSTEM_PROMPT,
+  QIITA_TECH_REWRITE_SYSTEM_PROMPT,
 } from "./templates.js";
 import type { ArticleType } from "./templates.js";
 import type { TrendResult } from "../trends/grok.js";
@@ -193,6 +195,73 @@ ${baseArticle.keywords.join(", ")}`,
     body = body.trimEnd();
     body += `\n\n---\n\nこの記事が参考になったら、ぜひLikeしていただけると励みになります。\nAI・機械学習に関する記事を定期的に発信しています。フォローもお待ちしています。`;
     return { ...baseArticle, body };
+  }
+}
+
+export async function generateQiitaVariation(
+  baseArticle: GeneratedArticle,
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+  const qiitaType = getQiitaArticleType();
+
+  console.log(`  Generating Qiita tech article (${qiitaType.name})...`);
+
+  const response = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 8192,
+    system: QIITA_TECH_REWRITE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下のSESエンジニア向け記事をベースに、Qiita向けの技術記事を執筆してください。
+記事タイプ: ${qiitaType.name}（${qiitaType.id}）
+
+## 元記事タイトル
+${baseArticle.title}
+
+## 元記事の要約
+${baseArticle.summary}
+
+## 元記事のキーワード
+${baseArticle.keywords.join(", ")}
+
+## 追加指示
+${qiitaType.systemPrompt}`,
+      },
+    ],
+  });
+
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+
+  try {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in Qiita rewrite response");
+    const rewritten = JSON.parse(jsonMatch[0]) as {
+      title: string;
+      body: string;
+      summary: string;
+      keywords: string[];
+    };
+
+    console.log(`  Qiita title: ${rewritten.title}`);
+    console.log(`  Qiita length: ${rewritten.body.length} chars`);
+
+    // Verify code blocks exist
+    const codeBlockCount = (rewritten.body.match(/```/g) || []).length / 2;
+    console.log(`  Qiita code blocks: ${Math.floor(codeBlockCount)}`);
+
+    return {
+      ...baseArticle,
+      title: rewritten.title,
+      body: rewritten.body,
+      summary: rewritten.summary,
+      keywords: rewritten.keywords || baseArticle.keywords,
+      articleType: qiitaType.id,
+    };
+  } catch {
+    console.log("  Qiita tech rewrite failed, using base article");
+    return baseArticle;
   }
 }
 

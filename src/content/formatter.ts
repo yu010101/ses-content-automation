@@ -40,6 +40,10 @@ const TOPIC_MAP: Record<string, string> = {
   エージェント: "agent", ファインチューニング: "finetuning",
   ses: "ses", エンジニア: "engineer", フリーランス: "freelance",
   キャリア: "career", 転職: "career", 開発: "development",
+  docker: "docker", github: "github", aws: "aws", terraform: "terraform",
+  react: "react", nextjs: "nextjs", vscode: "vscode",
+  copilot: "githubcopilot", cursor: "cursor", mcp: "mcp",
+  dify: "dify", n8n: "n8n", crewai: "crewai", autogen: "autogen",
 };
 
 function toEnglishTopics(keywords: string[]): string[] {
