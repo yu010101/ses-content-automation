@@ -1,9 +1,9 @@
 name: Daily SES Content Pipeline
 
 on:
-  schedule:
-    # UTC 11:00 = JST 20:00, weekdays only (X golden time)
-    - cron: "0 11 * * 1-5"
+  # Schedule disabled — local crontab runs pipeline at 08:00 JST with Playwright (Note.com)
+  # schedule:
+  #   - cron: "0 11 * * 1-5"
   workflow_dispatch:
     inputs:
       dry_run:
