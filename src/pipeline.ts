@@ -9,6 +9,10 @@ import { QiitaPublisher } from "./publishers/qiita.js";
 import { ZennPublisher } from "./publishers/zenn.js";
 import { XPublisher } from "./publishers/x.js";
 import { NotePublisher } from "./publishers/note.js";
+import { loadLearningState, formatLearningContext } from "./analytics/feedback.js";
+import { generateXVariations, addToXQueue } from "./x-amplification/bridge.js";
+import { extractQiitaItemId } from "./analytics/qiita-stats.js";
+import { extractZennSlug } from "./analytics/zenn-stats.js";
 import type { PublishResult } from "./publishers/types.js";
 import type { GeneratedArticle } from "./content/generator.js";
 
@@ -16,6 +20,7 @@ interface PublishedRecord {
   articles: Array<{
     title: string;
     date: string;
+    articleId?: string;
     platforms: PublishResult[];
   }>;
 }
@@ -24,21 +29,33 @@ function loadKeywords(): string[] {
   const data = JSON.parse(
     readFileSync(join(process.cwd(), "data/keywords.json"), "utf-8"),
   );
-  // Always include 2-3 high-conversion keywords for better lead gen
   const highCv: string[] = data.high_conversion ?? [];
   const rest: string[] = [...data.primary, ...data.secondary];
 
-  // Shuffle both pools
   const shuffle = (arr: string[]) => {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   };
+
+  // Phase 3: Use learning-state bestKeywords (70/30 strategy)
+  const learning = loadLearningState();
+  if (learning && learning.bestKeywords.length > 0) {
+    const bestKw = [...learning.bestKeywords];
+    shuffle(bestKw);
+    shuffle(highCv);
+    shuffle(rest);
+
+    // 70% from proven keywords, 30% exploration
+    const proven = bestKw.slice(0, 3);
+    const exploratory = [...highCv.slice(0, 2), ...rest.slice(0, 5)];
+    return [...proven, ...exploratory];
+  }
+
+  // Fallback: original behavior
   shuffle(highCv);
   shuffle(rest);
-
-  // Pick 3 high-conversion + 7 regular
   return [...highCv.slice(0, 3), ...rest.slice(0, 7)];
 }
 
@@ -83,9 +100,19 @@ function recordPublished(title: string, results: PublishResult[]) {
   } catch {
     data = { articles: [] };
   }
+
+  // Extract articleIds from platform URLs for analytics lookup
+  const qiitaResult = results.find((r) => r.platform === "qiita" && r.success && r.url);
+  const zennResult = results.find((r) => r.platform === "zenn" && r.success && r.url);
+  const qiitaItemId = qiitaResult?.url ? extractQiitaItemId(qiitaResult.url) : null;
+  const zennSlug = zennResult?.url ? extractZennSlug(zennResult.url) : null;
+
+  const articleId = qiitaItemId || zennSlug || undefined;
+
   data.articles.push({
     title,
     date: new Date().toISOString(),
+    articleId,
     platforms: results,
   });
   writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
@@ -124,7 +151,16 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   // Step 2: Generate article
   console.log("\n[2/5] Generating article via Claude...");
   const keywords = loadKeywords();
-  const article: GeneratedArticle = await generateArticle(trends, keywords, marketContext);
+
+  // Inject learning context from past performance analysis
+  let learningContext = "";
+  const learningState = loadLearningState();
+  if (learningState) {
+    learningContext = formatLearningContext(learningState);
+    console.log(`  Learning state loaded (updated: ${learningState.lastUpdated})`);
+  }
+
+  const article: GeneratedArticle = await generateArticle(trends, keywords, marketContext, learningContext);
   console.log(`Title: ${article.title}`);
   console.log(`Length: ${article.body.length} chars`);
   console.log(`Keywords: ${article.keywords.join(", ")}`);
@@ -201,6 +237,15 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
 
   for (const { publisher: pub, content } of publishTasks) {
     console.log(`\n  Publishing to ${pub.platform}...`);
+
+    // Cross-platform links: inject Qiita URL into Zenn/Note articles
+    if (qiitaUrl && (pub.platform === "zenn" || pub.platform === "note")) {
+      const crossLink = `\n\n---\n\n${pub.platform === "zenn" ? "Qiitaでコード付き解説も公開しています" : "技術的な詳細はQiitaでも解説しています"}: ${qiitaUrl}`;
+      if (!content.body.includes(qiitaUrl)) {
+        content.body += crossLink;
+      }
+    }
+
     try {
       let result: PublishResult;
       if (pub instanceof XPublisher) {
@@ -224,6 +269,17 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   console.log("\n[5/5] Recording results...");
   if (!dryRun) {
     recordPublished(article.title, results);
+  }
+
+  // Step 5.5: Generate X post variations and add to queue
+  if (!dryRun && qiitaUrl) {
+    try {
+      console.log("\n[5.5] Generating X post variations...");
+      const xVariations = await generateXVariations(article, qiitaUrl);
+      addToXQueue(article.title, qiitaUrl, xVariations);
+    } catch (err) {
+      console.log(`  X variation generation failed: ${err instanceof Error ? err.message : err}`);
+    }
   }
 
   // Summary

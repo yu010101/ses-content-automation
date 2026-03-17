@@ -62,6 +62,7 @@ function toEnglishTopics(keywords: string[]): string[] {
 export function formatForZenn(
   article: GeneratedArticle,
   published = true,
+  crossLinks?: { qiitaUrl?: string },
 ): string {
   const topics = toEnglishTopics(article.keywords);
 
@@ -81,17 +82,39 @@ export function formatForZenn(
     })
     .join("\n");
 
-  return `---\n${fm}\n---\n\n${article.body}`;
+  let body = article.body;
+
+  // Add cross-platform link for Zenn
+  if (crossLinks?.qiitaUrl) {
+    body += `\n\n---\n\nQiitaでコード付き解説も公開しています: ${crossLinks.qiitaUrl}`;
+  }
+
+  return `---\n${fm}\n---\n\n${body}`;
 }
 
-export function formatForNote(article: GeneratedArticle): {
+export function formatForNote(article: GeneratedArticle, crossLinks?: { qiitaUrl?: string; zennUrl?: string }): {
   title: string;
   body: string;
 } {
-  // Note uses plain markdown, strip any Qiita/Zenn-specific syntax
+  let body = article.body;
+
+  // Add cross-platform links at the end
+  if (crossLinks) {
+    const links: string[] = [];
+    if (crossLinks.qiitaUrl) {
+      links.push(`技術的な詳細はQiitaでも解説しています: ${crossLinks.qiitaUrl}`);
+    }
+    if (crossLinks.zennUrl) {
+      links.push(`Zennでも記事を公開中: ${crossLinks.zennUrl}`);
+    }
+    if (links.length > 0) {
+      body += `\n\n---\n\n${links.join("\n\n")}`;
+    }
+  }
+
   return {
     title: article.title,
-    body: article.body,
+    body,
   };
 }
 

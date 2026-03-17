@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { config } from "../config.js";
 
 // --- Article Types (rotated daily) ---
@@ -275,8 +277,33 @@ ${BASE_RULES}
   },
 ];
 
+function loadBestArticleTypes(): string[] {
+  try {
+    const data = JSON.parse(
+      readFileSync(join(process.cwd(), "data/learning-state.json"), "utf-8"),
+    );
+    return data.bestArticleTypes ?? [];
+  } catch {
+    return [];
+  }
+}
+
 export function getArticleType(): ArticleType {
-  // Rotate based on day of year
+  const bestTypes = loadBestArticleTypes();
+
+  // If learning data exists, use 70/30 strategy
+  if (bestTypes.length > 0 && Math.random() < 0.7) {
+    // Try to match bestTypes against ARTICLE_TYPES
+    for (const bt of bestTypes) {
+      const lower = bt.toLowerCase();
+      const match = ARTICLE_TYPES.find(
+        (at) => lower.includes(at.id) || lower.includes(at.name),
+      );
+      if (match) return match;
+    }
+  }
+
+  // Fallback: rotate based on day of year
   const now = new Date();
   const start = new Date(now.getFullYear(), 0, 0);
   const dayOfYear = Math.floor(
