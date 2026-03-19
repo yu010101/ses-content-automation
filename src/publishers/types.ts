@@ -5,6 +5,7 @@ export interface PublishResult {
   success: boolean;
   url?: string;
   error?: string;
+  tweetId?: string;
 }
 
 export interface IPublisher {

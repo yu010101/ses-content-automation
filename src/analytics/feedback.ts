@@ -15,6 +15,9 @@ export interface LearningState {
     note: string[];
   };
   recommendations: string[];
+  bestHookStyles?: string[];
+  topicDiversityScore?: number;
+  suggestedNewAngles?: string[];
 }
 
 export async function analyzeFeedback(): Promise<LearningState> {
@@ -32,6 +35,31 @@ export async function analyzeFeedback(): Promise<LearningState> {
 
   const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
 
+  // Load X queue data for hookStyle analysis
+  let xHookSummary = "";
+  try {
+    const xQueuePath = join(process.cwd(), "data/x-queue.json");
+    const xQueue = JSON.parse(readFileSync(xQueuePath, "utf-8"));
+    const hookCounts: Record<string, { total: number; posted: number }> = {};
+    for (const entry of xQueue.entries) {
+      for (let i = 0; i < entry.variations.length; i++) {
+        const v = entry.variations[i];
+        const style = v.hookStyle ?? "unknown";
+        if (!hookCounts[style]) hookCounts[style] = { total: 0, posted: 0 };
+        hookCounts[style].total++;
+        if (entry.posted[i]) hookCounts[style].posted++;
+      }
+    }
+    const lines = Object.entries(hookCounts).map(
+      ([style, { total, posted }]) => `  ${style}: ${posted}/${total} posted`,
+    );
+    if (lines.length > 0) {
+      xHookSummary = `\n\n## X投稿hookStyle別データ\n${lines.join("\n")}`;
+    }
+  } catch {
+    // No X queue data available
+  }
+
   // Prepare performance summary for Claude
   const articleSummaries = snapshot.articles.map((a, i) => {
     const q = a.platforms.qiita;
@@ -43,11 +71,15 @@ export async function analyzeFeedback(): Promise<LearningState> {
    ${a.platforms.note ? `Note: published` : "Note: N/A"}`;
   });
 
+  // Build title list for diversity analysis
+  const titleList = snapshot.articles.map((a) => `「${a.title}」`).join("\n");
+
   const response = await client.messages.create({
     model: config.anthropic.model,
     max_tokens: 4096,
     system: `あなたはコンテンツマーケティングのデータアナリストです。
 記事のパフォーマンスデータを分析し、今後の記事生成を改善するためのインサイトを抽出してください。
+特に「テーマの多様性」を重視し、同じネタの繰り返しを検出してください。
 分析結果は必ずJSON形式で返してください。`,
     messages: [
       {
@@ -62,7 +94,10 @@ export async function analyzeFeedback(): Promise<LearningState> {
 - 平均閲覧数/記事: ${snapshot.summary.avgViewsPerArticle}
 
 ## 記事別データ（エンゲージメントスコア順）
-${articleSummaries.join("\n\n")}
+${articleSummaries.join("\n\n")}${xHookSummary}
+
+## 記事タイトル一覧（テーマ多様性分析用）
+${titleList}
 
 以下のJSON形式で分析結果を返してください:
 {
@@ -74,8 +109,14 @@ ${articleSummaries.join("\n\n")}
     "zenn": ["Zennで効果的だったパターン（3つまで）"],
     "note": ["Note向けの改善提案（3つまで）"]
   },
-  "recommendations": ["次回の記事生成への具体的な提案（5つまで）"]
+  "recommendations": ["次回の記事生成への具体的な提案（5つまで）"],
+  "bestHookStyles": ["X投稿で効果的だったhookStyle（question/number/statement/contrastから、データがあれば）"],
+  "topicDiversityScore": 0.0-1.0,
+  "suggestedNewAngles": ["まだ試していない記事の切り口（3つまで、例: 企業分析、スキルロードマップ、キャリア事例）"]
 }
+
+topicDiversityScoreは記事タイトル一覧を分析し、テーマの多様性を0-1で評価してください（1=非常に多様、0=全て同じテーマ）。
+suggestedNewAnglesは、まだ書かれていない切り口を提案してください。
 
 JSONのみを返してください。`,
       },
@@ -118,6 +159,14 @@ export function loadLearningState(): LearningState | null {
 export function formatLearningContext(state: LearningState): string {
   const sections: string[] = [];
 
+  // Diversity warning (top priority)
+  if (state.topicDiversityScore !== undefined && state.topicDiversityScore < 0.4) {
+    const angles = state.suggestedNewAngles?.length
+      ? state.suggestedNewAngles.map((a) => `  - ${a}`).join("\n")
+      : "  - 企業の見分け方・面談テクニック\n  - スキルロードマップ・技術選定\n  - キャリアパス事例・年収推移ストーリー";
+    sections.push(`⚠️ 直近記事のテーマが偏っています（多様性スコア: ${state.topicDiversityScore.toFixed(1)}）。以下の新しい切り口を優先してください:\n${angles}`);
+  }
+
   if (state.bestArticleTypes.length > 0) {
     sections.push(`- 高パフォーマンス記事タイプ: ${state.bestArticleTypes.join(", ")}`);
   }
@@ -135,7 +184,7 @@ export function formatLearningContext(state: LearningState): string {
 
   return `\n## パフォーマンスデータに基づく指示
 過去の記事分析から、以下のパターンが高エンゲージメントにつながっています。
-70%はこれらの勝ちパターンを踏襲し、30%は新しいテーマで探索してください。
+勝ちパターンを参考にしつつ、テーマの多様性を確保してください。
 
 ${sections.join("\n")}`;
 }

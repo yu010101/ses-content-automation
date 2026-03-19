@@ -1,0 +1,9 @@
+{
+  "targets": [
+    { "username": "bmr_sri", "displayName": "BMRスモールビジネス研究所", "priority": "high" },
+    { "username": "L_go_mrk", "displayName": "AI駆動塾", "priority": "high" },
+    { "username": "it_bosatsu_moro", "displayName": "IT菩薩モロー", "priority": "high" },
+    { "username": "engineermikata", "displayName": "エンジニアのミカタ", "priority": "medium" },
+    { "username": "matome_ses", "displayName": "客先常駐・SESまとめ", "priority": "medium" }
+  ]
+}

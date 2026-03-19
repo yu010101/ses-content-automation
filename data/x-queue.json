@@ -1,0 +1,50 @@
+{
+  "entries": [
+    {
+      "articleTitle": "SESからの脱出戦略｜フリーランスエンジニアになる前に知っておきたい現実と準備方法",
+      "articleUrl": "https://qiita.com/sescore/items/63cbc76a0ff7ed671d74",
+      "createdAt": "2026-03-17T07:22:08.446Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "SESエンジニアの年収は平均400万円。一方、フリーランスエンジニアは平均720万円。この差を埋めるための脱出戦略と準備期間の現実を詳しく解説 #SES #フリーランスエンジニア",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-18T04:51:49.512Z"
+        },
+        {
+          "type": "key-point",
+          "text": "フリーランス転身前の必須準備：技術スキルの棚卸し、ポートフォリオ作成、営業力強化、最低6ヶ月分の生活費確保。この4つを並行して進めることが成功の鍵",
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-19T03:00:01.958Z",
+          "tweetId": "2034464884923183212"
+        },
+        {
+          "type": "data-highlight",
+          "text": "フリーランスエンジニアの約30%が1年以内に廃業している事実。成功するエンジニアと失敗するエンジニアの決定的な違いとは",
+          "scheduledSlot": "evening",
+          "postedAt": "2026-03-18T09:00:02.482Z",
+          "tweetId": "2034193096435773449"
+        },
+        {
+          "type": "discussion",
+          "text": "SESで働く皆さんに質問です。フリーランス転身を考える最大の理由は何ですか？年収アップ、技術的挑戦、働き方の自由度、それとも別の理由でしょうか",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-19T00:00:02.365Z",
+          "tweetId": "2034419587371159565"
+        },
+        {
+          "type": "quote",
+          "text": "「SESからフリーランスへの転身は、準備8割、実行2割。焦りは禁物、計画的な準備こそが成功への最短ルート」",
+          "scheduledSlot": "noon"
+        }
+      ],
+      "posted": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ]
+    }
+  ]
+}

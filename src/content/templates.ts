@@ -210,6 +210,80 @@ ${BASE_RULES}
 4. 今すぐやるべきこと
 5. CTA`,
   },
+  {
+    id: "career-story",
+    name: "キャリア事例型",
+    ctaVariant: "salary",
+    systemPrompt: `あなたはSESエンジニアのキャリア事例を取材するライターです。
+実際のキャリアパス事例を軸にしたストーリー型の記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- 具体的なキャリアパス事例をベースにしたストーリー記事
+- 「SES3年→社内SE→フリーランスで年収2倍」のような具体パターンを複数提示
+- 各パターンの成功要因・つまずきポイント・所要期間を分析
+- 読者が「自分ならどのパスが合うか」判断できる情報を提供
+- 年収・単価の推移を具体的な数字で示す
+- 感情に寄り添いつつもデータで裏付ける
+
+## 記事構成
+1. 導入（「キャリアに正解はない」が判断材料はある）
+2. キャリアパス事例3-4パターン（各パターンに年収推移・期間・スキル変遷）
+3. パターン比較テーブル
+4. 自分に合うパスの見極め方
+5. CTA`,
+  },
+  {
+    id: "company-insight",
+    name: "企業分析型",
+    ctaVariant: "escape",
+    systemPrompt: `あなたはSES業界に精通した転職アドバイザーです。
+SES企業の見分け方や面談での見極めポイントなど、実用的なTIPS記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- SES企業の良し悪しを見極めるための具体的なチェックポイント
+- 「面談でこの質問をする企業は要注意」系の実用TIPS
+- 優良SES企業の特徴（還元率、案件選択権、教育制度など）を具体的に解説
+- 求人票の読み方、契約書のチェックポイントなど実務知識
+- ブラックSES・ホワイトSESの具体的な違いをテーブルで比較
+- エンジニアが自分を守るための交渉術・質問テンプレート
+
+## 記事構成
+1. 導入（「SES企業選びで人生が変わる」）
+2. 危険なSES企業の見分け方（5-7個のチェックポイント）
+3. 優良SES企業の特徴（具体例付き）
+4. 面談・面接で使える質問テンプレート
+5. 比較チェックリスト
+6. CTA`,
+  },
+  {
+    id: "skill-roadmap",
+    name: "スキルロードマップ型",
+    ctaVariant: "ai",
+    systemPrompt: `あなたはIT業界のテクニカルキャリアコンサルタントです。
+技術スキルとキャリアの掛け算で、エンジニアの市場価値を上げるロードマップ記事を執筆してください。
+
+${BASE_RULES}
+
+## この記事タイプの特徴
+- 「${new Date().getFullYear()}年にSESエンジニアが学ぶべき技術」のような技術選定ガイド
+- 各技術の市場価値（単価への影響）をデータで示す
+- 学習ロードマップ（3ヶ月・6ヶ月・1年プラン）を具体的に提示
+- AI/クラウド/モダンフロントエンドなど旬の技術を含める
+- 「このスキルを身につけると単価がXX万円上がる」のような具体的なインセンティブ
+- SES現場で活かせる実践的なスキルに焦点
+
+## 記事構成
+1. 導入（技術選択がキャリアを決める）
+2. 注目技術5-7選（各技術に市場価値・学習コスト・おすすめ度を付与）
+3. スキル別の単価影響テーブル
+4. 学習ロードマップ（段階別）
+5. SES現場での活用シーン
+6. CTA`,
+  },
 ];
 
 // --- Qiita-specific Article Types (tech-focused with code) ---
@@ -291,8 +365,8 @@ function loadBestArticleTypes(): string[] {
 export function getArticleType(): ArticleType {
   const bestTypes = loadBestArticleTypes();
 
-  // If learning data exists, use 70/30 strategy
-  if (bestTypes.length > 0 && Math.random() < 0.7) {
+  // Reduced learning bias from 70% to 40% to prevent self-reinforcing loops
+  if (bestTypes.length > 0 && Math.random() < 0.4) {
     // Try to match bestTypes against ARTICLE_TYPES
     for (const bt of bestTypes) {
       const lower = bt.toLowerCase();
@@ -303,7 +377,7 @@ export function getArticleType(): ArticleType {
     }
   }
 
-  // Fallback: rotate based on day of year
+  // Fallback: rotate based on day of year (now 8 types → 8-day cycle)
   const now = new Date();
   const start = new Date(now.getFullYear(), 0, 0);
   const dayOfYear = Math.floor(

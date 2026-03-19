@@ -15,13 +15,19 @@ export async function discoverTrends(): Promise<TrendResult[]> {
   });
 
   const seeds = [
+    // SES系（既存）
     "SES エンジニア 最新動向",
     "フリーランスエンジニア トレンド",
     "IT人材 市場",
     "エンジニア 単価 相場",
-    "AIエージェント 開発",
+    // 技術トレンド（新規）
+    "AIエージェント 開発 2026",
     "Claude Code GitHub Copilot",
     "生成AI 開発 エンジニア",
+    // キャリア多角化（新規）
+    "エンジニア 副業 成功事例",
+    "IT企業 働き方改革",
+    "エンジニア リスキリング",
   ];
 
   const results: TrendResult[] = [];

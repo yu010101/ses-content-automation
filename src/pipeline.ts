@@ -31,6 +31,7 @@ function loadKeywords(): string[] {
   );
   const highCv: string[] = data.high_conversion ?? [];
   const rest: string[] = [...data.primary, ...data.secondary];
+  const angleSeedsAll: string[] = data.angle_seeds ?? [];
 
   const shuffle = (arr: string[]) => {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -38,6 +39,10 @@ function loadKeywords(): string[] {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   };
+
+  // Always inject 1-2 angle_seeds for topic diversity
+  shuffle(angleSeedsAll);
+  const angleSeeds = angleSeedsAll.slice(0, 2);
 
   // Phase 3: Use learning-state bestKeywords (70/30 strategy)
   const learning = loadLearningState();
@@ -49,14 +54,14 @@ function loadKeywords(): string[] {
 
     // 70% from proven keywords, 30% exploration
     const proven = bestKw.slice(0, 3);
-    const exploratory = [...highCv.slice(0, 2), ...rest.slice(0, 5)];
-    return [...proven, ...exploratory];
+    const exploratory = [...highCv.slice(0, 2), ...rest.slice(0, 3)];
+    return [...proven, ...exploratory, ...angleSeeds];
   }
 
   // Fallback: original behavior
   shuffle(highCv);
   shuffle(rest);
-  return [...highCv.slice(0, 3), ...rest.slice(0, 7)];
+  return [...highCv.slice(0, 3), ...rest.slice(0, 5), ...angleSeeds];
 }
 
 function loadTechKeywords(): string[] {
@@ -79,16 +84,46 @@ function loadTechKeywords(): string[] {
   return [...tech.slice(0, 5), ...ai.slice(0, 5)];
 }
 
-function isDuplicate(title: string): boolean {
+interface DiversityCheck {
+  isDuplicate: boolean;
+  isTooSimilar: boolean;
+  recentTitles: string[];
+}
+
+function checkDiversity(title: string): DiversityCheck {
   try {
     const data: PublishedRecord = JSON.parse(
       readFileSync(join(process.cwd(), "data/published.json"), "utf-8"),
     );
-    return data.articles.some(
+
+    const isDuplicate = data.articles.some(
       (a) => a.title.toLowerCase() === title.toLowerCase(),
     );
+
+    // Check recent 7 days of articles
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const recentArticles = data.articles.filter((a) => a.date >= sevenDaysAgo);
+    const recentTitles = recentArticles.map((a) => a.title);
+
+    // Check keyword overlap with recent titles
+    const commonWords = ["SES", "フリーランス", "エンジニア", "転職", "年収", "脱出", "転向", "比較", "完全ガイド", "徹底", "最新", "2026"];
+    const titleWords = commonWords.filter((w) => title.includes(w));
+    let isTooSimilar = false;
+
+    if (recentTitles.length > 0 && titleWords.length > 0) {
+      const overlapScores = recentTitles.map((recent) => {
+        const recentWords = commonWords.filter((w) => recent.includes(w));
+        if (recentWords.length === 0) return 0;
+        const overlap = titleWords.filter((w) => recentWords.includes(w)).length;
+        return overlap / Math.max(titleWords.length, recentWords.length);
+      });
+      // If any recent title has 70%+ keyword overlap, it's too similar
+      isTooSimilar = overlapScores.some((score) => score >= 0.7);
+    }
+
+    return { isDuplicate, isTooSimilar, recentTitles };
   } catch {
-    return false;
+    return { isDuplicate: false, isTooSimilar: false, recentTitles: [] };
   }
 }
 
@@ -165,8 +200,13 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   console.log(`Length: ${article.body.length} chars`);
   console.log(`Keywords: ${article.keywords.join(", ")}`);
 
-  if (isDuplicate(article.title)) {
-    console.log("WARNING: Similar article already published. Regenerating...");
+  const diversity = checkDiversity(article.title);
+  if (diversity.isDuplicate) {
+    console.log("WARNING: Exact duplicate title detected.");
+  }
+  if (diversity.isTooSimilar) {
+    console.log("WARNING: Topic too similar to recent articles. Angle seeds injected for diversity.");
+    console.log(`  Recent titles: ${diversity.recentTitles.slice(0, 3).join(" / ")}`);
   }
 
   // Insert internal links to past articles

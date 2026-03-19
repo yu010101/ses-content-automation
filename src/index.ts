@@ -73,6 +73,53 @@ async function main() {
       break;
     }
 
+    case "x-post": {
+      const slot = args[1] as "morning" | "noon" | "evening" | undefined;
+      if (!slot || !["morning", "noon", "evening"].includes(slot)) {
+        console.error("Usage: ses-content x-post <morning|noon|evening> [--dry-run]");
+        process.exit(1);
+      }
+      const { getNextUnpostedVariation, markAsPosted, injectCta } = await import("./x-amplification/bridge.js");
+      const { XPublisher } = await import("./publishers/x.js");
+
+      const next = getNextUnpostedVariation(slot);
+      if (!next) {
+        console.log(`[X] No unposted variations for slot: ${slot}`);
+        break;
+      }
+
+      const { entry, variationIndex, variation } = next;
+      console.log(`[X] Posting: [${variation.type}] (${variation.hookStyle}) ${variation.text.slice(0, 60)}...`);
+
+      const finalText = injectCta(variation.text, entry.articleUrl, variation.hookStyle);
+      const publisher = new XPublisher();
+      const result = await publisher.publishSingle(finalText, variation.postType, flags.dryRun);
+
+      if (result.success) {
+        markAsPosted(entry.articleTitle, variationIndex, result.tweetId);
+        console.log(`[X] Success: ${result.url}`);
+      } else {
+        console.error(`[X] Failed: ${result.error}`);
+        process.exit(1);
+      }
+      break;
+    }
+
+    case "x-quote": {
+      const { executeQuoteRepost } = await import("./x-amplification/quote-repost.js");
+      console.log("=== Quote Repost ===\n");
+      const quoteResult = await executeQuoteRepost(flags.dryRun);
+      if (quoteResult.success) {
+        console.log(`\nTarget: @${quoteResult.target}`);
+        console.log(`Comment: ${quoteResult.comment}`);
+        if (quoteResult.tweetId) console.log(`Tweet ID: ${quoteResult.tweetId}`);
+      } else {
+        console.error(`Failed: ${quoteResult.error}`);
+        process.exit(1);
+      }
+      break;
+    }
+
     case "x-generate": {
       const { generateXVariations, addToXQueue } = await import("./x-amplification/bridge.js");
       const articleUrl = args[1];
@@ -119,6 +166,8 @@ Usage:
   report                                    Send daily Telegram report
   meta-article                              Generate meta-analysis article
   x-generate <article-url>                  Generate X post variations
+  x-post <morning|noon|evening>             Post next queued X variation
+  x-quote [--dry-run]                       Quote repost influencer tweet
 
 Flags:
   --dry-run         Run without actual publishing

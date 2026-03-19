@@ -186,6 +186,105 @@ export class XPublisher implements IPublisher {
     }
   }
 
+  async publishSingle(
+    text: string,
+    postType: "text" | "long_text" = "text",
+    dryRun = false,
+  ): Promise<PublishResult> {
+    const budget = getXBudget();
+    if (budget.used + 1 > X_MONTHLY_LIMIT && !dryRun) {
+      console.log(`[X] Skipping: monthly budget exhausted (${budget.used}/${X_MONTHLY_LIMIT})`);
+      return { platform: this.platform, success: false, error: "budget-exhausted" };
+    }
+
+    // Enforce character limits
+    const limit = postType === "long_text" ? 25000 : 280;
+    if (text.length > limit) {
+      console.log(`[X] Text exceeds ${limit} chars (${text.length}), truncating`);
+      text = text.slice(0, limit - 1) + "…";
+    }
+
+    if (dryRun) {
+      console.log(`[X] DRY RUN (${postType}): ${text}`);
+      return { platform: this.platform, success: true, url: "(dry-run)" };
+    }
+
+    const url = "https://api.twitter.com/2/tweets";
+    const authHeader = generateOAuthHeader("POST", url, {});
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: authHeader,
+      },
+      body: JSON.stringify({ text }),
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      return { platform: this.platform, success: false, error: `${res.status}: ${err}` };
+    }
+
+    const data = (await res.json()) as { data: { id: string } };
+    const tweetId = data.data.id;
+    const tweetUrl = `https://x.com/i/status/${tweetId}`;
+
+    budget.used += 1;
+    saveXBudget(budget);
+
+    console.log(`[X] Posted (${postType}): ${tweetUrl}`);
+    return { platform: this.platform, success: true, url: tweetUrl, tweetId };
+  }
+
+  async publishQuoteRepost(
+    text: string,
+    quoteTweetId: string,
+    dryRun = false,
+  ): Promise<PublishResult> {
+    const budget = getXBudget();
+    if (budget.used + 1 > X_MONTHLY_LIMIT && !dryRun) {
+      console.log(`[X] Skipping quote: monthly budget exhausted (${budget.used}/${X_MONTHLY_LIMIT})`);
+      return { platform: this.platform, success: false, error: "budget-exhausted" };
+    }
+
+    if (text.length > 280) {
+      text = text.slice(0, 279) + "…";
+    }
+
+    if (dryRun) {
+      console.log(`[X] DRY RUN (quote-repost): ${text} | quote=${quoteTweetId}`);
+      return { platform: this.platform, success: true, url: "(dry-run)" };
+    }
+
+    const url = "https://api.twitter.com/2/tweets";
+    const authHeader = generateOAuthHeader("POST", url, {});
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: authHeader,
+      },
+      body: JSON.stringify({ text, quote_tweet_id: quoteTweetId }),
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      return { platform: this.platform, success: false, error: `${res.status}: ${err}` };
+    }
+
+    const data = (await res.json()) as { data: { id: string } };
+    const tweetId = data.data.id;
+    const tweetUrl = `https://x.com/i/status/${tweetId}`;
+
+    budget.used += 1;
+    saveXBudget(budget);
+
+    console.log(`[X] Quote repost posted: ${tweetUrl}`);
+    return { platform: this.platform, success: true, url: tweetUrl, tweetId };
+  }
+
   private async publishThread(thread: string[]): Promise<PublishResult> {
     let previousTweetId: string | undefined;
     let firstTweetUrl = "";
