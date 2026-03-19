@@ -126,10 +126,24 @@ export class NoteClient {
       const overlay = await page.$(".ReactModal__Overlay");
       if (!overlay || !(await overlay.isVisible())) return;
 
-      console.log("[Note] Modal detected, dismissing...");
+      // Detect modal type for logging
+      const modalContent = await page.$(".ReactModal__Content");
+      const modalText = modalContent ? (await modalContent.textContent()) ?? "" : "";
+      const isIdentificationModal = modalText.includes("本人確認") || modalText.includes("身分証") || modalText.includes("確認書類");
+      console.log(`[Note] Modal detected${isIdentificationModal ? " (IdentificationModal/本人確認)" : ""}, dismissing...`);
 
-      // Try close/dismiss buttons in order of likelihood
-      const dismissed = await this.clickFirst(page, [
+      // IdentificationModal-specific buttons first
+      const identificationSelectors = [
+        ".ReactModal__Content button:has-text('あとで確認する')",
+        ".ReactModal__Content button:has-text('今はしない')",
+        ".ReactModal__Content button:has-text('後で確認する')",
+        ".ReactModal__Content button:has-text('次へ')",
+        ".ReactModal__Content a:has-text('あとで')",
+        ".ReactModal__Content a:has-text('スキップ')",
+      ];
+
+      // General modal dismiss buttons
+      const generalSelectors = [
         ".ReactModal__Content button:has-text('閉じる')",
         ".ReactModal__Content button:has-text('あとで')",
         ".ReactModal__Content button:has-text('後で')",
@@ -140,12 +154,33 @@ export class NoteClient {
         ".ReactModal__Content [aria-label='Close']",
         // Generic close button (X icon)
         ".ReactModal__Content button:first-child",
-      ]);
+      ];
+
+      const selectors = isIdentificationModal
+        ? [...identificationSelectors, ...generalSelectors]
+        : generalSelectors;
+
+      const dismissed = await this.clickFirst(page, selectors);
 
       if (!dismissed) {
-        // Fallback: press Escape to close modal
-        await page.keyboard.press("Escape");
-        console.log("[Note] Pressed Escape to dismiss modal");
+        // Try clicking the overlay itself to dismiss (works for some modals)
+        console.log("[Note] Trying overlay click to dismiss...");
+        try {
+          const box = await overlay.boundingBox();
+          if (box) {
+            // Click the top-left corner of the overlay (outside modal content)
+            await page.mouse.click(box.x + 5, box.y + 5);
+            await page.waitForTimeout(500);
+          }
+        } catch { /* ignore */ }
+
+        // Check if overlay is still there after click
+        const stillVisible = await page.$(".ReactModal__Overlay");
+        if (stillVisible && await stillVisible.isVisible().catch(() => false)) {
+          // Last resort: press Escape
+          await page.keyboard.press("Escape");
+          console.log("[Note] Pressed Escape to dismiss modal");
+        }
       } else {
         console.log("[Note] Modal dismissed via button");
       }
@@ -154,6 +189,30 @@ export class NoteClient {
     } catch {
       // Modal handling is best-effort
     }
+  }
+
+  /**
+   * Aggressively dismiss modals with retries, verifying overlay is gone.
+   */
+  private async dismissModalWithRetry(page: import("playwright").Page, maxAttempts = 3): Promise<void> {
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      const overlay = await page.$(".ReactModal__Overlay");
+      if (!overlay || !(await overlay.isVisible().catch(() => false))) {
+        return; // No modal present, we're good
+      }
+
+      console.log(`[Note] Modal dismiss attempt ${attempt}/${maxAttempts}`);
+      await this.dismissModal(page);
+      await page.waitForTimeout(1000);
+
+      // Verify overlay is gone
+      const stillPresent = await page.$(".ReactModal__Overlay");
+      if (!stillPresent || !(await stillPresent.isVisible().catch(() => false))) {
+        console.log("[Note] Modal successfully dismissed");
+        return;
+      }
+    }
+    console.log("[Note] Warning: modal may still be present after all dismiss attempts");
   }
 
   async close(): Promise<void> {
@@ -363,14 +422,17 @@ export class NoteClient {
 
       // Wait for publish settings page to fully load
       await page.waitForTimeout(3000);
+
+      // Aggressively dismiss IdentificationModal if it appears (本人確認モーダル)
+      // This must happen before trying to click any publish buttons
+      await this.dismissModalWithRetry(page, 3);
+      await page.waitForTimeout(1000);
+
       // Log page state for debugging
       const buttons = await page.$$eval("button", (els) =>
         els.map((el) => el.textContent?.trim()).filter(Boolean),
       );
       console.log(`[Note] Buttons on page: ${JSON.stringify(buttons)}`);
-
-      // Dismiss IdentificationModal if it appears (本人確認モーダル)
-      await this.dismissModal(page);
 
       // Set paid settings if needed
       if (isPaid && price > 0) {
@@ -399,7 +461,7 @@ export class NoteClient {
       }
 
       // Dismiss modal again in case it reappeared
-      await this.dismissModal(page);
+      await this.dismissModalWithRetry(page, 2);
 
       // Click "投稿する" (final publish)
       const publishTexts = ["投稿する", "投稿", "公開する", "公開"];
@@ -466,11 +528,26 @@ export class NoteClient {
       }
 
       if (!clicked) {
-        throw new Error("Could not find final publish button");
+        // Fallback: return draft URL with indicator instead of throwing
+        const urlname = process.env.NOTE_URLNAME ?? "sescore";
+        const draftUrl = `https://note.com/${urlname}/n/${key}`;
+        console.log(`[Note] Could not find final publish button - returning draft URL: ${draftUrl}`);
+        return `${draftUrl}?status=draft-publish-failed`;
       }
 
       // Wait for publish to complete
       await page.waitForTimeout(5000);
+
+      // Try to detect navigation after publish (longer timeout)
+      try {
+        await page.waitForURL((url) => !url.href.includes("editor.note.com"), {
+          timeout: 15000,
+        });
+      } catch {
+        // URL might not change if publish happened via API in the background
+        console.log("[Note] No URL navigation after publish, checking response intercept...");
+        await page.waitForTimeout(3000);
+      }
 
       // Try to get URL from page if not captured via response
       if (!publishedUrl) {

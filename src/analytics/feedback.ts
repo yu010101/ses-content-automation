@@ -134,6 +134,39 @@ JSONのみを返してください。`,
     throw new Error(`Failed to parse feedback analysis: ${text.slice(0, 200)}`);
   }
 
+  // Fix 1: Default bestHookStyles when data is insufficient (< 3 data points)
+  if (
+    !analysis.bestHookStyles ||
+    analysis.bestHookStyles.length === 0 ||
+    analysis.bestHookStyles.some((s) => s.includes("データ不足") || s.includes("判定不可"))
+  ) {
+    analysis.bestHookStyles = ["number", "question"];
+  }
+
+  // Fix 2: Neutral topicDiversityScore when article count is too low to judge
+  if (snapshot.articles.length < 5) {
+    analysis.topicDiversityScore = Math.max(analysis.topicDiversityScore ?? 0.5, 0.5);
+  }
+
+  // Fix 3: Replace generic recommendations with actionable ones when data is sparse
+  if (snapshot.articles.length < 5) {
+    const sparseRecs = [
+      "投稿数が少ないため、まずは毎日1記事の投稿を目標にしてください",
+      "各プラットフォーム（Qiita・Zenn・Note）に最低3記事ずつ投稿し、反応の違いを比較してください",
+      "タイトルにはキーワード「2026年」「徹底解説」など権威性を示す言葉を含めてください",
+      "X投稿では number（数字訴求）と question（問いかけ）のhookStyleを優先的にテストしてください",
+      "投稿後48時間以内のエンゲージメントを記録し、次回の分析精度を上げてください",
+    ];
+    // Merge: keep any Claude-generated recs that are specific, then fill with sparse recs
+    const existingSpecific = (analysis.recommendations ?? []).filter(
+      (r) => r.length > 15 && !r.includes("データ不足"),
+    );
+    analysis.recommendations = [
+      ...existingSpecific.slice(0, 3),
+      ...sparseRecs.filter((sr) => !existingSpecific.some((er) => er.includes(sr.slice(0, 10)))),
+    ].slice(0, 7);
+  }
+
   const learningState: LearningState = {
     lastUpdated: new Date().toISOString(),
     ...analysis,
@@ -182,9 +215,20 @@ export function formatLearningContext(state: LearningState): string {
 
   if (sections.length === 0) return "";
 
+  // Fix 4: Warn article generation when learning data is based on sparse inputs
+  const isSparseData =
+    state.bestKeywords.length <= 3 ||
+    (state.bestHookStyles ?? []).length <= 2 &&
+      (state.bestHookStyles ?? []).includes("number") &&
+      (state.bestHookStyles ?? []).includes("question");
+
+  const dataQualityNote = isSparseData
+    ? `\n\n⚠️ 注意: 現在のパフォーマンスデータは蓄積が少ないため、上記の分析は暫定的です。\nデフォルト推奨値を含んでいます。独自の判断やバリエーションを積極的に試してください。`
+    : "";
+
   return `\n## パフォーマンスデータに基づく指示
 過去の記事分析から、以下のパターンが高エンゲージメントにつながっています。
 勝ちパターンを参考にしつつ、テーマの多様性を確保してください。
 
-${sections.join("\n")}`;
+${sections.join("\n")}${dataQualityNote}`;
 }

@@ -16,12 +16,15 @@ async function main() {
 
     case "publish": {
       const platform = args[1];
-      if (!platform) {
-        console.error("Usage: ses-content publish <qiita|zenn|x|note>");
+      const validPlatforms = ["qiita", "zenn", "x", "note"] as const;
+      type Platform = (typeof validPlatforms)[number];
+      if (!platform || !validPlatforms.includes(platform as Platform)) {
+        console.error("Usage: ses-content publish <qiita|zenn|x|note> [--dry-run]");
         process.exit(1);
       }
-      console.log(`Single-platform publish not yet implemented for: ${platform}`);
-      console.log("Use 'pipeline' command to run the full workflow.");
+
+      const { publishSinglePlatform } = await import("./publish-single.js");
+      await publishSinglePlatform(platform as Platform, flags);
       break;
     }
 

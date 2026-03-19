@@ -297,10 +297,22 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
       if (pub.platform === "qiita" && result.url) {
         qiitaUrl = result.url;
       }
-      console.log(`  ${result.success ? "OK" : "FAIL"}: ${result.url || result.error}`);
+      if (!result.success && pub.platform === "x" && result.error?.includes("402")) {
+        console.log(`  SKIP: X API credits exhausted server-side. Budget synced locally. Pipeline continues.`);
+      } else if (!result.success && pub.platform === "x" && result.error?.includes("401")) {
+        console.log(`  FAIL: X API auth failed. Check API credentials. Pipeline continues.`);
+      } else {
+        console.log(`  ${result.success ? "OK" : "FAIL"}: ${result.url || result.error}`);
+      }
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
-      console.log(`  ERROR: ${message}`);
+      if (pub.platform === "x" && (message.includes("402") || message.includes("CreditsDepleted"))) {
+        console.log(`  [X] Credits exhausted (402). X posts will be skipped. Other platforms continue normally.`);
+      } else if (pub.platform === "x" && (message.includes("401") || message.includes("Unauthorized"))) {
+        console.log(`  [X] Authentication failed (401). Verify X API keys are valid. Other platforms continue normally.`);
+      } else {
+        console.log(`  ERROR: ${message}`);
+      }
       results.push({ platform: pub.platform, success: false, error: message });
     }
   }

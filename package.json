@@ -14,7 +14,9 @@
     "publish:zenn": "tsx src/index.ts publish zenn",
     "publish:x": "tsx src/index.ts publish x",
     "publish:note": "tsx src/index.ts publish note",
-    "test": "tsx src/test-dry-run.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:legacy": "tsx src/test-dry-run.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^22.10.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.0"
   }
 }

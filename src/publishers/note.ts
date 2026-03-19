@@ -47,6 +47,18 @@ export class NotePublisher implements IPublisher {
         price: isPaid ? PAID_PRICE : 0,
       });
 
+      // Detect draft-publish-failed fallback URL
+      if (url.includes("status=draft-publish-failed")) {
+        const cleanUrl = url.replace("?status=draft-publish-failed", "");
+        console.log(`[Note] Browser publish failed, draft available at: ${cleanUrl}`);
+        return {
+          platform: this.platform,
+          success: false,
+          url: cleanUrl,
+          error: "Browser automation failed to click publish button. Draft was saved - publish manually.",
+        };
+      }
+
       return { platform: this.platform, success: true, url };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);

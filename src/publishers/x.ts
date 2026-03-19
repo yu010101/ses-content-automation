@@ -85,8 +85,47 @@ function saveXBudget(budget: XBudget): void {
   );
 }
 
+/** Mark local budget as fully exhausted so future calls skip without hitting the API. */
+function markBudgetExhausted(): void {
+  const budget = getXBudget();
+  budget.used = X_MONTHLY_LIMIT;
+  saveXBudget(budget);
+  console.log(
+    `[X] Budget synced to exhausted (${X_MONTHLY_LIMIT}/${X_MONTHLY_LIMIT}) — server returned 402 CreditsDepleted`,
+  );
+}
+
+/** Parse API error responses and handle 401/402 specially. Returns a PublishResult on handled errors, or null to use default handling. */
+function handleApiError(
+  status: number,
+  body: string,
+  platform: string,
+  context: string,
+): PublishResult | null {
+  if (status === 402) {
+    markBudgetExhausted();
+    console.log(
+      `[X] 402 CreditsDepleted during ${context}. Local budget synced. All further X posts will be skipped this month.`,
+    );
+    return { platform, success: false, error: `402 CreditsDepleted: X API free tier credits exhausted server-side. Local budget synced.` };
+  }
+  if (status === 401) {
+    console.log(
+      `[X] 401 Unauthorized during ${context}. Check your X API keys: X_CONSUMER_KEY, X_CONSUMER_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET. They may be expired or revoked.`,
+    );
+    return { platform, success: false, error: `401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked.` };
+  }
+  return null;
+}
+
 export class XPublisher implements IPublisher {
   platform = "x";
+
+  /** Returns false if the monthly X budget is exhausted (local tracker). */
+  static checkBudgetAvailable(): boolean {
+    const budget = getXBudget();
+    return budget.used < X_MONTHLY_LIMIT;
+  }
 
   async publish(
     article: GeneratedArticle,
@@ -223,6 +262,8 @@ export class XPublisher implements IPublisher {
 
     if (!res.ok) {
       const err = await res.text();
+      const handled = handleApiError(res.status, err, this.platform, "publishSingle");
+      if (handled) return handled;
       return { platform: this.platform, success: false, error: `${res.status}: ${err}` };
     }
 
@@ -271,6 +312,8 @@ export class XPublisher implements IPublisher {
 
     if (!res.ok) {
       const err = await res.text();
+      const handled = handleApiError(res.status, err, this.platform, "publishQuoteRepost");
+      if (handled) return handled;
       return { platform: this.platform, success: false, error: `${res.status}: ${err}` };
     }
 
@@ -309,6 +352,12 @@ export class XPublisher implements IPublisher {
 
       if (!res.ok) {
         const err = await res.text();
+        const handled = handleApiError(res.status, err, this.platform, `publishThread[${i + 1}/${thread.length}]`);
+        if (handled) {
+          const posted = i > 0 ? ` (${i}/${thread.length} tweets posted before failure)` : "";
+          handled.error = `${handled.error}${posted}`;
+          return handled;
+        }
         const posted = i > 0 ? ` (${i}/${thread.length} tweets posted)` : "";
         return {
           platform: this.platform,
