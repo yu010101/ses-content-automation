@@ -103,7 +103,7 @@ async function searchRecentTweet(
 
 選定基準:
 - エンゲージメント（いいね・RT）が多い投稿を優先
-- SES、エンジニアキャリア、AI、フリーランス関連の内容を優先
+- Claude Code、OpenClaw、AIエージェント、Vibe Coding、AI経営に関連する内容を優先
 - リプライや単なるRTではなくオリジナル投稿を優先
 
 JSON形式で返してください: { "tweetId": "...", "tweetText": "...", "tweetUrl": "..." }
@@ -136,37 +136,33 @@ async function generateQuoteComment(
   targetUsername: string,
   tweetText: string,
 ): Promise<string> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+  // Claude CLI経由で生成（AnthropicAPIクレジット不要）
+  const { execSync } = await import("node:child_process");
+  const prompt = `以下のX投稿に対する引用コメントを生成してください。
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 256,
-    system: `SES業界データメディア「SES Core」として引用コメントを生成してください。
+@${targetUsername} の投稿:
+${tweetText}
 
 ルール:
-- 共感 + データや知見の補足を入れる
+- AI経営OSを自社構築した経営者の視点で共感+実体験を補足
 - 宣伝臭なし（URL、ハッシュタグ、CTA禁止）
 - 相手がリポストしたくなる「いい引用」を目指す
 - 140字以内
 - 絵文字なし
-- 自然な日本語で、上から目線にならない`,
-    messages: [
-      {
-        role: "user",
-        content: `@${targetUsername} の以下の投稿に対する引用コメントを生成してください。
+- 自然な日本語、上から目線にならない
+- Claude Code、OpenClaw、AIエージェントの実体験があれば触れる
 
-投稿内容:
-${tweetText}
+140字以内の引用コメントのみを返してください。余計な説明不要。`;
 
-140字以内の引用コメントのみを返してください。`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
-  // Enforce 140 char limit
-  return text.length > 140 ? text.slice(0, 139) + "…" : text;
+  try {
+    const result = execSync(
+      `claude -p ${JSON.stringify(prompt)}`,
+      { timeout: 30000, encoding: "utf-8", env: { ...process.env, PATH: `${process.env.HOME}/.local/bin:${process.env.HOME}/.nvm/versions/node/v22.21.1/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin` } }
+    ).trim();
+    return result.length > 140 ? result.slice(0, 139) + "…" : result;
+  } catch {
+    return `これは参考になる。自社でもOpenClawで似た取り組みをしているが、この視点は新しい。`;
+  }
 }
 
 // ── Main: execute quote repost ───────────────────────────

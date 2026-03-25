@@ -182,26 +182,32 @@ export class XPublisher implements IPublisher {
   }
 
   private buildThread(article: GeneratedArticle, articleUrl?: string): string[] {
+    // Long-form single post strategy (AI駆動塾 style)
+    // Combine thread into one long post, or use xPost directly
+    let longPost: string;
+
     if (article.xThread && article.xThread.length > 1) {
-      const thread = [...article.xThread];
-      // Append article URL to the last tweet
-      if (articleUrl) {
-        const last = thread.length - 1;
-        thread[last] = `${thread[last]}\n${articleUrl}`;
-      }
-      return thread;
+      // Merge thread into single long-form post
+      longPost = article.xThread.join("\n\n");
+    } else {
+      longPost = article.xPost;
     }
 
-    // Fallback: single tweet
-    let post = article.xPost;
+    // Append article URL
     if (articleUrl) {
-      const maxLen = 280 - articleUrl.length - 2;
-      if (post.length > maxLen) {
-        post = post.slice(0, maxLen - 1) + "…";
-      }
-      post = `${post}\n${articleUrl}`;
+      longPost = `${longPost}\n\n詳しくはこちら👇\n${articleUrl}`;
     }
-    return [post];
+
+    // X Premium allows up to 25,000 chars; free tier is 280
+    // For long-form, keep under 4000 chars to be safe
+    if (longPost.length > 4000) {
+      longPost = longPost.slice(0, 3950) + "…";
+      if (articleUrl) {
+        longPost += `\n${articleUrl}`;
+      }
+    }
+
+    return [longPost];
   }
 
   private async publishViaMcp(text: string): Promise<PublishResult> {

@@ -213,37 +213,41 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   article.body = insertRelatedLinks(article.body, article.title);
   console.log(`Internal links: ${article.body.includes("## 関連記事") ? "added" : "none (first article)"}`);
 
-  // Step 2.5: Generate Note-optimized variation
-  console.log("\n[2.5/5] Generating Note variation...");
-  let noteArticle: GeneratedArticle;
-  try {
-    noteArticle = await generateNoteVariation(article);
-    console.log(`Note title: ${noteArticle.title}`);
-  } catch (err) {
-    console.log(`  Note variation failed (${err instanceof Error ? err.message : err}), using base`);
-    noteArticle = article;
-  }
+  // Step 2.5-2.7: Platform variations
+  // Skip separate LLM calls for speed (each adds 2-3 min).
+  // Use base article for all platforms. Formatter handles CTA/frontmatter differences.
+  const SKIP_VARIATIONS = process.env.SKIP_VARIATIONS !== "false";
 
-  // Step 2.6: Generate Zenn CTA-free variation
-  console.log("\n[2.6/5] Generating Zenn AI article...");
-  let zennArticle: GeneratedArticle;
-  try {
-    zennArticle = await generateZennVariation(article);
-    console.log(`Zenn variation: ${zennArticle.body.length} chars`);
-  } catch (err) {
-    console.log(`  Zenn variation failed (${err instanceof Error ? err.message : err}), using base`);
-    zennArticle = article;
-  }
+  let noteArticle: GeneratedArticle = article;
+  let zennArticle: GeneratedArticle = article;
+  let qiitaArticle: GeneratedArticle = article;
 
-  // Step 2.7: Generate Qiita tech variation
-  console.log("\n[2.7/5] Generating Qiita tech article...");
-  let qiitaArticle: GeneratedArticle;
-  try {
-    qiitaArticle = await generateQiitaVariation(article);
-    console.log(`Qiita tech variation: ${qiitaArticle.body.length} chars`);
-  } catch (err) {
-    console.log(`  Qiita tech variation failed (${err instanceof Error ? err.message : err}), using base`);
-    qiitaArticle = article;
+  if (SKIP_VARIATIONS) {
+    console.log("\n[2.5-2.7/5] Using base article for all platforms (SKIP_VARIATIONS=true)");
+  } else {
+    console.log("\n[2.5/5] Generating Note variation...");
+    try {
+      noteArticle = await generateNoteVariation(article);
+      console.log(`Note title: ${noteArticle.title}`);
+    } catch (err) {
+      console.log(`  Note variation failed (${err instanceof Error ? err.message : err}), using base`);
+    }
+
+    console.log("\n[2.6/5] Generating Zenn AI article...");
+    try {
+      zennArticle = await generateZennVariation(article);
+      console.log(`Zenn variation: ${zennArticle.body.length} chars`);
+    } catch (err) {
+      console.log(`  Zenn variation failed (${err instanceof Error ? err.message : err}), using base`);
+    }
+
+    console.log("\n[2.7/5] Generating Qiita tech article...");
+    try {
+      qiitaArticle = await generateQiitaVariation(article);
+      console.log(`Qiita tech variation: ${qiitaArticle.body.length} chars`);
+    } catch (err) {
+      console.log(`  Qiita tech variation failed (${err instanceof Error ? err.message : err}), using base`);
+    }
   }
 
   // Step 3: Telegram approval
@@ -262,25 +266,40 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     console.log(`\n[3/5] Skipping approval (${reason})`);
   }
 
-  // Step 4: Publish to all platforms (each gets optimized content)
+  // Step 4: Publish to all platforms
+  // Order: Note first → get URL → X with note link (OGP card) → Qiita → Zenn
   console.log("\n[4/5] Publishing to platforms...");
   const results: PublishResult[] = [];
   let qiitaUrl: string | undefined;
+  let noteUrl: string | undefined;
 
-  // Platform → article mapping: Note gets its own variation
-  const publishTasks: Array<{ publisher: QiitaPublisher | ZennPublisher | XPublisher | NotePublisher; content: GeneratedArticle }> = [
+  // Publish Note FIRST to get URL for X OGP card
+  console.log("\n  Publishing to note (first, for OGP card)...");
+  try {
+    const notePub = new NotePublisher();
+    const noteResult = await notePub.publish(noteArticle, dryRun);
+    results.push(noteResult);
+    if (noteResult.success && noteResult.url && noteResult.url !== "(dry-run)" && noteResult.url !== "(draft-via-mcp)") {
+      noteUrl = noteResult.url;
+    }
+    console.log(`  ${noteResult.success ? "OK" : "FAIL"}: ${noteResult.url || noteResult.error}`);
+  } catch (err) {
+    console.log(`  ERROR: ${err instanceof Error ? err.message : String(err)}`);
+  }
+
+  // Publish to remaining platforms: Qiita, Zenn, X (with note URL)
+  const publishTasks: Array<{ publisher: QiitaPublisher | ZennPublisher | XPublisher; content: GeneratedArticle }> = [
     { publisher: new QiitaPublisher(), content: qiitaArticle },
     { publisher: new ZennPublisher(), content: zennArticle },
     { publisher: new XPublisher(), content: article },
-    { publisher: new NotePublisher(), content: noteArticle },
   ];
 
   for (const { publisher: pub, content } of publishTasks) {
     console.log(`\n  Publishing to ${pub.platform}...`);
 
-    // Cross-platform links: inject Qiita URL into Zenn/Note articles
-    if (qiitaUrl && (pub.platform === "zenn" || pub.platform === "note")) {
-      const crossLink = `\n\n---\n\n${pub.platform === "zenn" ? "Qiitaでコード付き解説も公開しています" : "技術的な詳細はQiitaでも解説しています"}: ${qiitaUrl}`;
+    // Cross-platform links
+    if (qiitaUrl && pub.platform === "zenn") {
+      const crossLink = `\n\n---\n\nQiitaでコード付き解説も公開しています: ${qiitaUrl}`;
       if (!content.body.includes(qiitaUrl)) {
         content.body += crossLink;
       }
@@ -289,7 +308,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     try {
       let result: PublishResult;
       if (pub instanceof XPublisher) {
-        result = await pub.publish(content, dryRun, qiitaUrl);
+        // Pass noteUrl instead of qiitaUrl for OGP card display
+        result = await pub.publish(content, dryRun, noteUrl || qiitaUrl);
       } else {
         result = await pub.publish(content, dryRun);
       }

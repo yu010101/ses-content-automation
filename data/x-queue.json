@@ -35,7 +35,9 @@
         {
           "type": "quote",
           "text": "「SESからフリーランスへの転身は、準備8割、実行2割。焦りは禁物、計画的な準備こそが成功への最短ルート」",
-          "scheduledSlot": "noon"
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-20T03:01:42.103Z",
+          "tweetId": "2034827691145535972"
         }
       ],
       "posted": [
@@ -43,7 +45,149 @@
         true,
         true,
         true,
-        false
+        true
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】SESエンジニアが市場価値を劇的に上げる技術スキル7選とロードマップ",
+      "articleUrl": "https://qiita.com/sescore/items/80a9af046eef5aae59d0",
+      "createdAt": "2026-03-19T23:08:38.927Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "45万人のIT人材不足時代に、SESエンジニアの単価格差が拡大中。生成AI開発スキルで最大50万円アップの実例とは #SES #フリーランスエンジニア",
+          "postType": "text",
+          "hookStyle": "number",
+          "abVariant": "A",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-20T00:00:02.061Z",
+          "tweetId": "2034781974741885400"
+        },
+        {
+          "type": "teaser",
+          "text": "客先常駐から抜け出したいなら、どの技術を選ぶべき？2026年に市場価値を劇的に上げる7つのスキルを分析しました",
+          "postType": "text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-21T00:00:02.303Z",
+          "tweetId": "2035144363354071478"
+        },
+        {
+          "type": "key-point",
+          "text": "生成AI開発スキルは3ヶ月で習得可能。OpenAI API実装から始めて、LangChainでRAGシステム構築まで段階的に学習すれば単価80万円超えが狙える",
+          "postType": "text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-21T03:00:02.060Z",
+          "tweetId": "2035189661317177688"
+        },
+        {
+          "type": "data-highlight",
+          "text": "2026年現在、生成AI関連スキルを持つSESエンジニアの単価は80-120万円。従来の50-70万円相場から最大70万円アップという驚異的な市場価値上昇が確認されています。ChatGPT API、Claude API実装ができれば、客先常駐でも高単価案件への参画が可能になります",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-23T03:00:02.841Z",
+          "tweetId": "2035914439988490275"
+        },
+        {
+          "type": "discussion",
+          "text": "SESから独立を考えているエンジニアの皆さん、クラウドスキルと生成AIスキル、どちらを優先して学習すべきだと思いますか？",
+          "postType": "text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening",
+          "postedAt": "2026-03-20T09:00:43.291Z",
+          "tweetId": "2034918042581573886"
+        },
+        {
+          "type": "quote",
+          "text": "「単にSES やめたいと考えるだけでなく、戦略的な技術習得により市場価値を向上させる」ことの重要性。感情的な転職ではなく、データに基づいた技術選択こそが真の独立への近道。IT人材不足45万人の今だからこそ、正しいスキル投資が人生を変える",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening",
+          "postedAt": "2026-03-22T09:00:03.920Z",
+          "tweetId": "2035642649844343122"
+        }
+      ],
+      "posted": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新データ】AIツール時代のエンジニア市場分析｜SESvsフリーランス単価・転向タイミングを徹底解説",
+      "articleUrl": "https://qiita.com/sescore/items/e6516b35858e635475f0",
+      "createdAt": "2026-03-23T06:56:41.195Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "月額20-30万円の単価格差が発生。AIツール使えるエンジニアと使えないエンジニアで市場価値が完全に二極化している現実をデータで解説 #SES #フリーランスエンジニア",
+          "postType": "text",
+          "hookStyle": "number",
+          "abVariant": "A",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-24T00:00:02.321Z",
+          "tweetId": "2036231527261151401"
+        },
+        {
+          "type": "teaser",
+          "text": "なぜ同じスキルレベルのエンジニアなのに年収が2倍も違うのか？2026年のエンジニア市場で起きている深刻な格差の実態とは",
+          "postType": "text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning",
+          "postedAt": "2026-03-25T00:00:02.012Z",
+          "tweetId": "2036593922869506515"
+        },
+        {
+          "type": "key-point",
+          "text": "GitHub CopilotとClaudeを実務レベルで使いこなせ。これだけでフリーランス転向時の単価が月額20万円変わる。AIツール活用は今やエンジニアの必須スキル",
+          "postType": "text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-24T03:00:01.856Z",
+          "tweetId": "2036276824137932910"
+        },
+        {
+          "type": "data-highlight",
+          "text": "2026年3月データ：AIツール習熟フリーランスの平均単価90-120万円/月（前年比+25%）、従来型SESエンジニア45-65万円/月（前年比-5%）。同じエンジニアでもAIツール活用スキルの有無で最大75万円/月の格差が発生している現実。開発効率も劇的改善：API開発62%短縮、テストコード作成75%短縮を実現",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon",
+          "postedAt": "2026-03-25T03:00:01.704Z",
+          "tweetId": "2036639211256951167"
+        },
+        {
+          "type": "discussion",
+          "text": "SESエンジニアの皆さん、現場でAIツールの使用を禁止されていませんか？個人学習でもGitHub CopilotやClaude活用スキルを身につけるべき理由とは",
+          "postType": "text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening",
+          "postedAt": "2026-03-23T09:00:01.727Z",
+          "tweetId": "2036005032760574159"
+        },
+        {
+          "type": "quote",
+          "text": "従来の「現場ガチャ」に加えて「AIスキルガチャ」という新たなリスクが生まれているーーSESエンジニアが直面する厳しい現実。しかし裏を返せば、AIツールを習得すれば確実に市場価値を上げられる時代でもある。フリーランス転向で年収2-3倍は決して夢物語ではない",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening",
+          "postedAt": "2026-03-24T09:00:02.420Z",
+          "tweetId": "2036367423033761946"
+        }
+      ],
+      "posted": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
       ]
     }
   ]

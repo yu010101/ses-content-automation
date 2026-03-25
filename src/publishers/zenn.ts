@@ -47,7 +47,10 @@ export class ZennPublisher implements IPublisher {
 
       await repoGit.add(filePath);
       await repoGit.commit(`Add AI article: ${article.title}`);
-      await repoGit.push("origin", "main");
+      // Detect default branch (master or main)
+      const branches = await repoGit.branch();
+      const defaultBranch = branches.current || "master";
+      await repoGit.push("origin", defaultBranch);
 
       const url = `https://zenn.dev/${config.zenn.user}/articles/${slug}`;
       console.log(`[Zenn] Pushed to ${repo}: ${url}`);

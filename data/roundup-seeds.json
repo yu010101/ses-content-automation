@@ -1,0 +1,34 @@
+{
+  "seeds": [
+    {
+      "category": "ai-coding",
+      "title_hint": "AIコーディングツール",
+      "items": ["Claude Code", "GitHub Copilot", "Cursor", "Codeium", "Windsurf"],
+      "qiita_tags": ["AI", "Claude", "GitHubCopilot", "開発"]
+    },
+    {
+      "category": "mcp-servers",
+      "title_hint": "MCPサーバー・プラグイン",
+      "items": ["Context7", "Playwright MCP", "Sentry MCP", "Firecrawl", "PostgreSQL MCP"],
+      "qiita_tags": ["MCP", "Claude", "AI", "開発"]
+    },
+    {
+      "category": "ai-agents",
+      "title_hint": "AIエージェントフレームワーク",
+      "items": ["LangChain", "CrewAI", "AutoGen", "Claude Agent SDK", "Dify"],
+      "qiita_tags": ["AIAgent", "LangChain", "LLM", "Python"]
+    },
+    {
+      "category": "freelance-ai-tools",
+      "title_hint": "フリーランスエンジニアのAI業務効率化ツール",
+      "items": ["Claude Code", "ChatGPT", "Notion AI", "GitHub Actions AI", "v0"],
+      "qiita_tags": ["AI", "フリーランス", "自動化", "開発"]
+    },
+    {
+      "category": "dev-productivity",
+      "title_hint": "開発生産性ツール",
+      "items": ["Warp", "Fig", "Raycast", "Arc", "Linear", "Notion"],
+      "qiita_tags": ["開発", "生産性", "ツール", "エンジニア"]
+    }
+  ]
+}

@@ -31,14 +31,9 @@ export interface XQueue {
 export function injectCta(
   text: string,
   articleUrl: string,
-  hookStyle: string,
+  _hookStyle: string,
 ): string {
-  const utm = new URLSearchParams({
-    utm_source: "x",
-    utm_campaign: "variation",
-    utm_content: hookStyle,
-  });
-  const ctaUrl = `${config.freelanceDbUrl}?${utm.toString()}`;
+  const ctaUrl = "https://note.com/l_mrk/membership";
   const articleLine = `\n${articleUrl}`;
   const ctaLine = `\n${ctaUrl}`;
 
@@ -76,40 +71,55 @@ export async function generateXVariations(
   const response = await client.messages.create({
     model: config.anthropic.model,
     max_tokens: 2048,
-    system: `あなたはSES業界データメディア「SES Core」のX運用担当です。
-1つの記事から6種類の異なるXポストを作成してください。
+    system: `あなたは合同会社Radineerの代表で、Claude Code・OpenClaw・AI経営OSを毎日使っている実践者です。
+1つの記事から6種類の長文Xポスト（各800-1500文字）を作成してください。
 
-ルール:
-- 記事URLやリンクは含めないでください（投稿時に自動付与します）
-- ハッシュタグは teaser A にのみ #SES #フリーランスエンジニア
-- 絵文字は使わない
-- データに基づいた説得力のあるトーン
+## テーマ（これだけ）
+- Claude Code の実践Tips（コマンド、設定、workflow、CLAUDE.md）
+- OpenClaw の使い方・設定・エージェント構築
+- AI経営OS構築の裏側（9エージェント: CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost）
+- Claude Code × OpenClaw連携の実例
+- AI駆動塾の宣伝（noteメンバーシップ）
+
+## スタイル
+- 1行目: キャッチーなフック（具体的な数字 or 疑問文。ただし嘘の数字は禁止）
+- 「〜してみた」「〜が便利だった」「〜でハマった」の体験談形式
+- 具体的なコマンド・設定・ファイル名を含める
+- 改行を多用して読みやすく
+- 断定的な「だ・である」調
+
+## 禁止事項
+- 嘘の数字（「387%向上」「生産性10倍」等）は絶対に使うな
+- 「SES」「フリーランス案件」「単価」の話題は禁止
+- FreelanceDBへの誘導は禁止
+- AIっぽい定型表現（「〜ではないでしょうか」「〜と言えるでしょう」）は禁止
+
+## ルール
+- 記事URLやリンクは含めないでください（投稿時に自動付与）
+- ハッシュタグは末尾に2-3個: #ClaudeCode #OpenClaw #AI経営OS から選択
+- 絵文字は最小限（冒頭に1個程度はOK）
 - 各ポストにhookStyle（question/number/statement/contrast）を設定
-  - question: 問いかけで始まる
-  - number: 数字・データで始まる
-  - statement: 断定的な主張で始まる
-  - contrast: 対比構造（○○なのに××）
-- postType: "text"（140字以内）または "long_text"（280字以内）${hookGuidance}`,
+- postType: 全て "long_text"（800-1500文字）${hookGuidance}`,
     messages: [
       {
         role: "user",
-        content: `以下の記事から6種類のXポストを生成してください。
+        content: `以下の記事から6種類のXロングポストを生成してください。
 
 タイトル: ${article.title}
 要約: ${article.summary}
 キーワード: ${article.keywords.slice(0, 5).join(", ")}
 
 ## 記事の冒頭部分
-${article.body.slice(0, 1500)}
+${article.body.slice(0, 2000)}
 
-以下のJSON配列で返してください:
+各ポストは800-1500文字の長文で、以下のJSON配列で返してください:
 [
-  {"type": "teaser", "text": "インパクトある数字+続きが気になる一言", "postType": "text", "hookStyle": "number", "abVariant": "A"},
-  {"type": "teaser", "text": "同じ内容を別の切り口で（A/Bテスト用）", "postType": "text", "hookStyle": "question", "abVariant": "B"},
-  {"type": "key-point", "text": "1つの具体的アクション", "postType": "text", "hookStyle": "statement"},
-  {"type": "data-highlight", "text": "驚きのデータポイント", "postType": "long_text", "hookStyle": "number"},
-  {"type": "discussion", "text": "記事トピックに関連する問いかけ", "postType": "text", "hookStyle": "question"},
-  {"type": "quote", "text": "記事から引用した強い一文+考察", "postType": "long_text", "hookStyle": "contrast"}
+  {"type": "teaser", "text": "Claude Code/OpenClawの具体的なTipsを体験談形式で。『Claude Codeで〇〇してみたら〇〇だった』", "postType": "long_text", "hookStyle": "statement", "abVariant": "A"},
+  {"type": "teaser", "text": "同じ内容を疑問文フックで。『〇〇の設定、まだデフォルトのまま？』", "postType": "long_text", "hookStyle": "question", "abVariant": "B"},
+  {"type": "key-point", "text": "記事の中で最も実践的なコマンドや設定を深掘り。コピペで使える具体例付き", "postType": "long_text", "hookStyle": "statement"},
+  {"type": "data-highlight", "text": "実際の作業時間や工数の変化を正直に書く。盛った数字は禁止", "postType": "long_text", "hookStyle": "number"},
+  {"type": "discussion", "text": "AI経営OSの構築で学んだ教訓。『9エージェント運用してわかったこと』", "postType": "long_text", "hookStyle": "question"},
+  {"type": "quote", "text": "自分の失敗談・ハマりポイント。『最初は〇〇で失敗した。結局〇〇が正解だった』", "postType": "long_text", "hookStyle": "contrast"}
 ]
 
 JSON配列のみを返してください。`,
@@ -121,9 +131,17 @@ JSON配列のみを返してください。`,
 
   let variations: XPostVariation[];
   try {
-    const jsonMatch = text.match(/\[[\s\S]*\]/);
-    if (!jsonMatch) throw new Error("No JSON array found");
-    variations = JSON.parse(jsonMatch[0]);
+    let cleaned = text.trim();
+    if (cleaned.startsWith("```")) {
+      cleaned = cleaned.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+    }
+    try {
+      variations = JSON.parse(cleaned);
+    } catch {
+      const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
+      if (!jsonMatch) throw new Error("No JSON array found");
+      variations = JSON.parse(jsonMatch[0]);
+    }
   } catch {
     throw new Error(`Failed to parse X variations: ${text.slice(0, 200)}`);
   }

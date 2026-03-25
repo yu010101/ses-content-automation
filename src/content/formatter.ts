@@ -18,14 +18,31 @@ export interface ZennFrontmatter {
   published: boolean;
 }
 
+const FREELANCE_CTA = `
+
+---
+
+## 💼 フリーランスエンジニアの案件をお探しですか？
+
+**SES解体新書 フリーランスDB**では、高単価案件を多数掲載中です。
+
+- ✅ マージン率公開で透明な取引
+- ✅ AI/クラウド/Web系の厳選案件
+- ✅ 専任コーディネーターが単価交渉をサポート
+
+▶ **[無料でエンジニア登録する](https://freelance.radineer.asia/freelance/register)**
+
+`;
+
 export function formatForQiita(
   article: GeneratedArticle,
   isPrivate = false,
 ): QiitaPayload {
   const orgName = config.qiita.organizationName();
+  const bodyWithCta = article.body + FREELANCE_CTA;
   return {
     title: article.title,
-    body: article.body,
+    body: bodyWithCta,
     tags: getQiitaTags(article.keywords).map((name) => ({ name })),
     private: isPrivate,
     ...(orgName ? { organization_url_name: orgName } : {}),
@@ -82,11 +99,11 @@ export function formatForZenn(
     })
     .join("\n");
 
-  let body = article.body;
+  let body = article.body + FREELANCE_CTA;
 
   // Add cross-platform link for Zenn
   if (crossLinks?.qiitaUrl) {
-    body += `\n\n---\n\nQiitaでコード付き解説も公開しています: ${crossLinks.qiitaUrl}`;
+    body += `\nQiitaでコード付き解説も公開しています: ${crossLinks.qiitaUrl}`;
   }
 
   return `---\n${fm}\n---\n\n${body}`;
@@ -96,7 +113,7 @@ export function formatForNote(article: GeneratedArticle, crossLinks?: { qiitaUrl
   title: string;
   body: string;
 } {
-  let body = article.body;
+  let body = article.body + FREELANCE_CTA;
 
   // Add cross-platform links at the end
   if (crossLinks) {

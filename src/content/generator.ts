@@ -1,9 +1,13 @@
 import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import { config } from "../config.js";
 import {
   getArticleType,
   getQiitaArticleType,
   getArticleSystemPrompt,
+  ROUNDUP_ARTICLE_TYPE,
+  ROUNDUP_ZENN_REWRITE_SYSTEM_PROMPT,
+  ROUNDUP_QIITA_REWRITE_SYSTEM_PROMPT,
   X_THREAD_SYSTEM_PROMPT,
   NOTE_REWRITE_SYSTEM_PROMPT,
   ZENN_AI_REWRITE_SYSTEM_PROMPT,
@@ -83,9 +87,19 @@ JSONのみを返してください。`,
 
   let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType">;
   try {
-    const jsonMatch = articleText.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) throw new Error("No JSON found in response");
-    article = JSON.parse(jsonMatch[0]);
+    // Strip markdown code fences if present
+    let cleaned = articleText.trim();
+    if (cleaned.startsWith("```")) {
+      cleaned = cleaned.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+    }
+    // Try direct parse first, then regex fallback
+    try {
+      article = JSON.parse(cleaned);
+    } catch {
+      const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) throw new Error("No JSON found in response");
+      article = JSON.parse(jsonMatch[0]);
+    }
   } catch {
     throw new Error(
       `Failed to parse article response: ${articleText.slice(0, 200)}`,
@@ -318,5 +332,314 @@ ${baseArticle.keywords.join(", ")}`,
   } catch {
     console.log("  Note rewrite failed, using base article");
     return baseArticle;
+  }
+}
+
+// --- Roundup Article Generation (Grok research → Claude generation) ---
+
+export interface RoundupSeed {
+  category: string;
+  title_hint: string;
+  items: string[];
+  qiita_tags: string[];
+}
+
+export async function generateRoundupArticle(
+  seed: RoundupSeed,
+  marketContext = "",
+): Promise<GeneratedArticle> {
+  const anthropic = new Anthropic({ apiKey: config.anthropic.apiKey() });
+  const grok = new OpenAI({
+    apiKey: config.xai.apiKey(),
+    baseURL: config.xai.baseUrl,
+  });
+
+  // Step 1: Grok research — gather latest info on each tool
+  console.log("  [Roundup] Researching tools via Grok...");
+  const researchResults: string[] = [];
+
+  for (const item of seed.items) {
+    try {
+      const response = await grok.chat.completions.create({
+        model: config.xai.model,
+        messages: [
+          {
+            role: "system",
+            content:
+              "あなたはAI/開発ツールのリサーチアナリストです。X上の最新投稿や公開情報から、指定されたツールの最新状況を調査してください。",
+          },
+          {
+            role: "user",
+            content: `「${item}」について以下を調査し、簡潔にまとめてください:
+- 最新バージョン・アップデート情報
+- X上での評判・ユーザーの声
+- GitHub Star数（分かれば）
+- 主な特徴と強み/弱み
+- 料金プラン（無料/有料の区分）
+
+300文字程度で簡潔に日本語でまとめてください。`,
+          },
+        ],
+        temperature: 0.5,
+      });
+      const content = response.choices[0]?.message?.content;
+      if (content) {
+        researchResults.push(`### ${item}\n${content}`);
+      }
+    } catch (err) {
+      console.log(
+        `  [Roundup] Grok research failed for ${item}: ${err instanceof Error ? err.message : err}`,
+      );
+      researchResults.push(`### ${item}\n（リサーチ情報取得失敗）`);
+    }
+  }
+
+  const researchContext = researchResults.join("\n\n");
+  console.log(
+    `  [Roundup] Research complete: ${researchResults.length}/${seed.items.length} tools`,
+  );
+
+  // Step 2: Claude article generation (with retry if under 8000 chars)
+  console.log("  [Roundup] Generating article via Claude...");
+  const systemPrompt = getArticleSystemPrompt(ROUNDUP_ARTICLE_TYPE);
+
+  const MAX_ATTEMPTS = 2;
+  let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType"> | undefined;
+
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const extraInstruction = attempt > 1
+      ? "\n\n⚠️ 前回の生成が8000文字未満でした。各ツールの解説をより詳しく、コード例もより実践的に、8000文字以上を厳守してください。"
+      : "";
+
+    const articleResponse = await anthropic.messages.create({
+      model: config.anthropic.model,
+      max_tokens: 16384,
+      system: systemPrompt,
+      messages: [
+        {
+          role: "user",
+          content: `「${seed.title_hint}」の総まとめ記事を執筆してください。
+
+## 対象ツール
+${seed.items.join(", ")}
+
+## リサーチ結果（Grok APIによる最新情報）
+${researchContext}
+${marketContext ? `\n## 市場データ\n${marketContext}` : ""}${extraInstruction}
+
+以下のJSON形式で返してください:
+{
+  "title": "記事タイトル（SEO最適化、「【2026年最新】」を含む、30-60文字）",
+  "body": "記事本文（Markdown形式、8000文字以上、Tier分類+比較テーブル+コード例必須）",
+  "keywords": ["キーワード1", "キーワード2", ...],
+  "summary": "記事の要約（200文字以内）"
+}
+
+JSONのみを返してください。`,
+        },
+      ],
+    });
+
+    const articleText =
+      articleResponse.content[0].type === "text"
+        ? articleResponse.content[0].text
+        : "";
+
+    // Check if response was truncated (stop_reason !== "end_turn")
+    const stopReason = articleResponse.stop_reason;
+    if (stopReason !== "end_turn") {
+      console.log(`  [Roundup] Response truncated (${stopReason}), attempt ${attempt}`);
+      if (attempt < MAX_ATTEMPTS) continue;
+    }
+
+    try {
+      const jsonMatch = articleText.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) throw new Error("No JSON found in roundup response");
+      article = JSON.parse(jsonMatch[0]);
+    } catch (err) {
+      console.log(`  [Roundup] Parse failed (attempt ${attempt}): ${err instanceof Error ? err.message : err}`);
+      if (attempt < MAX_ATTEMPTS) continue;
+      throw new Error(
+        `Failed to parse roundup article response after ${MAX_ATTEMPTS} attempts`,
+      );
+    }
+
+    const charCount = article!.body.length;
+    if (charCount >= 8000) {
+      console.log(`  [Roundup] Article: ${charCount} chars (attempt ${attempt}) ✓`);
+      break;
+    }
+
+    if (attempt < MAX_ATTEMPTS) {
+      console.log(`  [Roundup] Article: ${charCount} chars < 8000, retrying...`);
+    } else {
+      console.log(`  [Roundup] Article: ${charCount} chars (below target, proceeding)`);
+    }
+  }
+
+  if (!article) throw new Error("Failed to generate roundup article");
+
+  // Generate X thread
+  const xResponse = await anthropic.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 1024,
+    system: X_THREAD_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下の記事のXスレッドを作成してください:
+
+タイトル: ${article.title}
+要約: ${article.summary}
+キーワード: ${article.keywords.slice(0, 5).join(", ")}`,
+      },
+    ],
+  });
+
+  const xText =
+    xResponse.content[0].type === "text"
+      ? xResponse.content[0].text.trim()
+      : "";
+
+  let xThread: string[] = [];
+  let xPost = "";
+  try {
+    const jsonMatch = xText.match(/\[[\s\S]*\]/);
+    if (jsonMatch) {
+      xThread = JSON.parse(jsonMatch[0]);
+      xPost = xThread[0] || "";
+    }
+  } catch {
+    xPost = xText.slice(0, 280);
+    xThread = [xPost];
+  }
+
+  return { ...article, xPost, xThread, articleType: "roundup" };
+}
+
+export async function generateRoundupZennVariation(
+  baseArticle: GeneratedArticle,
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+
+  console.log("  Generating Zenn roundup variation...");
+
+  const response = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 12288,
+    system: ROUNDUP_ZENN_REWRITE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下のAI/ツールまとめ記事をZenn向けに書き直してください。
+
+## 元記事タイトル
+${baseArticle.title}
+
+## 元記事本文
+${baseArticle.body}
+
+## キーワード
+${baseArticle.keywords.join(", ")}`,
+      },
+    ],
+  });
+
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+
+  try {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in Zenn roundup rewrite");
+    const rewritten = JSON.parse(jsonMatch[0]) as {
+      title: string;
+      body: string;
+      summary: string;
+      keywords: string[];
+    };
+
+    console.log(`  Zenn roundup title: ${rewritten.title}`);
+    console.log(`  Zenn roundup length: ${rewritten.body.length} chars`);
+
+    return {
+      ...baseArticle,
+      title: rewritten.title,
+      body: rewritten.body,
+      summary: rewritten.summary,
+      keywords: rewritten.keywords || baseArticle.keywords,
+      articleType: "roundup-zenn",
+    };
+  } catch {
+    console.log("  Zenn roundup rewrite failed, using CTA-stripped base");
+    let body = baseArticle.body;
+    body = body.replace(
+      /---\s*\n+\*\*.*(?:FreelanceDB|フリーランスDB|キャリアアップ|市場価値|独立|無料登録).*\*\*[\s\S]*$/,
+      "",
+    );
+    body = body.replace(/\[.*?FreelanceDB.*?\]\(.*?\)/g, "");
+    body = body.trimEnd();
+    body += `\n\n---\n\nこの記事が参考になったら、ぜひLikeしていただけると励みになります。\nAI・開発ツールに関する記事を定期的に発信しています。フォローもお待ちしています。`;
+    return { ...baseArticle, body, articleType: "roundup-zenn" };
+  }
+}
+
+export async function generateRoundupQiitaVariation(
+  baseArticle: GeneratedArticle,
+): Promise<GeneratedArticle> {
+  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
+
+  console.log("  Generating Qiita roundup variation...");
+
+  const response = await client.messages.create({
+    model: config.anthropic.model,
+    max_tokens: 12288,
+    system: ROUNDUP_QIITA_REWRITE_SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: `以下のAI/ツールまとめ記事をQiita向けに書き直してください。
+
+## 元記事タイトル
+${baseArticle.title}
+
+## 元記事本文
+${baseArticle.body}
+
+## キーワード
+${baseArticle.keywords.join(", ")}`,
+      },
+    ],
+  });
+
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+
+  try {
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No JSON found in Qiita roundup rewrite");
+    const rewritten = JSON.parse(jsonMatch[0]) as {
+      title: string;
+      body: string;
+      summary: string;
+      keywords: string[];
+    };
+
+    console.log(`  Qiita roundup title: ${rewritten.title}`);
+    console.log(`  Qiita roundup length: ${rewritten.body.length} chars`);
+
+    const codeBlockCount = (rewritten.body.match(/```/g) || []).length / 2;
+    console.log(`  Qiita roundup code blocks: ${Math.floor(codeBlockCount)}`);
+
+    return {
+      ...baseArticle,
+      title: rewritten.title,
+      body: rewritten.body,
+      summary: rewritten.summary,
+      keywords: rewritten.keywords || baseArticle.keywords,
+      articleType: "roundup-qiita",
+    };
+  } catch {
+    console.log("  Qiita roundup rewrite failed, using base article");
+    return { ...baseArticle, articleType: "roundup-qiita" };
   }
 }

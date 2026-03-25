@@ -1,4 +1,5 @@
 import { runPipeline } from "./pipeline.js";
+import { runRoundupPipeline } from "./roundup-pipeline.js";
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -6,6 +7,7 @@ const command = args[0];
 const flags = {
   dryRun: args.includes("--dry-run"),
   skipApproval: args.includes("--skip-approval"),
+  category: args.find((a) => a.startsWith("--category="))?.split("=")[1],
 };
 
 async function main() {
@@ -108,6 +110,10 @@ async function main() {
       break;
     }
 
+    case "roundup":
+      await runRoundupPipeline(flags);
+      break;
+
     case "x-quote": {
       const { executeQuoteRepost } = await import("./x-amplification/quote-repost.js");
       console.log("=== Quote Repost ===\n");
@@ -162,6 +168,7 @@ async function main() {
 
 Usage:
   pipeline [--dry-run] [--skip-approval]   Run full pipeline
+  roundup [--dry-run] [--category=...]     AI/tool roundup article
   trends                                    Discover current trends
   publish <platform>                        Publish to single platform
   analytics                                 Collect & display article performance
@@ -175,6 +182,7 @@ Usage:
 Flags:
   --dry-run         Run without actual publishing
   --skip-approval   Skip Telegram approval step
+  --category=<cat>  Specify roundup category (e.g. ai-coding)
 `);
   }
 }

@@ -1,9 +1,15 @@
 {
   "targets": [
+    { "username": "AlexFinnX", "displayName": "Alex Finn (OpenClaw/Vibe Coding)", "priority": "high" },
+    { "username": "alexalbert__", "displayName": "Alex Albert (Anthropic)", "priority": "high" },
+    { "username": "ichiaimarketer", "displayName": "いち（OpenClaw日本語）", "priority": "high" },
+    { "username": "L_go_mrk", "displayName": "AI駆動塾（自社）", "priority": "high" },
     { "username": "bmr_sri", "displayName": "BMRスモールビジネス研究所", "priority": "high" },
-    { "username": "L_go_mrk", "displayName": "AI駆動塾", "priority": "high" },
     { "username": "it_bosatsu_moro", "displayName": "IT菩薩モロー", "priority": "high" },
+    { "username": "simonw", "displayName": "Simon Willison (LLM/Claude)", "priority": "medium" },
+    { "username": "AnthropicAI", "displayName": "Anthropic公式", "priority": "medium" },
     { "username": "engineermikata", "displayName": "エンジニアのミカタ", "priority": "medium" },
-    { "username": "matome_ses", "displayName": "客先常駐・SESまとめ", "priority": "medium" }
+    { "username": "matome_ses", "displayName": "客先常駐・SESまとめ", "priority": "medium" },
+    { "username": "sdand", "displayName": "Swyx (AI Engineer)", "priority": "medium" }
   ]
 }
