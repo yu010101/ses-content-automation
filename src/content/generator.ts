@@ -1,6 +1,6 @@
-import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import { config } from "../config.js";
+import { claudeCli } from "../utils/claude-cli.js";
 import {
   getArticleType,
   getQiitaArticleType,
@@ -32,7 +32,6 @@ export async function generateArticle(
   marketContext = "",
   learningContext = "",
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
   const articleType: ArticleType = getArticleType();
 
   console.log(`  Article type: ${articleType.name} (${articleType.id})`);
@@ -51,14 +50,7 @@ export async function generateArticle(
 
   const systemPrompt = getArticleSystemPrompt(articleType);
 
-  const articleResponse = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 8192,
-    system: systemPrompt,
-    messages: [
-      {
-        role: "user",
-        content: `以下のトレンドとキーワードに基づいて、SESエンジニア向けの記事を執筆してください。
+  const userContent = `以下のトレンドとキーワードに基づいて、SESエンジニア向けの記事を執筆してください。
 
 ## 今日のトレンド
 ${trendContext}
@@ -75,15 +67,9 @@ ${marketContext ? `\n${marketContext}` : ""}${learningContext ? `\n${learningCon
   "summary": "記事の要約（200文字以内）"
 }
 
-JSONのみを返してください。`,
-      },
-    ],
-  });
+JSONのみを返してください。`;
 
-  const articleText =
-    articleResponse.content[0].type === "text"
-      ? articleResponse.content[0].text
-      : "";
+  const articleText = claudeCli(systemPrompt + "\n\n" + userContent);
 
   let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType">;
   try {
@@ -107,26 +93,11 @@ JSONのみを返してください。`,
   }
 
   // Generate X thread (3-5 tweets)
-  const xResponse = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 1024,
-    system: X_THREAD_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下の記事のXスレッドを作成してください:
+  const xText = claudeCli(X_THREAD_SYSTEM_PROMPT + "\n\n" + `以下の記事のXスレッドを作成してください:
 
 タイトル: ${article.title}
 要約: ${article.summary}
-キーワード: ${article.keywords.slice(0, 5).join(", ")}`,
-      },
-    ],
-  });
-
-  const xText =
-    xResponse.content[0].type === "text"
-      ? xResponse.content[0].text.trim()
-      : "";
+キーワード: ${article.keywords.slice(0, 5).join(", ")}`);
 
   // Parse thread JSON
   let xThread: string[] = [];
@@ -149,18 +120,9 @@ JSONのみを返してください。`,
 export async function generateZennVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   console.log("  Generating Zenn AI-focused article...");
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 8192,
-    system: ZENN_AI_REWRITE_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下のSESエンジニア向け記事をベースに、Zenn向けのAI/技術記事を執筆してください。
+  const text = claudeCli(ZENN_AI_REWRITE_SYSTEM_PROMPT + "\n\n" + `以下のSESエンジニア向け記事をベースに、Zenn向けのAI/技術記事を執筆してください。
 
 ## 元記事タイトル
 ${baseArticle.title}
@@ -169,13 +131,7 @@ ${baseArticle.title}
 ${baseArticle.summary}
 
 ## 元記事のキーワード
-${baseArticle.keywords.join(", ")}`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+${baseArticle.keywords.join(", ")}`);
 
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -216,19 +172,11 @@ ${baseArticle.keywords.join(", ")}`,
 export async function generateQiitaVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
   const qiitaType = getQiitaArticleType();
 
   console.log(`  Generating Qiita tech article (${qiitaType.name})...`);
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 8192,
-    system: QIITA_TECH_REWRITE_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下のSESエンジニア向け記事をベースに、Qiita向けの技術記事を執筆してください。
+  const text = claudeCli(QIITA_TECH_REWRITE_SYSTEM_PROMPT + "\n\n" + `以下のSESエンジニア向け記事をベースに、Qiita向けの技術記事を執筆してください。
 記事タイプ: ${qiitaType.name}（${qiitaType.id}）
 
 ## 元記事タイトル
@@ -241,13 +189,7 @@ ${baseArticle.summary}
 ${baseArticle.keywords.join(", ")}
 
 ## 追加指示
-${qiitaType.systemPrompt}`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+${qiitaType.systemPrompt}`);
 
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -283,18 +225,9 @@ ${qiitaType.systemPrompt}`,
 export async function generateNoteVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   console.log("  Generating Note-optimized variation...");
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 8192,
-    system: NOTE_REWRITE_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下の技術記事をnote.com向けにリライトしてください。
+  const text = claudeCli(NOTE_REWRITE_SYSTEM_PROMPT + "\n\n" + `以下の技術記事をnote.com向けにリライトしてください。
 
 ## 元記事タイトル
 ${baseArticle.title}
@@ -303,13 +236,7 @@ ${baseArticle.title}
 ${baseArticle.body}
 
 ## キーワード（リライト後も自然に含めること）
-${baseArticle.keywords.join(", ")}`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+${baseArticle.keywords.join(", ")}`);
 
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -348,7 +275,6 @@ export async function generateRoundupArticle(
   seed: RoundupSeed,
   marketContext = "",
 ): Promise<GeneratedArticle> {
-  const anthropic = new Anthropic({ apiKey: config.anthropic.apiKey() });
   const grok = new OpenAI({
     apiKey: config.xai.apiKey(),
     baseURL: config.xai.baseUrl,
@@ -411,14 +337,7 @@ export async function generateRoundupArticle(
       ? "\n\n⚠️ 前回の生成が8000文字未満でした。各ツールの解説をより詳しく、コード例もより実践的に、8000文字以上を厳守してください。"
       : "";
 
-    const articleResponse = await anthropic.messages.create({
-      model: config.anthropic.model,
-      max_tokens: 16384,
-      system: systemPrompt,
-      messages: [
-        {
-          role: "user",
-          content: `「${seed.title_hint}」の総まとめ記事を執筆してください。
+    const roundupUserContent = `「${seed.title_hint}」の総まとめ記事を執筆してください。
 
 ## 対象ツール
 ${seed.items.join(", ")}
@@ -435,22 +354,9 @@ ${marketContext ? `\n## 市場データ\n${marketContext}` : ""}${extraInstructi
   "summary": "記事の要約（200文字以内）"
 }
 
-JSONのみを返してください。`,
-        },
-      ],
-    });
+JSONのみを返してください。`;
 
-    const articleText =
-      articleResponse.content[0].type === "text"
-        ? articleResponse.content[0].text
-        : "";
-
-    // Check if response was truncated (stop_reason !== "end_turn")
-    const stopReason = articleResponse.stop_reason;
-    if (stopReason !== "end_turn") {
-      console.log(`  [Roundup] Response truncated (${stopReason}), attempt ${attempt}`);
-      if (attempt < MAX_ATTEMPTS) continue;
-    }
+    const articleText = claudeCli(systemPrompt + "\n\n" + roundupUserContent);
 
     try {
       const jsonMatch = articleText.match(/\{[\s\S]*\}/);
@@ -480,26 +386,11 @@ JSONのみを返してください。`,
   if (!article) throw new Error("Failed to generate roundup article");
 
   // Generate X thread
-  const xResponse = await anthropic.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 1024,
-    system: X_THREAD_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下の記事のXスレッドを作成してください:
+  const xText = claudeCli(X_THREAD_SYSTEM_PROMPT + "\n\n" + `以下の記事のXスレッドを作成してください:
 
 タイトル: ${article.title}
 要約: ${article.summary}
-キーワード: ${article.keywords.slice(0, 5).join(", ")}`,
-      },
-    ],
-  });
-
-  const xText =
-    xResponse.content[0].type === "text"
-      ? xResponse.content[0].text.trim()
-      : "";
+キーワード: ${article.keywords.slice(0, 5).join(", ")}`);
 
   let xThread: string[] = [];
   let xPost = "";
@@ -520,18 +411,9 @@ JSONのみを返してください。`,
 export async function generateRoundupZennVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   console.log("  Generating Zenn roundup variation...");
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 12288,
-    system: ROUNDUP_ZENN_REWRITE_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下のAI/ツールまとめ記事をZenn向けに書き直してください。
+  const text = claudeCli(ROUNDUP_ZENN_REWRITE_SYSTEM_PROMPT + "\n\n" + `以下のAI/ツールまとめ記事をZenn向けに書き直してください。
 
 ## 元記事タイトル
 ${baseArticle.title}
@@ -540,13 +422,7 @@ ${baseArticle.title}
 ${baseArticle.body}
 
 ## キーワード
-${baseArticle.keywords.join(", ")}`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+${baseArticle.keywords.join(", ")}`);
 
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);
@@ -586,18 +462,9 @@ ${baseArticle.keywords.join(", ")}`,
 export async function generateRoundupQiitaVariation(
   baseArticle: GeneratedArticle,
 ): Promise<GeneratedArticle> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   console.log("  Generating Qiita roundup variation...");
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 12288,
-    system: ROUNDUP_QIITA_REWRITE_SYSTEM_PROMPT,
-    messages: [
-      {
-        role: "user",
-        content: `以下のAI/ツールまとめ記事をQiita向けに書き直してください。
+  const text = claudeCli(ROUNDUP_QIITA_REWRITE_SYSTEM_PROMPT + "\n\n" + `以下のAI/ツールまとめ記事をQiita向けに書き直してください。
 
 ## 元記事タイトル
 ${baseArticle.title}
@@ -606,13 +473,7 @@ ${baseArticle.title}
 ${baseArticle.body}
 
 ## キーワード
-${baseArticle.keywords.join(", ")}`,
-      },
-    ],
-  });
-
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+${baseArticle.keywords.join(", ")}`);
 
   try {
     const jsonMatch = text.match(/\{[\s\S]*\}/);

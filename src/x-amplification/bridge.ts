@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
-import { config } from "../config.js";
+import { claudeCli } from "../utils/claude-cli.js";
 import { loadLearningState } from "../analytics/feedback.js";
 import type { GeneratedArticle } from "../content/generator.js";
 
@@ -59,8 +58,6 @@ export async function generateXVariations(
   article: GeneratedArticle,
   articleUrl: string,
 ): Promise<XPostVariation[]> {
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   // Load learning state for hookStyle weighting
   const learningState = loadLearningState();
   const bestHooks = learningState?.bestHookStyles ?? [];
@@ -68,10 +65,7 @@ export async function generateXVariations(
     ? `\n\n過去データから効果的なhookStyle: ${bestHooks.join(", ")}。これらを70%の確率で使用してください。`
     : "";
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 2048,
-    system: `あなたは合同会社Radineerの代表で、Claude Code・OpenClaw・AI経営OSを毎日使っている実践者です。
+  const systemPrompt = `あなたは合同会社Radineerの代表で、Claude Code・OpenClaw・AI経営OSを毎日使っている実践者です。
 1つの記事から6種類の長文Xポスト（各800-1500文字）を作成してください。
 
 ## テーマ（これだけ）
@@ -99,11 +93,9 @@ export async function generateXVariations(
 - ハッシュタグは末尾に2-3個: #ClaudeCode #OpenClaw #AI経営OS から選択
 - 絵文字は最小限（冒頭に1個程度はOK）
 - 各ポストにhookStyle（question/number/statement/contrast）を設定
-- postType: 全て "long_text"（800-1500文字）${hookGuidance}`,
-    messages: [
-      {
-        role: "user",
-        content: `以下の記事から6種類のXロングポストを生成してください。
+- postType: 全て "long_text"（800-1500文字）${hookGuidance}`;
+
+  const userContent = `以下の記事から6種類のXロングポストを生成してください。
 
 タイトル: ${article.title}
 要約: ${article.summary}
@@ -122,12 +114,9 @@ ${article.body.slice(0, 2000)}
   {"type": "quote", "text": "自分の失敗談・ハマりポイント。『最初は〇〇で失敗した。結局〇〇が正解だった』", "postType": "long_text", "hookStyle": "contrast"}
 ]
 
-JSON配列のみを返してください。`,
-      },
-    ],
-  });
+JSON配列のみを返してください。`;
 
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
+  const text = claudeCli(systemPrompt + "\n\n" + userContent);
 
   let variations: XPostVariation[];
   try {

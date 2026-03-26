@@ -1,7 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
-import { config } from "../config.js";
+import { claudeCli } from "../utils/claude-cli.js";
 import type { PerformanceSnapshot } from "../analytics/collector.js";
 import type { GeneratedArticle } from "./generator.js";
 
@@ -18,8 +17,6 @@ export async function generateMetaArticle(): Promise<GeneratedArticle> {
     throw new Error(`Need at least 5 articles for meta-analysis, have ${snapshot.articles.length}`);
   }
 
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
-
   // Prepare real data for the meta article
   const topArticles = snapshot.articles.slice(0, 5);
   const bottomArticles = snapshot.articles.slice(-3);
@@ -35,10 +32,7 @@ export async function generateMetaArticle(): Promise<GeneratedArticle> {
     engagement: a.totalEngagement,
   }));
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 8192,
-    system: `あなたはSES/エンジニア向けコンテンツマーケティングの専門家です。
+  const systemPrompt = `あなたはSES/エンジニア向けコンテンツマーケティングの専門家です。
 自社の記事パフォーマンスデータを分析した「メタ記事」を執筆してください。
 
 ## 重要
@@ -46,11 +40,9 @@ export async function generateMetaArticle(): Promise<GeneratedArticle> {
 - 「○○本の記事を書いて分かった」形式の一次情報記事として書いてください。
 - これはSES業界のコンテンツメディアが自社データを公開する形式です。
 - 読者はSESエンジニアやフリーランスに興味のあるエンジニアです。
-- 5000文字以上の充実した内容にしてください。`,
-    messages: [
-      {
-        role: "user",
-        content: `以下の実際のパフォーマンスデータに基づいて、メタ記事を執筆してください。
+- 5000文字以上の充実した内容にしてください。`;
+
+  const userContent = `以下の実際のパフォーマンスデータに基づいて、メタ記事を執筆してください。
 
 ## 全体サマリー
 - 総記事数: ${snapshot.summary.totalArticles}
@@ -76,12 +68,9 @@ ${bottomArticles.map((a, i) => `${i + 1}. "${a.title}" - engagement: ${a.totalEn
   "summary": "要約（200文字以内）"
 }
 
-JSONのみを返してください。`,
-      },
-    ],
-  });
+JSONのみを返してください。`;
 
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
+  const text = claudeCli(systemPrompt + "\n\n" + userContent);
 
   let parsed: { title: string; body: string; keywords: string[]; summary: string };
   try {
