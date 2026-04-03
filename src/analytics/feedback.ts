@@ -16,6 +16,8 @@ export interface LearningState {
   };
   recommendations: string[];
   bestHookStyles?: string[];
+  hookImprovementTips?: string[];
+  highEngagementPatterns?: string[];
   topicDiversityScore?: number;
   suggestedNewAngles?: string[];
 }
@@ -79,7 +81,10 @@ export async function analyzeFeedback(): Promise<LearningState> {
     max_tokens: 4096,
     system: `あなたはコンテンツマーケティングのデータアナリストです。
 記事のパフォーマンスデータを分析し、今後の記事生成を改善するためのインサイトを抽出してください。
-特に「テーマの多様性」を重視し、同じネタの繰り返しを検出してください。
+特に以下を重視してください：
+1. テーマの多様性 — 同じネタの繰り返しを検出
+2. X投稿のフック改善 — 冒頭1文のインパクト、数字・問いかけ・対比の使い分け効果を分析
+3. エンゲージメント率の高い投稿パターン抽出 — タイトル構成・キーワード配置・投稿時間帯の相関を特定
 分析結果は必ずJSON形式で返してください。`,
     messages: [
       {
@@ -111,6 +116,8 @@ ${titleList}
   },
   "recommendations": ["次回の記事生成への具体的な提案（5つまで）"],
   "bestHookStyles": ["X投稿で効果的だったhookStyle（question/number/statement/contrastから、データがあれば）"],
+  "hookImprovementTips": ["X投稿フック改善の具体的提案（3つまで、例: 数字を冒頭に置く、疑問形で始める等）"],
+  "highEngagementPatterns": ["エンゲージメント率が高い投稿に共通するパターン（3つまで）"],
   "topicDiversityScore": 0.0-1.0,
   "suggestedNewAngles": ["まだ試していない記事の切り口（3つまで、例: 企業分析、スキルロードマップ、キャリア事例）"]
 }
@@ -211,6 +218,12 @@ export function formatLearningContext(state: LearningState): string {
   }
   if (state.recommendations.length > 0) {
     sections.push(`- 改善提案:\n${state.recommendations.map((r) => `  - ${r}`).join("\n")}`);
+  if (state.hookImprovementTips && state.hookImprovementTips.length > 0) {
+    sections.push(`- Xフック改善: ${state.hookImprovementTips.join(" / ")}`);
+  }
+  if (state.highEngagementPatterns && state.highEngagementPatterns.length > 0) {
+    sections.push(`- 高エンゲージメントパターン: ${state.highEngagementPatterns.join(" / ")}`);
+  }
   }
 
   if (sections.length === 0) return "";
@@ -226,9 +239,8 @@ export function formatLearningContext(state: LearningState): string {
     ? `\n\n⚠️ 注意: 現在のパフォーマンスデータは蓄積が少ないため、上記の分析は暫定的です。\nデフォルト推奨値を含んでいます。独自の判断やバリエーションを積極的に試してください。`
     : "";
 
-  return `\n## パフォーマンスデータに基づく指示
-過去の記事分析から、以下のパターンが高エンゲージメントにつながっています。
-勝ちパターンを参考にしつつ、テーマの多様性を確保してください。
-
-${sections.join("\n")}${dataQualityNote}`;
+  // Keep learning context concise (max 3 items) to avoid prompt bloat
+  const trimmedSections = sections.slice(0, 3);
+  return `\n## パフォーマンス指示（簡潔版）
+${trimmedSections.join("\n")}${dataQualityNote}`;
 }
