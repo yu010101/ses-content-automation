@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-04-04T13:54:10.623Z",
+  "collectedAt": "2026-04-05T13:54:54.941Z",
   "articles": [
     {
       "title": "【2026年最新】SES単価相場とフリーランス市場の全データ分析 - AI時代のエンジニア年収戦略",
@@ -8,7 +8,7 @@
         "qiita": {
           "id": "116c660825f6bc579a44",
           "url": "https://qiita.com/sescore/items/116c660825f6bc579a44",
-          "views": 785,
+          "views": 820,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -20,7 +20,7 @@
           ]
         }
       },
-      "totalEngagement": 785
+      "totalEngagement": 820
     },
     {
       "title": "SES vs フリーランス市場データ徹底分析｜2026年単価相場と転向成功のポイント",
@@ -29,7 +29,7 @@
         "qiita": {
           "id": "9aeb9a0038fa8eadc3ad",
           "url": "https://qiita.com/sescore/items/9aeb9a0038fa8eadc3ad",
-          "views": 635,
+          "views": 647,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -41,7 +41,7 @@
           ]
         }
       },
-      "totalEngagement": 640
+      "totalEngagement": 652
     },
     {
       "title": "受託開発とは？契約の仕組みからSESとの違い、キャリア選択まで徹底解説",
@@ -50,7 +50,7 @@
         "qiita": {
           "id": "ed8bf8678f65fe62c147",
           "url": "https://qiita.com/sescore/items/ed8bf8678f65fe62c147",
-          "views": 587,
+          "views": 596,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -62,7 +62,7 @@
           ]
         }
       },
-      "totalEngagement": 592
+      "totalEngagement": 601
     },
     {
       "title": "客先常駐エンジニアの実態と構造的課題：SES市場を深掘りする徹底ガイド",
@@ -71,7 +71,7 @@
         "qiita": {
           "id": "2abaa05d0dff0bbc3f56",
           "url": "https://qiita.com/sescore/items/2abaa05d0dff0bbc3f56",
-          "views": 584,
+          "views": 587,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -79,7 +79,7 @@
           ]
         }
       },
-      "totalEngagement": 584
+      "totalEngagement": 587
     },
     {
       "title": "2026年最新｜SESからフリーランス転向の実態データ分析",
@@ -88,7 +88,7 @@
         "qiita": {
           "id": "98788e5bdf19c8445389",
           "url": "https://qiita.com/sescore/items/98788e5bdf19c8445389",
-          "views": 470,
+          "views": 481,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -106,7 +106,7 @@
           "topics": []
         }
       },
-      "totalEngagement": 480
+      "totalEngagement": 491
     },
     {
       "title": "SES1年目で転職を考える前に知るべき業界の真実【2026年最新版】",
@@ -115,7 +115,7 @@
         "qiita": {
           "id": "b4c043fc3b8565c53c49",
           "url": "https://qiita.com/sescore/items/b4c043fc3b8565c53c49",
-          "views": 399,
+          "views": 406,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -130,7 +130,7 @@
           "url": "https://note.com/sescore/n/n6affc0efb7b4"
         }
       },
-      "totalEngagement": 399
+      "totalEngagement": 406
     },
     {
       "title": "SES契約の実態とは？年収を上げるためのキャリア戦略を現役エンジニアが解説",
@@ -139,7 +139,7 @@
         "qiita": {
           "id": "8d82c9550c7da188f5fc",
           "url": "https://qiita.com/sescore/items/8d82c9550c7da188f5fc",
-          "views": 347,
+          "views": 350,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -151,7 +151,36 @@
           ]
         }
       },
-      "totalEngagement": 347
+      "totalEngagement": 350
+    },
+    {
+      "title": "SESからの脱出戦略｜フリーランスエンジニアになる前に知っておきたい現実と準備方法",
+      "publishedDate": "2026-03-17T04:53:29.691Z",
+      "platforms": {
+        "qiita": {
+          "id": "63cbc76a0ff7ed671d74",
+          "url": "https://qiita.com/sescore/items/63cbc76a0ff7ed671d74",
+          "views": 328,
+          "likes": 1,
+          "stocks": 2,
+          "tags": [
+            "ses",
+            "開発",
+            "Docker",
+            "自動化"
+          ]
+        },
+        "zenn": {
+          "slug": "20260317-ai---ai",
+          "url": "https://zenn.dev/ailmarketing/articles/20260317-ai---ai",
+          "likes": 0,
+          "topics": []
+        },
+        "note": {
+          "url": "https://note.com/sescore/n/n5e460e01049d"
+        }
+      },
+      "totalEngagement": 348
     },
     {
       "title": "【2026年最新】SES業界の構造的問題を徹底解説｜多重下請けとマージン率の実態",
@@ -160,7 +189,7 @@
         "qiita": {
           "id": "8165d5559d45275914c5",
           "url": "https://qiita.com/sescore/items/8165d5559d45275914c5",
-          "views": 332,
+          "views": 334,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -181,36 +210,7 @@
           "url": "https://note.com/sescore/n/nd27d09a4cccf"
         }
       },
-      "totalEngagement": 342
-    },
-    {
-      "title": "SESからの脱出戦略｜フリーランスエンジニアになる前に知っておきたい現実と準備方法",
-      "publishedDate": "2026-03-17T04:53:29.691Z",
-      "platforms": {
-        "qiita": {
-          "id": "63cbc76a0ff7ed671d74",
-          "url": "https://qiita.com/sescore/items/63cbc76a0ff7ed671d74",
-          "views": 322,
-          "likes": 1,
-          "stocks": 2,
-          "tags": [
-            "ses",
-            "開発",
-            "Docker",
-            "自動化"
-          ]
-        },
-        "zenn": {
-          "slug": "20260317-ai---ai",
-          "url": "https://zenn.dev/ailmarketing/articles/20260317-ai---ai",
-          "likes": 0,
-          "topics": []
-        },
-        "note": {
-          "url": "https://note.com/sescore/n/n5e460e01049d"
-        }
-      },
-      "totalEngagement": 342
+      "totalEngagement": 344
     },
     {
       "title": "【2026年最新データ】AIツール時代のエンジニア市場分析｜SESvsフリーランス単価・転向タイミングを徹底解説",
@@ -219,7 +219,7 @@
         "qiita": {
           "id": "e6516b35858e635475f0",
           "url": "https://qiita.com/sescore/items/e6516b35858e635475f0",
-          "views": 333,
+          "views": 342,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -231,7 +231,7 @@
           ]
         }
       },
-      "totalEngagement": 333
+      "totalEngagement": 342
     },
     {
       "title": "SES・SIer・自社開発・フリーランス徹底比較【2026年版】あなたに最適な働き方は？",
@@ -240,7 +240,7 @@
         "qiita": {
           "id": "27a7ca88ac546a4dd62b",
           "url": "https://qiita.com/sescore/items/27a7ca88ac546a4dd62b",
-          "views": 320,
+          "views": 321,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -252,7 +252,7 @@
           ]
         }
       },
-      "totalEngagement": 320
+      "totalEngagement": 321
     },
     {
       "title": "SES現場でClaude APIを活用した議事録自動要約システムの実装と運用ノウハウ",
@@ -261,7 +261,7 @@
         "qiita": {
           "id": "80a9af046eef5aae59d0",
           "url": "https://qiita.com/sescore/items/80a9af046eef5aae59d0",
-          "views": 282,
+          "views": 284,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -273,7 +273,7 @@
           ]
         }
       },
-      "totalEngagement": 282
+      "totalEngagement": 284
     },
     {
       "title": "SES脱出完全ガイド2026年版：フリーランス・自社開発・SIerへの転職比較と成功戦略",
@@ -282,7 +282,7 @@
         "qiita": {
           "id": "8e8b08744e207ac82dc3",
           "url": "https://qiita.com/sescore/items/8e8b08744e207ac82dc3",
-          "views": 278,
+          "views": 279,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -294,7 +294,7 @@
           ]
         }
       },
-      "totalEngagement": 278
+      "totalEngagement": 279
     },
     {
       "title": "スキルシートの完全ガイド｜SES・フリーランスエンジニア向けの作成から活用まで",
@@ -338,33 +338,13 @@
       "totalEngagement": 212
     },
     {
-      "title": "SES客先常駐から脱却したい！単価アップとフリーランス独立への完全ガイド【2024年最新】",
-      "publishedDate": "2026-03-10T01:00:59.024Z",
-      "platforms": {
-        "qiita": {
-          "id": "3265bfdc78c635323c63",
-          "url": "https://qiita.com/sescore/items/3265bfdc78c635323c63",
-          "views": 188,
-          "likes": 0,
-          "stocks": 0,
-          "tags": [
-            "ses",
-            "リモートワーク",
-            "エンジニア",
-            "フリーランス"
-          ]
-        }
-      },
-      "totalEngagement": 188
-    },
-    {
       "title": "SESエンジニアの働き方比較【2026年版】フリーランス・自社開発・転職の選択指針",
       "publishedDate": "2026-03-12T22:00:56.148Z",
       "platforms": {
         "qiita": {
           "id": "bb25abfa81eb40321423",
           "url": "https://qiita.com/sescore/items/bb25abfa81eb40321423",
-          "views": 187,
+          "views": 194,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -379,7 +359,27 @@
           "url": "https://note.com/sescore/n/n57aa5fcdbd20"
         }
       },
-      "totalEngagement": 187
+      "totalEngagement": 194
+    },
+    {
+      "title": "SES客先常駐から脱却したい！単価アップとフリーランス独立への完全ガイド【2024年最新】",
+      "publishedDate": "2026-03-10T01:00:59.024Z",
+      "platforms": {
+        "qiita": {
+          "id": "3265bfdc78c635323c63",
+          "url": "https://qiita.com/sescore/items/3265bfdc78c635323c63",
+          "views": 189,
+          "likes": 0,
+          "stocks": 0,
+          "tags": [
+            "ses",
+            "リモートワーク",
+            "エンジニア",
+            "フリーランス"
+          ]
+        }
+      },
+      "totalEngagement": 189
     },
     {
       "title": "SESエンジニアが知っておくべき副業・フリーランス転向の完全ガイド【2024年版】",
@@ -388,7 +388,7 @@
         "qiita": {
           "id": "b28ba40ebcb7f6272251",
           "url": "https://qiita.com/sescore/items/b28ba40ebcb7f6272251",
-          "views": 158,
+          "views": 168,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -400,7 +400,7 @@
           ]
         }
       },
-      "totalEngagement": 158
+      "totalEngagement": 168
     },
     {
       "title": "SESからフリーランス転身で単価2倍！2026年最新データで見る独立成功法",
@@ -409,7 +409,7 @@
         "qiita": {
           "id": "fa5a0ca2114f4b690fdc",
           "url": "https://qiita.com/sescore/items/fa5a0ca2114f4b690fdc",
-          "views": 144,
+          "views": 146,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -421,7 +421,7 @@
           ]
         }
       },
-      "totalEngagement": 144
+      "totalEngagement": 146
     },
     {
       "title": "SESからフリーランスへの完全移行ガイド！準委任契約の基礎から単価交渉まで徹底解説",
@@ -438,10 +438,10 @@
   ],
   "summary": {
     "totalArticles": 21,
-    "totalViews": 6808,
+    "totalViews": 6929,
     "totalLikes": 3,
     "totalStocks": 4,
-    "avgViewsPerArticle": 324,
+    "avgViewsPerArticle": 330,
     "avgLikesPerArticle": 0,
     "topPerformer": "【2026年最新】SES単価相場とフリーランス市場の全データ分析 - AI時代のエンジニア年収戦略"
   }
