@@ -25,7 +25,7 @@ export interface ZennFrontmatter {
  */
 function buildFreelanceCta(platform: string, slug: string): string {
   const utm = `?utm_source=${encodeURIComponent(platform)}&utm_medium=article&utm_campaign=${encodeURIComponent(slug)}`;
-  const url = `https://radineer.asia/freelance/register${utm}`;
+  const url = `https://freelance.radineer.asia/freelance/register${utm}`;
   return `
 
 ---

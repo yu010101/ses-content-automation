@@ -1,4 +1,6 @@
 import OpenAI from "openai";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { dirname } from "node:path";
 import { config } from "../config.js";
 
 export interface MarketData {
@@ -10,11 +12,53 @@ export interface MarketData {
   rawFacts: string[];
 }
 
-/**
- * Use Grok to search for real-time SES/freelance market data from the web.
- * Grok has access to X posts and web data, making it ideal for fresh statistics.
- */
-export async function fetchMarketData(): Promise<MarketData> {
+const CACHE_PATH = "data/market-cache.json";
+const CACHE_TTL_DAYS = 7;
+
+interface CachedMarketData {
+  fetchedAt: string;
+  data: MarketData;
+}
+
+const FALLBACK: MarketData = {
+  averageSalary: "データ取得失敗",
+  topSkills: ["React", "AWS", "Python", "TypeScript", "Docker"],
+  jobCount: "データ取得失敗",
+  yearOverYear: "データ取得失敗",
+  sources: [],
+  rawFacts: [],
+};
+
+function loadCache(): CachedMarketData | null {
+  try {
+    if (!existsSync(CACHE_PATH)) return null;
+    const raw = readFileSync(CACHE_PATH, "utf-8");
+    return JSON.parse(raw) as CachedMarketData;
+  } catch {
+    return null;
+  }
+}
+
+function saveCache(data: MarketData): void {
+  try {
+    mkdirSync(dirname(CACHE_PATH), { recursive: true });
+    const payload: CachedMarketData = {
+      fetchedAt: new Date().toISOString(),
+      data,
+    };
+    writeFileSync(CACHE_PATH, JSON.stringify(payload, null, 2), "utf-8");
+  } catch (e) {
+    console.warn("[market-data] failed to save cache:", e);
+  }
+}
+
+function isCacheFresh(cached: CachedMarketData): boolean {
+  const ageMs = Date.now() - new Date(cached.fetchedAt).getTime();
+  const ageDays = ageMs / (1000 * 60 * 60 * 24);
+  return ageDays < CACHE_TTL_DAYS;
+}
+
+async function fetchFromGrok(): Promise<MarketData> {
   const client = new OpenAI({
     apiKey: config.xai.apiKey(),
     baseURL: config.xai.baseUrl,
@@ -62,24 +106,42 @@ JSONのみを返してください。`,
   });
 
   const content = response.choices[0]?.message?.content;
-  if (!content) {
-    throw new Error("No response from Grok market data query");
+  if (!content) throw new Error("No response from Grok");
+
+  const jsonMatch = content.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) throw new Error("No JSON in Grok response");
+  return JSON.parse(jsonMatch[0]);
+}
+
+/**
+ * Fetch market data with 7-day cache fallback.
+ * Strategy:
+ *   1. If cache is fresh (< 7 days), return it without calling Grok (cost saving).
+ *   2. Otherwise call Grok, save fresh data to cache.
+ *   3. On any error, return stale cache if available, else FALLBACK.
+ */
+export async function fetchMarketData(): Promise<MarketData> {
+  const cached = loadCache();
+
+  if (cached && isCacheFresh(cached)) {
+    console.log(`[market-data] using fresh cache (age: ${cached.fetchedAt})`);
+    return cached.data;
   }
 
   try {
-    const jsonMatch = content.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) throw new Error("No JSON found");
-    return JSON.parse(jsonMatch[0]);
-  } catch {
-    console.warn("Failed to parse market data, using fallback");
-    return {
-      averageSalary: "データ取得失敗",
-      topSkills: ["React", "AWS", "Python", "TypeScript", "Docker"],
-      jobCount: "データ取得失敗",
-      yearOverYear: "データ取得失敗",
-      sources: [],
-      rawFacts: [],
-    };
+    const fresh = await fetchFromGrok();
+    saveCache(fresh);
+    console.log("[market-data] fetched fresh data from Grok");
+    return fresh;
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.warn(`[market-data] Grok fetch failed: ${msg}`);
+    if (cached) {
+      console.log(`[market-data] falling back to stale cache (age: ${cached.fetchedAt})`);
+      return cached.data;
+    }
+    console.warn("[market-data] no cache, returning FALLBACK");
+    return FALLBACK;
   }
 }
 

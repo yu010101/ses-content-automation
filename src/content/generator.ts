@@ -36,17 +36,19 @@ export async function generateArticle(
 
   console.log(`  Article type: ${articleType.name} (${articleType.id})`);
 
+  // Limit trends to top 3 to keep prompt concise
+  const topTrends = trends
+    .sort((a, b) => b.relevanceScore - a.relevanceScore)
+    .slice(0, 3);
   const trendContext =
-    trends.length > 0
-      ? trends
-          .map(
-            (t) =>
-              `- ${t.topic}: ${t.summary} (関連度: ${t.relevanceScore.toFixed(2)})`,
-          )
+    topTrends.length > 0
+      ? topTrends
+          .map((t) => `- ${t.topic}: ${t.summary}`)
           .join("\n")
       : "（トレンド情報なし - キーワードベースで執筆してください）";
 
-  const keywordList = keywords.slice(0, 10).join(", ");
+  // Limit keywords to top 5
+  const keywordList = keywords.slice(0, 5).join(", ");
 
   const systemPrompt = getArticleSystemPrompt(articleType);
 
@@ -57,7 +59,7 @@ ${trendContext}
 
 ## ターゲットキーワード（全て記事内に自然に含めること）
 ${keywordList}
-${marketContext ? `\n${marketContext}` : ""}${learningContext ? `\n${learningContext}` : ""}
+${marketContext && !marketContext.includes("（ファクトデータなし）") ? `\n${marketContext}` : ""}${learningContext ? `\n${learningContext}` : ""}
 
 以下のJSON形式で返してください:
 {
@@ -69,7 +71,13 @@ ${marketContext ? `\n${marketContext}` : ""}${learningContext ? `\n${learningCon
 
 JSONのみを返してください。`;
 
-  const articleText = claudeCli(systemPrompt + "\n\n" + userContent);
+  const fullPrompt = systemPrompt + "\n\n" + userContent;
+  console.log(`  Prompt length: ${fullPrompt.length} chars`);
+  const articleText = claudeCli(fullPrompt);
+
+  if (!articleText) {
+    throw new Error("Claude CLI returned empty response (possible timeout)");
+  }
 
   let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType">;
   try {

@@ -1,193 +1,1007 @@
 {
   "entries": [
     {
-      "articleTitle": "SESからの脱出戦略｜フリーランスエンジニアになる前に知っておきたい現実と準備方法",
-      "articleUrl": "https://qiita.com/sescore/items/63cbc76a0ff7ed671d74",
-      "createdAt": "2026-03-17T07:22:08.446Z",
+      "articleTitle": "【2026年最新】3人の会社にAI経営OS（CFO/COO/CMO/CEO）を作った全記録｜徹底解説",
+      "articleUrl": "https://note.com/sescore/n/n275986d1eb83",
+      "createdAt": "2026-04-21T04:22:28.281Z",
       "variations": [
         {
           "type": "teaser",
-          "text": "SESエンジニアの年収は平均400万円。一方、フリーランスエンジニアは平均720万円。この差を埋めるための脱出戦略と準備期間の現実を詳しく解説 #SES #フリーランスエンジニア",
+          "text": "🔧 Claude Codeで「/dash」と打つだけで経営ダッシュボードが出る仕組みを作った\n\nうちは3人の合同会社だ。\nCFO・COO・CMO・CEOなんて役職、普通は置けない。\n\nだから全部AIエージェントにした。\n\nClaude Codeのスキル機能を使って、\n/cfo → freee連携で財務データ取得・PL生成・仕訳計上\n/coo → タスク進捗・クライアント管理・営業パイプライン\n/cmo → GA4/GSC/SNSデータ統合マーケダッシュボード\n/ceo → 全CxOの報告を統合した経営判断支援\n\nこれが「AI経営OS」の正体だ。\n\n9…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
           "scheduledSlot": "morning",
-          "postedAt": "2026-03-18T04:51:49.512Z"
+          "postedAt": "2026-04-21T04:27:05.654Z"
+        },
+        {
+          "type": "teaser",
+          "text": "経営にCFOもCOOもCMOもいないのに、全部回ってる会社があるとしたら？\n\nうちがまさにそれだ。社員3人。\nでもClaude CodeとOpenClawで9体のAIエージェントを作って、\nC-Suite機能を全部カバーしている。\n\n具体的にどうやってるか。\n\nまずClaude Codeのスキル機能。\nCLAUDE.mdに各エージェントの役割を定義して、\nスラッシュコマンドで呼び出せるようにした。\n\n/cfo pl → 損益計算書を生成\n/cfo 仕訳 → freeeに仕訳を計上\n/cfo 未決済 → 未決済の請求を一覧表示\n/cfo cf → キャッ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
         },
         {
           "type": "key-point",
-          "text": "フリーランス転身前の必須準備：技術スキルの棚卸し、ポートフォリオ作成、営業力強化、最低6ヶ月分の生活費確保。この4つを並行して進めることが成功の鍵",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-19T03:00:01.958Z",
-          "tweetId": "2034464884923183212"
+          "text": "AI経営OSで一番実用的だったのは「ルーティング」の仕組みだ\n\nradineer-osというスキルを作った。\nこれは自然言語の質問を受け取って、\n適切なCxOエージェントに自動で振り分けるルーターだ。\n\n仕組みはシンプル。\nClaude Codeのスキル定義でこう書く：\n\n「質問を自動的に適切なCxOスキルに委譲する」\n\nあとはClaude側が文脈を判断して、\n/cfo なのか /coo なのか /cmo なのかを選ぶ。\n\n実際の使い方：\n「今月のPLどうなってる？」→ CFOが回答\n「来週のタスク優先度は？」→ COOが回答\n「Xのエンゲージメント推…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
         },
         {
           "type": "data-highlight",
-          "text": "フリーランスエンジニアの約30%が1年以内に廃業している事実。成功するエンジニアと失敗するエンジニアの決定的な違いとは",
-          "scheduledSlot": "evening",
-          "postedAt": "2026-03-18T09:00:02.482Z",
-          "tweetId": "2034193096435773449"
+          "text": "9体のAIエージェントを運用して3ヶ月経った\n\n正直に書く。\n\n【毎月やっていた作業の変化】\n\n■ 月次PL作成\n以前：freeeからCSV出して、スプレッドシートで整形して約2時間\n今：/cfo pl で1分以内にMarkdownで出力\n\n■ マーケ定例の準備\n以前：GA4とGSCとX開いて、スクショ撮って資料作って約3時間\n今：/cmo で統合レポートが出る。meeting-prepスキルで定例資料も自動生成\n\n■ タスク棚卸し\n以前：Linearの画面を眺めながら手動で優先度つけて約1時間\n今：/coo tasks で進捗一覧。/cto prio…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
         },
         {
           "type": "discussion",
-          "text": "SESで働く皆さんに質問です。フリーランス転身を考える最大の理由は何ですか？年収アップ、技術的挑戦、働き方の自由度、それとも別の理由でしょうか",
-          "scheduledSlot": "morning",
-          "postedAt": "2026-03-19T00:00:02.365Z",
-          "tweetId": "2034419587371159565"
+          "text": "AIエージェントを9体も作って、本当に全部使ってるのか？\n\n正直に答える。毎日使うのは4体だ。\n\nCFO → 仕訳と未決済チェックは毎日\nCOO → タスク確認は朝イチの習慣\nCMO → Xの投稿パフォーマンス分析\nSecretary → inboxとtodoの管理\n\n残りの5体は週1〜月1の頻度。\n\nBrain → 戦略的な意思決定が必要なとき\nKaizen → プロセス改善のレビュー時\nScreen → コンテンツのフィルタリング\nCareerBoost → メンバーのキャリア相談時\nCEO → 月次の経営ダッシュボード\n\n9体作ってわかったことが…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
         },
         {
           "type": "quote",
-          "text": "「SESからフリーランスへの転身は、準備8割、実行2割。焦りは禁物、計画的な準備こそが成功への最短ルート」",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-20T03:01:42.103Z",
-          "tweetId": "2034827691145535972"
+          "text": "最初はChatGPTのカスタムGPTで経営OSを作ろうとして失敗した\n\n結局Claude Code + OpenClawが正解だった。その理由を書く。\n\n最初のアプローチ：\nChatGPTでカスタムGPTを9個作った。\nCFO-GPT、COO-GPT、CMO-GPT…\n\n問題だらけだった。\n・各GPTが独立していて連携できない\n・ファイルシステムにアクセスできない\n・freeeやGA4のAPIを直接叩けない\n・毎回コンテキストをコピペで渡す必要がある\n\nつまり「見た目はCxOだけど中身はただのチャットボット」だった。\n\nClaude Codeに切り替え…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
         }
       ],
       "posted": [
         true,
-        true,
-        true,
-        true,
-        true
+        false,
+        false,
+        false,
+        false,
+        false
       ]
     },
     {
-      "articleTitle": "【2026年最新】SESエンジニアが市場価値を劇的に上げる技術スキル7選とロードマップ",
-      "articleUrl": "https://qiita.com/sescore/items/80a9af046eef5aae59d0",
-      "createdAt": "2026-03-19T23:08:38.927Z",
+      "articleTitle": "OpenClaw×Claude Code連携を徹底解説｜AI経営OSで開発ワークフローを自動化した全手順【2026年最新】",
+      "articleUrl": "https://note.com/sescore/n/nf48d34387e3c",
+      "createdAt": "2026-04-21T04:23:58.683Z",
       "variations": [
         {
           "type": "teaser",
-          "text": "45万人のIT人材不足時代に、SESエンジニアの単価格差が拡大中。生成AI開発スキルで最大50万円アップの実例とは #SES #フリーランスエンジニア",
-          "postType": "text",
-          "hookStyle": "number",
+          "text": "OpenClawとClaude Codeを連携させてみたら、開発ワークフローが根本から変わった。\n\n具体的に何をやったか書く。\n\nまずOpenClawでエージェントを定義する。\nCFO、COO、CMO、CEO…と役割ごとにスキルファイルを作成。\n\n例えばCFOエージェントなら\nfreee APIと連携して財務データを取得し、\nPL生成・仕訳計上・キャッシュフロー予測まで自動で回す。\n\nこれをClaude Codeのスキルとして登録すると\n「/cfo pl」と打つだけで損益計算書が出てくる。\n\nポイントはCLAUDE.mdの設計。\n\nワークフローオーケス…",
+          "postType": "long_text",
+          "hookStyle": "statement",
           "abVariant": "A",
-          "scheduledSlot": "morning",
-          "postedAt": "2026-03-20T00:00:02.061Z",
-          "tweetId": "2034781974741885400"
+          "scheduledSlot": "morning"
         },
         {
           "type": "teaser",
-          "text": "客先常駐から抜け出したいなら、どの技術を選ぶべき？2026年に市場価値を劇的に上げる7つのスキルを分析しました",
-          "postType": "text",
+          "text": "Claude Codeのスキル設定、まだデフォルトのまま使ってない？\n\nそれ、かなりもったいない。\n\nOpenClawと連携させると\nClaude Codeが「ただのコーディング補助」から\n「経営判断を支えるAIエージェント群の司令塔」に化ける。\n\nやり方はシンプル。\n\nまずCLAUDE.mdにワークフロールールを書く。\n\n自分の場合はこう定義している：\n・非自明なタスクは必ずプランモードに入る\n・サブエージェントでリサーチと実行を分離する\n・タスク完了前に必ず動作検証する\n・修正を受けたらlessons.mdに記録する\n\nこれだけでClaude Co…",
+          "postType": "long_text",
           "hookStyle": "question",
           "abVariant": "B",
-          "scheduledSlot": "morning",
-          "postedAt": "2026-03-21T00:00:02.303Z",
-          "tweetId": "2035144363354071478"
+          "scheduledSlot": "morning"
         },
         {
           "type": "key-point",
-          "text": "生成AI開発スキルは3ヶ月で習得可能。OpenAI API実装から始めて、LangChainでRAGシステム構築まで段階的に学習すれば単価80万円超えが狙える",
-          "postType": "text",
+          "text": "OpenClaw×Claude Code連携で一番実用的なのは「スキルチェーン」の設計だった。\n\n具体的に解説する。\n\nまずスキルファイルの基本構造。\nOpenClawのスキルは.mdファイルで定義する：\n\n---\nname: cfo\ndescription: CFO（最高財務責任者）。freee連携で財務データ取得\n---\n\nこの中に「何をどう実行するか」を自然言語で書く。\nコードは不要。Claude Codeが解釈して動いてくれる。\n\n次にCLAUDE.mdでオーケストレーションを定義。\n\n自分が使っている設定の核心部分：\n\n## Workflow…",
+          "postType": "long_text",
           "hookStyle": "statement",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-21T03:00:02.060Z",
-          "tweetId": "2035189661317177688"
+          "scheduledSlot": "noon"
         },
         {
           "type": "data-highlight",
-          "text": "2026年現在、生成AI関連スキルを持つSESエンジニアの単価は80-120万円。従来の50-70万円相場から最大70万円アップという驚異的な市場価値上昇が確認されています。ChatGPT API、Claude API実装ができれば、客先常駐でも高単価案件への参画が可能になります",
+          "text": "9つのAIエージェントを運用して3ヶ月。正直に変化を書く。\n\n毎月の経営数値確認。\n以前：freeeにログイン→レポート画面→CSVダウンロード→スプレッドシートで加工→30分以上\n今：「/cfo pl」→数秒で損益計算書が出力される\n\nマーケティングデータの統合。\n以前：GA4、GSC、Google Ads、SNSをそれぞれ開いて手動で突き合わせ\n今：「/cmo」一発でダッシュボードが生成される\n\nタスク管理。\n以前：Notionを開いてフィルタリングして優先度を判断\n今：「/coo tasks」でクライアント横断の進捗確認\n\n全体の経営判断。\n以前…",
           "postType": "long_text",
           "hookStyle": "number",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-23T03:00:02.841Z",
-          "tweetId": "2035914439988490275"
+          "scheduledSlot": "noon"
         },
         {
           "type": "discussion",
-          "text": "SESから独立を考えているエンジニアの皆さん、クラウドスキルと生成AIスキル、どちらを優先して学習すべきだと思いますか？",
-          "postType": "text",
+          "text": "9エージェント体制のAI経営OSを運用してわかった、最大の教訓は何か？\n\n「エージェントは増やすほど良い」は完全に間違いだった。\n\n最初は機能ごとに細かくエージェントを分けていた。\n請求管理エージェント、税務エージェント、採用エージェント…\nと際限なく増やして15個くらいまで膨らんだ時期がある。\n\n結果、どのエージェントに何を聞けばいいかわからなくなった。\n\nそこで整理して9つに集約した。\nCFO・COO・CMO・CTO・CEO・Brain・Kaizen・Screen・CareerBoost。\n\n設計の原則は「経営の意思決定ラインに沿わせる」こと。\n\n…",
+          "postType": "long_text",
           "hookStyle": "question",
-          "scheduledSlot": "evening",
-          "postedAt": "2026-03-20T09:00:43.291Z",
-          "tweetId": "2034918042581573886"
+          "scheduledSlot": "evening"
         },
         {
           "type": "quote",
-          "text": "「単にSES やめたいと考えるだけでなく、戦略的な技術習得により市場価値を向上させる」ことの重要性。感情的な転職ではなく、データに基づいた技術選択こそが真の独立への近道。IT人材不足45万人の今だからこそ、正しいスキル投資が人生を変える",
+          "text": "最初、Claude CodeとOpenClawの連携で盛大に失敗した話をする。\n\nやらかしたのは「CLAUDE.mdを書かずにスキルだけ作った」こと。\n\nOpenClawでCFOスキル、COOスキル、CMOスキルを定義して\n意気揚々とコマンドを叩いた。\n\n結果：エージェントが暴走。\n\nプランモードに入らず突っ走る。\nサブエージェントを使わずコンテキストが溢れる。\n検証せずに「完了」と報告してくる。\n\n原因は明確だった。\nCLAUDE.mdにワークフローのルールを書いていなかった。\n\nスキルファイルは「何ができるか」を定義するもの。\nCLAUDE.mdは…",
           "postType": "long_text",
           "hookStyle": "contrast",
-          "scheduledSlot": "evening",
-          "postedAt": "2026-03-22T09:00:03.920Z",
-          "tweetId": "2035642649844343122"
+          "scheduledSlot": "evening"
         }
       ],
       "posted": [
-        true,
-        true,
-        true,
-        true,
-        true,
-        true
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
       ]
     },
     {
-      "articleTitle": "【2026年最新データ】AIツール時代のエンジニア市場分析｜SESvsフリーランス単価・転向タイミングを徹底解説",
-      "articleUrl": "https://qiita.com/sescore/items/e6516b35858e635475f0",
-      "createdAt": "2026-03-23T06:56:41.195Z",
+      "articleTitle": "【2026年版】OpenClawで9体のAIエージェント経営OSを構築した全記録",
+      "articleUrl": "https://qiita.com/sescore/items/2e0a84c7f0c300cc3f1f",
+      "createdAt": "2026-04-25T23:07:14.078Z",
       "variations": [
         {
           "type": "teaser",
-          "text": "月額20-30万円の単価格差が発生。AIツール使えるエンジニアと使えないエンジニアで市場価値が完全に二極化している現実をデータで解説 #SES #フリーランスエンジニア",
-          "postType": "text",
+          "text": "🛠 Claude Codeのスキル機能で「AI-CFO」を作ってみたら、毎月の経理作業が完全に変わった。\n\nターミナルで /cfo pl と打つだけで、freee APIから会計データを引っ張ってきて損益計算書を自動生成する仕組みを構築した。\n\nやったことはシンプルで、Claude Codeのスキルディレクトリに、CFOの役割定義をMarkdownで書いて配置しただけ。\n\n```\n# CFO スキル定義\n## 役割\nfreee連携で財務データ取得・PL生成・仕訳計上\n## トリガー\n/cfo pl → PL生成\n/cfo 仕訳 → 仕訳計上\n/cfo…",
+          "postType": "long_text",
           "hookStyle": "number",
           "abVariant": "A",
-          "scheduledSlot": "morning",
-          "postedAt": "2026-03-24T00:00:02.321Z",
-          "tweetId": "2036231527261151401"
+          "scheduledSlot": "morning"
         },
         {
           "type": "teaser",
-          "text": "なぜ同じスキルレベルのエンジニアなのに年収が2倍も違うのか？2026年のエンジニア市場で起きている深刻な格差の実態とは",
-          "postType": "text",
+          "text": "Claude Codeのスキル設定、まだデフォルトのまま使ってない？\n\nそれ、めちゃくちゃもったいない。\n\nOpenClawというフレームワークを使えば、Claude Codeに「役割」と「専門知識」を定義して、経営の各領域に特化したAIエージェントを作れる。\n\n俺が実際にやったのは、スキルディレクトリにMarkdownファイルを置いて、CFO・COO・CMO・CTO・CEOの5つのCxOロールを定義すること。\n\nたとえばCMOスキルなら、GA4・Google Search Console・SNSデータを統合分析して戦略提案まで出してくれる。/cmo …",
+          "postType": "long_text",
           "hookStyle": "question",
           "abVariant": "B",
-          "scheduledSlot": "morning",
-          "postedAt": "2026-03-25T00:00:02.012Z",
-          "tweetId": "2036593922869506515"
+          "scheduledSlot": "morning"
         },
         {
           "type": "key-point",
-          "text": "GitHub CopilotとClaudeを実務レベルで使いこなせ。これだけでフリーランス転向時の単価が月額20万円変わる。AIツール活用は今やエンジニアの必須スキル",
-          "postType": "text",
-          "hookStyle": "statement",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-24T03:00:01.856Z",
-          "tweetId": "2036276824137932910"
+          "text": "9体のAIエージェント、実際にどうやって動かしてるかコマンド付きで全部書く。\n\nまずClaude Codeのスキルシステムの基本。スキルディレクトリにMarkdownを置くと、それが「専門家の脳」になる。\n\n■ CFO（財務）\n/cfo pl → 損益計算書生成\n/cfo 仕訳 → 仕訳計上\n/cfo cf → キャッシュフロー予測\n/cfo 未決済 → 未決済管理\nfreee APIと直結していて、リアルタイムの会計データを引っ張れる。\n\n■ COO（業務執行）\n/coo tasks → タスク進捗管理\n/coo clients → クライアント一覧…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
         },
         {
           "type": "data-highlight",
-          "text": "2026年3月データ：AIツール習熟フリーランスの平均単価90-120万円/月（前年比+25%）、従来型SESエンジニア45-65万円/月（前年比-5%）。同じエンジニアでもAIツール活用スキルの有無で最大75万円/月の格差が発生している現実。開発効率も劇的改善：API開発62%短縮、テストコード作成75%短縮を実現",
+          "text": "社員3人、AIエージェント9体。これが合同会社Radineerのリアルな体制だ。\n\n経理・営業・マーケ・技術管理・経営判断——普通なら最低でも5人は必要なCxOポジションを、全てClaude Code + OpenClawのスキルシステムで回している。\n\n具体的に何が変わったか正直に書く。\n\n■ 経理作業\n以前：freeeの画面を開いて手動で仕訳入力、月末にExcelでPL作成\n現在：/cfo 仕訳 で仕訳計上、/cfo pl で損益計算書を自動生成\n\n■ マーケティング分析\n以前：GA4とSearch Consoleを別々に開いて目視チェック\n現在：…",
           "postType": "long_text",
           "hookStyle": "number",
-          "scheduledSlot": "noon",
-          "postedAt": "2026-03-25T03:00:01.704Z",
-          "tweetId": "2036639211256951167"
+          "scheduledSlot": "noon"
         },
         {
           "type": "discussion",
-          "text": "SESエンジニアの皆さん、現場でAIツールの使用を禁止されていませんか？個人学習でもGitHub CopilotやClaude活用スキルを身につけるべき理由とは",
-          "postType": "text",
+          "text": "AIエージェントを9体運用してわかった、誰も教えてくれない落とし穴って何だと思う？\n\n結論から言うと「ルーティングの精度」だ。\n\n9体もエージェントがいると、ユーザーの質問をどのエージェントに振るかが最大の課題になる。\n\n「今月のキャッシュフロー見せて」→ CFO\nこれは簡単。\n\n「来月のコンテンツ計画、予算込みで出して」→ CMO？CFO？COO？\nこれが難しい。複数のCxOにまたがる質問が日常的に発生する。\n\n俺の解決策は、Radineer-OSという自然言語ルーターエージェントを独立して作ったこと。こいつが全ての入力を受け取って、適切なCxOに委…",
+          "postType": "long_text",
           "hookStyle": "question",
-          "scheduledSlot": "evening",
-          "postedAt": "2026-03-23T09:00:01.727Z",
-          "tweetId": "2036005032760574159"
+          "scheduledSlot": "evening"
         },
         {
           "type": "quote",
-          "text": "従来の「現場ガチャ」に加えて「AIスキルガチャ」という新たなリスクが生まれているーーSESエンジニアが直面する厳しい現実。しかし裏を返せば、AIツールを習得すれば確実に市場価値を上げられる時代でもある。フリーランス転向で年収2-3倍は決して夢物語ではない",
+          "text": "最初は全部1つのCLAUDE.mdに詰め込んで大失敗した。結局、スキルを分割するのが正解だった。\n\nAI経営OSを作り始めた頃、CFOもCOOもCMOも全部1つのプロンプトに書いていた。「Claude Codeは賢いから、長い指示書でも理解してくれるだろう」と。\n\n結果、何が起きたか。\n\n財務の質問をしてるのにマーケの文脈が混ざる。タスク管理を聞いてるのに技術スタックの話が始まる。コンテキストが汚染されまくった。\n\nそこでOpenClawのスキルシステムに切り替えた。各CxOロールを独立したMarkdownファイルとして定義し、トリガーコマンドで明示的…",
           "postType": "long_text",
           "hookStyle": "contrast",
-          "scheduledSlot": "evening",
-          "postedAt": "2026-03-24T09:00:02.420Z",
-          "tweetId": "2036367423033761946"
+          "scheduledSlot": "evening"
         }
       ],
       "posted": [
-        true,
-        true,
-        true,
-        true,
-        true,
-        true
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール5選を徹底比較｜Claude Code・Copilot・Cursor・Codeium・Windsurf",
+      "articleUrl": "https://qiita.com/sescore/items/f80187de48a28fa1d045",
+      "createdAt": "2026-04-25T23:15:51.670Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeに CLAUDE.md を置いたら、コード生成の精度が明らかに変わった。\n\n2026年4月現在、AIコーディングツールは5つの選択肢がある。\nClaude Code、Copilot、Cursor、Codeium、Windsurf。\n\n全部試した上で断言する。\n「どれが最強か」ではなく「どう組み合わせるか」が正解だ。\n\nその中でも俺が毎日使っているのがClaude Code。\n理由は単純で、ターミナルネイティブだから。\n\nVS Codeの拡張じゃない。\nターミナルに常駐して、ファイル読み書き、Git操作、コマンド実行まで自律的…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ作ってない？それ、Claude Codeの性能を半分も引き出せてないかもしれない。\n\nAIコーディングツール5つ（Claude Code・Copilot・Cursor・Codeium・Windsurf）を日常的に使い分けている。\n\nその中でClaude Codeだけが持っている武器がある。\nプロジェクト固有の設定ファイル「CLAUDE.md」だ。\n\nやることは簡単。\nプロジェクトルートにCLAUDE.mdを作って、こう書く。\n\n```\n## プロジェクト概要\nNext.js 15 + TypeScript + Prisma\n\n#…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeを本気で使うなら、この3つのコマンドは覚えておけ。\n\n毎日ターミナルでClaude Codeを叩いている中で、特に使用頻度が高いものを共有する。\n\n① プロジェクト起動\n```bash\ncd your-project\nclaude\n```\nこれだけ。VS Codeを開く必要すらない。\n\n② CLAUDE.mdでプロジェクト設定を食わせる\n```bash\ncat > CLAUDE.md << 'EOF'\n## コーディング規約\n- 関数コンポーネントのみ\n- テストはVitestで記述\nEOF\n```\n一度書けば、以降の全セッション…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "5つのAIコーディングツールを評価した結果、Tier分けはこうなった。\n\nTier 1（必須級）: Claude Code\nTier 2（推奨）: Cursor、GitHub Copilot\nTier 3（選択型）: Codeium、Windsurf\n\n評価軸は5つ。\n・コード生成精度（文脈理解力）\n・開発ワークフロー統合（Git、ターミナル連携）\n・コンテキスト理解（大規模コードベース対応）\n・コストパフォーマンス\n・学習コスト・導入しやすさ\n\nClaude CodeがTier 1の理由は明確で、最大1Mトークンのコンテキストウィンドウ。\nこれは他の…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント体制で運用して気づいたこと。結局「ツール選び」より「設計」が全てだった。\n\nCFO、CTO、COO、CEO、Brain、Kaizen、Screen、CareerBoost——\nこの9つのエージェントをClaude Code + OpenClawの上で動かしている。\n\nで、最初に何をやったかというと、ツール選びに時間を使いすぎた。\n\nCopilotも試した。Cursorも試した。Codeiumも。\n「どれが一番いいか」を延々比較していた時期がある。\n\n結論から言うと、それは間違いだった。\n\n重要なのはCLAUDE.mdの設計。…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCursorだけで全部やろうとして失敗した。結局Claude Codeとの併用が正解だった。\n\nCursorを導入した時、「これ一本で完結するな」と思った。\nエディタ内でAIとチャットしながらコードを書ける体験は確かに革命的だった。\n\nでも壁にぶつかった。\n\nプロジェクトが大きくなると、コンテキストが切れる。\n複数ファイルにまたがるリファクタリングで、整合性が崩れる。\nGit操作やターミナル作業は結局手動。\n\nそこでClaude Codeを導入した。\nターミナルから `claude` と打つだけで起動。\nCLAUDE.mdにプロジェクト構成を書い…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年実録】3人の会社がAI経営OS（CFO/COO/CMO）を作って月商250万を回した全記録",
+      "articleUrl": "https://qiita.com/sescore/items/d103dc09f28def807de2",
+      "createdAt": "2026-04-26T23:06:54.682Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeのスキル機能でCFOエージェントを作ってみたら、月末の経費処理が4時間→30分になった。\n\nやったことはシンプルで、freee APIと連携するClaude Codeスキルを1つ書いただけ。\n\nターミナルで `/cfo pl` と打てば損益計算書が出る。\n`/cfo 仕訳` で仕訳を計上。\n`/cfo 未決済` で未決済取引の一覧。\n`/cfo cf` でキャッシュフロー予測。\n\n全部スラッシュコマンド一発。\n\nただ、最初はfreee APIのレート制限（1時間3,600リクエスト）にハマった。PLの生成で勘定科目ごとに取引…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのスキル機能、まだ使ってない人いる？\n\nうちは社員3人の会社なんだが、このスキル機能でCFO・COO・CMO・CTO・CEOの5つのAIエージェントを作って運用している。\n\n具体的にはこう。\n\n`/cfo pl` → 損益計算書を生成\n`/coo clients` → クライアント状況を確認\n`/cmo` → GA4・GSC・X連携のマーケダッシュボード\n`/cto health` → 技術スタックのヘルスチェック\n`/ceo ダッシュボード` → 全CxO統合の経営ダッシュボード\n\n1つのターミナルから会社全体を俯瞰できる。\n\n…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeでAI経営OSを作るなら、最初にCFO（財務）から着手するのが正解だった。\n\n理由は単純で、お金の管理が一番ミスると痛いから。ここを先に安定させると、他のエージェントを作る心理的余裕が生まれる。\n\n実装の骨格はこう：\n\n1. freee APIのOAuth認定アプリを作成\n2. Claude Codeスキルとして `/cfo` を定義\n3. サブコマンドを4つ実装\n\n```\n/cfo pl → 損益計算書\n/cfo 仕訳 → 仕訳計上\n/cfo 未決済 → 未決済取引一覧\n/cfo cf → キャッシュフロー予測\n```\n\nキャッ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "月27時間の管理業務が3.5時間になった。削減率にして87%。\n\nこれはうちの会社（社員3人）でAI経営OSを導入した実測値である。\n\n内訳はこう：\n\n・月末の経費処理：4時間 → 30分\n・仕訳ミスの修正：月2-3件 → ほぼゼロ\n・GA4レポート作成：手動で都度確認 → `/cmo` 一発\n・クライアント状況確認：散らばったチャットを巡回 → `/coo clients` 一発\n・経営全体の把握：各ツールをバラバラに見る → `/ceo ダッシュボード` 一発\n\nコードベースは約4,800行のTypeScript。5つのCxOエージェント（CFO/…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "5つのAIエージェント（CFO/COO/CMO/CTO/CEO）を運用してわかった、一番大事なことは何だったか？\n\n「各エージェントを独立させること」だった。\n\nうちのAI経営OSでは、各CxOがClaude Codeの独立したスキルファイルとして存在している。CFOはfreee API、CMOはGA4とGSCとX API、COOはYAMLベースのタスク管理。それぞれが自分の領域だけを見る。\n\nそしてCEOエージェントが全員の出力を統合する。\n\n```\n/ceo ダッシュボード\n```\n\nこの一発で、財務・タスク・マーケ・技術の全体像が見える。\n\n最初…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は「freee APIを直接叩けば楽勝でしょ」と思っていた。結局キャッシュ設計をサボったせいで、レート制限に引っかかりまくって1週間ロスした。\n\nfreee APIは1時間あたり3,600リクエストの制限がある。\n\nPLの生成では勘定科目ごとに取引を取得するから、素朴に全件取得すると一瞬で上限に達する。開発中に何度も429エラーを食らって、テストすらまともに回せなかった。\n\n解決策は「ローカルキャッシュ＋差分同期」。\n\n月次データをローカルのJSONに保存し、最終同期日時以降の新規取引だけをAPIで取得してマージする。月1回のフル同期＋日次の差分同…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】OpenClaw×Claude Code連携の徹底解説｜AI駆動開発の実践ワークフロー",
+      "articleUrl": "https://qiita.com/sescore/items/2ae5af475b64119ac364",
+      "createdAt": "2026-04-27T23:04:59.361Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 OpenClawとClaude Codeを連携させたら、プロジェクト初期設定が毎回2分で終わるようになった。\n\nやったことはシンプルで、OpenClawのメモリに「プロジェクト初期設定ポリシー」を保存しただけ。\n\nTypeScript + ESM構成、Biomeでlint/format、vitestでテスト、CLAUDE.mdに開発規約、GitHub ActionsでCI。\n\nこれを毎回手打ちしてた時代が信じられない。\n\nOpenClawが「何をやるか」を記憶・判断して、Claude Codeが「どうやるか」を実行する。この分離が肝になる。\n\n人…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeの設定、まだデフォルトのまま使ってない？\n\nOpenClawと連携させると世界が変わる。\n\n自分はOpenClawを「思考・記憶レイヤー」、Claude Codeを「開発・実行レイヤー」として使い分けている。\n\nOpenClawにプロジェクトの知識や過去の判断、教訓を蓄積させておく。するとClaude Codeへの指示が毎回的確になる。\n\n例えばバグ修正。CIが落ちたとき、OpenClawがエラーの種類を特定→影響範囲を推定→修正方針を決定、という思考プロセスを回す。\n\nそしてClaude Codeに具体的な修正指示を生成する。\n…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClaw×Claude Code連携で一番実用的なのは「記憶の永続化」だと断言する。\n\nOpenClawのメモリにプロジェクト知識を保存しておくと、Claude Codeへの指示が毎回ゼロから書かなくてよくなる。\n\nコピペで使える設定例を書いておく。\n\nまずOpenClawに保存するポリシーの例：\n\n```\n# プロジェクト初期設定ポリシー\n- TypeScript + ESM構成\n- Biomeでlint/format統一\n- vitestでテスト\n- CLAUDE.mdに開発規約を記載\n- GitHub Actionsで基本CI\n```\n\n…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "手動30分→指示から完了まで約2分。プロジェクト初期設定の話。\n\nOpenClaw×Claude Code連携を導入してから、毎回手動でやっていた初期設定がほぼ消えた。\n\n具体的にどこで時間が削れたかを正直に書く。\n\npackage.json作成・編集：手動だと5分→自動で数秒\ntsconfig.jsonの設定：ググって調べて10分→記憶済みポリシーから即生成\nbiome.json設定：これも毎回調べてた→テンプレ化済み\nvitest設定：3分くらい→自動\nGitHub Actions：雛形コピペして調整で10分→自動\nCLAUDE.md作成：手動5分…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSで9エージェント（CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost等）を運用してわかったこと。\n\n一番大事なのは「エージェント同士の役割分担を明確にすること」だった。\n\nOpenClawとClaude Codeの連携もまったく同じ原理で動いている。\n\nOpenClawが思考・計画・記憶を担当。Claude Codeが開発・実行・検証を担当。この分離が崩れると途端にカオスになる。\n\nAI経営OSを作り始めた当初、全部のエージェントに何でもやらせようとして失敗した。CFOがマーケティングの判断をした…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は「Claude Code単体で全部できる」と思っていた。結局それが一番の遠回りだった。\n\nClaude Codeは実行力が圧倒的に高い。コード生成、ファイル操作、テスト実行、デバッグ。どれも速い。\n\nだからこそ「考える部分」もClaude Codeにやらせようとしてしまった。\n\n結果、コンテキストが膨れ上がって、セッション後半になると精度が落ちる。同じ間違いを繰り返す。過去の判断を忘れる。\n\nそこでOpenClawを「思考・記憶レイヤー」として導入した。\n\nOpenClawにプロジェクトの方針、過去の判断、教訓を蓄積させる。Claude Code…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を徹底解説",
+      "articleUrl": "https://qiita.com/sescore/items/66180512020fbce1bf8b",
+      "createdAt": "2026-04-30T23:06:56.888Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.mdに全エージェントのプロンプトを詰め込んで大失敗した話。\n\nCFOに「今月のPL出して」と聞いたら、なぜかCMOのマーケティング分析が返ってきた。\n\nコンテキストが汚染されるのだ。\n\n1つのファイルに9体分のエージェント定義を書くと、Claude Codeはどのエージェントとして振る舞うべきか判断できなくなる。\n\nこれを解決したのがOpenClawのスキルファイル分離だった。\n\n具体的には、各エージェントを独立したMarkdownファイルとして定義する。CFOならcfo.md、COOならcoo.md。フロントマタ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "OpenClawのdescriptionフィールド、適当に書いてない？\n\nこれ、ルーティング精度に直結する最重要項目だ。\n\n自分は9体のAIエージェント経営OSを運用しているが、descriptionが曖昧だと誤ルーティングが頻発した。\n\n例えば、CFOのdescriptionを「財務関連の処理」と書いていた時期がある。この書き方だと「売上データを分析して」という質問がCFOに飛んだりCMOに飛んだりして不安定だった。\n\n修正後はこう書いた：\n「CFO（最高財務責任者）。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawスキルファイルの実践テンプレートを公開する。\n\nこの構造をコピペすれば、すぐにCxOエージェントが動く。\n\nフロントマターに書くのは2つだけ。\n\nname: エージェントの識別名（英字小文字）\ndescription: ルーティング判定に使われる1行説明\n\n本文には4セクションを書く。\n\n1. 役割定義 — 「あなたは〇〇のCFOです」\n2. 担当業務 — 箇条書きで具体的なタスクを列挙\n3. 使用可能なコマンド — `/cfo pl` `/cfo 仕訳` のようにスラッシュコマンドを定義\n4. 制約 — やってはいけないこと、判断の境…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェント経営OS、構築に2ヶ月かかった。\n\n内訳を正直に書く。\n\n最初の2週間：CLAUDE.mdに全部書く方式で試行錯誤。コンテキスト汚染で使い物にならず。\n\n次の2週間：OpenClawのスキルファイル分離を学び、CFO/COO/CTOの3体を構築。ここで「descriptionの書き方」が精度を左右することに気づく。\n\n次の3週間：CMO/CEOを追加し、自然言語ルーター（radineer-os）を実装。ルーティング精度の調整に時間がかかった。\n\n最後の2週間：Brain/Kaizen/Screen/CareerBoostの専門エー…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを運用してわかった、一番大事なことは何だと思う？\n\n技術的なことじゃない。\n\n「エージェント同士の境界設計」だ。\n\n最初は各エージェントの担当範囲を曖昧にしていた。CMOに「売上の推移を分析して」と聞くと、CMOがfreee APIを叩こうとする。それはCFOの仕事だ。\n\nこの問題を解決するために、3つのルールを設けた。\n\n1. 各エージェントは自分の外部APIだけを使う\n— CFOはfreee、CMOはGA4/GSC、CTOはGitHub\n\n2. 他エージェントの領域に踏み込む場合はCEO経由で委譲する\n— CMOが財務データを…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCLAUDE.mdに9エージェント分のプロンプトを全部書いた。結局それが全部間違いだった。\n\n3000行を超えるCLAUDE.md。\nCFOに質問するとCMOが答える。\nCOOに頼むとCTOが動く。\nコンテキストウィンドウの中で9つの人格が混ざり合って、カオスだった。\n\n「プロンプトエンジニアリングで解決できるはず」と思って、区切り文字を工夫したり、XMLタグで囲んだり、「あなたは今CFOとして振る舞ってください」と毎回指示したり。\n\n全部ダメだった。\n\n転機はOpenClawを知った時だ。\n\nスキルファイルという仕組みで、各エージェントを物理的…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "SESエンジニアがClaude Codeでデータ分析スキルを身につけて単価を上げた話【2026年版】",
+      "articleUrl": "https://qiita.com/sescore/items/0da5767dce8f76a457fb",
+      "createdAt": "2026-05-14T23:07:45.958Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeでデータ分析を始めてみたら、作業の進め方が根本から変わった。\n\nきっかけは手元にあったCSVデータ。\nいままでPythonスクリプトを1から書いて、pandas読み込んで、matplotlib整えて…ってやってたのが、Claude Codeだとターミナル上で対話しながら全部進められる。\n\n具体的にはこうだ。\n\nプロジェクトディレクトリで claude を起動して、\n「data/access_log.csv を読み込んで、時間帯別のアクセス数を可視化して」\nと指示する。それだけ。\n\nClaude Codeが勝手にpandasで…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの設定、まだデフォルトのまま使ってない？\n\nClaude Codeの真価はCLAUDE.mdで決まると言っても過言じゃない。\n\n自分はデータ分析用のプロジェクトで、CLAUDE.mdにこう書いている。\n\n---\n- CSVの読み込みはpandas.read_csv()を使い、encodingは自動判定すること\n- 可視化はmatplotlib + seabornを基本とし、日本語フォント設定を必ず含めること\n- 分析結果はoutput/に日付付きで保存すること\n- コードは必ずスクリプトファイルとして保存すること（ワンショットで消えな…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのデータ分析で一番使えるのは「対話的に仮説検証を回せる」ことだ。\n\n従来のやり方だと、\n1. Jupyter Notebook開く\n2. セルにコード書く\n3. 実行してエラー直す\n4. グラフ見て次のコード書く\n\nこのループを全部自分でやっていた。\n\nClaude Codeだと、ターミナルで\n「このデータ、曜日別に傾向が違う気がする。曜日ごとに集計して可視化して」\nと言うだけで、コードの生成→実行→結果の表示まで一気通貫で進む。\n\n実際に自分がよく使うコマンドパターンはこれだ。\n\n```\ncd ~/analysis-projec…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeでデータ分析のワークフローを組んでから、レポート作成にかかる時間が体感で半分以下になった。\n\n以前の自分のやり方：\n- CSVを開いてカラム確認：15分\n- pandasで読み込みコード作成：20分\n- データクレンジング：30分\n- 集計・可視化コード作成：45分\n- レポート執筆：60分\n合計：約2時間半〜3時間\n\nClaude Code導入後：\n- claude起動してCSV投げる：1分\n- 「概要を把握して、主要な傾向を可視化して」：Claude Codeが自動実行で15分\n- 結果を見て追加の分析指示：20分\n- 「Ma…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント体制で運用して半年。正直、最初から上手くいったわけじゃない。\n\n自分が構築しているAI経営OSは、CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostなど、役割ごとにエージェントを分けている。全部Claude Codeベースで動いている。\n\n最初にハマったのは「エージェント同士の責務が曖昧になる問題」だ。\n\nたとえばCMO（マーケティング）とCOO（オペレーション）の境界。GA4のデータを見て施策を判断するのはCMOの仕事だが、施策の実行管理はCOOの仕事。ここが曖昧だと、同じデータ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに「全部やって」と丸投げして大失敗した。結局、CLAUDE.mdで制約をかけるのが正解だった。\n\n自分がClaude Codeを使い始めた頃、データ分析タスクを雑に投げていた。「このCSVを分析して、いい感じにレポートにして」みたいな指示だ。\n\n結果、Claude Codeは律儀に全カラムの相関分析を実行し、意味のないグラフを大量生産し、レポートは冗長で使い物にならなかった。\n\n失敗の原因は「制約がなさすぎた」ことだ。\n\nAIは自由度が高すぎると、人間にとって意味のない方向に暴走する。データ分析で言えば、「全部のカラムの組み…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を公開",
+      "articleUrl": "https://qiita.com/sescore/items/e9170e79f50188f8e3c4",
+      "createdAt": "2026-05-15T23:11:19.535Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeで「1エージェント1責務」を徹底したら、レスポンスの質が明らかに変わった。\n\nうちは3人の会社で9体のAIエージェントを運用している。\nCEO・CFO・COO・CMO・Brain・Kaizen・Screen・CareerBoost・Secretary。\n\n最初はCEOとCFOの2体だけだった。\n1つのエージェントに「財務も」「マーケも」「タスク管理も」と詰め込んでいた。\n\n結果、プロンプトが肥大化してレスポンスの質がガタ落ちした。\n聞いてないことまで答えるし、肝心の数字は曖昧になる。\n\nそこでOpenClawのスキル分割を使…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "OpenClawのスキル定義、まだ1ファイルに全部詰め込んでない？\n\nうちの会社は3人＋AIエージェント9体で回している。\n人間3人、AI9体。つまり社員の75%がAI。\n\nこの構成に辿り着くまでに最大の失敗があった。\n「1つのスキルファイルに全機能を書く」というやつだ。\n\nCFOエージェントに財務分析もキャッシュフロー予測も仕訳も未決済管理も全部入れたら、どれも中途半端な回答しか返さなくなった。\n\nOpenClawのスキルはMarkdownで定義する。\n~/.claude/skills/配下にファイルを置くだけ。\n\nポイントは、description…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawのCFOエージェント、実際のスキル定義を晒す。\n\nうちのCFOエージェントはfreee APIと連携して、PL生成・仕訳計上・未決済管理・キャッシュフロー予測をやっている。\n\n構築手順はこう。\n\nまず~/.claude/skills/にMarkdownファイルを作る。\n\n```markdown\n---\nname: cfo\ndescription: CFO（最高財務責任者）。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\ntrigger: /cfo\n---\n\n## 役割\nあなたは合同会社Radi…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェントを運用している会社の内訳：人間3人、AI9体。\n\n合同会社Radineerの現状はこうなっている。\n\nCEO — 経営ダッシュボード・意思決定支援\nCFO — freee連携で財務管理・PL・仕訳・キャッシュフロー\nCOO — タスク進捗・クライアント管理・営業パイプライン\nCMO — GA4・GSC・SNS連携のマーケダッシュボード\nBrain — ナレッジ管理・教訓DB\nKaizen — 改善提案・パフォーマンス最適化\nScreen — コンテンツ審査・品質管理\nCareerBoost — キャリア関連コンテンツ生成\nSecr…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを運用してわかった「最大の教訓」は何だったか？\n\n答えは「1エージェント1責務」の原則だ。\n\nうちは最初、CEOとCFOの2体で始めた。\nCEOに経営判断もマーケ分析もタスク管理も全部やらせようとした。\n\n結果はひどかった。\nプロンプトが長くなりすぎて、聞いてない情報まで出してくる。\n肝心の経営指標は曖昧になる。\n「どの数字を見ればいいのか」すら答えが変わる。\n\nここで気づいた。\nこれはソフトウェア設計の単一責任原則（SRP）と同じだ。\n\n1つのクラスに複数の責務を持たせると保守不能になるのと同じで、1つのエージェントに複数の役割…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は「AIエージェント2体で十分」と思っていた。結局9体に増えたのは、失敗の連続があったからだ。\n\n最大の失敗は、CEOエージェントに全部やらせようとしたこと。\n\n経営ダッシュボードも、財務分析も、マーケデータも、タスク管理も。\n1つのスキルファイルに全機能を詰め込んだ。\n\n何が起きたか。\n\n「今月の売上は？」と聞くと、なぜかマーケティング施策の提案まで返ってくる。\n「タスクの進捗は？」と聞くと、キャッシュフローの話が混ざる。\n\nプロンプトが肥大化して、エージェントが「何を聞かれているか」を正確に判断できなくなっていた。\n\n正解は分割だった。\n\nOp…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】3人会社がAI経営OSを自作した全記録 — 月商250万円の裏側",
+      "articleUrl": "https://qiita.com/sescore/items/f44b8737600596fdc55d",
+      "createdAt": "2026-05-16T23:06:25.106Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🛠 Claude Codeで「AI経営OS」を自作してみたら、バックオフィス作業が週15時間→2時間になった。\n\n3人会社の代表をやってると、経理・マーケ・営業管理・コンテンツ運用を全部片手間でやることになる。どれも中途半端になるのが一番キツい。\n\nそこでClaude CodeのSkillsシステムを使って、CxOエージェントを5体構築した。\n\n/ceo ダッシュボード\n/cfo pl\n/coo tasks\n/cmo\n\nこれだけで経営状況が全部見える。\n\n特に便利なのが自然言語ルーティング。/radineer-os に「今月の売上どう？」と聞けばCF…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeの/ceoコマンド、使ったことある？\n\n3人会社を経営してるんだが、Claude CodeのSkillsシステムでCxOエージェントを5体作った。CEO・CFO・CTO・COO・CMO。\n\nやったことはシンプルで、各エージェントに役割を定義して、データソース（freee API、GA4、GSC）と接続しただけ。\n\nでもこれが劇的に効いた。\n\n以前の自分：\n- freeeにログインしてPL確認（15分）\n- GA4でアクセス数チェック（10分）\n- スプレッドシートで営業管理（20分）\n- 各種レポート作成（1時間）\n\n今の自分：\n…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeでAI経営OSを作るとき、最初にやるべきは自然言語ルーティングの実装である。\n\n具体的には /radineer-os というSkillを作り、ユーザーの質問内容に応じて適切なCxOエージェントに振り分ける。\n\n実装の核はこう：\n\n1. CLAUDE.mdにSkillを登録\n2. 各CxOのSkillファイルを作成\n3. ルーターSkillで意図分類\n\n呼び出し例：\n\n/cfo pl → 今月のPL表示\n/cfo 仕訳 → 仕訳計上\n/cfo 未決済 → 未決済管理\n/cfo cf → キャッシュフロー予測\n\n/coo tasks …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "週15時間 → 週2時間。\n\nこれが3人会社でAI経営OSを導入した前後のバックオフィス作業時間の変化である。\n\n内訳を正直に書く。\n\n【導入前の週間作業】\n・経理処理（freee入力・確認）：3時間\n・マーケデータ確認（GA4/GSC/SNS）：2時間\n・営業管理（パイプライン更新）：2時間\n・コンテンツ企画・執筆：5時間\n・各種レポート作成：2時間\n・その他雑務：1時間\n合計：約15時間/週\n\n【導入後の週間作業】\n・AI生成コンテンツの承認チェック：1時間\n・経営判断（AIレポートを見て意思決定）：30分\n・例外対応（APIエラー、想定外のケース…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "5体のCxOエージェントを運用してわかった、最大の教訓は何か？\n\n「エージェントは増やすほど管理コストが上がる」\n\nこれに尽きる。\n\n最初は「CEO/CFO/CTO/COO/CMO全部作れば完璧だ」と思って一気に構築しようとした。結果、どのエージェントも中途半端な状態で3週間を溶かした。\n\n正解だったアプローチ：\n\n1ヶ月目：コンテンツパイプラインだけ作る\n2ヶ月目：CFOとCOOを追加\n3ヶ月目：CEOで統合、ルーティング実装\n\n1体ずつ完成させて、動作確認してから次に進む。当たり前のことだが、「全部一気に」の誘惑は強い。\n\nもう一つの教訓：\n\n「コ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は全部自動化しようとして盛大に失敗した。結局「人間が判断、AIが実行」の設計が正解だった。\n\nAI経営OSを構築し始めた頃、理想を描いていた。「コマンド1発で経営が全部回る世界」。トレンド発見→記事生成→配信→分析→改善、全部自動。\n\n現実はこうだった：\n\n失敗①：コンテンツ全自動配信\n承認ゲートなしで記事を自動公開した。3日目に完全に的外れな記事が出た。読者から「これ本当に本人が書いてる？」とDMが来た。信頼を損なうところだった。\n\n失敗②：freee APIの仕様を甘く見た\nAPIのレート制限に引っかかって、月末の仕訳処理が途中で止まった。手動…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】MCPサーバー・プラグイン総まとめ｜結局どれを使えばいいの？5大ツール徹底比較",
+      "articleUrl": "https://qiita.com/sescore/items/3e4a86e275574f9902e8",
+      "createdAt": "2026-05-16T23:13:34.087Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude CodeにContext7を入れてみたら、ドキュメント参照の質が別次元になった。\n\nMCPサーバー、正直「また新しいの出たのか」くらいに思ってた。\n\nでも実際にsettings.jsonに数行追加して使い始めたら、もう戻れない。\n\n具体的に何が変わったかというと、\nNext.js 15のApp Router周りのコードを書くとき、\n以前は古いPages Routerの書き方が返ってきてイライラしてた。\n\nContext7を入れた後は、プロンプトに「use context7」と付けるだけで最新ドキュメントを参照してくれる。\n\nセットア…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのMCPサーバー設定、まだデフォルトのまま使ってない？\n\nもしそうなら、かなり損してる。\n\n俺も最初は「MCPって結局何が便利なの？」状態だった。\nでも実際に導入してみたら、開発フローが根本から変わった。\n\n特にContext7。\nこれはnpmパッケージやフレームワークの最新ドキュメントを、LLMのコンテキストに直接注入してくれるMCPサーバー。\n\nつまり「学習データが古い」問題が消える。\n\nRemixのloader実装を聞くとき、\n「use context7」とプロンプトに付けるだけで最新APIを参照した回答が返ってくる。\n\n設…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🛠️ MCPサーバーのセットアップ、コピペで終わる設定を共有する。\n\nClaude Codeユーザー向け。\n~/.claude/settings.json に以下を追加するだけ。\n\n■ Context7（最新ドキュメント参照）\n```\n\"context7\": {\n  \"command\": \"npx\",\n  \"args\": [\"-y\", \"@upstash/context7-mcp@latest\"]\n}\n```\n使い方: プロンプトに「use context7」を付ける\n\n■ Playwright MCP（ブラウザ自動化）\nE2Eテスト、スクレイピング…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "MCPサーバー5つを検証するのに丸2日かかった。\n\nその結果をTier分類にまとめたので共有する。\n\n■ 検証環境\n- Claude Code（メイン）\n- macOS / Node.js 22\n- 実際の業務プロジェクトで各3日以上使用\n\n■ 結果\nTier1（必須級）: 3つ\n- Context7: ドキュメント参照。セットアップ30秒。毎日使う\n- Playwright MCP: ブラウザ自動化。E2Eテスト作成が圧倒的に楽になった\n- PostgreSQL MCP: DB操作。スキーマ読み込みでSQL生成精度が上がる\n\nTier2（推奨）: 2…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント体制で運用してわかったこと。\n\nMCPサーバーの選定も、この運用の一部として学んだ教訓がある。\n\n俺はCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostの9エージェントを\nClaude Code + OpenClawで動かしてるんだけど、\n各エージェントが参照するデータソースを繋ぐのにMCPが不可欠になってる。\n\n例えば：\n- CMOエージェント → Firecrawlで競合サイトのデータ取得\n- CTOエージェント → PostgreSQL MCPでDB状態を直接確認\n- 全エー…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はMCPサーバーを「とりあえず全部入れ」して大失敗した。結局シンプルが正解だった。\n\n失敗の経緯を正直に書く。\n\n2025年末、MCPが話題になり始めた頃。\nGitHubで見つけたMCPサーバーを片っ端からsettings.jsonに追加した。\n\n結果：\n- Claude Codeの起動が遅くなった\n- どのMCPが何をしてるか把握できなくなった\n- 競合するMCPサーバー同士が干渉してエラーが出た\n- 設定ファイルが100行超えて管理不能に\n\nそこから1つずつ外して検証し直した。\n\n「このMCPがないと困る」と感じたものだけ残した結果、\n生き残っ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code実践ガイド｜AI駆動開発で市場価値を上げる方法【2026年最新】",
+      "articleUrl": "https://qiita.com/sescore/items/170d695868d4bf7fb2ce",
+      "createdAt": "2026-05-17T23:04:31.712Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude CodeのCLAUDE.mdにOpenClawの指示を書き出す運用を3ヶ月続けてみた結果、開発の「迷い時間」が激減した。\n\n具体的にやってることはシンプルで、OpenClaw側でプロジェクト方針・コーディング規約・過去の学習結果を整理して、CLAUDE.mdに反映させるだけ。\n\nたとえばデータ分析パイプラインを組むとき、CLAUDE.mdにこう書く：\n\n```\n## Architecture Decisions\n- BigQuery → Python (polars) → Visualization\n- 型安全: pandera で…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.md、まだデフォルトのまま使ってない？\n\nもしそうなら、OpenClawと連携させる運用を試してほしい。開発体験が別物になる。\n\nOpenClawは「思考・記憶・指示」を管理するレイヤーで、Claude Codeは「実行」を担当するレイヤー。この2つを組み合わせるアーキテクチャが強い。\n\n具体的な連携フロー：\n\n1. OpenClawでタスクを分解・優先度を判断\n2. プロジェクト固有のルールをCLAUDE.mdに書き出し\n3. Claude Codeがそのルールに従って自律実行\n4. 結果をOpenClawのMe…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "📋 OpenClaw×Claude Codeで一番実践的だと感じてるのが、CLAUDE.mdのテンプレート化だ。\n\nプロジェクトごとに毎回ゼロから書くのではなく、OpenClawの記憶レイヤーに「このタイプのプロジェクトならこの指示セット」をストックしておく。\n\n自分が実際に使ってるCLAUDE.mdの構成：\n\n```markdown\n## Architecture Decisions\n- 技術選定の方針（言語、フレームワーク、ライブラリ）\n- データフローの定義\n\n## Coding Standards\n- 型安全のルール（type hints必須…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "4つのユースケースでOpenClaw×Claude Code連携を実運用してわかった、正直な作業時間の変化を共有する。\n\n【ユースケース1: データ分析パイプライン構築】\n以前：環境構築+コード+テストで丸2日\n現在：CLAUDE.mdに方針書いてClaude Codeに任せて半日\n\n【ユースケース2: バグ修正】\n以前：原因調査に1-2時間、修正に30分\n現在：エラーログ渡して「直して」で15-30分\n\n【ユースケース3: 技術調査】\n以前：ドキュメント読み込みで半日\n現在：サブエージェント並列で1-2時間\n\n【ユースケース4: 経営判断支援】\n以前…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSで9エージェント（CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost/CTO）を同時運用して半年。正直に言って、最初の構想とは全然違う形に着地した。\n\n一番の学びは「エージェント間の連携設計が全て」ということ。\n\n最初は各エージェントを独立で動かしてた。CFOが財務データ集めて、CMOがマーケデータ集めて、CEOがそれを統合する、みたいな直列処理。\n\nこれが遅い。しかも各エージェントの出力フォーマットがバラバラで、統合する側（CEO）の負荷が高すぎた。\n\n解決策はOpenClawの指示レイヤーで「…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClawなしでClaude Codeだけ使ってた。結局「記憶と指示の管理レイヤー」が必要だと気づくまで2ヶ月かかった。\n\n何が起きてたかというと、Claude Codeに毎回同じ指示を出してた。\n\n「polars使って」「型ヒントつけて」「テストも書いて」「このプロジェクトではJWT認証」「N+1に気をつけて」\n\n毎セッション、毎タスクでこれを繰り返す。コンテキストウィンドウの無駄遣い。しかも忘れる。指示し忘れると品質がブレる。\n\nCLAUDE.mdに全部書けばいいじゃん、と思うかもしれない。実際最初はそうした。でもCLAUDE.mdが肥…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携を徹底解説【2026年最新】AIエージェント実践ガイド",
+      "articleUrl": "https://qiita.com/sescore/items/ea07f1d533d13bcb8cf9",
+      "createdAt": "2026-05-22T23:06:33.378Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのANTHROPIC_API_KEYを削除したら、運用が安定した話。\n\nOpenClawとClaude Codeを連携させて半年以上経つが、最初にハマったのがAPI認証の問題だった。\n\nClaude CLIをTypeScriptから呼び出すとき、環境変数にANTHROPIC_API_KEYが残っていると、Pro Planのセッション認証と競合してエラーが出る。\n\n解決策はシンプルで、spawnSyncのenv設定で明示的にdeleteするだけ。\n\n```\nconst env = { ...process.env };\ndelete…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeの環境変数、まだデフォルトのまま使ってない？\n\nOpenClawとClaude Codeを連携させるとき、最初に見直すべきはCLI呼び出しの認証設定だ。\n\nPro Planのセッション認証を使いたいのに、環境変数にANTHROPIC_API_KEYが残っていると競合する。\n\nspawnSyncでCLI実行するときに、envから明示的にAPI_KEYをdeleteする。たったこれだけで安定する。\n\nそもそもなぜこの2つを連携させるのか。\n\nClaude Code単体だと、会話ごとにコンテキストがリセットされる。長期記憶がない。戦略レ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🔧 OpenClaw×Claude Codeで実運用しているコンテンツ自動生成パイプラインの全体像を公開する。\n\n構成はこうなっている。\n\n① Grok APIでトレンド発見\n② Claude CLIで記事生成（5000字以上）\n③ Telegramで人間の承認ゲート\n④ 4プラットフォーム同時公開\n\n公開先はQiita（コード重視・3ブロック以上）、Zenn（AI特化・CTA除去）、note（ナラティブ重視）、X（6バリエーション自動生成）。\n\nCLI呼び出し部分のTypeScriptコードで重要なのはこの設定。\n\n```\nspawnSync('/…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "4プラットフォーム同時公開を手動でやっていた頃は、1記事あたり2〜3時間かかっていた。\n\nQiita用にコードブロックを調整し、Zenn用にCTAを外し、note用に文体を変え、X用に要約を作る。これを毎回手作業でやるのは正直しんどかった。\n\nOpenClaw×Claude Codeのパイプラインを組んでからは、記事生成から各プラットフォーム向けのフォーマット変換まで自動化できた。\n\n今は承認ボタンを押すだけで4箇所に出る。実作業は記事の最終チェックのみ。\n\nただし注意点もある。\n\n最初の環境構築には丸1日かかった。Claude CLIのtimeout…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AIエージェントを「単体ツール」として使い続けていたら、いつまでも手作業は減らないのでは？\n\n自分はOpenClawとClaude Codeを連携させて運用しているが、この構成に辿り着くまでにClaude Code単体で色々試した時期があった。\n\nClaude Codeは優秀なコーディングエージェントだ。指示すればコードを書くし、テストも実行してくれる。\n\nでも単体だと3つの壁にぶつかる。\n\n① コンテキストが会話ごとにリセットされる\n② 戦略レベルの「何をやるか」の判断が苦手\n③ 複数プロジェクト横断の知見が蓄積されない\n\nこの3つ、全部「記憶がない…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Code単体で全部やろうとして失敗した。結局「役割分離」が正解だった。\n\nOpenClawとClaude Codeの連携を始める前、Claude Codeに戦略立案からコード実装まで全部任せようとしていた時期がある。\n\nプロンプトに「まず方針を考えて、次にコードを書いて、テストして、レポートして」と全部詰め込む。\n\n結果どうなったか。\n\n毎回同じ文脈説明を繰り返す羽目になった。会話がリセットされるたびに「前回はここまでやって、品質基準はこれで…」と一から説明し直す。\n\nしかもClaude Codeは「どうやるか」に強いが「何をやるか…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "Claude Codeで開発速度3倍｜SESからフリーランスになって変わった働き方【2026年最新】",
+      "articleUrl": "https://qiita.com/sescore/items/d1ec36c803d97c6fb87e",
+      "createdAt": "2026-05-24T23:04:37.545Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🛠 Claude Codeの CLAUDE.md にプロジェクトルールを書いたら、生成コードの一貫性が劇的に変わった。\n\n具体的に何をしたかというと、プロジェクトルートに CLAUDE.md を置いて、コーディング規約・アーキテクチャ・テスト方針を全部書き出した。\n\nたとえばこんな感じ：\n\n```\n## コーディング規約\n- TypeScript strictモード必須\n- テストはVitest使用\n- コミットメッセージはConventional Commits形式\n\n## アーキテクチャ\n- src/domain/ にビジネスロジック\n- src…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeの settings.json にある hooks 設定、まだ使ってない人いる？\n\nこれ知らないのマジでもったいない。\n\nhooksは「Claude Codeが特定の操作をしたとき、自動でコマンドを走らせる」仕組み。\n\n自分が実際に設定してるのがこれ：\n\n```json\n{\n  \"hooks\": {\n    \"postToolCall\": [\n      {\n        \"matcher\": \"Edit|Write\",\n        \"command\": \"npx eslint --fix ${filePath}\"\n    …",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeの /init コマンド、新しいコードベースに入るとき必ず最初に叩いてる。\n\nやることは単純で、ターミナルで：\n\n```\n/init\n```\n\nこれだけ。するとClaude Codeがプロジェクト構造を分析して、CLAUDE.mdのドラフトを自動生成してくれる。\n\n既存のコードベースを理解するのに以前は数日かかってた。ドキュメントがない、READMEが古い、アーキテクチャ図が存在しない。よくある話。\n\n/init を叩けば、ディレクトリ構成・使用ライブラリ・テスト構成・ビルド設定を一発で把握できる。\n\nそこから自分は Plan M…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeのサブエージェントを使い始めて、1タスクあたりの作業時間が体感で半分になった。\n\n具体的にどう使ってるか。\n\nたとえばAPI実装タスクがあるとする。以前の流れ：\n\n1. API実装（40分）\n2. テスト作成（30分）\n3. ドキュメント更新（15分）\n合計：約85分\n\nサブエージェント活用後：\n\n1. メインでAPI実装を進めながら\n2. サブエージェントにテストを並列で書かせる\n3. 別のサブエージェントにドキュメントを更新させる\n合計：約45分（並列実行のため）\n\n自分のCLAUDE.mdにはこう書いてある：\n\n```\n##…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSで9エージェント（CFO/COO/CMO/CEO/CTO/Brain/Kaizen/Screen/CareerBoost）を運用して半年。わかったことがある。\n\n最初は「全部AIに任せれば楽になる」と思ってた。現実は違った。\n\n一番の学びは「エージェント間の依存関係設計」が全てだということ。\n\n自分のシステムでは：\n- CFOがfreee連携で財務データを取得\n- COOがタスク進捗を管理\n- CMOがGA4/GSC/SNSデータを統合\n- CEOが全部を統合して意思決定支援\n\nこれをClaude Codeのスキルシステムで実装してる。各エ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに「全部任せる」スタイルで大失敗した。結局「設計は人間、実装はAI」が正解だった。\n\n何が起きたかというと、複雑な機能を「これ作って」と丸投げしたら、動くけど保守不能なコードが生まれた。テストもない。設計思想もバラバラ。\n\n反省して今やってるのが Plan Mode ファーストのワークフロー。\n\nCLAUDE.mdにこう書いてある：\n\n```\n## Workflow\n- Enter plan mode for ANY non-trivial task\n- If something goes sideways, STOP an…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code実践ガイド｜AI駆動開発の具体的ワークフロー【2026年最新】",
+      "articleUrl": "https://qiita.com/sescore/items/22cbc5b534e4db342e77",
+      "createdAt": "2026-06-01T23:04:31.175Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "OpenClawとClaude Codeの役割分担を整理したら、開発の進め方が根本的に変わった。\n\nポイントは「思考レイヤー」と「実行レイヤー」を明確に分けること。\n\nOpenClawには設計方針・技術選定の理由・過去の失敗パターンを記憶させる。\nClaude Codeにはclaude \"tasks/todo.mdの設計に従って実装して\"と投げる。\n\nこの分業が効くのは、OpenClawが過去の文脈を保持しているから。\n\n例えば俺の環境では「Anthropic API直叩きでコスト事故を起こした」という記憶がOpenClawに残っている。\nだから新しい…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "OpenClawの記憶機能、ちゃんと活用できてる？\n\nClaude Codeと組み合わせる時、OpenClawをただのチャットAIとして使ってるなら正直もったいない。\n\n俺がやってるのは「設計の理由」まで記憶させること。\n\n例えばデータ分析パイプラインを作る時、OpenClawにこう指示する：\n\n「データソース：PostgreSQL（Neon）+ GA4\n処理：日次KPI集計→Slack通知\n技術制約：macmini上でPM2管理、Claude CLIのみ\n予算：月額$0\n設計方針をCLAUDE.mdに反映できる形式で出力して」\n\nここで重要なのは「な…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🔧 OpenClaw×Claude Code連携で一番実用的だったコマンドパターンを共有する。\n\nまずOpenClawで設計方針を固めて、CLAUDE.md反映用の形式で出力させる。\nこれがそのままClaude Codeの行動指針になる。\n\n次にClaude Code側の実装指示：\n\nclaude \"tasks/todo.mdの設計に従って実装して。テストも書いて。\"\n\nたったこれだけ。でもこれが機能するには前提がある。\n\n1. tasks/todo.mdに設計方針がチェックリスト形式で書かれている\n2. CLAUDE.mdに技術制約（使っていいAP…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "OpenClaw×Claude Code連携を始めて変わったことを正直に書く。\n\n一番大きいのは「設計のやり直し」が減ったこと。\n\n以前はClaude Codeに直接「〇〇作って」と投げていた。\n動くものはできる。でも途中で「あ、この技術選定じゃダメだ」となって作り直すことが多かった。\n\nOpenClawを設計フェーズに挟むようにしてから、この手戻りがほぼなくなった。\n\n理由は単純で、OpenClawが過去の失敗を覚えているから。\n\n「前回Anthropic APIの直接呼び出しでコスト事故を起こした」\n「psqlの空文字列接続でローカルDBに化けた」…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント体制で運用して気づいたこと、正直に書く。\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost。\nそれぞれ役割を持ったエージェントが連携して動く仕組みを作った。\n\n最初に学んだのは「全部自動化しようとするな」ということ。\n\nSNS投稿を完全自動化したら、同一アカウントに15分で15件投稿してshadow banを食らった。\n結局「生成は自動、公開は人間承認」というルールに落ち着いた。\n\n次に学んだのは「エージェント間の情報共有の設計が一番難しい」ということ。\n\nCFOが出した財務デ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに全部丸投げしていた。結局OpenClawとの分業が正解だった。\n\nClaude Codeは実行力が凄い。\nコード生成、テスト実行、Git操作、ファイル読み書き。全部やってくれる。\n\nだから最初は「これ1つで全部いけるじゃん」と思った。\n\n失敗したのは設計フェーズ。\n\n「データ分析パイプライン作って」と投げたら、動くものはできた。\nでもAnthropicのAPI直叩きでコストが跳ね上がった。\n過去の失敗を知らないClaude Codeが、最適だと判断した実装を素直にやっただけ。\n\nここでOpenClawの価値に気づいた。\n\n…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "Claude Codeで開発効率が激変した話｜SESエンジニアの独立準備にも使える実践Tips徹底解説",
+      "articleUrl": "https://qiita.com/sescore/items/5b73544a40f4ac623da2",
+      "createdAt": "2026-06-03T23:04:54.330Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 CLAUDE.mdに「禁止事項」セクションを追加したら、Claude Codeの出力品質が別物になった。\n\n半年間Claude Codeを毎日使い倒してきて、一番効果があったのはこれ。\n\nプロジェクトルートに置くCLAUDE.mdに「やってほしいこと」だけ書いてた時期がある。\n\nコーディング規約とか、使うフレームワークとか。\n\nでも全然安定しなかった。\n\n勝手にnpmパッケージ追加される。\nconsole.logが残る。\nAnthropic API直叩きのコードが生成される。\n\nで、試しに「やってはいけないこと」セクションを作った。\n\n```\n#…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの設定、まだデフォルトのまま使ってない？\n\nそれ、Claude Codeの性能の半分も引き出せてないと思う。\n\n自分は半年間、毎日Claude Codeで開発してる。OpenClawの全プロダクト、AI経営OSの9エージェント、全部これで作った。\n\nで、最初にやるべきことは1つ。\n\nプロジェクトルートにCLAUDE.mdを置く。\n\nこのファイル、会話開始時に自動で読み込まれる。\nつまりAIへの「前提知識」を毎回渡せる。\n\n書くべき内容：\n\n1. プロジェクト概要（何のリポジトリか）\n2. 技術スタック（TypeScript + Hon…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeの計画モード（/plan）、使ってない人が多すぎる。\n\n非自明なタスクでいきなり「実装して」は危険。まず計画を立てさせる。これだけで手戻りが激減する。\n\n使い方はシンプル：\n\n```\n/plan\nこのAPIにページネーション機能を追加したい。\n現状のコードを読んで、どのファイルをどう変更するか計画を書いて。\n```\n\nClaude Codeが関連ファイルを全部読んで、変更計画を提示する。\n\nこれを確認してからGoを出す。\n\n自分の実体験だが、計画モードを使わずに「ページネーション追加して」と丸投げしたら、既存のレスポンス形式を壊さ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeの /commit 、コミットメッセージを考える時間がゼロになった。\n\n毎日のコミット回数が多い人ほど効く。\n\n使い方：\n```\n/commit\n```\n\nこれだけ。変更内容を読み取って、適切なコミットメッセージを生成してコミットしてくれる。\n\n自分はOpenClawの複数プロダクトを同時開発してて、1日に何十回もコミットする。以前は毎回メッセージを考えて書いてた。\n\nでも正直、/commitに任せた方がメッセージの質が安定する。差分を全部読んだ上でメッセージを生成するから、「何を変えたか」の要約精度が高い。\n\n注意点もある：\n\n…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSで9エージェント（CFO/COO/CMO/CEO/CTO等）を運用してわかったこと。\n\n一番の学びは「エージェントの指示書設計が全て」ということ。\n\nClaude CodeのCLAUDE.mdと全く同じ原則がエージェント設計にも適用される。\n\n具体的に言うと：\n\n1. 各エージェントの「やらないこと」を明確にする\n2. エージェント間の責務境界を厳密に定義する\n3. 禁止事項を最優先で書く\n\nCFOエージェントにfreee連携でPL生成させてるが、最初は「財務全般」と曖昧に定義してた。結果、COOの領域と被りまくって混乱した。\n\n今は「CF…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCLAUDE.mdなしでClaude Codeを使ってた。結局それが一番の遠回りだった。\n\n半年前、Claude Codeを導入した時の話。\n\n「ターミナルで動くAIアシスタント？VS Codeの拡張でよくない？」\n\nこれが正直な第一印象。\n\nで、最初の1ヶ月はCLAUDE.mdも書かず、計画モードも使わず、ただ「これ実装して」と丸投げしてた。\n\n結果：\n- 勝手にnpmパッケージ追加されて依存関係が壊れた\n- レスポンス形式を勝手に変えられた\n- 有料APIを直叩きするコードが生成されて課金が走った\n\n特に3つ目は実害が大きかった。Anthro…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "AIエージェント9体で経営OSを作った話｜OpenClaw×Claude Codeで実現するデータ分析経営",
+      "articleUrl": "https://qiita.com/sescore/items/b2bd53ebed7c63e11223",
+      "createdAt": "2026-06-04T23:08:55.083Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeのスキル機構で「AI経営OS」を作ってみたら、経営の解像度が変わった。\n\nやったことはシンプルで、CEO・CFO・CTO・COO・CMOの5つのCxOエージェントと補助エージェント4体、計9体をClaude Codeのプラグインとして定義しただけ。\n\n具体的には settings.json に extraKnownMarketplaces を追加して、skills/<name>/SKILL.md にMarkdownでプロンプトを書く。コードは一切不要。\n\n例えば /cfo と打てばfreee APIからPL・未決済・キャッシュフロ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのスキル機構、まだ触ってない人いる？\n\nこれ、ただのコード補完ツールだと思ってたら完全に損してる。自分はこの機構を使って「AI経営OS」を組んだ。\n\nやり方は簡単で、settings.jsonに以下を足す。\n\n```\nextraKnownMarketplaces:\n  radineer-plugins:\n    source: directory\n    path: /Users/apple/radineer-plugins\n```\n\nあとは skills/cfo/SKILL.md みたいにMarkdownファイルを置くだけ。これ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "AI経営OSで一番コピペして使い回せる実装パターンを共有する。\n\nClaude Codeのスキル定義は skills/<name>/SKILL.md に書くだけなんだが、実際に動かすときのコツがある。\n\n① 自然言語ルーターの設計\n/radineer-os というスキルを作り、ユーザーの日本語入力を適切なCxOに振り分ける。SKILL.mdの中に「財務・売上・経費の話題→/cfoに委譲」「プロダクト・バグ・技術の話題→/ctoに委譲」とルールを書くだけ。\n\n② YAMLフラットファイル設計\nDBは使わない。タスクは inbox.yaml と today…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェントで経営OSを回して実感した、作業時間の変化を正直に書く。\n\n以前の自分の1日：\n・freee開いてPL確認 → 30分\n・GA4でサイト分析 → 20分\n・GitHub通知チェック → 15分\n・タスク整理（Notion/スプレッドシート） → 20分\n・全体像の把握 → ???（把握しきれない日が多かった）\n\n19プロダクト並行だと、ツール間を行き来するだけで午前中が溶ける日があった。\n\n今はClaude Codeで /ceo と打つ。CFO・CTO・COO・CMOの報告が統合された経営ダッシュボードが出る。所要時間は数分。\n\n…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを運用してわかった「設計で一番大事なこと」って何だと思う？\n\n自分の答えは「エージェント間の責務分離」だ。\n\n最初、CFOエージェントに財務＋タスク管理＋ちょっとしたマーケ分析まで詰め込んだ。結果、プロンプトが肥大化してレスポンスの精度がガタ落ちした。\n\nそこでCxO体制にした。\n・/cfo は財務だけ。freee APIからデータを引くことに専念\n・/coo はタスクとクライアント管理だけ\n・/cmo はGA4・GSC・Adsのデータ分析だけ\n\n人間の組織設計と同じで、責務を明確に分けた方がエージェントの出力品質が上がる。\n\nも…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "🔥 最初は「1つの万能エージェント」を作ろうとして完全に失敗した。結局9体に分割したのが正解だった。\n\nAI経営OS構築の初期、自分がやったのは「何でも答えるスーパーエージェント」を1体作ること。SKILL.mdに財務、技術、マーケ、タスク管理の全プロンプトを詰め込んだ。\n\n結果：\n・プロンプトが長すぎてClaude Codeのコンテキストを圧迫\n・財務の質問にマーケのデータを混ぜて回答する\n・「今月のPLは？」と聞いて的外れな回答が返ってくる\n\n完全に使い物にならなかった。\n\n転機は、人間の会社組織を参考にしたこと。CFO、CTO、COO、CMO、…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
       ]
     }
   ]

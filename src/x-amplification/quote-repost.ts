@@ -139,7 +139,7 @@ async function generateQuoteComment(
   // Claude CLI経由で生成（AnthropicAPIクレジット不要）
   const { execSync } = await import("node:child_process");
   const prompt = `以下のX投稿に対する引用コメントを生成してください。
-
+末尾は必ず読者への問いかけで締めてください。
 @${targetUsername} の投稿:
 ${tweetText}
 

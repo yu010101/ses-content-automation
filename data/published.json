@@ -444,6 +444,492 @@
           "url": "https://x.com/i/status/2035992758209651036"
         }
       ]
+    },
+    {
+      "title": "【2026年最新】3人の会社にAI経営OS構築してみた — CFO/COO/CMOをClaude Codeで自動化した全記録",
+      "date": "2026-04-07T00:46:27.213Z",
+      "articleId": "5ab66c40b1844f06cda4",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n84ca93016aec"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/5ab66c40b1844f06cda4"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260407-20263aios-cfocoocmoclaude-code"
+        },
+        {
+          "platform": "x",
+          "success": true,
+          "url": "https://x.com/i/status/2041316638453346321"
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】3人の会社にAI経営OS（CFO/COO/CMO/CEO）を作った全記録｜徹底解説",
+      "date": "2026-04-16T23:06:25.153Z",
+      "articleId": "06d437d72924c362c2cd",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n275986d1eb83"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/06d437d72924c362c2cd"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260416-20263aioscfocoocmoceo"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "OpenClaw×Claude Code連携を徹底解説｜AI経営OSで開発ワークフローを自動化した全手順【2026年最新】",
+      "date": "2026-04-17T23:05:29.551Z",
+      "articleId": "add124787040f61aab38",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nf48d34387e3c"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/add124787040f61aab38"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260417-openclawclaude-codeaios2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年版】OpenClawで9体のAIエージェント経営OSを構築した全記録",
+      "date": "2026-04-25T23:05:41.987Z",
+      "articleId": "2e0a84c7f0c300cc3f1f",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n83418d10a789"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/2e0a84c7f0c300cc3f1f"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260425-2026openclaw9aios"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール5選を徹底比較｜Claude Code・Copilot・Cursor・Codeium・Windsurf",
+      "date": "2026-04-25T23:14:32.619Z",
+      "articleId": "f80187de48a28fa1d045",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/f80187de48a28fa1d045"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260425-2026ai5-claude-codecopilotcurs"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nc444de1f91d2"
+        }
+      ]
+    },
+    {
+      "title": "【2026年実録】3人の会社がAI経営OS（CFO/COO/CMO）を作って月商250万を回した全記録",
+      "date": "2026-04-26T23:05:40.633Z",
+      "articleId": "d103dc09f28def807de2",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/neba83a5d8d2a"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/d103dc09f28def807de2"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260426-20263aioscfocoocmo250"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】OpenClaw×Claude Code連携の徹底解説｜AI駆動開発の実践ワークフロー",
+      "date": "2026-04-27T23:03:21.082Z",
+      "articleId": "2ae5af475b64119ac364",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n2eb312e92077"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/2ae5af475b64119ac364"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260427-2026openclawclaude-codeai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を徹底解説",
+      "date": "2026-04-30T23:05:30.884Z",
+      "articleId": "66180512020fbce1bf8b",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n3f569d212e2c"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/66180512020fbce1bf8b"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260430-2026openclaw9aios"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "SESエンジニアがClaude Codeでデータ分析スキルを身につけて単価を上げた話【2026年版】",
+      "date": "2026-05-14T23:05:09.746Z",
+      "articleId": "0da5767dce8f76a457fb",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n04d78949fcf3"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/0da5767dce8f76a457fb"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260514-sesclaude-code2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を公開",
+      "date": "2026-05-15T23:09:55.092Z",
+      "articleId": "e9170e79f50188f8e3c4",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n72e22181149c"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/e9170e79f50188f8e3c4"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260515-2026openclaw9aios"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】3人会社がAI経営OSを自作した全記録 — 月商250万円の裏側",
+      "date": "2026-05-16T23:04:55.309Z",
+      "articleId": "f44b8737600596fdc55d",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n78e010f30e46"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/f44b8737600596fdc55d"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260516-20263aios-250"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】MCPサーバー・プラグイン総まとめ｜結局どれを使えばいいの？5大ツール徹底比較",
+      "date": "2026-05-16T23:12:17.036Z",
+      "articleId": "3e4a86e275574f9902e8",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/3e4a86e275574f9902e8"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260516-2026mcp5-api"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nf4cac1bb7d4e"
+        }
+      ]
+    },
+    {
+      "title": "OpenClaw×Claude Code実践ガイド｜AI駆動開発で市場価値を上げる方法【2026年最新】",
+      "date": "2026-05-17T23:02:59.381Z",
+      "articleId": "170d695868d4bf7fb2ce",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nee345221d151"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/170d695868d4bf7fb2ce"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260517-openclawclaude-codeai2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "OpenClaw×Claude Code連携を徹底解説【2026年最新】AIエージェント実践ガイド",
+      "date": "2026-05-22T23:05:09.365Z",
+      "articleId": "ea07f1d533d13bcb8cf9",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n01f45c8d0188"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/ea07f1d533d13bcb8cf9"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260522-openclawclaude-code2026ai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "Claude Codeで開発速度3倍｜SESからフリーランスになって変わった働き方【2026年最新】",
+      "date": "2026-05-24T23:03:13.047Z",
+      "articleId": "d1ec36c803d97c6fb87e",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n7c9e84d3b2c2"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/d1ec36c803d97c6fb87e"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260524-claude-code3ses2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "OpenClaw×Claude Code実践ガイド｜AI駆動開発の具体的ワークフロー【2026年最新】",
+      "date": "2026-06-01T23:03:03.960Z",
+      "articleId": "22cbc5b534e4db342e77",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n9d96c5586416"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/22cbc5b534e4db342e77"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260601-openclawclaude-codeai2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "Claude Codeで開発効率が激変した話｜SESエンジニアの独立準備にも使える実践Tips徹底解説",
+      "date": "2026-06-03T23:03:19.842Z",
+      "articleId": "5b73544a40f4ac623da2",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nd5c3f95e7b98"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/5b73544a40f4ac623da2"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260603-claude-codesestips"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "AIエージェント9体で経営OSを作った話｜OpenClaw×Claude Codeで実現するデータ分析経営",
+      "date": "2026-06-04T23:07:19.791Z",
+      "articleId": "b2bd53ebed7c63e11223",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nd493d4fa186e"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/b2bd53ebed7c63e11223"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260604-ai9osopenclawclaude-code"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

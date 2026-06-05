@@ -129,6 +129,38 @@ async function main() {
       break;
     }
 
+    case "x-backfill": {
+      const { generateXVariations, addToXQueue, loadXQueue } = await import("./x-amplification/bridge.js");
+      const { readFileSync } = await import("node:fs");
+      const { join } = await import("node:path");
+      const limitArg = args.find((a) => a.startsWith("--limit="));
+      const limit = limitArg ? parseInt(limitArg.split("=")[1], 10) : 5;
+      console.log("=== X Queue Backfill (last " + limit + " articles) ===\n");
+      const published = JSON.parse(readFileSync(join(process.cwd(), "data/published.json"), "utf-8"));
+      const queue = loadXQueue();
+      const queuedTitles = new Set(queue.entries.map((e: { articleTitle: string }) => e.articleTitle));
+      const recent = (published.articles as Array<{ title: string; date: string; platforms: Array<{ platform: string; success: boolean; url?: string }> }>)
+        .filter((a) => a.platforms.some((p) => p.success && p.url && !p.url.includes("draft")))
+        .filter((a) => !queuedTitles.has(a.title))
+        .slice(-limit);
+      console.log("Backfilling " + recent.length + " articles (skipped " + queuedTitles.size + " already queued)");
+      for (const a of recent) {
+        const url = a.platforms.find((p) => p.success && p.url && !p.url.includes("draft"))?.url ?? "";
+        if (!url) continue;
+        console.log("\n→ " + a.title + "\n  url: " + url);
+        const fakeArticle = { title: a.title, body: "", keywords: [], summary: "", xPost: "", xThread: [], articleType: "" };
+        try {
+          const variations = await generateXVariations(fakeArticle, url);
+          addToXQueue(a.title, url, variations);
+          console.log("  Added " + variations.length + " variations");
+        } catch (e) {
+          console.error("  Failed: " + (e instanceof Error ? e.message : String(e)));
+        }
+      }
+      console.log("\n=== Backfill Complete ===");
+      break;
+    }
+
     case "x-generate": {
       const { generateXVariations, addToXQueue } = await import("./x-amplification/bridge.js");
       const articleUrl = args[1];
@@ -178,6 +210,7 @@ Usage:
   x-generate <article-url>                  Generate X post variations
   x-post <morning|noon|evening>             Post next queued X variation
   x-quote [--dry-run]                       Quote repost influencer tweet
+  x-backfill [--limit=5]                    Backfill x-queue from past published articles
 
 Flags:
   --dry-run         Run without actual publishing
