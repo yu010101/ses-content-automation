@@ -1003,6 +1003,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SESやめたいエンジニアが2026年にAIで年収800万を超える方法【徹底解説】",
+      "articleUrl": "https://qiita.com/sescore/items/d67da3910ca99effb1fb",
+      "createdAt": "2026-06-07T23:06:19.395Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🔧 CLAUDE.mdを丁寧に書き始めたら、AIとの無駄なやり取りがほぼ消えた\n\nClaude Codeを使い始めた当初、毎回セッションのたびに「このプロジェクトはNext.jsです」「命名規則はcamelCaseです」「DBマイグレーションは確認が必要です」と説明していた。\n\n当然ながら非効率だ。1セッション開始するたびに5〜10分消える。\n\n転機はCLAUDE.mdをちゃんと書き始めたことだ。\n\n```markdown\n## Project Context\n- Stack: Next.js 15 + Prisma + PostgreSQL\n- 命…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "Claude Codeの設定、プロジェクトルートのCLAUDE.mdはまだ空ファイルのまま？\n\nもしそうなら、かなり損している。\n\nClaude Codeはセッションが変わるたびに記憶がリセットされる。つまりCLAUDE.mdなしで使うと、毎回「このプロジェクトの技術スタックは？」「どんなコーディング規約がある？」という基本情報のやり取りから始まることになる。\n\n俺が実際に試してわかったのは、CLAUDE.mdに書くべきことは「技術スタック」だけじゃないということだ。\n\n```bash\n# プロジェクトルートでCLAUDE.mdを作成\ncat > CL…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "🛠 Claude Codeのカスタムコマンド機能、使ってなかったら今すぐ設定してほしい\n\n`.claude/commands/` ディレクトリにMarkdownファイルを置くだけで、`/project:ファイル名` で呼び出せるスラッシュコマンドが作れる。\n\n俺が実際に使っているコマンド構成：\n\n```\n.claude/\n  commands/\n    review.md       → /project:review\n    deploy-check.md → /project:deploy-check\n    spec.md         → …",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "作業時間の変化を正直に書く。盛った数字じゃなく、実測ベースで。\n\nClaude Code + Cursorを半年使い続けて、特定の作業で所要時間が変わった。\n\n**ボイラープレート生成**\n以前: 2〜3時間（Expressのルーター、コントローラー、モデルをゼロから書く）\n今: 15〜30分（仕様をCLAUDE.mdに書いてclaudeに生成させる）\n\nただし「設計判断」の時間は変わっていない。どういうアーキテクチャにするか、どのテーブル設計にするかは相変わらず自分で考える必要がある。AIが速くなったのは「決まった構造をコードに落とす」部分だけだ。\n…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "🤖 AI経営OS（9エージェント）を数ヶ月運用してわかったこと、正直に書く\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost…これだけのエージェントを動かして学んだ一番の教訓は「エージェントの役割境界を明確にしないと崩壊する」だ。\n\n最初に起きた問題：CFOエージェントが収益予測を出すとき、CMOエージェントのマーケ施策を「勝手に」前提に置いて計算し始めた。CFOとCMOの役割が重なって、判断の根拠がわからなくなった。\n\n対処法は単純だった。各エージェントのCLAUDE.mdに「担当範囲」と「判断しては…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はCLAUDE.mdを適当に書いていた。それが失敗だった。\n\nClaude Codeを使い始めた頃、CLAUDE.mdに書いたのは「Stack: Next.js + PostgreSQL」の2行だけだった。\n\n「どうせAIが賢いんだからコードを見れば理解するだろう」と思っていた。\n\n結果は散々だった。\n\n毎回セッションを始めると「このプロジェクトの構成を教えてください」から始まる。コードを生成させると微妙にプロジェクトの命名規則と合わない変数名が混じる。ビジネスルール違反のコードをAIが平然と書いてくる。何度か「あ、これおかしい」とレビューで気づい…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
