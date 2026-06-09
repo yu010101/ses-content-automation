@@ -1062,6 +1062,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code実践Tips集2026年最新版：毎日使う開発者が教える本当に使えるテクニック",
+      "articleUrl": "https://qiita.com/sescore/items/8a25772fdb0f2e12681c",
+      "createdAt": "2026-06-08T23:07:03.695Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを書く前と後で、Claude Codeへの説明コストがゼロになった。\n\n8ヶ月間、毎日Claude Codeを使ってきた。最初の1ヶ月は本当に無駄が多かった。毎回「このプロジェクトはNext.js 14でApp Router使っていて、TypeScriptのstrict modeで、コンポーネントはsrc/components/に置いて...」という説明から始めていた。\n\nそれがCLAUDE.mdを書いてから一切なくなった。\n\nプロジェクトルートに`.claude/CLAUDE.md`を置くと、そのプロジェクトのすべてのClaude …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのコンテキスト設定、まだ毎回手入力してる？\n\nもしセッションのたびに「このプロジェクトはNext.js 14で...」と説明しているなら、CLAUDE.mdを使っていない証拠だ。\n\n`.claude/CLAUDE.md`というファイルを1つ作るだけで、そのプロジェクトのすべてのClaude Codeセッションが「このプロジェクトを最初から知っている状態」で始まるようになる。\n\nClaude Codeを使い始めた最初の1ヶ月、このファイルの存在を知らなかった。毎回コンテキスト説明から始めていて、同じことを何度も入力していた。完全に無…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🔧 Claude Codeで毎日使うコマンドパターンが固まってきた。全部公開する。\n\n8ヶ月使い続けて、本当に使うのはこの5パターンだと分かった。\n\n**1. /compact でコンテキスト節約**\n\n```\n/compact\n```\n\n1〜2時間ごとに打つのが習慣になった。長時間作業でこれをサボると、後半の回答品質が明らかに落ちる。コンテキストウィンドウが埋まっているせいだ。タイマーをセットして定期的に打つことをおすすめする。\n\n**2. --print で非インタラクティブ実行**\n\n```bash\ngit diff main...featur…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeを導入して8ヶ月。変わったことと変わらなかったことを正直に書く。\n\n盛った数字は書かない。実感だけを言語化する。\n\n---\n\n**変わったこと（良い方向）**\n\n定型的なCRUDの実装にかける時間がほぼゼロになった。DBスキーマと既存のパターンファイルを`@`で渡せば、一貫したコードを生成してくれる。ここに時間を使わなくなった分、アーキテクチャの判断や、本当に難しいロジックの部分に集中できている。\n\nPR説明文を書く時間が減った。Claude Codeが変更の文脈を理解した状態でdiffをレビューできるので、「この変更の意図は何か…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OS（9エージェント）を3ヶ月運用してわかったこと。\n\nOpenClawでCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostなど複数エージェントを構築して運用している。やってみて初めて分かったことが多かった。\n\n**1. エージェントに「役割の境界」を書かないと収拾がつかなくなる**\n\n最初は「CFOエージェント」に財務関連を何でも任せようとした。でも「財務分析をする」と「資金調達の意思決定をする」は全然違う。エージェント定義に「ここまでやる、これはやらない」を明示しないと、複数エージェントが同じ問題…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初の1ヶ月、Claude Codeの使い方を完全に間違えていた。今はこう使っている。\n\n同じ失敗をする人を減らしたいので、正直に書く。\n\n---\n\n**失敗1：CLAUDE.mdを知らずに毎回ゼロから説明していた**\n\n毎回「このプロジェクトはNext.js 14で、TypeScript strict modeで...」と入力していた。1日3〜4回、同じ説明を。完全に無駄だった。\n\n今はこうしている：`.claude/CLAUDE.md`にプロジェクトの文脈を全部書く。スタック、コーディング規約、設計の背景。これを書いてから一切説明しなくなった。最初…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
