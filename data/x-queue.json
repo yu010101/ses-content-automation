@@ -1180,6 +1180,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "3人会社がAI経営OSを作った話｜CFO・CMO・COOをAIにした2026年のリアル",
+      "articleUrl": "https://qiita.com/sescore/items/a6d40ea3e2ec927fd8f1",
+      "createdAt": "2026-06-10T23:11:39.290Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CFOをAIエージェントにしたら、月次の意思決定が変わった。\n\n正確に言うと「変わった」というより「確実に実行されるようになった」の方が近い。\n\n我が社は合同会社Radineer、3人の会社だ。\nデータ分析エンジニア出身の自分が代表を務め、月商250万円ほどの規模で動いている。\n\n半年前まで、月次PLのレビューはこんな感じだった。\n\n・請求書をスプレッドシートから拾ってくる\n・費用をカテゴリごとに集計する\n・「今月は利益が出たのか」を把握するまで2〜3時間かかる\n・それでも月末にやれないことが多かった\n\n今は /cfo を打つと15分で終わる。\n\n/c…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "AIエージェントに経営管理を任せる設計、データを渡さずに動かしていませんか？\n\nこれは半年前の自分への問いでもある。\n\n最初にAI経営OSを作ろうと思ったとき、自分がやったのは「スキル定義を書いてClaude Codeで呼び出す」だけだった。\nNeon DBも繋がず、請求書データも渡さず、ただ定義ファイルだけ書いて満足していた。\n\n/cfo を打つと、こんな答えが返ってきていた。\n「月次PLのレビューには、売上・原価・販管費の三区分で確認するのが一般的です」\n\nこれはChatGPTで検索しても出てくる話だ。エージェントを作った意味がない。\n\n---\n\n…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawの/cfoスキル、コピペで使える定義を公開する。\n\n自社で半年使って改善してきた構成だ。\n3人会社のCFO代替として実運用しているバージョンをそのまま出す。\n\n---\n\n【ファイル構成】\n\nスキルファイルの置き場所は以下だ。\n\n```\n.claude/\n  commands/\n    cfo.md      ← CFOスキル定義\n    cmo.md\n    coo.md\n  mcp.json      ← MCPサーバー設定\n```\n\nClaude Codeでは .claude/commands/ 以下の .md ファイルが /コマン…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "AI経営OS6ヶ月の正直な数字を出す。盛りなし。\n\n「生産性10倍」とか「売上2倍」とかは書かない。\n実際に変化した数字と、変化しなかった数字を分けて出す。\n\n---\n\n【変化した数字】\n\n▼ PLレビュー所要時間\n導入前: 月1回、2〜3時間（請求書集計含む）\n導入後: 月3回、1回あたり15分\n/cfo がNeon DBから財務データを引いてPLを組み立てるので、集計作業がなくなった。\n\n▼ 週次振り返りの実施率\n導入前: 月に1〜2回しかできていなかった\n導入後: 6ヶ月連続で毎週実行\n/ceo スキルが週次レビューのフォーマットを持っていて、「…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "5つのAIエージェントを同時運用して見えてきた、設計の落とし穴は何だと思う？\n\n答えを先に言う。\n「データを繋がないで運用する」「エージェントに役割を詰め込みすぎる」の2つだ。\n\n---\n\n【失敗1: データ接続なしで運用していた】\n\n最初の2ヶ月は、MCPサーバーを繋がずに動かしていた。\n/cfo を打っても出てくるのは「PLレビューの一般的な手順」だった。\n\nこれはChatGPTで検索するのと変わらない。\n「エージェントを作ったのに使えない」という感想になるのは当然で、問題はツールではなくデータ設計だった。\n\n.claude/mcp.json でN…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "SNS自動投稿エージェントで15分以内に複数投稿を走らせたら、シャドウバンされた。\n\n2025年の実体験だ。笑えない。\n\n---\n\n【何が起きたか】\n\n/cmo スキルを作って、SNS投稿の自動化を試みた時期がある。\nコンテンツを生成して、APIで投稿して、次のコンテンツを生成して、また投稿する。\nエージェントが動き続けるので、15分以内に複数投稿が走った。\n\n翌日からインプレッションが急落した。\n通常の20〜30%程度まで落ちた。\n回復までに2〜3週間かかった。\n\nSNSプラットフォームは短時間での連続投稿をスパムと判定する。\nこれを知らずにエージェ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

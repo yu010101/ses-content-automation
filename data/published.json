@@ -1011,6 +1011,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "3人会社がAI経営OSを作った話｜CFO・CMO・COOをAIにした2026年のリアル",
+      "date": "2026-06-10T23:03:23.260Z",
+      "articleId": "a6d40ea3e2ec927fd8f1",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n8e1a7f06c90b"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/a6d40ea3e2ec927fd8f1"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260610-3aioscfocmocooai2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
