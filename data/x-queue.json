@@ -1239,6 +1239,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携で変わる開発体験——実践コマンドと具体ユースケース完全解説【2026年】",
+      "articleUrl": "https://qiita.com/sescore/items/3bebfa78a916ca44316f",
+      "createdAt": "2026-06-11T23:06:25.988Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "OpenClawとClaude Codeを別々に使うのをやめた。その結果、新機能開発のフローが根本から変わった。\n\n以前の開発スタイルはこうだった。Claude Codeを起動するたびに「このプロジェクトはNext.js App Routerを使っていて、APIはapp/api/配下に置いて、TypeScriptはstrictモードで、既存のコンポーネントはshadcn/uiを使っていて…」と毎回説明し直していた。セッションが変わるたびにコンテキストをゼロから渡す。この「説明コスト」が積み重なって、1日の中でかなりの時間を食っていた。\n\n解決の糸口は「…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "OpenClawの /cc-products、まだ「なんとなく」使ってる？\n\n実は使い方を変えるだけで、Claude Codeへのコンテキスト渡しがほぼゼロになる。\n\n多くの人がやりがちな失敗は「OpenClawで決めた方針をClaude Codeに手動でコピペする」ことだ。これだと結局、毎回同じ説明を繰り返すことになる。\n\n正しいフローは「構造化→渡す→記録」の3ステップだ。\n\nまずOpenClawで要件を構造化する。\n\n/cc-products\n> 認証機能にOAuth2.0を追加したい。\n> GitHub・Googleアカウントでのログインを想定…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "OpenClaw×Claude Code連携で一番効いたのは、バグ調査の「パターン化」だった。\n\n単発のバグ修正は誰でもできる。でも「同じクラスのバグを二度踏まない仕組み」を作るのが難しい。この問題を解決したのが、Claude Codeでの調査とOpenClawへの蓄積を組み合わせたフローだ。\n\nまずClaude Codeでバグ調査を指示する。\n\nclaude \"本番ログに 'Cannot read properties of undefined (reading map)' が出ている。\napp/components/DataTable.tsx あた…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "正直に書く。OpenClaw×Claude Code連携を始めて変わったこと、数字で。\n\n新機能の要件定義：以前は30〜60分かかっていたものが10〜15分になった。OpenClawの /cc-products が既存の技術制約・設計パターンを把握した上でスペックを出してくれるので、ゼロから考える必要がなくなった。「何を作るか」の言語化にかかる時間が減った。\n\nClaude Codeへのコンテキスト渡し：以前は毎回3〜5分かけてプロジェクトの前提を説明していた。CLAUDE.mdを整備してOpenClawからスペックを渡す形にしたら、この時間がほぼゼロ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "9エージェントで経営OSを数ヶ月運用した。「全部AIに任せれば楽になる」という期待は半分当たって半分外れた。正直なレビューを書く。\n\n当たった部分から話す。\n\n定型的な意思決定は速くなった。「このコストが妥当かどうか」「タスクの優先順位をどう付けるか」「このSNS投稿の文章をどう改善するか」——こういった判断を /cfo、/coo、/cmo に投げると、数秒で構造化された回答が返ってくる。判断のたたき台が即座に出るので、決定が速くなった。\n\n/cc-knowledge への蓄積が本当の武器になった。3ヶ月分の教訓・判断パターン・失敗事例がOpenCla…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初の1ヶ月は完全に間違った使い方をしていた。気づいたら全部やり直した。\n\n当時の使い方はこうだった。Claude Codeで実装する→バグが出る→OpenClawで原因を考える→またClaude Codeで修正する。OpenClawを「デバッグツール」として使っていた。\n\nこれが根本的に間違いだった。\n\nOpenClawは「実装の前」に使うものだ。実装した後でOpenClawに相談しても、コードベース全体の整合性を保ちながら修正する判断はできない。それはClaude Codeの仕事だ。\n\n気づいたきっかけは、同じ設計ミスを3回繰り返したことだった。「…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
