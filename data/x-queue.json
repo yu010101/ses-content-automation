@@ -1298,6 +1298,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "フリーランス独立準備を徹底解説【2026年最新】AIで契約書・データ分析まで完全攻略",
+      "articleUrl": "https://qiita.com/sescore/items/c413bd43e7d293acff2b",
+      "createdAt": "2026-06-12T23:09:54.795Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "Claude Codeで「定型文書の自動生成」をワークフローに完全組み込んでみたら、予想以上に実務レベルで使えた。\n\nAIで文書を生成する「実験」をしたことがある人は多いはずだ。でも「毎日の業務フローに埋め込んでいる」人はまだ少ない。その差を生むのがCLAUDE.mdの書き方だ。\n\n自分がやった手順はこうだ。\n\nまずCLAUDE.mdに出力ルールを3行書く。\n\n```\n## 文書生成ルール\n- 生成物：tasks/output/{type}/{YYYY-MM-DD}_{title}.md に保存\n- 法的・財務的な内容：末尾に「[要専門家確認]」タグ必…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "Claude Codeで文書を自動生成するための設定、まだデフォルトのまま使ってる？\n\n実はCLAUDE.mdに3行追加するだけで、文書生成の品質と再現性が変わる。半年使い続けて「これは外せない」と確信した設定を全部公開する。\n\n**必須の3行：**\n\n```\n## 文書生成ルール\n- 生成物：tasks/output/{type}/{YYYY-MM-DD}_{title}.md に保存\n- 法的・財務的な内容：末尾に「[要専門家確認]」タグ必須\n- フォーマット：tasks/templates/ の雛形ファイルに必ず準拠\n```\n\nこの3行を書く前は…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "Claude Code + Pythonで「多段プロンプト」を実装する方法。コピペで動くコードを公開する。\n\nClaude Codeは単発の指示だけでなく、複数の処理を連鎖させる「多段プロンプト」に真価がある。自分が実際に使っているパターンがこれだ。\n\n```python\nimport anthropic\n\nclient = anthropic.Anthropic()\n\ndef multi_step_generation(base_content, additional_requirements):\n    # ステップ1：ベースドラフト生成\n    …",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "Claude Codeで文書生成を自動化して6ヶ月。正直に変わったことと変わらなかったことを書く。盛った数字は使わない。\n\n**変わったこと①：初稿を作るまでの時間**\n\n以前は白紙から書き始めていたので、構成を考える時間が毎回かかっていた。Claude Codeを使うと、構成込みの初稿が数分で出てくる。この「0→1」の部分は明確に速くなった。\n\n**変わったこと②：繰り返し作業の精神的コスト**\n\n「また同じような文書を作らないといけない」というストレスがなくなった。CLAUDE.mdにテンプレートルールを書いておけば、Claude Codeが毎回フ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSのCFOエージェントに財務処理を自動化させてみたら、見えてきた「任せていいこと」と「任せてはいけないこと」の境界線はどこだと思う？\n\n自分が構築しているAI経営OSは現在9エージェント構成だ。CEO/CFO/COO/CMO/CTO/Brain/Kaizen/Screen/CareerBoostが役割分担して動いている。\n\nこの中で「最も成果が出た」のはCFOエージェントだ。やらせていることはこれだ：\n\n- 毎月の支出カテゴリ分類（会計ソフトのCSVを食わせる）\n- 税務上の確認が必要な取引のフラグ立て\n- 損益の月次サマリ生成\n\nCFOエー…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はClaude APIをPythonで直叩きしてた。結局Claude Codeが正解だった。その理由と、直叩きが向いている場面も正直に書く。\n\n半年前、自分はAnthropicのAPIをこうやって呼び出すコードを書いていた。\n\n```python\nimport anthropic\nclient = anthropic.Anthropic()\nmessage = client.messages.create(\n    model=\"claude-opus-4-8\",\n    max_tokens=1024,\n    messages=[{\"role\"…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
