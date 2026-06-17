@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { config } from "../config.js";
 import { claudeCli } from "../utils/claude-cli.js";
+import { execSync } from "child_process";
 import {
   getArticleType,
   getQiitaArticleType,
@@ -52,6 +53,22 @@ export async function generateArticle(
 
   const systemPrompt = getArticleSystemPrompt(articleType);
 
+  // [user-approved 2026-06-17] creative-db 勝者種バンク注入（PTCG「勝者から学習」転用・死蔵資産の回収）
+  let seedContext = "";
+  try {
+    const block = execSync("python3 /Users/apple/creative-db/seed_lookup.py 人材", {
+      encoding: "utf-8",
+      timeout: 12000,
+    });
+    if (block && !block.includes("no proven")) {
+      seedContext =
+        "\n## 実証済み勝ちパターン（広告で長期稼働した訴求の参考。タイトル・冒頭フックの設計に応用し、捏造はしないこと）\n" +
+        block.trim();
+    }
+  } catch (e) {
+    // seed注入は任意・失敗しても本文生成は継続
+  }
+
   const userContent = `以下のトレンドとキーワードに基づいて、SESエンジニア向けの記事を執筆してください。
 
 ## 今日のトレンド
@@ -59,7 +76,7 @@ ${trendContext}
 
 ## ターゲットキーワード（全て記事内に自然に含めること）
 ${keywordList}
-${marketContext && !marketContext.includes("（ファクトデータなし）") ? `\n${marketContext}` : ""}${learningContext ? `\n${learningContext}` : ""}
+${marketContext && !marketContext.includes("（ファクトデータなし）") ? `\n${marketContext}` : ""}${learningContext ? `\n${learningContext}` : ""}${seedContext}
 
 以下のJSON形式で返してください:
 {
