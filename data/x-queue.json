@@ -1357,6 +1357,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携を徹底解説｜SES脱出を加速するAI開発術2026",
+      "articleUrl": "https://qiita.com/sescore/items/65ea2e8d04eec3470d3c",
+      "createdAt": "2026-06-26T23:51:25.175Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🔧 OpenClawとClaude Codeを組み合わせたら、AIへの指示出しが根本から変わった。\n\n以前はClaude Codeを使うたびに「このプロジェクトの背景は〜」「先週はこういう決定をして〜」と毎回ゼロから説明していた。長期プロジェクトになるほど、前回の意思決定をAIが覚えていないから、また一から説明する。この繰り返しが地味に消耗だった。\n\n解決策は役割の明確な分担だった。\n\nOpenClaw → 思考・記憶・意思決定\nClaude Code → 開発・実行・検証\n\nこの2つを繋ぐのが「構造化されたコンテキスト転送」という発想だ。\n\n具体的…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "OpenClawとClaude Codeの連携設定、まだ手動でコンテキスト渡してる？\n\n毎回「このプロジェクトの技術スタックは〜」「前回の決定では〜」と説明し直してるなら、設計を変えた方がいい。\n\nやるべきことは2つだ。\n\n【1つ目】CLAUDE.mdにプロジェクト固有のルールを書いておく\n\n```\n# CLAUDE.md\n\n## 技術スタック\n- Next.js 15 + TypeScript\n- Tailwind CSS v4\n- Vercel（デプロイ先）\n\n## コーディング規約\n- any型は絶対に使わない\n- 関数名は動詞始まり（get, …",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "🛠 CLAUDE.mdの書き方1つで、Claude Codeの出力品質が変わる。コピペで使える設定を公開する。\n\nClaude Codeを使い始めたとき、出力が「なんかズレてる」と感じることがあった。コードは動くけど、プロジェクトのスタイルと合わない。毎回修正を入れる必要があった。原因は CLAUDE.md が曖昧だったことだ。\n\n試行錯誤した結果、以下の構成に落ち着いた。\n\n```\n# CLAUDE.md - プロジェクト設定\n\n## 技術スタック\n- Next.js 15（App Router）\n- TypeScript 5.x（strict: …",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "1日に3〜4回、Claude Codeに同じコンテキストを説明し直していた。\n\n正確には「同じではない」。毎回少しずつ言い方が違うから、Claude Codeの出力も微妙にブレる。プロジェクトが長くなるほど、この「説明のブレ」が蓄積されてコードの一貫性が失われていった。\n\n計ってみたら、コンテキスト説明の時間が1セッションあたり15〜20分かかっていた。実装の前に毎回それだけ時間を使っていた。\n\n変えたのは2つだ。\n\n【CLAUDE.mdの整備】\nプロジェクトの技術スタック・規約・禁止パターンを一度書いてしまえば、Claude Codeが毎回読み込む。…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSを9エージェントで1ヶ月以上運用してわかったことを書く。\n\n9エージェントとはCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostに加えて、プロジェクト固有のまとめ役だ。最初に思い描いていた姿は「全部自動化されたダッシュボード」だった。エージェントがデータを集め、分析し、判断し、次のアクションを提案してくれる世界。\n\n実際に動かしてわかったのは「エージェントの数より、エージェント間のコンテキスト共有設計が重要」ということだった。\n\n具体的にハマったのはここだ。\n\nCFOエージェントが出した財務分析を…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初は「OpenClawとClaude Codeは別々に使うもの」だと思っていた。完全に間違いだった。\n\n具体的にやっていた失敗はこれだ。\n\nOpenClawで考える → Claude Codeで実装する → OpenClawで振り返る\n\nこの「シリアルな使い方」をしていた。OpenClawで決めたことをメモして、Claude Codeを開いて、また一から説明する。この往復が面倒で、結局どちらかしか使わなくなっていた。\n\n転機は「コンテキスト転送」という考え方に気づいたことだ。\n\nOpenClawのアウトプットをそのままClaude Codeへの指示書…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
