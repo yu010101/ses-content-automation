@@ -1416,6 +1416,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "【2026年最新】Claude Codeを毎日使うエンジニアが語る実践Tips〜SES脱出・フリーランス独立準備にも効く",
+      "articleUrl": "https://qiita.com/sescore/items/06bf73a2d3ea40213026",
+      "createdAt": "2026-07-03T23:06:42.589Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "CLAUDE.mdを設定したら、毎回の繰り返し指示入力がなくなった。\n\nClaude Codeを使い始めた最初の1週間、自分は毎回「TypeScriptを使って」「anyは禁止」「コメントは理由だけ書いて」と入力していた。完全な無駄だ。同じことを何十回も言い続けるのは、ツールを使いこなせていない証拠だ。\n\nプロジェクトルートに CLAUDE.md を置くと、Claudeが毎回そのルールを読んでから動いてくれる。1回設定すれば終わりだ。\n\n自分のCLAUDE.mdに書いていること：\n\n【コーディング規約】\n・TypeScriptを使う。anyは使わない\n…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "あなたのCLAUDE.md、まだ空のまま使っていない？\n\nClaude Codeを使い始めて最初にやるべきことは、CLAUDE.mdの設定だ。これをやらないと、毎回同じ指示を繰り返す羽目になる。「TypeScriptを使って」「anyは禁止」「コメントは理由だけ」——同じことを何十回も入力するのは完全な無駄作業だ。\n\nプロジェクトルートにCLAUDE.mdを置けばいい。Claudeがセッション開始時に必ずそのルールを読んで動いてくれる。\n\n最低限入れるべき項目：\n\n1. コーディング規約（any禁止、関数の長さ上限、コメントルール）\n2. コミット規則…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "/compact を知るまで、長時間セッションが苦痛だった。\n\nClaude Codeのスラッシュコマンドを全部把握しているか？知らないと損するコマンドがある。\n\n【よく使うコマンド一覧】\n/help   → 使えるコマンド一覧を表示\n/clear  → 会話コンテキストをリセット\n/compact → 長い会話を要約して圧縮\n/review → 現在の差分をコードレビュー\n/commit → ステージング〜コミットまで自動化\n\n特に /compact は必須だ。長時間セッションでコンテキストが肥大してくると、回答の精度が落ちてくるのが体感できる。そこ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "CLAUDE.mdの設定に初日30分かけた。その後の繰り返し入力がゼロになった。\n\n正直に変化を書く。誇張はしない。\n\n【なくなった作業】\n・毎回のコーディング規約の説明（以前は1セッションあたり3〜5分かかっていた）\n・コミットメッセージ作成（/commit で数秒になった）\n・「どこから調査すればいい？」という迷い（CLAUDE.mdに委譲ルールを書いたら消えた）\n\n【正直まだ変わっていないこと】\n・複雑な設計判断はまだ自分でやっている\n・エージェントの出力確認は必須（ノーチェックで本番には出せない）\n・初めてのドメイン知識が必要なタスクはClau…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "9つのAIエージェントを並列で動かして気づいたこと——「指示の粒度」が全てを決める。\n\nOpenClawでAI経営OS（CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost）を構築して毎日使っている。エージェントが増えるほど「指示の出し方」の重要性が浮き彫りになってくる。\n\n【最初の失敗】\n「売上を上げる方法を考えて」とCEOエージェントに投げた。返ってきたのは教科書に書いてありそうな一般論だけだった。\n\n【改善後】\nCFOに「今月のキャッシュフロー見通しを3パターン（楽観・中立・悲観）で出して。前提は固定費X…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初の1週間はClaudeに全部任せて、ひどいコードが量産された。今はCLAUDE.mdで全部制御できている。\n\n失敗談を正直に書く。同じ轍を踏んでほしくないから。\n\n【失敗1: コンテキストなしで実装を頼んだ】\n「ユーザー認証機能を作って」と投げた。返ってきたのはJWTを使ったコードだったが、自分のプロジェクトがSessionベースだったことを伝え忘れていた。気づかずにマージしかけた。\n→ 解決策：CLAUDE.mdに「認証はSession。JWTは使わない」と明記した。\n\n【失敗2: サブエージェントを使いすぎた】\n全タスクをサブエージェントに投げ…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

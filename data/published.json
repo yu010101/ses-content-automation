@@ -1146,6 +1146,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "【2026年最新】Claude Codeを毎日使うエンジニアが語る実践Tips〜SES脱出・フリーランス独立準備にも効く",
+      "date": "2026-07-03T23:03:41.851Z",
+      "articleId": "06bf73a2d3ea40213026",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n0bd722d2319a"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/06bf73a2d3ea40213026"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260703-2026claude-codetipsses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
