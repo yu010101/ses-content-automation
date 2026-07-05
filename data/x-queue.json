@@ -1475,6 +1475,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "「SESつらい」から脱出した私がOpenClawで9体のAIエージェント経営OSを構築した全手順【2026年最新徹底解説】",
+      "articleUrl": "https://qiita.com/sescore/items/6dbb31bee0f1a6082d95",
+      "createdAt": "2026-07-04T23:10:08.419Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 OpenClawで9体のAIエージェントを3ヶ月走らせてわかったこと。最初の1週間は何も動かなかった。\n\nCEOエージェントとCFOエージェントを同時に起動しても連携しない。\nなぜか。\nファイルベースのメモリ設計が抜けていたからだ。\n\nOpenClawが一般的なAIツールと根本的に違う点はここだ。\n\nエージェント同士が連携するには「情報の受け渡し設計」が先に必要だ。\n\n私が最初に理解すべきだった構造はこうだ。\n\nCFOエージェントが月次PLを分析する\n↓\nその出力が特定のファイルパスに保存される\n↓\nCEOエージェントがそのファイルを読んで統合判…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CEOエージェントとCFOエージェント、ちゃんと使い分けできてる？9体フル運用している私が正直に答える。\n\nOpenClawを触り始めた頃、私は全エージェントを「なんでも聞けるAI」として使っていた。\n当然ながら混乱した。\n\n「売上の分析をお願い」という指示をCEOエージェントに投げていた。\nでも正解はCFOエージェントへの指示だ。\n\nこのエージェントの役割分担を理解するまで、使い勝手が悪いツールという印象が抜けなかった。\n\n実際の使い分けはこうだ。\n\nCFOエージェント → 財務数字の分析・月次PL確認・コスト最適化\n/openclaw-keiei-…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🛠️ コピペで使えるOpenClaw経営OSコマンド集。9体エージェントの実践的な呼び出し方をまとめた。\n\nOpenClawを3ヶ月運用してわかったのは「コマンドの組み合わせ」が生産性を決めるということだ。\n単発のエージェント呼び出しより、連携させた呼び出しの方が圧倒的に強い。\n\n【毎朝のルーティン】\n\n全体状況を把握する。\n/openclaw-keiei-os:dash\n\n優先タスクを確認する。\n/openclaw-keiei-os:priority\n\nCEOに今日の戦略判断を仰ぐ。\n/openclaw-keiei-os:ceo\n→「今日の最重要タ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "📊 9体のAIエージェントを導入して、実際に何が変わったか。正直に報告する。「生産性10倍」のような誇張はしない。\n\n大前提：実際に計測した変化だけを書く。感覚値ではなく、作業ログと照合した数字だ。\n\n【週次レポート作成】\n導入前：毎週月曜に各種データを集めてレポートを作る作業に約2時間かかっていた。\n導入後：/openclaw-keiei-os:dashと/openclaw-keiei-os:healthを実行して確認するのに約15〜20分。\nただし「完全自動化」ではない。最終的な解釈と判断は自分でやる。\n\n【月次財務確認】\n導入前：会計データをエ…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを3ヶ月運用してわかったこと。設計思想を間違えると全部崩壊する。\n\nOpenClawでAI経営OSを構築するとき、ほとんどの人が最初に犯すミスがある。\n「エージェントを増やせば賢くなる」という思い込みだ。\n\n私も同じ間違いをした。\n9体のエージェントを全部同時に設定しようとして、何も動かない状態が1週間続いた。\n\n本当の設計原則はこうだ。\n\n1エージェント、1責任。そして段階的な統合。\n\nまずCFOエージェント1体を完璧に動かす。\n財務データの入力・分析・出力の流れを確認する。\nそれが安定してから次のエージェントを追加する。\n\nこ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "🔥 最初はCEOエージェントに「全部やって」と投げていた。結局、全エージェントが混乱して使い物にならなかった。正解を見つけるまで3週間かかった。\n\nOpenClaw導入初期の失敗談を正直に書く。\n\n【失敗1：指示が曖昧すぎた】\n\n/openclaw-keiei-os:ceo\n「今月の事業をどうすればいい？」\n\nこれをやった。\nCEOエージェントは立派な回答を返してくれたが、実態と全くかみ合っていない抽象的な提言だった。\n\n原因はシンプル。コンテキストを何も渡していなかった。\n\n正解はこうだ。\n\n/openclaw-keiei-os:ceo\n「CFOの…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIエージェントフレームワーク完全比較：LangChain・CrewAI・AutoGen・Claude Agent SDK・Dify、結局どれを使えばいいのか",
+      "articleUrl": "https://qiita.com/sescore/items/ab45a950e1837918df5c",
+      "createdAt": "2026-07-04T23:23:03.754Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "フレームワーク選びだけで数週間を費やした。その反省から学んだことを書く。\n\n2026年7月、AIエージェントフレームワークの主要選択肢はLangChain・CrewAI・AutoGen・Claude Agent SDK・Difyの5つだ。全部触った結論を先に言う。「ClaudeでエージェントをつくるならClaude Agent SDK一択」だ。\n\n最初はLangChainを選んだ。理由は情報量だ。QiitaにもZennにもGitHubにも解決策が転がっている。最初のプロトタイプは確かに速く動いた。\n\n問題は本番を意識してからだ。LangChainは抽象…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "AIエージェントのフレームワーク、まだ「情報が多いから」だけでLangChainを使い続けていないか？\n\n2026年7月時点、LangChain・CrewAI・AutoGen・Claude Agent SDK・Difyの5つが並立している。それぞれ特性が違い、ユースケースによって最適解が変わる。「みんな使ってるから」でフレームワークを選ぶと、3ヶ月後に後悔することになる。\n\n自分が経験した典型的な失敗をひとつ話す。\n\nLangChainを選んだ初期、設定はデフォルトに近いままだった。動くことを優先し、カスタムエラーハンドリングやロギングは後回しにした。…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Agent SDKでツール付きエージェントを作る最小構成を、そのまま書く。\n\nフレームワーク比較記事は多いが、「実際に動くコードがどれだけシンプルか」を並べたものは少ない。以下がエージェントループの最小構成だ。\n\nimport anthropic\nclient = anthropic.Anthropic()\n\ntools = [{\n  \"name\": \"search_web\",\n  \"description\": \"Webを検索して情報を取得する\",\n  \"input_schema\": {\n    \"type\": \"object\",\n   …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "5つのフレームワーク、全部触った。プロトタイプ完成までの実際の時間を正直に書く。盛った数字は一切ない。\n\nLangChain: 初回プロトタイプまで約2時間。ただし本番に近いコードへの移行に追加で5〜7日かかった。抽象化が多い分、カスタマイズのたびに内部コードを追いかける必要が出てくる。\n\nCrewAI: 初回プロトタイプまで約1時間。APIが直感的で最初の印象は一番よかった。ただし本番環境でのログ設定とエラーハンドリング強化に追加で2〜3日かかった。\n\nAutoGen: 初回プロトタイプまで約3時間。マルチエージェントの概念が独特で慣れが必要だった。…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9つのAIエージェントを同時運用してわかったこと。フレームワーク選択の失敗談も含めて正直に話す。\n\nAI経営OS（CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostの9エージェント）を構築・運用する中で、フレームワーク選択の重要性を体感した。最初の設計では、エージェントごとに実装が違っていた。あるエージェントはLangChainベース、あるエージェントはClaude Agent SDK直叩き。これが後の最大の頭痛の種になった。\n\n問題はエージェント間の連携が複雑になったとき出た。LangChainで作ったエー…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はLangChainで全部やろうとした。3週間後、Claude Agent SDKに乗り換えた。その判断を後悔していない理由を書く。\n\nLangChainを最初に選んだ理由は「情報が多い」の一点だった。2024年末時点では、AIエージェント関連のQiita記事・Zenn記事・GitHubサンプルの大半がLangChainベースだった。困ったときに答えがすぐ見つかる安心感は本物だった。\n\nプロトタイプフェーズは問題なかった。LangChainのAPIはよくできており、最初のエージェントはすぐ動いた。「これで全部いける」と思っていた。\n\n本番に近いコー…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

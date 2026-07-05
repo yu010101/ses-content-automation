@@ -12,7 +12,7 @@ export const config = {
   },
   anthropic: {
     apiKey: () => env("ANTHROPIC_API_KEY"),
-    model: "claude-sonnet-4-20250514",
+    model: "claude-fable-5",
   },
   qiita: {
     accessToken: () => env("QIITA_ACCESS_TOKEN"),

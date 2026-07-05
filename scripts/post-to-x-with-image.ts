@@ -53,7 +53,7 @@ function oauthHeader(method: string, url: string, params: Record<string, string>
 async function generatePost(topic: string): Promise<{ text: string; imageHtml: string; title: string; keyPoints: string[] }> {
   const client = new Anthropic();
   const resp = await client.messages.create({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-fable-5",
     max_tokens: 4096,
     messages: [{
       role: "user",
