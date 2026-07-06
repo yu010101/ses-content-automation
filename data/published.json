@@ -1227,6 +1227,33 @@
           "url": "https://note.com/sescore/n/nf4e3c1765f14"
         }
       ]
+    },
+    {
+      "title": "3人会社でAI経営OSを自作した話：Claude Codeで月商250万を回す2026年の実務構成",
+      "date": "2026-07-05T23:04:05.991Z",
+      "articleId": "198b36e173d7b7bcd1fd",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n918fbaa2a79d"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/198b36e173d7b7bcd1fd"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260705-3aiosclaude-code2502026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

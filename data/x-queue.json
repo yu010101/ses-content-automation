@@ -1593,6 +1593,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "3人会社でAI経営OSを自作した話：Claude Codeで月商250万を回す2026年の実務構成",
+      "articleUrl": "https://qiita.com/sescore/items/198b36e173d7b7bcd1fd",
+      "createdAt": "2026-07-05T23:08:44.732Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeに「/cfo」とタイプしたら、毎月かかっていたPL作業の大半が自動化された話をする。\n\n3人会社の代表として動かしながら、今年本格的にAI経営OSを構築した。CFO・COO・CMO・CEOの4エージェントを、すべてClaude Codeのスキルファイルとして実装している。\n\n最初に作ったのはCFOエージェントだ。\n\n毎月の損益計算書（PL）の整理・分析は、地味に時間を食う作業だった。freeeからCSVをエクスポートして、数字を並べ替えて、前月比を手で計算して、社内向けコメントを書く。小さな会社でも、これが馬鹿にならない時間…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "🤔 CLAUDE.mdの設定、まだデフォルトのまま使ってる？\n\nClaude Codeを使い始めた人の多くが、CLAUDE.mdをほぼ空のまま運用していることに気づいた。これはもったいない。CLAUDE.mdはClaude Codeの「会社の憲法」みたいなものだ。ここに書いたルールが、エージェントの判断基準になる。\n\n3人会社でAI経営OSを運用している中で、特に効いていると感じる設定を共有する。\n\nまず「コスト事故防止」のセクションだ。\n\n```markdown\n## 無人運用 安全鉄則\n\n### コスト事故防止\n- 有料LLM/APIはClaud…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのスキルファイル構成を公開する。AI経営OSを複数エージェントで回している実態だ。\n\nよく「エージェントって何を作ったの？」と聞かれる。整理すると以下の構成になっている。\n\n```bash\nls ~/.claude/skills/openclaw-keiei-os/\n# ceo.md  cfo.md  coo.md  cmo.md\n# cf.md   pl.md   shiwake.md\n# health.md  priority.md  tasks.md\n# inbox.md   meeting-prep.md  dash.md…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "月に4つの業務がAIエージェントに移管された。実際の変化を正直に書く。\n\nAI経営OSを本格稼働させて数ヶ月が経った。「どのくらい変わった？」という質問をよくされる。盛った数字は書かない。実際に変化したことだけを書く。\n\n【変化した4つの業務】\n\n■ 月次PL分析\n以前：CSVエクスポート→Excelで集計→コメント書き→社内共有\n今：CFOエージェントが集計・分析の下書き生成→自分が確認・修正→共有\n\n作業の内容が「自分で集計する」から「エージェントの分析をレビューする」に変わった。集計作業そのものは自分ではやらなくなった。\n\n■ コンテンツ量産\n以…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "🧠 AI経営OSを複数エージェントで運用してみてわかったこと。設計の失敗と成功の話。\n\n最初は「とりあえず全部エージェントに」という発想で始めた。CFO・COO・CMO・CEOの4エージェントを一気に作って、いろんな業務を投げてみた。\n\n最初の1ヶ月でわかったのは「エージェントが多いと管理コストが上がる」ということだ。\n\n各エージェントのスキルファイルを更新するたびに、他のエージェントとの整合性を確認する必要が出てくる。CFOのファイルに書いた数値の定義と、CEOのファイルに書いた数値の定義が微妙にズレていたりする。これを全部把握するのが、想定外に面…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeのworkflowを使わずに手動でエージェントを呼んでいた。それが最大の失敗だった。今は全部自動化している。\n\n具体的に何が失敗だったか。\n\n最初の設計は「必要になったときに手動で `/cfo` を叩く」というシンプルなものだった。悪くない出発点だ。でも数ヶ月使って気づいたのは、「手動で呼ぶ」は結局続かないということだ。\n\n忙しい月は `/cfo` を呼ぶのを忘れる。プロジェクトが重なると月次レビューが飛ぶ。緊急タスクが積み重なると、定例の振り返りが後回しになる——そういうときにこそ、経営の数字を見る必要があるのに。\n\n解決…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
