@@ -1652,6 +1652,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携の実践録：SESエンジニアがAIで副業→独立した話【2026年最新】",
+      "articleUrl": "https://qiita.com/sescore/items/95f9406f1de07e1ce237",
+      "createdAt": "2026-07-06T23:08:28.484Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "OpenClaw × Claude Codeを本格的に組み合わせてから、開発プロセスが構造的に変わった。\n\n以前は「何を作るか考える思考」と「どう実装するかの思考」が常に混在していた。タスクのたびに文脈を頭の中で再構築するコストが馬鹿にならなかった。この2つの思考レイヤーを明確に分離したのが、OpenClaw × Claude Codeの組み合わせだ。\n\n構造を整理するとシンプルだ。\n\nOpenClawが「何を・なぜ・どの優先度で」を担う。\nClaude Codeが「どうやって実装するか」を担う。\n\nOpenClawのディレクトリ構成はこうなっている。…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "OpenClawのmemory/ディレクトリ、ちゃんと設計できていますか？\n\n自分は最初の3ヶ月間、ここを完全に雑に使っていた。プロジェクト文脈も過去の判断経緯も教訓も、全部バラバラのファイルに書き捨てていた。結果、Claude Codeに「前回の判断の理由は？」と聞いても的外れな返答が増えて、「やっぱりAIには記憶がない」と思い込んでいた。\n\n問題はAIではなく、自分のメモリ設計だった。\n\nmemoryファイルのfrontmatterに `name`・`description`・`type` を付けることで、Claude Codeが「このメモリはいつ…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "OpenClaw × Claude Codeでリサーチと知識管理を自動化するとき、実際に使えるコマンドパターンをまとめる。コピペして試してほしい。\n\n**パターン1: CMOスキル × 競合・市場調査**\n\n```bash\nclaude --skill openclaw-keiei-os:cmo \\\n  \"競合サービスの特徴を整理して。\\\n   対象: [調べたい分野]。\\\n   出力: 比較表Markdown形式\"\n```\n\nCMOスキルファイルに「競合分析・市場調査・コンテンツ戦略」の責任範囲が定義されている。このコマンドで構造化されたMarkdo…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "OpenClaw × Claude Codeを使って、リサーチ作業がどう変わったか正直に書く。派手な数字は出さない。\n\n**定量で出せる1点**\n\nCMOスキルでのリサーチ実行: コマンド入力からMarkdown出力まで、自分の環境では概ね3〜8分。「概ね」と書いた理由がある。調査対象の広さ・WebSearchの結果量・処理内容によって時間が変わるからだ。ピーク値を平均値として書かない。それが正確な情報提供だと思っている。\n\n**変化したこと（定性）**\n\n以前は競合調査を始める前に「どこから調べよう」「どう整理しよう」という準備に30〜60分使ってい…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "9エージェント体制（CFO/COO/CMO/CEO/CTO/Brain/Kaizen/Screen/CareerBoost）を実際に運用してわかったことを書く。\n\n**わかったこと1: 全部同時に設定しようとすると破綻する**\n\n最初に9つ全部セットアップしようとした。結果、どのエージェントも中途半端な定義のまま稼働させてしまい、出力品質がバラバラになった。今は「使うスキルから1つずつ完成させる」方針だ。自分の優先順位はCEO→CMO→CTOの順だった。意思決定・市場分析・技術判断の順で実務への貢献度が高かったからだ。\n\n**わかったこと2: スキルフ…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初の失敗を正直に書く。OpenClaw × Claude Codeの導入1週目、自分は3つのことで盛大にハマった。\n\n**失敗1: CLAUDE.mdを長く書きすぎた**\n\n「なるべく詳しく書けば伝わるはず」という思い込みで、CLAUDE.mdに500行近いルールを書いた。結果、Claude Codeが起動するたびにコンテキスト消費が増え、長いセッションで指示の後半が無視される現象が起きた。\n\n正解は「短く・明確に・優先度順に」だった。今は100行以内を目標に、本当に守ってほしいルールだけを書く。「詳しく書けば伝わる」ではなく「本質だけ書けば動く」と…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
