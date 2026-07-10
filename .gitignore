@@ -41,3 +41,6 @@ coverage/
 
 # 外部自動投稿botは公開しない (feedback_no_buzz_external_auto_post)
 scripts/x-daily-article-pipeline.sh
+.venv*/
+.dart_tool/
+*.log.*
