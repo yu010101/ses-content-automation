@@ -1711,6 +1711,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "【2026年最新】フリーランスエンジニアのAI業務効率化ツール完全まとめ｜結局どれを使えばいいのか徹底解説",
+      "articleUrl": "https://qiita.com/sescore/items/5f6385661452f45dae54",
+      "createdAt": "2026-07-11T23:32:18.907Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "CLAUDE.mdを書いてからClaude Codeが別物になった。\n\nClaude Codeを入れたはいいが「なんか微妙だな」で止まっている人に伝えたい。\n問題はほぼ100%、CLAUDE.mdを書いていないことだ。\n\nClaude Codeはプロジェクトルートにある CLAUDE.md を起動時に自動で読み込む。\nこれが設定されていないと、毎回「このプロジェクトはNext.jsで〜」から説明し直すことになる。\n\n自分が実際に書いているCLAUDE.mdの構成はこうだ：\n\n```\n## プロジェクト概要\nNext.js 15 + TypeScript…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "CLAUDE.mdの設定、まだ空のまま使っていませんか？\n\nClaude Codeを使い始めて最初にハマるのが「毎回同じ説明をしている感覚」だ。\n「このプロジェクトはReactで」「テストはVitestで」「TypeScriptのanyは禁止で」——同じことを毎回言い続けるのは疲れるし、言い忘れると規約を無視したコードが生成される。\n\nこの問題の解決策がCLAUDE.mdだ。\n\n---\n\n実際に運用していて特に効いていると感じる項目を3つ挙げる。\n\n① コーディング規約（これが最重要）\n\n```\n## コーディング規約\n- テストはVitest。機能追…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "Claude Codeのworkflow機能を使い始めてから、エージェントの動き方が変わった。\n\n「会話しながらコードを直してもらう」というイメージを持っている人が多いが、Claude Codeはそれだけじゃない。複数の処理を連鎖・並列で実行する「workflow」の組み方を覚えてから、使い方が別次元になった。\n\n実際に自分が使っているパターンを3つ共有する。\n\n---\n\nパターン1: レビュー → 修正 → テスト の連鎖実行\n\n```\n# Claude Code起動後、こう指示する\n「src/lib/配下の全ファイルをレビューして、\n バグや型の問…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "Claude Codeを導入して3ヶ月。正直な作業時間の変化を書く。\n\n「生産性が10倍になった」みたいな話は信用していない。\n実際に自分が体感した変化を、盛らずに共有する。\n\n---\n\n効果を感じた作業\n\n① 既存コードへの機能追加\n\nBefore: 既存コードを読む→影響範囲を把握する→実装する→テスト書く\nで、小さな機能追加でも1〜2時間かかっていた。\n\nAfter: 「〇〇の機能を追加して。関連ファイルも確認してテストも書いて」と指示するだけ。\n自分は実装後のレビューと最終確認に集中できるようになった。\n\n体感で30〜40%程度は時間が短縮され…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSを9エージェントで3ヶ月動かした結果、何がわかったか？\n\nClaude Code + OpenClawをベースに、以下の9エージェントで構成している：\n\nCFO（財務管理）\nCOO（業務管理）\nCMO（マーケティング）\nCEO（意思決定支援）\nBrain（情報収集・整理）\nKaizen（改善提案）\nScreen（コンテンツスクリーニング）\nCareerBoost（スキル・キャリア管理）\nSecretary（スケジュール・議事録）\n\n「AIに経営を手伝わせる」というアイデア自体はキャッチーだが、実際に動かしてみるとボトルネックは技術ではなく「…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はClaude Codeを完全に使い損ねていた。今は違う。\n\n導入直後の1ヶ月、自分はClaude Codeを「賢いターミナル補完ツール」として使っていた。\n\n「このコード直して」「この関数追加して」\n\nそれだけ。\n\n毎回プロジェクトの説明から始めて、毎回規約を伝えて、毎回「テスト書いてね」と言って。\nこれだと会話型AIとほぼ変わらない。Claude Codeの真の価値を全然引き出せていなかった。\n\n---\n\n失敗1: CLAUDE.mdを知らずに1ヶ月使い続けた\n\n「毎回説明するのが面倒だな」と思いながらも、それが仕様だと思っていた。\nCLAUD…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
