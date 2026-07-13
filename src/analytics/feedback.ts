@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
+import { claudeCli } from "../utils/claude-cli.js";
 import { config } from "../config.js";
 import type { PerformanceSnapshot } from "./collector.js";
 
@@ -35,7 +35,6 @@ export async function analyzeFeedback(): Promise<LearningState> {
     throw new Error("No articles in performance data to analyze.");
   }
 
-  const client = new Anthropic({ apiKey: config.anthropic.apiKey() });
 
   // Load X queue data for hookStyle analysis
   let xHookSummary = "";
@@ -76,20 +75,14 @@ export async function analyzeFeedback(): Promise<LearningState> {
   // Build title list for diversity analysis
   const titleList = snapshot.articles.map((a) => `「${a.title}」`).join("\n");
 
-  const response = await client.messages.create({
-    model: config.anthropic.model,
-    max_tokens: 4096,
-    system: `あなたはコンテンツマーケティングのデータアナリストです。
+  const systemPrompt = `あなたはコンテンツマーケティングのデータアナリストです。
 記事のパフォーマンスデータを分析し、今後の記事生成を改善するためのインサイトを抽出してください。
 特に以下を重視してください：
 1. テーマの多様性 — 同じネタの繰り返しを検出
 2. X投稿のフック改善 — 冒頭1文のインパクト、数字・問いかけ・対比の使い分け効果を分析
 3. エンゲージメント率の高い投稿パターン抽出 — タイトル構成・キーワード配置・投稿時間帯の相関を特定
-分析結果は必ずJSON形式で返してください。`,
-    messages: [
-      {
-        role: "user",
-        content: `以下の記事パフォーマンスデータを分析してください。
+分析結果は必ずJSON形式で返してください。`;
+  const userContent = `以下の記事パフォーマンスデータを分析してください。
 
 ## パフォーマンスサマリー
 - 総記事数: ${snapshot.summary.totalArticles}
@@ -125,12 +118,8 @@ ${titleList}
 topicDiversityScoreは記事タイトル一覧を分析し、テーマの多様性を0-1で評価してください（1=非常に多様、0=全て同じテーマ）。
 suggestedNewAnglesは、まだ書かれていない切り口を提案してください。
 
-JSONのみを返してください。`,
-      },
-    ],
-  });
-
-  const text = response.content[0].type === "text" ? response.content[0].text : "";
+JSONのみを返してください。`;
+  const text = claudeCli(systemPrompt + "\n\n" + userContent);
 
   let analysis: Omit<LearningState, "lastUpdated">;
   try {

@@ -1362,6 +1362,33 @@
           "url": "https://note.com/sescore/n/nf4595f8ecf08"
         }
       ]
+    },
+    {
+      "title": "SESつらいエンジニアが2026年にフリーランスへ転身する最短ルート【データ分析×AI活用】",
+      "date": "2026-07-12T23:09:22.852Z",
+      "articleId": "0874fd5363e1fd43afd4",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n842a4f9d4d82"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/0874fd5363e1fd43afd4"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260712-ses2026ai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
