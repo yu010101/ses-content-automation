@@ -1770,6 +1770,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code毎日使い録：SESエンジニアがデータ分析を自動化してフリーランス転向を考えた話",
+      "articleUrl": "https://qiita.com/sescore/items/25c7b6f65e6722115c32",
+      "createdAt": "2026-07-13T23:24:23.750Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを設定してから、Claude Codeへの「毎回の説明」が完全になくなった。\n\nClaude Codeを使い始めた最初の数週間、セッションのたびに「このプロジェクトはPythonのデータ分析で、型ヒントを必ず付けて、secretsフォルダは触らないで」と毎回説明していた。ツールが賢くても、コンテキストが消えるたびにリセットされるのは純粋にストレスだった。\n\n転機はCLAUDE.mdを書いたことだ。プロジェクトルートにこのファイルを置くだけで、Claude Codeはセッション開始時に自動で読み込んでくれる。一度書けば、もう同じ説明を繰…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeの設定ファイル、まだ何も書いていない？\n\nもしCLAUDE.mdを設定していないなら、毎回のセッションで「このプロジェクトは〇〇で、規約は〇〇で、触ってはいけないのは〇〇」と説明していることになる。Claude Codeは確かに賢いが、コンテキストはセッションが切れるとリセットされる。\n\nCLAUDE.mdを使えば、この繰り返しが不要になる。プロジェクトルートに置くだけで、Claude Codeがセッション開始時に自動で読み込む。設定さえ書けば、次回からゼロコンテキストで即戦力になる。\n\nポイントは「何を書くか」ではなく「何を禁止…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "データ分析業務でClaude Codeを実際に使っている3つのパターンを全部公開する。\n\nコードを書かせるだけが使い方ではない。「ファイルを読んで実行して確認する」という一連の流れをClaude Codeに任せると、手数が大幅に減る。\n\n**パターン1：CSVの前処理を一気に任せる**\n\n現場で渡されるCSVは、文字コード・日付フォーマット・欠損値の処理がバラバラなことが多い。\n\n手順：\n1. CSVをプロジェクトフォルダに置く\n2.「このCSVの品質チェックをして、問題点を洗い出してからクリーニングスクリプトを書いて」と指示\n3. Claude Co…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "🔢 Claude Codeを3ヶ月使って、正直に変わったことを書く。盛った数字は使わない。\n\n「生産性10倍」「作業時間90%削減」という主張を見るたびに疑問が湧く。自分の体感はそんなに単純ではなかった。変わったことと、変わらなかったことを正直に整理する。\n\n**変わったこと1：繰り返し作業の初期ドラフト速度**\n\nCSVの前処理スクリプト、SQLのひな形、テストコードの骨格——これらの「最初の一行から書き始める」部分が速くなった。「ゼロから書き始める気が重い」という感覚が減った。具体的な分数はプロジェクトによって全然違うので断言しないが、初動のハー…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9つのAIエージェントで経営OSを回して、本当に効いたこととそうでなかったことを整理する。\n\nCFO、COO、CMO、CEO、CTO、Brain、Kaizen、Screen、CareerBoost——この9つのエージェントを「AI経営OS」として毎日稼働させている。OpenClawのエージェントシステムとClaude Codeを組み合わせた構成だ。\n\n数ヶ月運用した中で、「本当に使っているエージェント」と「作ったけどあまり使わないエージェント」が自然に分かれてきた。\n\n**毎日使っているエージェント**\n\nCFOエージェントは財務のモニタリングに欠かせ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeを「賢いオートコンプリート」として使っていた。それが間違いだった。\n\n使い始めの頃、やっていたことがある。エディタのタブを開いて、コードを数行書いて、「続きを書いて」と頼む。GitHub Copilotの延長として使っていた。\n\nこれだと、Claude Codeの力の10%も引き出せていない。\n\n**最初の失敗：コード補完として使っていた時期**\n\n「続きを書いて」という使い方は最も非効率だった。Claude Codeはローカルファイルを直接読み書きできるし、シェルコマンドも実行できる。この「実行できる」という点をまったく活…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

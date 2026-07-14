@@ -228,8 +228,12 @@ export function formatLearningContext(state: LearningState): string {
     ? `\n\n⚠️ 注意: 現在のパフォーマンスデータは蓄積が少ないため、上記の分析は暫定的です。\nデフォルト推奨値を含んでいます。独自の判断やバリエーションを積極的に試してください。`
     : "";
 
+  // 決定論品質ゲート(ses_improve.py注入)は必ず先頭・トリム免除で生成器に届ける
+  const forcedLines = (state.recommendations ?? [])
+    .filter((r) => typeof r === "string" && r.startsWith("[決定論品質ゲート]"))
+    .map((r) => `- ${r}`);
   // Keep learning context concise (max 3 items) to avoid prompt bloat
-  const trimmedSections = sections.slice(0, 3);
+  const trimmedSections = [...forcedLines, ...sections.slice(0, Math.max(1, 3 - forcedLines.length))];
   return `\n## パフォーマンス指示（簡潔版）
 ${trimmedSections.join("\n")}${dataQualityNote}`;
 }

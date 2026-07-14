@@ -1389,6 +1389,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "Claude Code毎日使い録：SESエンジニアがデータ分析を自動化してフリーランス転向を考えた話",
+      "date": "2026-07-13T23:11:13.409Z",
+      "articleId": "25c7b6f65e6722115c32",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n20ce0f7e5bb7"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/25c7b6f65e6722115c32"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260713-claude-codeses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
