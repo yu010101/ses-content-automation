@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-07-15T13:01:04.078Z",
+  "collectedAt": "2026-07-16T13:01:09.810Z",
   "articles": [
     {
       "title": "【2026年最新】SES単価相場とフリーランス市場の全データ分析 - AI時代のエンジニア年収戦略",
@@ -8,7 +8,7 @@
         "qiita": {
           "id": "116c660825f6bc579a44",
           "url": "https://qiita.com/sescore/items/116c660825f6bc579a44",
-          "views": 4982,
+          "views": 5032,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -29,7 +29,31 @@
           "url": "https://note.com/sescore/n/n5980ca8d91a5"
         }
       },
-      "totalEngagement": 4982
+      "totalEngagement": 5032
+    },
+    {
+      "title": "OpenClaw×Claude Code連携で爆速開発【2026年最新】SESやめたいエンジニアのAI駆動独立準備術",
+      "publishedDate": "2026-07-11T23:10:42.956Z",
+      "platforms": {
+        "qiita": {
+          "id": "775341ba6f0d106fd7d0",
+          "url": "https://qiita.com/sescore/items/775341ba6f0d106fd7d0",
+          "views": 3293,
+          "likes": 2,
+          "stocks": 3,
+          "tags": [
+            "ses",
+            "AI",
+            "独立",
+            "フリーランス",
+            "Claude"
+          ]
+        },
+        "note": {
+          "url": "https://note.com/sescore/n/n8b85acc8c386"
+        }
+      },
+      "totalEngagement": 3328
     },
     {
       "title": "2026年最新｜SESからフリーランス転向の実態データ分析",
@@ -38,7 +62,7 @@
         "qiita": {
           "id": "98788e5bdf19c8445389",
           "url": "https://qiita.com/sescore/items/98788e5bdf19c8445389",
-          "views": 3239,
+          "views": 3287,
           "likes": 2,
           "stocks": 0,
           "tags": [
@@ -56,31 +80,7 @@
           "topics": []
         }
       },
-      "totalEngagement": 3259
-    },
-    {
-      "title": "OpenClaw×Claude Code連携で爆速開発【2026年最新】SESやめたいエンジニアのAI駆動独立準備術",
-      "publishedDate": "2026-07-11T23:10:42.956Z",
-      "platforms": {
-        "qiita": {
-          "id": "775341ba6f0d106fd7d0",
-          "url": "https://qiita.com/sescore/items/775341ba6f0d106fd7d0",
-          "views": 3219,
-          "likes": 2,
-          "stocks": 3,
-          "tags": [
-            "ses",
-            "AI",
-            "独立",
-            "フリーランス",
-            "Claude"
-          ]
-        },
-        "note": {
-          "url": "https://note.com/sescore/n/n8b85acc8c386"
-        }
-      },
-      "totalEngagement": 3254
+      "totalEngagement": 3307
     },
     {
       "title": "【2026年最新】AIコーディングツール5選を徹底比較｜Claude Code・Copilot・Cursor・Codeium・Windsurf",
@@ -89,7 +89,7 @@
         "qiita": {
           "id": "f80187de48a28fa1d045",
           "url": "https://qiita.com/sescore/items/f80187de48a28fa1d045",
-          "views": 2925,
+          "views": 2931,
           "likes": 5,
           "stocks": 11,
           "tags": [
@@ -110,7 +110,7 @@
           "url": "https://note.com/sescore/n/nc444de1f91d2"
         }
       },
-      "totalEngagement": 3030
+      "totalEngagement": 3036
     },
     {
       "title": "SES vs フリーランス市場データ徹底分析｜2026年単価相場と転向成功のポイント",
@@ -119,7 +119,7 @@
         "qiita": {
           "id": "9aeb9a0038fa8eadc3ad",
           "url": "https://qiita.com/sescore/items/9aeb9a0038fa8eadc3ad",
-          "views": 2857,
+          "views": 2887,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -131,7 +131,7 @@
           ]
         }
       },
-      "totalEngagement": 2872
+      "totalEngagement": 2902
     },
     {
       "title": "客先常駐エンジニアの実態と構造的課題：SES市場を深掘りする徹底ガイド",
@@ -140,7 +140,7 @@
         "qiita": {
           "id": "2abaa05d0dff0bbc3f56",
           "url": "https://qiita.com/sescore/items/2abaa05d0dff0bbc3f56",
-          "views": 1568,
+          "views": 1580,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -148,7 +148,31 @@
           ]
         }
       },
-      "totalEngagement": 1568
+      "totalEngagement": 1580
+    },
+    {
+      "title": "SES1年目で転職を考える前に知るべき業界の真実【2026年最新版】",
+      "publishedDate": "2026-03-13T12:40:31.651Z",
+      "platforms": {
+        "qiita": {
+          "id": "b4c043fc3b8565c53c49",
+          "url": "https://qiita.com/sescore/items/b4c043fc3b8565c53c49",
+          "views": 1467,
+          "likes": 1,
+          "stocks": 1,
+          "tags": [
+            "ses",
+            "転職",
+            "案件",
+            "独立",
+            "フリーランス"
+          ]
+        },
+        "note": {
+          "url": "https://note.com/sescore/n/n6affc0efb7b4"
+        }
+      },
+      "totalEngagement": 1482
     },
     {
       "title": "【2026年版】OpenClawで9体のAIエージェント経営OSを構築した全記録",
@@ -181,37 +205,13 @@
       "totalEngagement": 1479
     },
     {
-      "title": "SES1年目で転職を考える前に知るべき業界の真実【2026年最新版】",
-      "publishedDate": "2026-03-13T12:40:31.651Z",
-      "platforms": {
-        "qiita": {
-          "id": "b4c043fc3b8565c53c49",
-          "url": "https://qiita.com/sescore/items/b4c043fc3b8565c53c49",
-          "views": 1461,
-          "likes": 1,
-          "stocks": 1,
-          "tags": [
-            "ses",
-            "転職",
-            "案件",
-            "独立",
-            "フリーランス"
-          ]
-        },
-        "note": {
-          "url": "https://note.com/sescore/n/n6affc0efb7b4"
-        }
-      },
-      "totalEngagement": 1476
-    },
-    {
       "title": "受託開発とは？契約の仕組みからSESとの違い、キャリア選択まで徹底解説",
       "publishedDate": "2026-02-10T11:45:09+09:00",
       "platforms": {
         "qiita": {
           "id": "ed8bf8678f65fe62c147",
           "url": "https://qiita.com/sescore/items/ed8bf8678f65fe62c147",
-          "views": 1418,
+          "views": 1424,
           "likes": 0,
           "stocks": 2,
           "tags": [
@@ -223,7 +223,7 @@
           ]
         }
       },
-      "totalEngagement": 1428
+      "totalEngagement": 1434
     },
     {
       "title": "【2026年最新データ】AIツール時代のエンジニア市場分析｜SESvsフリーランス単価・転向タイミングを徹底解説",
@@ -232,7 +232,7 @@
         "qiita": {
           "id": "e6516b35858e635475f0",
           "url": "https://qiita.com/sescore/items/e6516b35858e635475f0",
-          "views": 1202,
+          "views": 1209,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -253,7 +253,7 @@
           "url": "https://note.com/sescore/n/n41b7661bb95b"
         }
       },
-      "totalEngagement": 1202
+      "totalEngagement": 1209
     },
     {
       "title": "【2026年最新】SES業界の構造的問題を徹底解説｜多重下請けとマージン率の実態",
@@ -262,7 +262,7 @@
         "qiita": {
           "id": "8165d5559d45275914c5",
           "url": "https://qiita.com/sescore/items/8165d5559d45275914c5",
-          "views": 1046,
+          "views": 1052,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -283,7 +283,7 @@
           "url": "https://note.com/sescore/n/nd27d09a4cccf"
         }
       },
-      "totalEngagement": 1066
+      "totalEngagement": 1072
     },
     {
       "title": "【2026年実録】3人の会社がAI経営OS（CFO/COO/CMO）を作って月商250万を回した全記録",
@@ -292,7 +292,7 @@
         "qiita": {
           "id": "d103dc09f28def807de2",
           "url": "https://qiita.com/sescore/items/d103dc09f28def807de2",
-          "views": 963,
+          "views": 965,
           "likes": 2,
           "stocks": 0,
           "tags": [
@@ -313,7 +313,7 @@
           "url": "https://note.com/sescore/n/neba83a5d8d2a"
         }
       },
-      "totalEngagement": 983
+      "totalEngagement": 985
     },
     {
       "title": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を公開",
@@ -382,7 +382,7 @@
         "qiita": {
           "id": "27a7ca88ac546a4dd62b",
           "url": "https://qiita.com/sescore/items/27a7ca88ac546a4dd62b",
-          "views": 771,
+          "views": 779,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -394,7 +394,7 @@
           ]
         }
       },
-      "totalEngagement": 776
+      "totalEngagement": 784
     },
     {
       "title": "SESやめたいエンジニアが2026年にAIで年収800万を超える方法【徹底解説】",
@@ -403,7 +403,7 @@
         "qiita": {
           "id": "d67da3910ca99effb1fb",
           "url": "https://qiita.com/sescore/items/d67da3910ca99effb1fb",
-          "views": 677,
+          "views": 679,
           "likes": 3,
           "stocks": 2,
           "tags": [
@@ -424,7 +424,7 @@
           "url": "https://note.com/sescore/n/n4edf8688c968"
         }
       },
-      "totalEngagement": 717
+      "totalEngagement": 719
     },
     {
       "title": "SESエンジニアがClaude Codeでデータ分析スキルを身につけて単価を上げた話【2026年版】",
@@ -433,7 +433,7 @@
         "qiita": {
           "id": "0da5767dce8f76a457fb",
           "url": "https://qiita.com/sescore/items/0da5767dce8f76a457fb",
-          "views": 702,
+          "views": 705,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -454,7 +454,7 @@
           "url": "https://note.com/sescore/n/n04d78949fcf3"
         }
       },
-      "totalEngagement": 707
+      "totalEngagement": 710
     },
     {
       "title": "OpenClaw×Claude Code連携を徹底解説｜AI経営OSで開発ワークフローを自動化した全手順【2026年最新】",
@@ -463,7 +463,7 @@
         "qiita": {
           "id": "add124787040f61aab38",
           "url": "https://qiita.com/sescore/items/add124787040f61aab38",
-          "views": 675,
+          "views": 683,
           "likes": 1,
           "stocks": 3,
           "tags": [
@@ -484,7 +484,7 @@
           "url": "https://note.com/sescore/n/nf48d34387e3c"
         }
       },
-      "totalEngagement": 700
+      "totalEngagement": 708
     },
     {
       "title": "SES脱出完全ガイド2026年版：フリーランス・自社開発・SIerへの転職比較と成功戦略",
@@ -529,6 +529,26 @@
       "totalEngagement": 660
     },
     {
+      "title": "スキルシートの完全ガイド｜SES・フリーランスエンジニア向けの作成から活用まで",
+      "publishedDate": "2026-02-10T09:58:31+09:00",
+      "platforms": {
+        "qiita": {
+          "id": "dcc33c58461cc092d186",
+          "url": "https://qiita.com/sescore/items/dcc33c58461cc092d186",
+          "views": 650,
+          "likes": 0,
+          "stocks": 0,
+          "tags": [
+            "ses",
+            "キャリア",
+            "エンジニア",
+            "スキルシート"
+          ]
+        }
+      },
+      "totalEngagement": 650
+    },
+    {
       "title": "【2026年最新】3人会社がAI経営OSを自作した全記録 — 月商250万円の裏側",
       "publishedDate": "2026-05-16T23:04:55.309Z",
       "platforms": {
@@ -559,33 +579,13 @@
       "totalEngagement": 645
     },
     {
-      "title": "スキルシートの完全ガイド｜SES・フリーランスエンジニア向けの作成から活用まで",
-      "publishedDate": "2026-02-10T09:58:31+09:00",
-      "platforms": {
-        "qiita": {
-          "id": "dcc33c58461cc092d186",
-          "url": "https://qiita.com/sescore/items/dcc33c58461cc092d186",
-          "views": 642,
-          "likes": 0,
-          "stocks": 0,
-          "tags": [
-            "ses",
-            "キャリア",
-            "エンジニア",
-            "スキルシート"
-          ]
-        }
-      },
-      "totalEngagement": 642
-    },
-    {
       "title": "Claude Codeで開発速度3倍｜SESからフリーランスになって変わった働き方【2026年最新】",
       "publishedDate": "2026-05-24T23:03:13.047Z",
       "platforms": {
         "qiita": {
           "id": "d1ec36c803d97c6fb87e",
           "url": "https://qiita.com/sescore/items/d1ec36c803d97c6fb87e",
-          "views": 625,
+          "views": 626,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -606,7 +606,37 @@
           "url": "https://note.com/sescore/n/n7c9e84d3b2c2"
         }
       },
-      "totalEngagement": 640
+      "totalEngagement": 641
+    },
+    {
+      "title": "OpenClawで「AI経営OS」を構築してみた：9体のエージェントの設定方法と経営効果【2026年】",
+      "publishedDate": "2026-06-09T23:05:31.648Z",
+      "platforms": {
+        "qiita": {
+          "id": "c23dd0264cb1b26158f1",
+          "url": "https://qiita.com/sescore/items/c23dd0264cb1b26158f1",
+          "views": 612,
+          "likes": 2,
+          "stocks": 1,
+          "tags": [
+            "データ分析",
+            "AI",
+            "フリーランス",
+            "契約",
+            "Claude"
+          ]
+        },
+        "zenn": {
+          "slug": "20260609-openclawaios92026",
+          "url": "https://zenn.dev/ailmarketing/articles/20260609-openclawaios92026",
+          "likes": 0,
+          "topics": []
+        },
+        "note": {
+          "url": "https://note.com/sescore/n/nfdb9bfcc6e66"
+        }
+      },
+      "totalEngagement": 637
     },
     {
       "title": "【2026年最新】3人の会社にAI経営OS（CFO/COO/CMO/CEO）を作った全記録｜徹底解説",
@@ -639,43 +669,13 @@
       "totalEngagement": 636
     },
     {
-      "title": "OpenClawで「AI経営OS」を構築してみた：9体のエージェントの設定方法と経営効果【2026年】",
-      "publishedDate": "2026-06-09T23:05:31.648Z",
-      "platforms": {
-        "qiita": {
-          "id": "c23dd0264cb1b26158f1",
-          "url": "https://qiita.com/sescore/items/c23dd0264cb1b26158f1",
-          "views": 610,
-          "likes": 2,
-          "stocks": 1,
-          "tags": [
-            "データ分析",
-            "AI",
-            "フリーランス",
-            "契約",
-            "Claude"
-          ]
-        },
-        "zenn": {
-          "slug": "20260609-openclawaios92026",
-          "url": "https://zenn.dev/ailmarketing/articles/20260609-openclawaios92026",
-          "likes": 0,
-          "topics": []
-        },
-        "note": {
-          "url": "https://note.com/sescore/n/nfdb9bfcc6e66"
-        }
-      },
-      "totalEngagement": 635
-    },
-    {
       "title": "OpenClaw×Claude Code実践ガイド｜AI駆動開発の具体的ワークフロー【2026年最新】",
       "publishedDate": "2026-06-01T23:03:03.960Z",
       "platforms": {
         "qiita": {
           "id": "22cbc5b534e4db342e77",
           "url": "https://qiita.com/sescore/items/22cbc5b534e4db342e77",
-          "views": 624,
+          "views": 629,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -696,7 +696,7 @@
           "url": "https://note.com/sescore/n/n9d96c5586416"
         }
       },
-      "totalEngagement": 624
+      "totalEngagement": 629
     },
     {
       "title": "【2026年最新】OpenClaw×Claude Code連携の徹底解説｜AI駆動開発の実践ワークフロー",
@@ -705,7 +705,7 @@
         "qiita": {
           "id": "2ae5af475b64119ac364",
           "url": "https://qiita.com/sescore/items/2ae5af475b64119ac364",
-          "views": 601,
+          "views": 602,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -726,7 +726,7 @@
           "url": "https://note.com/sescore/n/n2eb312e92077"
         }
       },
-      "totalEngagement": 601
+      "totalEngagement": 602
     },
     {
       "title": "SESからの脱出戦略｜フリーランスエンジニアになる前に知っておきたい現実と準備方法",
@@ -735,7 +735,7 @@
         "qiita": {
           "id": "63cbc76a0ff7ed671d74",
           "url": "https://qiita.com/sescore/items/63cbc76a0ff7ed671d74",
-          "views": 556,
+          "views": 557,
           "likes": 1,
           "stocks": 3,
           "tags": [
@@ -755,7 +755,7 @@
           "url": "https://note.com/sescore/n/n5e460e01049d"
         }
       },
-      "totalEngagement": 581
+      "totalEngagement": 582
     },
     {
       "title": "【2026年最新】MCPサーバー・プラグイン総まとめ｜結局どれを使えばいいの？5大ツール徹底比較",
@@ -794,7 +794,7 @@
         "qiita": {
           "id": "170d695868d4bf7fb2ce",
           "url": "https://qiita.com/sescore/items/170d695868d4bf7fb2ce",
-          "views": 559,
+          "views": 560,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -815,7 +815,7 @@
           "url": "https://note.com/sescore/n/nee345221d151"
         }
       },
-      "totalEngagement": 559
+      "totalEngagement": 560
     },
     {
       "title": "3人会社がAI経営OSを作った話｜CFO・CMO・COOをAIにした2026年のリアル",
@@ -824,7 +824,7 @@
         "qiita": {
           "id": "a6d40ea3e2ec927fd8f1",
           "url": "https://qiita.com/sescore/items/a6d40ea3e2ec927fd8f1",
-          "views": 529,
+          "views": 531,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -845,7 +845,7 @@
           "url": "https://note.com/sescore/n/n8e1a7f06c90b"
         }
       },
-      "totalEngagement": 534
+      "totalEngagement": 536
     },
     {
       "title": "【2026年最新】SESエンジニアが市場価値を劇的に上げる技術スキル7選とロードマップ",
@@ -854,7 +854,7 @@
         "qiita": {
           "id": "80a9af046eef5aae59d0",
           "url": "https://qiita.com/sescore/items/80a9af046eef5aae59d0",
-          "views": 512,
+          "views": 513,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -875,7 +875,7 @@
           "url": "https://note.com/sescore/n/nd3f7441fa80a"
         }
       },
-      "totalEngagement": 517
+      "totalEngagement": 518
     },
     {
       "title": "Claude Codeで開発効率が激変した話｜SESエンジニアの独立準備にも使える実践Tips徹底解説",
@@ -884,7 +884,7 @@
         "qiita": {
           "id": "5b73544a40f4ac623da2",
           "url": "https://qiita.com/sescore/items/5b73544a40f4ac623da2",
-          "views": 497,
+          "views": 502,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -905,7 +905,7 @@
           "url": "https://note.com/sescore/n/nd5c3f95e7b98"
         }
       },
-      "totalEngagement": 512
+      "totalEngagement": 517
     },
     {
       "title": "【2026年最新】OpenClawで9体のAIエージェント経営OSを構築した全手順を徹底解説",
@@ -944,7 +944,7 @@
         "qiita": {
           "id": "198b36e173d7b7bcd1fd",
           "url": "https://qiita.com/sescore/items/198b36e173d7b7bcd1fd",
-          "views": 486,
+          "views": 490,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -959,7 +959,7 @@
           "url": "https://note.com/sescore/n/n918fbaa2a79d"
         }
       },
-      "totalEngagement": 496
+      "totalEngagement": 500
     },
     {
       "title": "SESからフリーランス転職で年収アップ？2026年最新の働き方比較とキャリア戦略",
@@ -968,7 +968,7 @@
         "qiita": {
           "id": "fdb53bbe89968830ddc8",
           "url": "https://qiita.com/sescore/items/fdb53bbe89968830ddc8",
-          "views": 478,
+          "views": 480,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -980,7 +980,7 @@
           ]
         }
       },
-      "totalEngagement": 478
+      "totalEngagement": 480
     },
     {
       "title": "SESエンジニアの働き方比較【2026年版】フリーランス・自社開発・転職の選択指針",
@@ -989,7 +989,7 @@
         "qiita": {
           "id": "bb25abfa81eb40321423",
           "url": "https://qiita.com/sescore/items/bb25abfa81eb40321423",
-          "views": 462,
+          "views": 463,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1004,7 +1004,7 @@
           "url": "https://note.com/sescore/n/n57aa5fcdbd20"
         }
       },
-      "totalEngagement": 462
+      "totalEngagement": 463
     },
     {
       "title": "Claude Code実践Tips集2026年最新版：毎日使う開発者が教える本当に使えるテクニック",
@@ -1013,7 +1013,7 @@
         "qiita": {
           "id": "8a25772fdb0f2e12681c",
           "url": "https://qiita.com/sescore/items/8a25772fdb0f2e12681c",
-          "views": 442,
+          "views": 447,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1034,7 +1034,7 @@
           "url": "https://note.com/sescore/n/na3c0fa9674c0"
         }
       },
-      "totalEngagement": 457
+      "totalEngagement": 462
     },
     {
       "title": "OpenClaw×Claude Code連携の実践録：SESエンジニアがAIで副業→独立した話【2026年最新】",
@@ -1043,7 +1043,7 @@
         "qiita": {
           "id": "95f9406f1de07e1ce237",
           "url": "https://qiita.com/sescore/items/95f9406f1de07e1ce237",
-          "views": 427,
+          "views": 445,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -1058,7 +1058,7 @@
           "url": "https://note.com/sescore/n/n14cc9de67656"
         }
       },
-      "totalEngagement": 432
+      "totalEngagement": 450
     },
     {
       "title": "SES客先常駐から脱却したい！単価アップとフリーランス独立への完全ガイド【2024年最新】",
@@ -1067,7 +1067,7 @@
         "qiita": {
           "id": "3265bfdc78c635323c63",
           "url": "https://qiita.com/sescore/items/3265bfdc78c635323c63",
-          "views": 429,
+          "views": 431,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1078,7 +1078,7 @@
           ]
         }
       },
-      "totalEngagement": 429
+      "totalEngagement": 431
     },
     {
       "title": "AIエージェント9体で経営OSを作った話｜OpenClaw×Claude Codeで実現するデータ分析経営",
@@ -1087,7 +1087,7 @@
         "qiita": {
           "id": "b2bd53ebed7c63e11223",
           "url": "https://qiita.com/sescore/items/b2bd53ebed7c63e11223",
-          "views": 422,
+          "views": 424,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1108,7 +1108,7 @@
           "url": "https://note.com/sescore/n/nd493d4fa186e"
         }
       },
-      "totalEngagement": 422
+      "totalEngagement": 424
     },
     {
       "title": "SESからフリーランス転身で単価2倍！2026年最新データで見る独立成功法",
@@ -1117,7 +1117,7 @@
         "qiita": {
           "id": "fa5a0ca2114f4b690fdc",
           "url": "https://qiita.com/sescore/items/fa5a0ca2114f4b690fdc",
-          "views": 415,
+          "views": 417,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1129,7 +1129,7 @@
           ]
         }
       },
-      "totalEngagement": 415
+      "totalEngagement": 417
     },
     {
       "title": "SESエンジニアが知っておくべき副業・フリーランス転向の完全ガイド【2024年版】",
@@ -1159,7 +1159,7 @@
         "qiita": {
           "id": "ab45a950e1837918df5c",
           "url": "https://qiita.com/sescore/items/ab45a950e1837918df5c",
-          "views": 399,
+          "views": 408,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1174,7 +1174,31 @@
           "url": "https://note.com/sescore/n/nf4e3c1765f14"
         }
       },
-      "totalEngagement": 399
+      "totalEngagement": 408
+    },
+    {
+      "title": "【2026年最新】フリーランスエンジニアのAI業務効率化ツール完全まとめ｜結局どれを使えばいいのか徹底解説",
+      "publishedDate": "2026-07-11T23:25:34.279Z",
+      "platforms": {
+        "qiita": {
+          "id": "5f6385661452f45dae54",
+          "url": "https://qiita.com/sescore/items/5f6385661452f45dae54",
+          "views": 373,
+          "likes": 0,
+          "stocks": 0,
+          "tags": [
+            "Git",
+            "AI",
+            "GitHubActions",
+            "ChatGPT",
+            "Claude"
+          ]
+        },
+        "note": {
+          "url": "https://note.com/sescore/n/nf4595f8ecf08"
+        }
+      },
+      "totalEngagement": 373
     },
     {
       "title": "OpenClaw×Claude Code連携で変わる開発体験——実践コマンドと具体ユースケース完全解説【2026年】",
@@ -1205,30 +1229,6 @@
         }
       },
       "totalEngagement": 366
-    },
-    {
-      "title": "【2026年最新】フリーランスエンジニアのAI業務効率化ツール完全まとめ｜結局どれを使えばいいのか徹底解説",
-      "publishedDate": "2026-07-11T23:25:34.279Z",
-      "platforms": {
-        "qiita": {
-          "id": "5f6385661452f45dae54",
-          "url": "https://qiita.com/sescore/items/5f6385661452f45dae54",
-          "views": 361,
-          "likes": 0,
-          "stocks": 0,
-          "tags": [
-            "Git",
-            "AI",
-            "GitHubActions",
-            "ChatGPT",
-            "Claude"
-          ]
-        },
-        "note": {
-          "url": "https://note.com/sescore/n/nf4595f8ecf08"
-        }
-      },
-      "totalEngagement": 361
     },
     {
       "title": "OpenClaw×Claude Code連携を徹底解説【2026年最新】AIエージェント実践ガイド",
@@ -1267,7 +1267,7 @@
         "qiita": {
           "id": "6dbb31bee0f1a6082d95",
           "url": "https://qiita.com/sescore/items/6dbb31bee0f1a6082d95",
-          "views": 337,
+          "views": 341,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -1282,7 +1282,7 @@
           "url": "https://note.com/sescore/n/nd10639641511"
         }
       },
-      "totalEngagement": 347
+      "totalEngagement": 351
     },
     {
       "title": "【2026年最新】Claude Codeを毎日使うエンジニアが語る実践Tips〜SES脱出・フリーランス独立準備にも効く",
@@ -1291,7 +1291,7 @@
         "qiita": {
           "id": "06bf73a2d3ea40213026",
           "url": "https://qiita.com/sescore/items/06bf73a2d3ea40213026",
-          "views": 261,
+          "views": 264,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1306,7 +1306,7 @@
           "url": "https://note.com/sescore/n/n0bd722d2319a"
         }
       },
-      "totalEngagement": 276
+      "totalEngagement": 279
     },
     {
       "title": "OpenClaw×Claude Code連携を徹底解説｜SES脱出を加速するAI開発術2026",
@@ -1315,7 +1315,7 @@
         "qiita": {
           "id": "65ea2e8d04eec3470d3c",
           "url": "https://qiita.com/sescore/items/65ea2e8d04eec3470d3c",
-          "views": 268,
+          "views": 271,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1327,7 +1327,7 @@
           ]
         }
       },
-      "totalEngagement": 268
+      "totalEngagement": 271
     },
     {
       "title": "フリーランス独立準備を徹底解説【2026年最新】AIで契約書・データ分析まで完全攻略",
@@ -1336,7 +1336,7 @@
         "qiita": {
           "id": "c413bd43e7d293acff2b",
           "url": "https://qiita.com/sescore/items/c413bd43e7d293acff2b",
-          "views": 259,
+          "views": 260,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1357,7 +1357,7 @@
           "url": "https://note.com/sescore/n/n3a2febe01dd1"
         }
       },
-      "totalEngagement": 259
+      "totalEngagement": 260
     },
     {
       "title": "3人会社でAI経営OSを自作した話｜CFO・CMO・COOエージェントの実装と月商250万からの変化【2026年】",
@@ -1366,7 +1366,7 @@
         "qiita": {
           "id": "608d91c23773f56b1245",
           "url": "https://qiita.com/sescore/items/608d91c23773f56b1245",
-          "views": 214,
+          "views": 221,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1381,28 +1381,7 @@
           "url": "https://note.com/sescore/n/n3fd1db9357ae"
         }
       },
-      "totalEngagement": 214
-    },
-    {
-      "title": "SESやめたいエンジニアのフリーランス独立準備完全ガイド2026【データ分析×AI活用で収益最大化】",
-      "publishedDate": "2026-07-02T23:05:44.657Z",
-      "platforms": {
-        "qiita": {
-          "id": "bdef4c1cc3ebba9253a7",
-          "url": "https://qiita.com/sescore/items/bdef4c1cc3ebba9253a7",
-          "views": 190,
-          "likes": 0,
-          "stocks": 0,
-          "tags": [
-            "ses",
-            "データ分析",
-            "エンジニア",
-            "独立",
-            "フリーランス"
-          ]
-        }
-      },
-      "totalEngagement": 190
+      "totalEngagement": 221
     },
     {
       "title": "Claude Code毎日使い録：SESエンジニアがデータ分析を自動化してフリーランス転向を考えた話",
@@ -1411,7 +1390,7 @@
         "qiita": {
           "id": "25c7b6f65e6722115c32",
           "url": "https://qiita.com/sescore/items/25c7b6f65e6722115c32",
-          "views": 187,
+          "views": 208,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1426,7 +1405,28 @@
           "url": "https://note.com/sescore/n/n20ce0f7e5bb7"
         }
       },
-      "totalEngagement": 187
+      "totalEngagement": 208
+    },
+    {
+      "title": "SESやめたいエンジニアのフリーランス独立準備完全ガイド2026【データ分析×AI活用で収益最大化】",
+      "publishedDate": "2026-07-02T23:05:44.657Z",
+      "platforms": {
+        "qiita": {
+          "id": "bdef4c1cc3ebba9253a7",
+          "url": "https://qiita.com/sescore/items/bdef4c1cc3ebba9253a7",
+          "views": 191,
+          "likes": 0,
+          "stocks": 0,
+          "tags": [
+            "ses",
+            "データ分析",
+            "エンジニア",
+            "独立",
+            "フリーランス"
+          ]
+        }
+      },
+      "totalEngagement": 191
     },
     {
       "title": "SESつらいエンジニアが2026年にフリーランスへ転身する最短ルート【データ分析×AI活用】",
@@ -1435,7 +1435,7 @@
         "qiita": {
           "id": "0874fd5363e1fd43afd4",
           "url": "https://qiita.com/sescore/items/0874fd5363e1fd43afd4",
-          "views": 159,
+          "views": 173,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1450,7 +1450,7 @@
           "url": "https://note.com/sescore/n/n842a4f9d4d82"
         }
       },
-      "totalEngagement": 159
+      "totalEngagement": 173
     },
     {
       "title": "SESからフリーランスへの完全移行ガイド！準委任契約の基礎から単価交渉まで徹底解説",
@@ -1467,10 +1467,10 @@
   ],
   "summary": {
     "totalArticles": 57,
-    "totalViews": 47514,
+    "totalViews": 47920,
     "totalLikes": 36,
     "totalStocks": 53,
-    "avgViewsPerArticle": 834,
+    "avgViewsPerArticle": 841,
     "avgLikesPerArticle": 1,
     "topPerformer": "【2026年最新】SES単価相場とフリーランス市場の全データ分析 - AI時代のエンジニア年収戦略"
   }
