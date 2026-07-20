@@ -1829,6 +1829,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "2026年最新｜OpenClawで経営OSを自作した話——9体のAIエージェントが会社を回す",
+      "articleUrl": "https://qiita.com/sescore/items/1b0f47d7d3885a38995e",
+      "createdAt": "2026-07-19T23:16:17.963Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "経営の全タスクが1人に集中して、完全に限界を迎えた。だからAIエージェントで経営OSをゼロから自作することにした。\n\n独立してしばらくは順調だった。でもすぐに現実が見えてきた。\n\n月次の売上管理・仕訳は自分でやる。\nクライアントへの提案書・議事録は自分でやる。\n採用・外注の選定も自分でやる。\nSNS発信・コンテンツ制作も自分でやる。\n経営判断のためのデータ分析も自分でやる。\n\n1人経営者のキャパを完全にオーバーしていた。\n\nChatGPTやClaude.aiに頼ってみたが、毎回ゼロから文脈を説明するのが本末転倒で続かなかった。「自分の会社の文脈を常に持…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "AIエージェントに経営タスクを任せるとしたら、最初に何から始める？\n\nこの問いに向き合った結果、OpenClawを使って9体のAIエージェントによる経営OSを自作した。\n\n最初のきっかけは単純だ。1人で会社を動かしていると、全ての業務が自分に集中する。売上管理も提案書も採用も発信も、全部自分でやる。既製品のAIツールは試した。でも毎回ゼロから文脈を説明するのが本末転倒で、実務に組み込めなかった。「自分の会社の文脈を常に保持するAI」を作るしかないと気づいた。\n\nOpenClawはClaude Codeのスキル機能を使った自社専用のエージェント基盤だ。~…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "OpenClawでAIエージェントを作る最小手順を公開する。スキルファイル1枚から始められる。\n\nClaude Codeにはスキルという機能がある。~/.claude/skills/ 以下にMarkdownファイルを置くと、そのファイルに書いた役割・権限・行動原則を持つエージェントがスラッシュコマンドで召喚できる仕組みだ。\n\n最小構成のスキルファイルはこれだけでいい。\n\n---\nname: cfo\ndescription: 財務分析・P/L確認・キャッシュフロー管理を担当するCFOエージェント\ntools: Read, Bash, Write\n---\n…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "9体のAIエージェント、約3ヶ月の運用。実際に何が変わったか正直に書く。\n\nまず前提として「生産性◯倍」みたいな数字は書かない。計測できていないし、そういう言い方は信用できない。自分が体感した変化だけを書く。\n\n変わったこと1: 月次財務確認の「作業」が「判断」に変わった\n\n以前は帳票を開いて数字を拾って、気になる項目を自分で深掘りしていた。今は /cfo にCSVを渡してサマリを作らせる。自分がやるのは「この数字をどう判断するか」だけだ。確認作業の時間が減った分、判断の質に集中できるようになった。\n\n変わったこと2: コンテンツ制作の「詰まり」が減っ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSを9体のエージェントで運用して、一番難しかったのはどこだと思う？\n\n答えは「設計」でも「コーディング」でもなかった。「運用ルールを決めること」だった。それが3ヶ月で学んだ最大の気づきだ。\n\n学んだこと1: CLAUDE.mdの「制約」が命\n\n各エージェントが何をしてはいけないかを CLAUDE.md に書いておかないと、予想外の動きをする。特に外部APIを叩いたり、有料サービスを勝手に使おうとする動きは怖い。「有料LLM/APIはClaude CLIのみ」「Anthropic API直叩き禁止」という制約を明示したのは、実際にコスト事故を経…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はコスト事故で34万円飛んだ。結局、エージェントに「制約」を書かないのが全ての失敗の原因だった。\n\nOpenClawでAI経営OSを作り始めた初期、エージェントに自由度を持たせすぎた。「必要だと思ったAPIを呼んでいい」「外部サービスを使っていい」という設計をしていた。結果、従量課金のAPIが無制限に叩かれて、気づいたら請求額が跳ね上がっていた。\n\nこれが最大の失敗だった。\n\n今の CLAUDE.md にはこう書いてある。\n\n── コスト事故防止 ──\n有料LLM/APIはClaude CLIのみ\nAnthropic API直叩き・従量課金APIの…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
