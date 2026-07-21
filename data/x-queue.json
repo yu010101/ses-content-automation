@@ -1888,6 +1888,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "3人会社にAI経営OSを実装した全記録——CFO/COO/CMOエージェントの作り方と月商250万円の変化",
+      "articleUrl": "https://qiita.com/sescore/items/0a54bf1232c0b290cbf4",
+      "createdAt": "2026-07-20T23:09:12.427Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🤖 Claude Code で CFOエージェントを作って毎月5日の財務分析を自動化した話をする。\n\n3人会社には CFO がいない。大企業には当たり前にいる役職が、スモールビジネスには存在しない。財務の責任者が誰もいない状態で、月商約250万円規模の経営判断を毎月している。そのしんどさに耐えきれなくて作ったのが CFO エージェントだ。\n\n技術的な話をすると、構成はシンプルだ。\n\nfreee API で前月分のP/Lデータを取得してJSONに書き出す。それを `claude --print` コマンドでプロンプトと一緒に渡す。出力されたレポートをS…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "CFO も COO も CMO も 3人会社に実在しない——なのに全部動いてる、ってどういうこと？\n\nAI エージェントで作った、というのが答えだ。\n\n「AI経営OS」という言葉は私の造語だ。経営管理の各機能をAIエージェントに分担させる仕組みのことを指している。法人化してから経営管理のコストが思ったより重くて、解決策を探した結果この構成に落ち着いた。\n\n現在の構成：\n\n```\nAI経営OS\n├── CFOエージェント（財務・PL分析）\n├── COOエージェント（タスク・プロセス管理）\n├── CMOエージェント（集客・コンテンツ）\n└── CEOダ…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "🔧 Claude Code を PM2 cron で安定させるための設定を全部公開する。コピペで使える。\n\nまず ecosystem.config.js の構造：\n\n```javascript\n{\n  name: 'cfo-agent-monthly',\n  script: './agents/cfo/run.sh',\n  cron_restart: '0 9 5 * *',\n  watch: false,\n  autorestart: false,\n}\n```\n\n`autorestart: false` は必須だ。true のままだと、エージェント…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "毎月5日朝9時、CFOエージェントが自動で財務レポートを届けるようになって3ヶ月経った。正直な変化を数字を盛らずに書く。\n\n【変わったこと】\n\n毎月 freee の管理画面を開いて数字をExcelに転記する作業がなくなった。この作業が毎月どれくらいかかっていたか正確には計測していなかったが、意識的にやらないといけない「重い仕事」の一つだったのは確かだ。\n\nSlackにレポートが届くので「財務確認のために管理画面を開く」という行動がなくなった。プッシュ型に変わった。\n\n月次レポートの観察が「作業」から「読む」に変わった。数字を拾う時間がなくなったので、分…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "🤔 AI経営OSを3ヶ月運用してわかった「エージェント設計で最初に間違えること」を話す。\n\nCFOエージェントから始まって、今は CFO・COO・CMO・CEO ダッシュボードの4構成で動いている。何度も設計をやり直した過程で見えてきたことがある。\n\n【間違い1：プロンプトを先に頑張る】\n\nエージェントの品質は「いいプロンプトを書く」より「きれいなデータを渡せるか」に依存する。freee API からデータを取得する部分、Neon PostgreSQL に蓄積する部分——ここが整ってないとどんなプロンプトも機能しない。データエンジニアリングが先、AI…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初のCFOエージェントは完全に失敗だった——今うまくいってる構成と何が違うか、正直に書く。\n\n【失敗：バージョン1】\n\nClaude Code をインタラクティブに操作して、毎月手動でプロンプトにデータを貼り付けていた。「AIを使って財務分析している」つもりで、実態は「AIアシスタントに毎月聞く作業」だった。自動化ではなかった。\n\n【失敗：バージョン2】\n\nスクリプトを作ったが `timeout 120 claude ...` と書いた。macOS には `timeout` コマンドがない。スクリプトが無限待ちになって翌朝 PM2 のログを見たら何も…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
