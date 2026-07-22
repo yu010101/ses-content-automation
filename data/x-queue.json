@@ -1947,6 +1947,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携で年収が変わる：SESエンジニアの実践ワークフロー全公開",
+      "articleUrl": "https://qiita.com/sescore/items/cd0c35a1b8e79a87babf",
+      "createdAt": "2026-07-21T23:07:19.315Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "OpenClawとClaude Codeを別々に使っていたとき、「AIってこんなもんか」と思っていた。\n\n繋げた瞬間、開発の進め方が根本から変わった。\n\nOpenClawは「考える頭」、Claude Codeは「動く手」。\nこの役割分担が明確になったことが転換点だった。\n\n具体的に何が変わったか。プロジェクトの立ち上げ方だ。\n\n以前は要件が曖昧なまま実装を始めて、途中で「この設計、間違えた」となることが多かった。\n\n今はまずOpenClawの /cc-products スキルで要件を構造化する。\n\n---\n/cc-products\n\n要件：\n- 入力：…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "OpenClawのスキル、全部同じように使ってない？\n\n実は /cc-products と /cto と /cc-secretary って、似てるようで全然違う使い方をするツールだ。\n\n自分が最初にハマったのはここだった。\n\n全部「AIに聞けばいいや」でとりあえず /cc-secretary に投げていたら、アウトプットがどれもぼやけた。\nスキルの役割を整理してから、一気に使いやすくなった。\n\n自分の整理はこうだ。\n\n/cc-products → プロジェクトの要件定義・技術設計\n/cc-company → 事業全体の状況把握・戦略検討\n/cto → …",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "CLAUDE.mdの書き方でClaude Codeの動きが変わる。\n\n「設定は面倒だし、デフォルトでいいや」と思っていたとき、Claude Codeの精度は正直低かった。\n\n毎回「このプロジェクトはPython 3.11を使ってください」「型ヒントをつけてください」と言い直していた。\nCLAUDE.mdをちゃんと書いてから、その手間がなくなった。\n\n自分が実際に使っているCLAUDE.mdの構成を公開する。\n\n---\n# CLAUDE.md\n\n## プロジェクト概要\n（プロジェクト名と目的を2-3行で記述）\n\n## 技術スタック\n- 言語：Python…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "OpenClaw×Claude Code連携を本格導入して、作業工数がどう変わったか正直に書く。\n\n盛った数字は書かない。実際に体感した変化だけだ。\n\n【データ分析パイプライン構築（売上CSV→週次レポート）】\n\n導入前：要件定義から動作確認まで丸2日かかっていた。\n- 要件整理：2〜3時間\n- 設計：3〜4時間\n- 実装：6〜8時間\n- テスト・修正：3〜4時間\n\n導入後：同じスコープで約6時間。\n- OpenClawで要件構造化：30分\n- Claude Codeで骨格生成：1時間\n- 実装の穴埋め・調整：3時間\n- テスト・修正：1.5時間\n\nた…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント体制で運用して、わかったことを書く。\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost、そしてもう1つ。\n\n最初は「エージェントが多いほど強い」と思っていた。完全に間違いだった。\n\nエージェントを増やした結果、何が起きたか。\n\n「誰に聞けばいい？」問題が発生した。\n\n財務系の話はCFO？でも事業戦略も絡むからCEO？いや、改善案を出すならKaizen？\n毎回「どのエージェントに振るか」を考えることになって、かえって時間がかかる局面が出てきた。\n\n解決策はシンプルだった。\n\nエン…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClawとClaude Codeをバラバラに使って、ひどいことになった。\n\n失敗談を正直に書く。\n\n【失敗①：要件を整理せずClaude Codeに投げた】\n\n「データ分析パイプライン作って」とだけ伝えた。\n\nClaude Codeは動いた。コードを生成した。\nでも「オフライン環境・Python限定」という制約が伝わっていなかった。\nクラウドサービスを使う設計で実装が進んでいた。\n\n途中で気づいて全部やり直し。\n\n結局、OpenClawで要件を先に構造化してから渡すのが正解だった。\n「OpenClaw→構造化→Claude Codeに渡す…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
