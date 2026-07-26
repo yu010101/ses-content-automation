@@ -1497,6 +1497,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "3人会社でAI経営OSを構築した全記録——CFO・CMO・CEOエージェントが月商250万の会社を変えた話",
+      "date": "2026-07-25T23:12:10.991Z",
+      "articleId": "697565e13dd51e76b935",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/na59008bf9b02"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/697565e13dd51e76b935"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260725-3aioscfocmoceo250"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】開発生産性ツール完全比較：Warp・Raycast・Linear・Notionなど6選をエンジニアがTier分けしてみた",
+      "date": "2026-07-25T23:28:04.107Z",
+      "articleId": "a2aeb5058ad5f90c89f7",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/a2aeb5058ad5f90c89f7"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260725-2026warpraycastlinearnotion6"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/ne28768a2e78a"
+        }
+      ]
     }
   ]
 }

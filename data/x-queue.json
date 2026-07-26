@@ -2006,6 +2006,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "【2026年最新】開発生産性ツール完全比較：Warp・Raycast・Linear・Notionなど6選をエンジニアがTier分けしてみた",
+      "articleUrl": "https://qiita.com/sescore/items/a2aeb5058ad5f90c89f7",
+      "createdAt": "2026-07-25T23:32:03.331Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🖥 WarpターミナルとClaude Codeを組み合わせたら、エラー対応の構造が根本から変わった。\n\n「ターミナルはiTerm2で十分」と思っていた時期がある。コマンドが打てて補完があれば十分、という考えだ。その認識が変わったのは、WarpとClaude Codeを同時に使い始めてからだ。\n\n■ 何が変わったか\n\n従来のエラー対応はこうだった。エラーが出る → ログをコピー → ブラウザでClaude.aiを開く → 貼り付けて質問 → 回答を読む → ターミナルに戻って適用。このフローで毎回起きるのが「コンテキストスイッチ」だ。集中が途切れ、戻る…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "ターミナル、まだiTerm2のまま使ってる？\n\n2026年のエンジニアにとって、ターミナル選びは「好みの問題」ではなくなっている。AIがどう統合されているかで、日常の開発スピードが実際に変わるからだ。\n\n自分がWarpに切り替えたのは1年ほど前だ。正直、最初は「UIが綺麗なだけでしょ」と思っていた。使い込んでみて初めてわかったのは、AIとの連携方法が根本的に違うということだ。\n\n■ iTerm2との実際の違い\n\niTerm2でエラーが出たとき: テキスト選択 → コピー → ブラウザに切り替え → 貼り付け → 質問 → 戻る\n\nWarpでエラーが出た…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "🔧 CLAUDE.mdを正しく書けば、Claude Codeはツール間の連携まで理解して動く。\n\n開発生産性ツールを複数導入したとき、よくある問題がある。「ツールはあるのに使われない」「チームによって手順がバラバラ」「AIに聞くたびに前提を説明し直す」という状態だ。この問題をまとめて解決する方法がCLAUDE.mdだ。\n\n単なる設定メモではなく、AIへの仕様書として書くことで効果が変わる。\n\n■ CLAUDE.mdの実践的な書き方\n\nClaude Codeはプロジェクトルートに置いたCLAUDE.mdを毎回読み込む。ここに書いた内容が、Claude …",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "6つのツールを試して、3ヶ月後に生き残ったのは2つだった。\n\n開発生産性ツールの「積み」問題は、エンジニアなら誰もが経験している。Warp、Raycast、Arc、Linear、Notion……名前が出るたびに試して、結局デフォルトのMac環境に戻る。自分もこれを繰り返していた。今回の比較記事を書くにあたって、過去1年で試したツールを棚卸しした結果を正直に書く。\n\n■ 試したツールと実際の結果\n\nWarp: 現在も毎日使用中。Claude Codeとの連携が定着の決め手になった\nRaycast: 現在も使用中。Spotlightの代替として自然に定着し…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "🤔 9エージェントのAI経営OSを3ヶ月運用してわかったこと。ツール選びより「エージェントへの文脈渡し」が全てだった。\n\nOpenClawでCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostの9エージェントを動かしている。最初の1ヶ月は正直、期待通りには動かなかった。何が問題だったか。エージェントに「仕事をしてほしい」と思うだけで、そのエージェントが動く文脈を渡していなかった。\n\n■ 最初の失敗\n\nCFOエージェントに「今月の財務状況を分析して」と投げた。返ってきたのは汎用的なフレームワークと一般論だった。…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はNotionで全部管理しようとして失敗した。結局、ツールを分けてClaude Codeで繋ぐのが正解だった。\n\n開発生産性ツールを選ぶとき、「1つで全部解決できるツール」を探したくなる。自分もそれをやった。Notionにタスク、仕様書、議事録、バグ報告、全部入れた。半年後に起きたことは、どこに何があるかわからない状態だった。\n\n■ Notionオールイン失敗の詳細\n\nタスクをNotionのデータベースで管理 → 更新が面倒で誰も更新しなくなった\nバグ報告もNotion → 開発サイクルとの連携がなく、放置チケットが増えた\n仕様書もNotion →…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
