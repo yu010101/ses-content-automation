@@ -2065,6 +2065,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携実践録——SES脱出を加速するAI開発OSの全貌2026",
+      "articleUrl": "https://qiita.com/sescore/items/919fc2c210407303f471",
+      "createdAt": "2026-07-26T23:10:21.937Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "Claude Codeを「コードを書かせるだけ」で使っているなら、本来の価値の半分以下しか引き出せていない。\n\nOpenClaw×Claude Codeの2層構造を組み合わせてから、プロジェクトの意思決定フローが根本から変わった。体験談を正直に書く。\n\n【2層構造の役割分担】\n\n「思考・記憶・指示」をOpenClawが担い、「開発・実行」をClaude Codeが担う。この分離が機能し始めると、疲弊した状態で重要なアーキテクチャ判断を下すという最悪のパターンから抜け出せる。\n\nOpenClawは openclaw-keiei-os というスキル群として…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "🤔 OpenClawのスキル設定、まだデフォルトのまま？\n\nCLAUDE.mdをカスタマイズしないまま使っているなら、Claude Code+OpenClawの本来の力を引き出せていない可能性が高い。自分がやっている設定を公開する。\n\n【CLAUDE.mdに書くべき内容】\n\nプロジェクトルートのCLAUDE.mdに以下を書いておくと、OpenClawスキルが毎回コンテキストを正確に把握して動いてくれる：\n\n```markdown\n# プロジェクト概要\n- 種別: SaaS（B2C）\n- 技術スタック: Next.js App Router / Neo…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "📋 OpenClaw実践コマンド集——コピペで使える入力例をまとめた。\n\n使い込んでわかったのは「スキルに渡す情報量」が出力品質を決めるということだ。現状の数値・背景・「何を判断してほしいか」の3つを含めると回答が一変する。\n\n【CEO：経営判断・優先順位】\n\n```\n/openclaw-keiei-os:ceo\n「今月の状況を報告する。\nMAU: 87人（先月比+12人）、MRR: 0円（無料プラン運営中）。\n直近の課題: 7日後継続率38%。\n有料化を先行すべきか、継続率改善を先行すべきか判断してほしい。」\n```\n\n返ってくる判断：「継続率38…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "📊 OpenClaw×Claude Codeを導入して、実際に何が変わったか。正直に書く。\n\n盛った数字は書かない。変わったこととまだ変わっていないことを分けて話す。\n\n【変わったこと1：アーキテクチャ判断の時間】\n\nBefore: 技術選定の調査から判断まで平均2〜3時間。検索・記事読み・試作・判断のサイクルを自力で回していた。\n\nAfter: CTOスキルにコンテキストを渡してから判断を受け取るまで10〜15分。調査時間がほぼゼロになった。\n\nただし「判断の委任」であって「考えることの放棄」ではない。返ってきた判断を自分でレビューする時間は必要だ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "🤔 AI経営OSを複数エージェントで3ヶ月運用してわかったこと——率直な教訓を書く。\n\n結論から言うと「エージェントを増やすより、各エージェントに渡す文脈を磨くほうが効果が高い」だった。\n\n【運用しているエージェント構成】\n\nOpenClaw上で以下のスキルを日常的に使っている：\n・CEO（/openclaw-keiei-os:ceo）——週次の経営判断と優先順位設定\n・CTO（/openclaw-keiei-os:cto）——技術選定・アーキテクチャ決定\n・CFO（/openclaw-keiei-os:cfo）——インフラコスト管理と試算\n・CMO…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はClaude Code単体で全部やろうとして失敗した。結局OpenClawとの役割分担が正解だった。\n\n同じ失敗をしている人がいそうなので、何がダメで何が正解だったかを書く。\n\n【失敗パターン1：Claude Codeに設計判断ごと丸投げ】\n\n「認証基盤を設計してコードを書いてほしい」と打ち込んでコードを生成させた。できたコードは動いた。しかし3週間後に「ロール管理を追加したい」となったとき、最初の設計判断の理由が残っていないので変更のたびに全体を読み直す羽目になった。\n\nClaude Codeはコードを書くのは得意だが、判断の蓄積には向いていな…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
