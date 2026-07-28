@@ -2124,6 +2124,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SESエンジニアがフリーランス独立前に絶対確認すべき税務・節税の全知識【2026年最新版】",
+      "articleUrl": "https://qiita.com/sescore/items/508398300d7d26e26a40",
+      "createdAt": "2026-07-27T23:13:19.446Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🧾 Claude Codeで経理自動化を実装してみたら、帳簿作業への苦手意識がほぼ消えた。\n\nfreee APIとClaude APIを連携させるまで、毎月の仕訳作業に数時間かかっていた。\n\n請求書のPDFを開いて、金額を確認して、勘定科目を選んで、freeeに入力する。この繰り返しが本当に苦痛だった。\n\n解決したのは「Claude Codeにfreee APIのドキュメントを食わせて、Pythonスクリプトを書かせること」だ。\n\n仕組みはシンプルだ。freee APIで銀行口座の取引明細を自動取得する。Claude APIに各取引の内容を渡して「こ…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "freee APIとClaude Code、まだ手動で連携させてない？\n\n毎月末に数時間を「仕訳の確認」に使っていた。取引内容を見て、勘定科目を考えて、freeeに入力する。この繰り返しが月次の一番のボトルネックだった。\n\nある日、Claude Codeにfreee APIのドキュメントをそのまま食わせて「銀行明細を自動取得して勘定科目を分類するPythonスクリプトを書いて」と頼んでみた。30分後には動くコードができていた。\n\nそのコードの核心部分：\n\n```python\ndef get_deals(company_id, access_token,…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "freee API × Claude Codeの経理自動化、実装で詰まったポイントを全部書く。\n\nパイプライン全体の構造はこうだ：\n\n銀行明細 → freee API取得 → Claude API分類 → 人間確認フラグ付きリスト → freee登録\n\n最初に詰まったのは認証フローだ。freee APIはOAuth2.0なのでアクセストークンの取得と更新を実装しないといけない。\n\n```python\ndef refresh_access_token(client_id, client_secret, refresh_token):\n    resp =…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "💴 青色申告65万円控除の節税効果を正直に計算してみた。AI経営OSのCFOエージェントで初めてちゃんと数字を見た結果を共有する。\n\n感覚で「節税できてる」と思っていたのが、実際に計算したら想像と全然違う数字が出た。\n\n**青色申告65万円控除の実際の効果（所得700万円の場合）**\n\n所得695万〜900万円の所得税率は23%、住民税は10%、合計約33%。\n\n65万円 × 33% ≈ 21万円の削減\n\nさらに国民健康保険の保険料は所得に連動する。65万円の控除で所得が下がれば健康保険料も下がるため、実際の恩恵は所得税・住民税だけじゃない。\n\nこれ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSの9エージェントで税務・経理を管理してみて、最初の設計が完全に間違っていた話。\n\n最初にCFOエージェントに「財務管理全般を担当する」と設定して、経理の記録も判断も全部任せようとした。\n\n結果は散々だった。月によって同じ取引が違う勘定科目に分類された。「AWSが今月は通信費、先月は外注費」という状態になって、青色申告の帳簿として使い物にならない。\n\n**失敗の原因は役割の混同だ。**\n\n税務には「記録」と「判断」の2層がある。AIが得意なのは「記録」だ。同じルールで毎月同じ分類をすること。「判断」、つまり「この取引は本当に経費として妥当か」…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "🔄 最初はExcelで経費を管理してた。Claude Code + freee APIに移行したら別の世界だった。正直に比較する。\n\nExcel経費管理は「とりあえず動く」から始めた。1ファイルに領収書の写真パス、金額、日付、勘定科目を手入力。月末にまとめてfreeeに転記する運用だった。\n\nこの方式の問題は「転記ミス」と「分類の迷い」だ。\n\n同じAWSの請求でも「通信費か外注費か消耗品費か」毎回悩んでいた。月によって判断がブレて、後から振り返ると一貫性がない帳簿になっていた。\n\n**Claude Code + freee APIに移行してから変わっ…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
