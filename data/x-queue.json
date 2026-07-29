@@ -2183,6 +2183,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code毎日使い倒して気づいた実践Tips集【2026年版】SESエンジニアのフリーランス転身にも効く",
+      "articleUrl": "https://qiita.com/sescore/items/88f8ce268734e761bcac",
+      "createdAt": "2026-07-28T23:07:18.528Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "🔧 Claude Codeに全投げしたら、一人で回る開発環境ができた。\n\nプロジェクトルートに`CLAUDE.md`を置くだけで仕事の流れが変わる。これを知ったのは使い始めてから数ヶ月後だった。\n\nCLAUDE.mdはClaude Codeが必ず最初に読む設定ファイルだ。ここに書いたことが全会話の前提になる。\n\n```\n# このプロジェクトの鉄則\n- コミットはfeat/fix/choreセマンティクス厳守\n- テストなしのPRは出さない（vitest）\n- 型エラーは絶対に残さない\n\n## よく使うコマンド\n- dev: npm run dev\n-…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "CLAUDE.mdの設定、まだデフォルトのまま？\n\nClaude Codeを使っていて「なんか毎回同じことを説明している」と感じたら、CLAUDE.mdを書いていないのが原因かもしれない。\n\nプロジェクトルートに置くだけで、Claude Codeが必ずそれを読んでからタスクに入る。毎回の説明が消える。\n\n```\n# このプロジェクトの鉄則\n- コミットはfeat/fix/choreセマンティクス厳守\n- テストなしのPRは出さない（vitest）\n- 型エラーは絶対に残さない\n\n## よく使うコマンド\n- dev: npm run dev\n- test…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "Claude CodeのHooksで自動化できることを全部試してみた。\n\nHooksは「Claudeが特定のアクションをしたとき、自動でコマンドを実行する」機能だ。設定は`.claude/settings.json`に書く。\n\n```json\n{\n  \"hooks\": {\n    \"PreToolUse\": [\n      {\n        \"matcher\": \"Bash\",\n        \"hooks\": [{\n          \"type\": \"command\",\n          \"command\": \"echo $CLAUDE_TOO…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "Claude Codeを使って変わった作業時間を正直に書く。「生産性が〇倍」みたいな話はしない。\n\n---\n\n**変わったこと1: コードレビューの待ち時間**\n\n以前はPRを出した後、セキュリティ・パフォーマンス・型安全性を1つずつ自分で確認していた。1つのPRあたり30〜60分かけていた。\n\n今はClaudeに並列レビューを投げる。\n\n```\nこのPRを以下の観点で並行レビューしてほしい：\n- セキュリティ（XSS, SQLインジェクション）\n- パフォーマンス（N+1クエリ）\n- 型安全性\n- テスト漏れ\n```\n\n返ってくるまで15〜20分。そ…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "🤔 AI経営OSで9つのエージェントを動かして気づいたことを書く。\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost、そしてもう1つ。これらを経営管理の各機能として別々のエージェントに分けて動かしている。\n\n最初は「全部1つのClaudeに聞けばいいじゃないか」と思っていた。やってみてわかったのは、役割分担することで出力の質が変わるということだ。\n\n---\n\n**気づき1: コンテキストを絞ると判断の精度が上がる**\n\nCFOエージェントにはPLと資金繰りの情報だけを持たせている。経営全体を知っていなく…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はClaude Codeを「高性能なコード補完」だと思っていた。今は「一緒に考えるチームメンバー」として使っている。この認識が変わるまでに半年かかった。\n\n---\n\n**最初の失敗: 全部丸投げしようとした**\n\n「このプロジェクトの設計をしてください」と投げていた時期がある。\n\n返ってきたのは汎用的な設計で、自分のプロジェクトの制約を全く考慮していなかった。「Supabaseを使っている」「Vercelにデプロイする」「チームは自分一人」、こういう文脈を渡していなかったのが原因だ。\n\nCLAUDE.mdを書くようになってから、この種のズレがなくな…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
