@@ -2242,6 +2242,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "AIエージェント9体で経営OSを構築した全記録【OpenClaw実践】",
+      "articleUrl": "https://qiita.com/sescore/items/d0457d54d5a53495b286",
+      "createdAt": "2026-07-29T23:06:52.082Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "「社長業の8割はAIに任せられる」——この仮説を2026年初頭から本気で検証してみた。\n\nOpenClawで9体のAIエージェントを設計し、財務分析・市場調査・タスク管理・コンテンツ生成の4領域を自動化した。\n\n構造はシンプルだ。`.claude/skills/`ディレクトリにMarkdownファイルを置くだけで、`/cfo`や`/cmo`というコマンドでエージェントを呼び出せる。\n\n今回構築した9体の顔ぶれはこうだ:\n• CEO: 経営判断の統合・優先度設定\n• CFO: 財務分析・P&L管理\n• CTO: 技術選定・アーキテクチャレビュー\n• CM…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "`.claude/skills/`フォルダ、まだ空のまま放置してる？\n\nOpenClawでエージェントを9体並べてから、Claude Codeの使い方が根本的に変わった。\n\n従来の使い方: Claude Codeに「財務分析して」と都度投げる\nOpenClaw導入後: `/cfo`と入力するだけでP&L分析・コスト最適化提案が自動で走る\n\n違いはどこにあるか。スキルファイルの中にツール権限・プロンプトテンプレート・行動制約が全部定義されているから、毎回指示を書かなくていい。\n\n```bash\n.claude/\n  skills/\n    cfo.md …",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "CFOエージェントの設定ファイル、全部公開する。コピペで使える。\n\nOpenClawでAI経営OSを構築して一番効いたのがこのCFOエージェントだ。財務の数字を読んで仮説を出す作業を完全に委ねられるようになった。\n\n```markdown\n# .claude/skills/cfo.md\n\n---\nname: cfo\ndescription: |\n  CFO（最高財務責任者）。P&L分析、キャッシュフロー管理、\n  財務予測、コスト最適化提案を担当。\n  数値は必ずソースを明記し、推定値は推定と明示する。\n  ファイルの書き換えは一切行わない。分析と提案…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "9体のAIエージェントを導入して、実際に何が変わったか正直に書く。盛った数字は一切使わない。\n\n**変わったこと（実測値）**\n\n週次の財務確認\n→ 以前: 表計算を手で更新して1〜2時間\n→ 今: `/cfo`を叩いてデータを渡すだけで10〜15分\n※ AIの出力は必ず目視確認しているのでゼロにはならない\n\n競合調査レポート\n→ 以前: 3〜4社を調べて比較表を作るのに半日\n→ 今: Research Scoutに任せると下書きが30〜40分で上がる\n※ 事実確認は人間がやる。そこは削れない\n\nタスク分解\n→ プロジェクトの要件を書いてTasks M…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "9体のAIエージェントを3ヶ月運用して、最初に思い描いていた理想と実際はかなりズレていた。何が違ったか正直に書く。\n\n**学んだこと1: 全権限は即座に問題を起こす**\n\n最初、全エージェントに全ツール権限を与えた。CMOが市場調査中に発見した外部データを、勝手にローカルファイルに書き込もうとした。CFOが財務分析の「改善提案」を実装しようとしてコードを書き始めた。\n\n教訓: 権限は職責に対して最小限。Writeは必要な場合のみ、明示的に許可する。\n\n**学んだこと2: エージェント間の連携は設計しないと機能しない**\n\n9体を「並べただけ」では、それ…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "AI経営OSの構築、最初の1ヶ月で3回失敗した。今は安定している。何が違ったか書く。\n\n**失敗1: macOSに`timeout`コマンドがない問題**\n\ncronでエージェントを定期実行する設定を組んだ。`timeout 60 claude ...`と書いたら、macOSにはそのコマンドが存在せず無視されていた。プロセスが死なずにループし続け、気づくまで2日かかった。\n\n→ 正解: `gtimeout`を使う。`brew install coreutils`してパスを通す。macOSで無人運用するなら必須の知識だ。\n\n**失敗2: launchdで…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
