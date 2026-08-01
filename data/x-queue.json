@@ -2301,6 +2301,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携実践｜経営OSと自律開発をつなぐ具体的ワークフロー",
+      "articleUrl": "https://qiita.com/sescore/items/448066259b0395586f21",
+      "createdAt": "2026-07-31T23:12:06.157Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "同じAIに「考えること」と「手を動かすこと」を両方任せていたら、正直どっちも中途半端だった。\n\n数ヶ月前まで、1つのセッションの中でプロダクトの技術的負債について相談しながら、そのままファイル編集やデプロイまでやらせていた。経営判断のつもりで聞いた相談が浅い返答で終わるし、実装は実装で細部が雑になる。結局あとで自分が読み直して手を入れる羽目になることが多かった。\n\n今はOpenClawとClaude Codeで役割をはっきり分けている。OpenClaw側は「思考・記憶・指示」、Claude Code側は「開発・実行」。長期記憶と意思決定の文脈を持つ層と…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "OpenClawとClaude Codeの役割分担、まだ同じセッションで経営判断と実装を両方やらせてない？\n\n自分は数ヶ月前まで、Claude Codeに「このプロダクトの技術的負債どう思う」みたいな相談をしながら、そのままファイル編集やデプロイまで任せていた。判断は浅くなるし実装は雑になるしで、結局あとで自分がやり直す羽目になっていた。\n\n今はOpenClaw側を「思考・記憶・指示」、Claude Code側を「開発・実行」と役割を分離している。長期記憶と意思決定の文脈を保持する層と、ファイルを編集しコマンドを実行する層が別になっただけで、急に実務で…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "記事の中で一番実務に効いているのが、監査から実装、デプロイまでを一気通貫でつなぐパイプラインだ。コピペで使えるので流れごと書いておく。\n\n1. コードベース全体を大規模コンテキストで監査する\n/analyze\n→ アーキテクチャ・セキュリティ・パフォーマンスの観点でレポートが出てくる\n\n2. 画面や機能の設計書を生成する\n/spec\n→ コンポーネント一覧、状態遷移、レスポンシブ仕様まで落とし込まれる\n\n3. 設計書からコードを自動生成する\n/implement\n→ 仕様に基づいてソースコードが生成される\n\n4. テストを実行して結果を確認する\n/te…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "劇的に何倍速くなった、みたいな話はしない。盛った数字を出しても意味がないので、実際に変わった中身だけ正直に書く。\n\n以前は監査・設計・実装・デプロイを1つの長いセッションでまとめてやらせていた。途中でエラーが出たり詰まったりした時、原因が設計にあるのか実装にあるのかを切り分けるのに毎回時間がかかっていた。\n\n今は工程を6ステップに分けている。\n/analyze → /spec → /implement → /test → /commit → /deploy\n\nこの6ステップに分けてから変わったのは速度そのものより「詰まる場所がすぐ特定できるようになった…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "複数の経営ペルソナをAIに持たせて運用してみて、一番学んだのは「分けたら終わりじゃない」ということだった。\n\nOpenClaw側にCEO/CFO/CTO/COO/CMOという5つのペルソナを置き、それぞれ担当領域のデータソースに接続している。CFOはfreee連携で財務データを取得しPLを生成し仕訳計上や未決済管理までやる。CTOはプロダクト群のヘルスチェックと技術的負債の可視化、開発優先度の提案をする。COOはタスク進捗とクライアント管理、営業パイプラインの横断管理を担当する。CMOはGA4やGoogle Ads、GSCのデータを統合してマーケティン…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClaw側にもファイル編集やコマンド実行の権限を持たせていた。結局それが一番のハマりポイントだった。\n\n「思考層にも多少の実行権限を持たせておいた方が柔軟に対応できるはず」というのが最初の発想だった。経営判断をしたその場ですぐ手を動かせた方が速いだろう、と。\n\n実際にやってみると逆だった。OpenClaw側で判断と実行が混ざると、長期記憶や意思決定の文脈を保持するはずのセッションに、ファイル編集の細かいログやコマンドの実行結果がそのまま流れ込んでくる。結果として、次の経営判断をするときに文脈がノイズだらけになり、CEOペルソナに聞いても回…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
