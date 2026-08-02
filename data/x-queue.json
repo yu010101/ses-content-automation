@@ -2360,6 +2360,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SES単価が上がらない人へ。データ分析をClaude Codeで武器化する方法",
+      "articleUrl": "https://qiita.com/sescore/items/76a4a560b04fe90c5dcd",
+      "createdAt": "2026-08-01T23:18:20.247Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeに「pandasの分析環境を作って」と頼んだら、venv構築からnotebook雛形まで一気に終わった。\n\n自分の活動ログやプロジェクトのデータを可視化したくて、いつもならmkdir → venv → pip install…と手を動かしてから、やっとJupyterを開いて空のセルとにらめっこする流れだった。\n\n今回はターミナルで\n\nmkdir data-analysis && cd data-analysis\npython3 -m venv venv\nsource venv/bin/activate\npip install pa…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Jupyterの空セルを前に固まる時間、まだ消えてない?\n\n自分のログやプロジェクトデータを分析しようと思っても、環境構築とnotebookの雛形作りで疲れて、本題に入る前にやる気が尽きる…という経験、心当たりがある人は多いはずだ。\n\n今回試したのは、環境構築だけ自分の手で済ませて、雛形作りをClaude Codeに投げるという分担。\n\nmkdir data-analysis && cd data-analysis\npython3 -m venv venv\nsource venv/bin/activate\npip install pandas matp…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeにコードを書かせると、見た目はきれいだけど意思決定に使えないグラフが量産されがちだ。これを避けるための最低限のプロンプト設計をまとめておく。\n\n例えば売上データを分析するとき、こんなコードをClaude Codeに書かせることができる。\n\nimport pandas as pd\n\ndf = pd.read_csv(\"sales.csv\")\n\nbins = [0, 100000, 300000, 500000, 1000000, 99999999]\nlabels = [\"~10万\", \"10-30万\", \"30-50万\", \"50-…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "環境構築からnotebookの雛形完成まで、実測でだいたい10分だった。誇張ではなく、実際に時計を見ながら計測した数字だ。\n\n内訳はこんな感じ。\n\nvenv作成とpip install(pandas, matplotlib, jupyterlab, openpyxl)で3〜4分。ここはネット回線次第で前後する。\n\nそのあとClaude Codeのターミナルに\n\n> pandasでCSVを読み込み、月次推移を折れ線グラフにするnotebookを作って\n\nと一文投げてから、notebookの雛形が返ってくるまでが1〜2分。\n\n残りの時間は、返ってきたコード…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSでCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostの9エージェントを運用してみて、一番強く感じたのは「軸を決めるのは結局人間の仕事」ということだった。\n\nそれぞれのエージェントにfreeeやGA4、GSCのデータを取ってこさせて集計させることはすぐできる。CFOエージェントに月次のPLを出させるのも、COOエージェントにタスク進捗をまとめさせるのも、プロンプト一つで数分で終わる。\n\n問題はそこから先だ。「どの数字を並べれば経営判断に使えるダッシュボードになるか」は、エージェントに丸投げしても出て…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに「このCSVいい感じに分析して」とだけ投げていた。結局、それが一番遠回りだった。\n\n出てきたグラフは確かにきれいだった。棒グラフも折れ線も、色使いまで整っている。でも見返してみると、「で、これで何を判断すればいいんだっけ」と手が止まる。binsの区切りは適当な等間隔で、実態の分布とズレていたし、集計の軸も自分が本当に知りたかったものとは違っていた。\n\n作り直しになって気づいたのは、AIに「いい感じに」と丸投げした時点で、分析の設計を放棄していたということだった。AIは指示された通りに全力でやってくれるが、指示が曖昧なら曖昧…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール5選比較｜結局どれを使うべきかTier別に解説",
+      "articleUrl": "https://qiita.com/sescore/items/89f8b679e1faf6c5d034",
+      "createdAt": "2026-08-01T23:35:36.336Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🤖 Claude CodeのCLAUDE.mdを「最初はコメントアウトのメモ書き」程度にしか使っていなかった。正直、あってもなくても大差ないと思っていた。\n\nだが実際にコーディング規約とアーキテクチャ方針をガッツリ書き込んでからは話が変わった。\n\n```\n## コーディング規約\n- TypeScriptのstrictモードを必須とする\n- テストはVitestを使用し、新規ロジックには必ずユニットテストを追加する\n- コミットメッセージはConventional Commitsに従う\n```\n\nこんな感じで規約を明文化しておくと、セッションをまたいで…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの中身、まだ空っぽか初期テンプレのままじゃないか?\n\nClaude Codeを使い始めた頃、自分もそうだった。プロジェクトルートに置くだけ置いて、中身はほぼ空。当然、セッションが変わるたびに同じ指示を繰り返す羽目になっていた。\n\n試しに以下のようにコーディング規約を書き込んでみた。\n\n```\n## コーディング規約\n- TypeScriptのstrictモードを必須とする\n- テストはVitestを使用し、新規ロジックには必ずユニットテストを追加する\n- コミットメッセージはConventional Commitsに従う\n```\n\nた…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeでMCP(Model Context Protocol)経由の連携を組んだときにハマったポイントと、実際に落ち着いた設定を書いておく。\n\nセットアップ自体はシンプルだ。\n\n```bash\nnpm install -g @anthropic-ai/claude-code\ncd my-project\nclaude\n```\n\nここまではどのチュートリアルにも書いてある。問題はその先で、GitHubやDBをMCP経由でつなぐ段になると、最初は権限周りの設計を詰め切らずに始めてしまい、エージェントに渡す権限が広すぎたり狭すぎたりを何度も往復…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9つ。これがいま動いているAI経営OSのエージェント数だ。CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostに加えてCTOも動いている。\n\n数を増やすこと自体が目的だったわけではない。最初はCFOエージェント1つだけで、freee連携から仕訳と未決済管理をやらせるところから始めた。そこから「この業務も切り出せるな」という単位でエージェントを足していった結果が9つだった。\n\n正直に書くと、作業時間が劇的に短縮したという言い方はしたくない。実際に変わったのは「自分が思い出して確認しなければいけないタスクの数」だ。…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェント運用してわかったこと、正直に書く。\n\nCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostという構成でAI経営OSを組んでいるが、一番の学びは「エージェントを増やすほど楽になるわけではない」ということだった。\n\nエージェントの数が増えると、次に困るのは「誰が最終判断をするか」だ。CFOが財務データを出し、CMOがマーケ施策を出し、それぞれが正しくても、経営としての優先順位は別問題になる。ここでCEOエージェントに「各エージェントの報告を統合して意思決定を支援する」役割を持たせたことで、ようやく運用…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCLAUDE.mdに規約を詰め込みすぎて失敗した。結局、削ってからの方がうまくいった。\n\nAI経営OSを組み始めた頃、Claude Codeに渡す指示書(CLAUDE.md)に「あれもこれも守ってほしい」と思うがままに規約を書き足していった。気づけば長大なドキュメントになっていて、逆にエージェントが指示のどこを優先すべきか迷うようになった。テストを書けと書いてあるのに、別の箇所で速度優先と書いてあったり、矛盾する指示が紛れ込んでいたのが原因だった。\n\n結局やったのは、CLAUDE.mdを一度ゼロベースで見直して、本当に守ってほしい最低限のルールだ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
