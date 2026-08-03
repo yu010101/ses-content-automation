@@ -2478,6 +2478,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SESエンジニアがClaude Codeで自分のキャリアをデータ分析してみた｜年収UPの実践Tips",
+      "articleUrl": "https://qiita.com/sescore/items/c3bbe363e13f713a2bc6",
+      "createdAt": "2026-08-02T23:15:53.596Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeに自分の1年分のgitコミット履歴を読ませてみたら、想像以上に地味な発見があった。\n\nきっかけは単純だ。次のキャリアを考えるタイミングで「自分が何をやってきたか」を数字で説明できないと気づいたこと。感覚だけで「頑張りました」と言っても、聞く側からすれば根拠がない話に聞こえる。\n\nやったことはこれだけだ。\n\ngit log --author=\"自分の名前\" --since=\"1 year ago\" --pretty=format:\"%ad %s\" --date=short > my_commits.txt\n\nこのテキストファイルをC…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの設定、まだ`/init`で生成したまま放置してない?\n\nClaude Codeを使い始めた頃、自分もそうだった。`/init`を実行すればプロジェクトを読み込んでCLAUDE.mdを自動生成してくれるから、それだけで満足していた。\n\nでも実際に効いてくるのは、そこから手で書き足す部分だ。CLAUDE.mdはClaude Codeがそのプロジェクトの文脈を毎回のセッションで覚えておくためのメモリファイルで、現場でよくある「このリポジトリはLintルールが厳しい」「テストはVitestを使う」「コミットメッセージはConventiona…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで一番地味に時短になっているのは、実はカスタムスラッシュコマンドだ。\n\n現場では日報や週報の提出を求められることが多いが、これを手で書くと地味に時間を取られる。Claude Codeはプロジェクト固有のスラッシュコマンドを`.claude/commands/`配下にMarkdownファイルとして定義できる。\n\nmkdir -p .claude/commands\n\n<!-- .claude/commands/weekly-report.md -->\n今日のgit logとGitHub Issuesのクローズ履歴を確認し、\n今週やった…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeのセットアップは、実際にやってみると3分もかからなかった。\n\nnpm install -g @anthropic-ai/claude-code\ncd ~/projects/your-repo\nclaude\n\nこれだけだ。起動して`/init`を実行すれば、プロジェクトを読み込んでCLAUDE.mdという設定ファイルを自動生成してくれる。技術スタックやディレクトリ構成、コーディング規約といった文脈を、毎回のセッションで覚えておいてくれるメモリファイルだ。\n\n正直、導入前は「どうせ環境構築で1時間くらい溶けるんだろう」と身構えていた。…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSとして9つのエージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を動かしてみて、一番学んだのは「エージェントを増やすほど楽になるわけではない」ということだった。\n\n最初は「役割を分ければ分けるほど専門特化して判断の精度が上がるはず」と単純に考えていた。実際にCFO・COO・CMOと役割を分けて運用してみると、確かに個別の判断の質は上がる。財務まわりはCFOに、日々の運営状況はCOOに任せる、という切り分け自体は理にかなっている。\n\nただ、エージェントの数が増えるほど「結局誰が何を報告…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude CodeのCLAUDE.mdに、細かいルールを全部書き込もうとして失敗した。\n\nコーディング規約、命名規則、テストの書き方、レビューでよく指摘される点...思いつく限り全部詰め込んだら、CLAUDE.mdが長大になりすぎて、逆にどこに何が書いてあるか自分でも分からなくなった。セッションを開始するたびに読み込む量も増えて、正直やってることが本末転倒だった。\n\n結局正解だったのは、CLAUDE.mdには「毎回のセッションで絶対に外してほしくないこと」だけを書き、それ以外は`.claude/commands/`のスラッシュコマンドや、その…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

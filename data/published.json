@@ -1740,6 +1740,33 @@
           "url": "https://note.com/sescore/n/n2f621d69bab9"
         }
       ]
+    },
+    {
+      "title": "SESエンジニアがClaude Codeで自分のキャリアをデータ分析してみた｜年収UPの実践Tips",
+      "date": "2026-08-02T23:10:17.324Z",
+      "articleId": "c3bbe363e13f713a2bc6",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n91f501413561"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/c3bbe363e13f713a2bc6"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260802-sesclaude-codeuptips"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
