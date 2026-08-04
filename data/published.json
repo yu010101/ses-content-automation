@@ -1767,6 +1767,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "OpenClawで9体のAIエージェント経営OSを構築した実装ログ【2026年版】",
+      "date": "2026-08-03T23:11:56.270Z",
+      "articleId": "f42658a32bfc896669f8",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": false,
+          "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('.ProseMirror') to be visible\n    - locator resolved to visible <div translate=\"no\" role=\"textbox\" aria-multiline=\"true\" contenteditable=\"true\" class=\"ProseMirror note-common-styles__textnote-body\">…</div>\n"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/f42658a32bfc896669f8"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260803-openclaw9aios2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
