@@ -2537,6 +2537,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "3人会社でAI経営OS(CFO/COO/CMO/CEO)を作った話｜構築ログ徹底分析",
+      "articleUrl": "https://qiita.com/sescore/items/00dfc682ba3398e3a035",
+      "createdAt": "2026-08-04T23:10:04.805Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "社員3人、月商およそ250万円。この規模の会社にとって、経営管理のバッファはほぼゼロだと痛感した。\n\n請求書の消込、freeeの仕訳確認、GA4のトラフィック分析、クライアント案件の進捗管理。ひとつひとつは小さいタスクなのに、全部が「重要だが緊急ではない」カテゴリに滑り込んでくる。気づけば経営判断そのものに使える時間がほとんど残っていなかった。\n\n発想を変えて、Claude Codeのスキル機構を使いCFO・COO・CMO・CEOという4つの役職をAIエージェントに割り当ててみた。\n\n.claude/skills/配下にcfo、coo、cmo、ceoの…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "「経営管理はどうせ自分がやるしかない」——そう思い込んでいないか？\n\n社員3人、月商およそ250万円のうちの会社では、財務・営業進捗・マーケティング分析・意思決定という本来なら部門ごとに人を置くべき業務を、実質1人で兼任していた。請求書の消込、freeeの仕訳確認、GA4のトラフィック分析、クライアント案件の進捗管理。どれも重要だが緊急ではないタスクの塊で、経営判断に使う時間が削られていく。\n\nそこでClaude Codeのスキル機構を使い、CFO・COO・CMO・CEOという役職をAIエージェントに割り当てるという発想に切り替えてみた。\n\n.clau…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeのSKILL.md、frontmatterに説明文だけ書いて終わらせていないだろうか。\n\nAI経営OSを構築するときに一番効いたのは、SKILL.mdの中に「AIに何をさせないか」まで明記したことだった。\n\n実際のCFOエージェントのSKILL.mdを簡略化するとこんな形になる。\n\n---\nname: cfo\ndescription: CFO(最高財務責任者)。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\n---\n\n# CFOエージェント指示\n1. freee APIから直近の仕訳デー…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "社員3人、月商およそ250万円、そしてAIエージェント4体。この数字だけ並べると小さな実験に見えるかもしれない。\n\nでも実際にCFO・COO・CMO・CEOという4つの役職をClaude Codeのスキルとして構築し、週次でCEOエージェントが各エージェントの報告を統合するところまで動かしてみて、正直な感想を書いておきたい。\n\n盛った数字を出すつもりはない。「生産性が何倍になった」というような話は今回できない。まだ運用歴も浅いし、そもそもそういう定量測定を厳密にしているわけでもないからだ。\n\n変わった実感としてはっきり言えるのは、請求書の消込やGA4の…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO・COO・CMO・CEOという4つの役職をAIエージェントに割り当ててみて、一番学んだのは技術的な話ではなく設計思想の話だった。\n\n最初は「AIに経営データを分析させる」くらいの粒度で考えていた。でも実際に組んでみると、単発タスクの委任と役割の継続的な運用は全く別物だと気づく。ChatGPTに議事録をまとめてもらうのと、CFOという役職を任せるのとでは、求められる責任の設計が違う。\n\nもうひとつの学びは、AIエージェント同士の関係性を人間組織の構造からそのまま借りてくると設計が破綻しにくいということだ。CEOエージェントが自分でデータを取りに行か…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAIエージェントに「生成」と「確定」を同じ権限として扱っていた。結局それが一番危なかった。\n\nCFOエージェントを組んだ最初のバージョンでは、freeeから取得した仕訳データを元にPLドラフトを作らせるところまでは良かったが、そのまま数値を経営判断の材料として扱ってしまいそうになった瞬間があった。AIが「生成」した数値と、人間が「確定」させた数値は、見た目は同じ表の上に並んでいるのに信頼度が全く違う。この区別を曖昧にしたまま運用フェーズに進んでいたら、いずれ痛い目を見ていたと思う。\n\n結局正解だったのは、SKILL.mdの指示に「生成した数値は必…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
