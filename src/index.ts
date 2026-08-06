@@ -1,3 +1,11 @@
+// SES技術コンテンツ自動化の CLI エントリポイント。
+// サブコマンドで動作が変わる:
+//   pipeline  … 記事生成〜各プラットフォーム下書き投入までの一括実行
+//   roundup   … 週次まとめ記事の生成
+//   analytics … 各プラットフォームの実績を収集しランキング表示
+//   publish   … 単一プラットフォーム(qiita/zenn/x/note)へ個別投稿
+//   trends    … Grok でトレンド候補を取得して JSON 出力
+// --dry-run / --skip-approval / --category= のフラグを受ける。
 import { runPipeline } from "./pipeline.js";
 import { runRoundupPipeline } from "./roundup-pipeline.js";
 
