@@ -1821,6 +1821,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "データ分析スキルで年収アップ｜SES1年目からフリーランス独立への実践ロードマップ",
+      "date": "2026-08-06T23:13:10.774Z",
+      "articleId": "84f6f4524b7a34830bb5",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n14787ae2c953"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/84f6f4524b7a34830bb5"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260806-ses1"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
