@@ -1848,6 +1848,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "Claude Code実践Tips8選｜フリーランスエンジニアの年収・単価を上げるAI活用術",
+      "date": "2026-08-07T23:05:38.321Z",
+      "articleId": "083afa2b61b35f2eb5d6",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n9ff69aac33c2"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/083afa2b61b35f2eb5d6"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260807-claude-codetips8ai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
