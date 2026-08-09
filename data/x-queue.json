@@ -2596,6 +2596,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Codeで9体のAIエージェント経営OSを構築した実装録",
+      "articleUrl": "https://qiita.com/sescore/items/5862090655e4e39be0ab",
+      "createdAt": "2026-08-08T23:05:39.840Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェント機構だけで「経営タスクを役割ごとに分けて動かす」ってどこまでできるのか試してみた。\n\n結論、9体まで増やしても普通に運用できた。\n\nCEO・CFO・CTO・COO・CMOという経営層に加えて、秘書役のcc-secretary、教訓やパターンを溜めるcc-knowledge、タスクを部門に振り分けるcc-company、プロダクト横断管理のcc-productsを`.claude/agents/`配下にMarkdownで定義しただけだ。\n\nやってみて一番効いたのは、権限を絞るほど事故が減るということ。最初はCEOエ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェント、まだ1体に全部やらせてないか?\n\n自分は最近、経営まわりのタスクをCEO・CFO・CTO・COO・CMOという経営層と、秘書役のcc-secretary、ナレッジ管理のcc-knowledge、振り分け役のcc-company、プロダクト管理のcc-productsという9体に分けて動かすようにした。\n\nきっかけは単純で、1つのエージェントに財務も進捗もマーケも全部担当させていたら、指示のたびにコンテキストが膨らんで挙動が読めなくなってきたこと。\n\n`.claude/agents/`にfrontmatter付き…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで役割特化のサブエージェントを作るとき、実際に書いているfrontmatterの中身を貼っておく。\n\n```markdown\n---\nname: cfo\ndescription: CFO。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\ntools: Bash, Read, Grep\n---\n\n財務レポートを作成する際は必ず実データを取得してから数値を出す。\n未確認の推定値は「推定」と明示し、確定値と混同しない。\n```\n\nポイントは`tools:`の指定だ。CFOにはBash・Read・…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のエージェント体制、どれくらいの期間で今の形になったか正直に書く。\n\n盛った数字は出したくないので率直に言うと、最初の1体（CFO相当のエージェント)を動かしてから、CEO・CTO・COO・CMOを足して、さらに秘書役のcc-secretaryやナレッジ管理のcc-knowledgeを追加するまで、まとまった試行錯誤の期間がかかっている。一気に9体設計を書いて動かしたわけではなく、1体ずつ「これは要る」「これは重複してる」を確認しながら増やしていった。\n\n途中で減らした役割もある。最初は経理と請求を別エージェントに分けていたが、参照するデータソース…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントで経営タスクを分担するようになって、一番の学びは何だったか。\n\n技術的な組み方より、「誰に何を見せないか」を決める設計の方が難しかった、というのが正直な答えだ。\n\nCEOエージェントには最初、CFOやCOOが触っているデータソースへの直接アクセスを許可していた。効率がいいと思っていたが、実際にはCEOが自分で数値を拾いに行って、各部門エージェントの報告と微妙に違う数字を出してくることがあった。人間の組織でも、経営会議の場で部門長を通さずにトップが現場データを直接いじり始めたら混乱するのと同じことが起きた。\n\n今はCEOエージェント…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCEOエージェントに全ツールの権限を渡していた。CFOのデータもCTOのデータも直接触れるようにしておけば、統合作業が速くなると思っていたからだ。\n\n結局これは失敗だった。\n\nCEOが自分でfreee連携のデータを取りに行き、その数字がCFOエージェントの出すPLの数字と微妙にズレることがあった。原因を追うと、CEOとCFOがそれぞれ別のタイミングでデータを取得していて、集計のずれがそのまま数字のずれになっていた。経営ダッシュボードに矛盾した数字が2つ並ぶという、地味だが厄介な状態になった。\n\n結局正解だったのは、CEOエージェントの権限を絞るこ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール比較｜Claude Code・Copilot・Cursor徹底解説",
+      "articleUrl": "https://qiita.com/sescore/items/0ecc8dded92646448bd6",
+      "createdAt": "2026-08-08T23:23:03.624Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeにCLAUDE.mdを置いたら、毎回の説明が消えた\n\n5大AIコーディングツールを比較する記事を書きながら気づいたことがある。\n\nCopilotは補完、CursorとWindsurfはAIネイティブIDE、そしてClaude CodeはCLIエージェント。似ているようで設計思想がまるで違う。評価軸を「導入障壁の低さ」「エージェント機能の実用性」で揃えて比べてみると、その差がはっきり出た。\n\nうちが最終的にClaude Code中心の運用に落ち着いた理由は、プロジェクトルートに置く「CLAUDE.md」だ。\n\n最初は「ただのメモ」く…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ空っぽのままにしてない?\n\n5大AIコーディングツールを比較していて気づいたことがある。CopilotはIDEの補完、CursorとWindsurfはAIネイティブIDE、Claude CodeはCLIに常駐するエージェント。仕組みがそもそも違う。評価軸として「導入障壁の低さ」「エージェント機能の実用性」「セキュリティ対応」を並べると、この違いが実務での使い勝手に直結してくる。\n\nうちがClaude Code中心の運用に落ち着いた最大の理由はCLAUDE.mdだ。\n\n最初は空のままか、せいぜい「TypeScriptを使う」くらい…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "AIコーディングツール比較記事を書きながら、CLAUDE.mdの書き方を見直した\n\n5つのツールを横断的に評価していて、実務で一番効いてくるのはエージェント機能の実用性だと改めて思った。単なるコード補完に留まらず、複数ファイル・複数ステップのタスクをどこまで自律的にこなせるかという基準だ。\n\nその中でClaude CodeのCLAUDE.mdは地味だが強力だ。うちで実際に使っている構成を書く。\n\n# CLAUDE.md\n## コーディング規約\n- TypeScriptのstrictモードを維持する\n- 新規APIエンドポイントには必ずテストを追加する\n…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "CLAUDE.mdを書く時間は体感5分。でも節約できたのは「説明する時間」だった\n\n正直に数字を書く。盛った話はしない。\n\nCLAUDE.mdを最初に書くのにかかった時間は体感5分程度。コーディング規約とディレクトリ構成の意図を箇条書きにしただけだ。\n\n変わったのは「その後」の方だ。\n\n以前は新しいセッションを開くたびに、「このプロジェクトはTypeScriptのstrictモードで」「テストはvitestで」と毎回同じ説明を打っていた。1回あたり数分でも、1日に何度もセッションを開けば積み重なる。5大AIコーディングツールを比較記事のために一通り触っ…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AIエージェントを9体も作って、本当に全部必要なのか?\n\nAIコーディングツールをTier分類する記事を書きながら、ふと自分たちのAI経営OSのことを考えた。ツール選びと同じで、エージェントも「多ければいいわけではない」と痛感している。\n\nうちはCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost/Secretaryの9体を作った。でも毎日使うのは半分もいない。\n\nCFOは仕訳と未決済チェックで毎日。COOはタスク確認で朝イチの習慣。CMOはXの投稿パフォーマンス分析。Secretaryはinboxとtodoの…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は5つのAIコーディングツールを全部契約した。結局Claude Code一本に絞るのが正解だった\n\nAIコーディングツール比較記事を書くために、実はCopilot・Cursor・Codeium・Windsurf・Claude Codeを一通り契約して触った時期がある。\n\n最初の判断は「全部入れれば一番強い」だった。結果、サブスク疲れしただけだった。機能は重複しているのに、切り替えるたびに操作感が違って余計な認知負荷がかかった。どのツールでどの作業をしたか、自分でも把握しきれなくなった時期があった。\n\nCopilotはVS Codeに溶け込んでいて便…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

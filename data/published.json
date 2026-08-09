@@ -1875,6 +1875,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "OpenClaw×Claude Codeで9体のAIエージェント経営OSを構築した実装録",
+      "date": "2026-08-08T23:04:15.532Z",
+      "articleId": "5862090655e4e39be0ab",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nf56dcfe8123b"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/5862090655e4e39be0ab"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260808-openclawclaude-code9aios"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール比較｜Claude Code・Copilot・Cursor徹底解説",
+      "date": "2026-08-08T23:15:55.426Z",
+      "articleId": "0ecc8dded92646448bd6",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/0ecc8dded92646448bd6"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260808-claude-codegithub-copilotcurso"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n02f7b7e6a942"
+        }
+      ]
     }
   ]
 }
