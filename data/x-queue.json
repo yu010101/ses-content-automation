@@ -2714,6 +2714,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code実践連携術：思考と実行を分離する開発フロー",
+      "articleUrl": "https://qiita.com/sescore/items/8b52428d6c450f6cab39",
+      "createdAt": "2026-08-10T23:05:37.348Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeに全部やらせようとして、見事に迷子になった。\n\n要件整理も優先度判断も、実装もテストも、ぜんぶ同じチャットでやらせていたら、会話が長くなるほど精度が落ちていく。「あれ、さっき何のために動いてたんだっけ」と自分で見失う瞬間が何度もあった。AIも人間と同じで、コンテキストが混ざると判断がブレる。\n\nこれに気づいてから、OpenClaw（思考・記憶・指示担当）とClaude Code（開発・実行担当）で役割を分ける構成に切り替えた。\n\nやり方はシンプルだ。\n\nまずOpenClaw側で状況を俯瞰する。\n\n/cto health\n/cto …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "そのAIエージェント、思考と実行を同じコンテキストでやらせてない?\n\n自分は最初それで何度も迷子になった。要件整理も優先度判断も実装もテストも、ぜんぶ同じチャットで進めていたら、会話が長くなるほど精度が落ちていく。途中で「これ何のために動いてたんだっけ」と自分で見失う。AIも人間と同じで、コンテキストが混ざると判断がブレる。\n\n今はOpenClaw（思考・記憶・指示担当）とClaude Code（開発・実行担当）で役割を完全に分けている。\n\nまずOpenClaw側で状況を俯瞰する。\n\n/cto health\n/cto priority\n\nこれで「今週着…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawとClaude Codeの連携で一番効いてるのは、意思決定と実装の間に「秘書エージェント」を挟んだことだ。\n\n流れはこう。\n\n① OpenClaw側で横断的に状況を見る\n\n/cto health　→ プロダクトのヘルスチェック\n/cto priority　→ 技術負債・バグ・稼働状況から優先度を提案\n/cfo 未決済　→ 財務状況の確認\n/coo clients　→ 営業パイプラインとクライアント状況の確認\n\n単なる「バグの重大度」だけじゃなく、財務や営業の文脈も加味した優先順位が出せる。\n\n② その結果をそのままClaude Code…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "誇張なしで、今の構成を数字で整理してみる。\n\nAIエージェントは大きく2つの役割に分けている。OpenClawが思考・記憶・指示、Claude Codeが開発・実行。この2つだけだ。「もっと細かく分けたほうが賢そう」と思って一時期増やしたこともあるが、結局は判断と実装の2層がいちばんシンプルで運用しやすかった。\n\n実際に毎回使うコマンドは3つだけに絞っている。\n\n1. /cto health（現状把握）\n2. /cto priority（優先度提案）\n3. /cc-secretary list（実行結果の記録確認）\n\nこの3つを回すだけで、経営判断から…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost。複数のエージェントを役割分担させて運用してみて、いちばん学んだのは「エージェントを増やすこと」自体は目的じゃないということだった。\n\n最初は「経営の各機能をエージェント化すれば自動で回る」と思っていたが、実際はエージェントが増えるほど、どのエージェントが何を記憶していて、どの情報を誰に渡すべきかの設計がボトルネックになる。CFOが把握してる財務データと、COOが把握してる営業パイプラインを、CEOエージェントがちゃんと横断して統合できるかどうかが肝心だった。…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClaw一本で、意思決定から実装まで全部やらせようとした。結局それは正解じゃなかった。\n\n経営判断をさせるエージェントに「じゃあこのバグも直しておいて」と実装まで頼んでいた時期がある。一見便利そうに見えたが、会話が長くなるにつれて、さっきの経営判断の文脈と今の実装の文脈が混ざって、どちらの精度も落ちていった。「なぜこの優先度にしたか」の理由づけが曖昧になり、実装コードも中途半端になる。1つのAIに欲張らせすぎた結果だった。\n\n結局たどり着いたのは、判断はOpenClaw、実装はClaude Codeという単純な分離だった。OpenClaw…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
