@@ -2773,6 +2773,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code徹底比較&実践Tips13選 SES1年目〜フリーランス転向のリアル",
+      "articleUrl": "https://qiita.com/sescore/items/537cec6b05026a0184d7",
+      "createdAt": "2026-08-12T23:06:14.821Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを置いたら、毎回の前提説明がいらなくなった。\n\n正直、最初は「READMEと何が違うんだ」くらいの温度感だった。でも実際にプロジェクトルートに置いてみて、体感がはっきり変わった。\n\n```markdown\n## Core Principles\n- 既存のコードスタイルに合わせる。新しい抽象化を勝手に増やさない\n- テストを書かずに「動作確認済み」と報告しない\n- npm run lint / npm run test を通してからコミットする\n\n## Commands\n- 開発サーバー: npm run dev\n- テスト: npm …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "その権限設定、まだデフォルトのまま使ってない？\n\nClaude Codeは`--permission-mode`でセッションごとの権限レベルを切り替えられるし、`settings.json`に許可コマンドを列挙しておくこともできる。これを知らずにデフォルトのまま使い続けていると、毎回の確認プロンプトに地味にストレスを溜めることになる。\n\n```json\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(npm run lint)\",\n      \"Bash(npm run test:*)\",\n      \"…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "`.claude/commands/`にMarkdownファイルを置くだけで、独自のスラッシュコマンドが作れる。これが地味に一番実務で効いている設定かもしれない。\n\n```markdown\n---\ndescription: PRの説明文を生成してdraft PRを作る\n---\n\n現在のブランチのdiffを確認し、変更内容を要約したPR説明文を作成せよ。\nその後 `gh pr create --draft` でドラフトPRを作成せよ。\n```\n\nこれを`.claude/commands/pr.md`として保存しておくと、セッション中に`/pr`と打つだけ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "記事では実践Tipsを13個書いたけど、正直に言うと、毎日体に染み付いて使っているのはそのうちの一部だけだ。\n\nCLAUDE.mdの設置、Plan Modeでの計画確認、settings.jsonでの許可コマンド管理、`.claude/commands/`でのカスタムスラッシュコマンド化——この4つは触った初日から今日まで途切れずに使い続けている。逆に一度試して「便利だけど今のワークフローには合わなかった」設定もいくつかあった。\n\n盛った数字を出す気はないので正直に書くけど、「13個全部を毎日フル活用してます」というのは嘘になる。実際に定着するのは、自…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSとして9つのエージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を組んで運用してみて、一番学んだのは「エージェントを増やすこと自体は簡単だけど、役割の境界を曖昧にすると事故る」ということだった。\n\n最初はとにかく機能ごとにエージェントを分けていったけど、CFOとCOOの担当領域が微妙に被っていて、同じ判断について違う答えを返してくることがあった。ここでCLAUDE.mdと同じ発想が効いてくる。各エージェントに「このエージェントは何をして、何をしないか」を明文化したファイルを持たせて、…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は複雑なタスクもいきなり実行モードで投げていた。結局それで痛い目を見て、今はPlan Modeが自分のデフォルトになっている。\n\n複数ファイルにまたがるリファクタを頼んだとき、意図していなかった設定ファイルまで書き換えられていたことがあった。原因は自分にある。「早く終わらせたい」という気持ちで、計画を確認せずにいきなり実行させたからだ。差分を後から確認して青ざめた記憶がある。\n\nそれ以降、大きめの変更を頼むときは必ずShift+TabでPlan Modeに切り替えて、読み取り専用のツールだけで設計案を先に出させるようにした。内容を確認してから実行に…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
