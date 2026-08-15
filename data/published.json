@@ -2010,6 +2010,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "月商250万円、社員3人でAI経営OSを作った話｜CFO/COO/CMOをClaude Codeで実装",
+      "date": "2026-08-14T23:53:53.844Z",
+      "articleId": "3772c5b1daab7fb20bc0",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": false,
+          "error": "browserType.launch: Timeout 180000ms exceeded."
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/3772c5b1daab7fb20bc0"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260814-2503aioscfocoocmoclaude-code"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

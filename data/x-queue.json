@@ -2832,6 +2832,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "月商250万円、社員3人でAI経営OSを作った話｜CFO/COO/CMOをClaude Codeで実装",
+      "articleUrl": "https://qiita.com/sescore/items/3772c5b1daab7fb20bc0",
+      "createdAt": "2026-08-15T00:05:10.052Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "月商250万円、社員3人の会社に「経営会議」を作った話。\n\nうちくらいの規模だと、経理も営業管理もマーケ分析も、基本は代表が片手間でやることになる。freeeでPLを確認するのは月末の締めのときだけ。GA4やSearch Consoleは気になったときにたまに開く程度。営業パイプラインの進捗はSlackとNotionに散らばったまま——そんな状態がずっと続いていた。\n\n税理士やマーケコンサルを雇う予算はまだない。かといって数字を見ずに経営判断を続けるのは怖い。この「小さい会社ほど経営データを扱う余裕がない」というジレンマを、Claude Codeで解決…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのSkillって、社内ダッシュボード作りにも使えるって知ってた?\n\nうちは社員3人、月商250万円の会社で、CFO・COO・CMO・CEOという4つの「役職エージェント」をClaude Codeで作った。仕組みはこうだ。skillsディレクトリの下に、役職ごとにYAML frontmatter付きのMarkdownを置く。\n\n---\nname: cfo\ndescription: CFO(最高財務責任者)。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\n---\n\nこんな感じで役職ごとにスコ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "記事で一番実践的だったのは、役職ごとにClaude Codeのskillsを定義して、CEOエージェントだけをルーティング役にする設計だった。\n\n構成はskillsディレクトリ配下に、役職ごとにYAML frontmatter付きのMarkdownファイルを置くところから始まる。\n\n---\nname: cfo\ndescription: CFO(最高財務責任者)。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\n---\n\n呼び出しは/cfo plのようなコマンド形式にして、内部でfreee APIを叩いてPLを生…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に書く。今回のAI経営OS構築で、作業時間が何倍速くなったとか、そういう景気のいい数字はまだ出せない。\n\n変わったのは定性的な部分だ。以前はfreeeを開いてPLを確認するのは月末の締め作業のときだけだった。今は/cfo plと打てば、いつでもPLと未決済状況を確認できる。GA4やSearch Consoleも「気になったときにたまに見る」状態から、/cmoで統合されたマーケサマリを呼び出せる状態になった。営業パイプラインもSlackとNotionに散らばっていたのが、/coo clientsで一覧化できる。\n\nこれは「劇的に速くなった」という話で…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "役職ごとにAIエージェントを分けて運用してみてわかったことがある。\n\n一番大きい学びは、単一のAIに全部任せると精度が落ちるということだ。財務データを分析している最中にマーケの話題が混ざると、プロンプトが肥大化して的外れな回答が増える。CFO/COO/CMO/CEOという4つのエージェントに役割を分けて、各エージェントが「自分の担当領域のことしか知らない」状態を意図的に作ったら、この問題は解消された。人間の組織と同じで、役割が分かれているからこそ、それぞれの回答の質が上がる。\n\nもう一つの学びはコスト管理だ。最初、財務データやマーケデータの分析処理を高…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はlaunchdで定期実行を組んでいた。結局PM2に移行するのが正解だった。\n\n日次の財務サマリ生成みたいな定期処理を、最初はmacOSのlaunchdで組んでいた。でもcronやlaunchdでバッチ処理を回していると、プロセスが死んでも気づかないまま数日放置してしまうことがある。macOSのlaunchdは条件によって無音で停止することがあり、通知が来ない。これに気づいたのは、財務サマリが数日更新されていないことにたまたま気づいたときだった。もし気づかなければ、古いデータを見ながら経営判断をしていたことになる。\n\n対応として、PM2で常駐管理し…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
