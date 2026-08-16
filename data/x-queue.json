@@ -2891,6 +2891,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール徹底比較｜結局どれを使えばいいのか",
+      "articleUrl": "https://qiita.com/sescore/items/216e6f75dff95bf1c661",
+      "createdAt": "2026-08-15T23:14:13.161Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.mdに『禁止事項』だけを書き足したら、コードレビューでの指摘が目に見えて減った。\n\n最初はコーディング規約を延々と書いていた。「TypeScriptはstrictモード必須」「コンポーネントは関数コンポーネントのみ」「テストはvitestで書く」みたいな『やること』リストだ。悪くはないが、なんとなく効いている実感がなかった。\n\n転機になったのは逆の発想だった。\n\n## 禁止事項\n- any型の使用禁止(unknown + 型ガードで代替)\n- console.logをコミットに含めない\n\nこの数行を足しただけで、生…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ「コーディング規約を並べただけ」で止まってない?\n\n自分も最初はそうだった。「TypeScriptはstrictモード必須」「テストはvitestで書く」みたいな『やること』リストをひたすら積んでいたが、Claude Codeの挙動が思うように締まらなかった。\n\n試しに発想を逆にして、禁止事項だけのセクションを足してみた。\n\n## 禁止事項\n- any型の使用禁止(unknown + 型ガードで代替)\n- console.logをコミットに含めない\n\nたったこれだけで、生成されるコードの質が安定した。理由はシンプルで、Claud…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのサブエージェント、調査タスクと実装タスクを分けて使ってる?\n\n最初は全部メインのセッションでやっていた。バグ調査も、原因特定も、修正実装も、全部同じ文脈で流す。すると調査で読み込んだ大量のファイルの中身がコンテキストに残り続けて、肝心の実装フェーズで判断がブレることが増えた。\n\n今はこう分けている。\n\n1. 「このバグの原因を調査して報告して」とサブエージェントに投げる\n2. 調査結果だけをメインセッションに戻す\n3. メインセッションで、その結果をもとに修正方針を対話しながら実装する\n\nセットアップ自体はシンプルだ。\n\n```…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "CLAUDE.mdを「禁止事項5行」に絞ってから、同じバグの指摘を何度も繰り返す回数が減った。\n\n盛った数字は書きたくないので正直に状況だけ書く。以前は規約を並べたCLAUDE.mdが50行近くあった。読み込みコストもかかるし、Claude Code自身がどのルールを優先すべきか判断に迷っている感触があった。\n\n今は禁止事項だけを先頭に置くようにした。\n\n## 禁止事項\n- any型の使用禁止(unknown + 型ガードで代替)\n- console.logをコミットに含めない\n\n体感で変わったのは、同じ指摘をPRレビューで繰り返す回数だ。以前は「また…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSでCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostの9エージェントを運用してみて、一番学んだのは「役割を絞るほど精度が上がる」ということだった。\n\n最初は1つのエージェントに財務も営業も全部任せようとした。CFOに「今月の数字まとめて、ついでに営業パイプラインも見て」みたいな依頼を投げていた時期があった。結果、どっちの回答も中途半端になった。\n\n今はCFOは財務データの取得とPL生成だけ、COOはタスク進捗とクライアント管理だけ、CMOはマーケティングダッシュボードだけ、と役割を狭く固定している…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClawのエージェントに、調査から実装から投稿まで一気通貫でやらせようとして失敗した。結局「役割ごとに完全に分離する」のが正解だった。\n\n最初の設計はこうだった。1つのエージェントが記事を読んで、要点を抜き出して、投稿文を書いて、そのまま投稿する。一見効率的に見えるが、実際に動かすとどこかの工程でおかしくなる。要約が浅いまま投稿文に進んだり、逆に要約に時間をかけすぎて投稿文が雑になったりした。1つのエージェントに全工程を任せると、各工程の品質チェックが誰もしていない状態になる。\n\n今は工程ごとにエージェントを分けている。調査エージェントは…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code実践連携術—思考と実行を分業するAI開発フロー",
+      "articleUrl": "https://qiita.com/sescore/items/d3314a8367cefde4caa8",
+      "createdAt": "2026-08-15T23:15:38.769Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "OpenClawとClaude Codeを分業させてみたら、手戻りの感覚が明確に減った。\n\nこれまでAIコーディングツールを使うとき、プランニングも記憶管理も指示出しも実装も、全部同じチャットセッションに詰め込んでいた。数時間前に決めたはずの方針を、次のセッションでまた一から説明し直す。同じ議論を繰り返す。地味だが積み重なると相当なストレスになる。コンテキストが膨らむほど、AIも人間も何を優先すべきか見失いやすくなる。\n\nそこで試したのが役割分業だ。OpenClaw側に思考・記憶・指示を、Claude Code側に開発・実行を担わせる構成にした。\n\nO…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "AIとの開発、まだ1つのチャットセッションに全部詰め込んでる?\n\nプランニングも記憶管理も指示出しも実装も同じ会話でやると、コンテキストはすぐ膨張する。数時間前に決めた方針が忘れられて、同じ説明を繰り返す羽目になる。数日にわたるプロジェクトになるほど、この非効率は無視できなくなる。これに心当たりがある人は多いはずだ。\n\n自分はOpenClawとClaude Codeで役割を分業する構成に切り替えた。OpenClaw側は思考・記憶・指示のレイヤー、Claude Code側は開発・実行のレイヤーとして使う。時間軸で言えば、前者は週次・月次の継続的な文脈を持…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeのCLAUDE.mdは、コピペで運用ルールを固定できる便利な仕組みだ。\n\nOpenClaw側から方針や優先度の指示を受け取っても、実装の作法まで毎回言葉で説明していたら意味がない。そこでリポジトリ直下にCLAUDE.mdを置き、Claude Code自身に守らせたい原則を明文化している。中身はこんな感じだ。\n\nCore Principlesという見出しの下に、Simplicity First 変更は必要最小限に留める、No Laziness 根本原因を特定し一時しのぎの修正をしない、Minimal Impact 変更は必要な箇所の…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "3つ。CLAUDE.mdに書いているCore Principlesの数だ。\n\nSimplicity First 変更は必要最小限に留める。No Laziness 根本原因を特定し一時しのぎの修正をしない。Minimal Impact 変更は必要な箇所のみに限定する。この3行だけを固定ルールとしてリポジトリに置いている。\n\n盛った効果測定はしたくないので正直に書くと、作業時間が劇的に短縮したという実感は無い。変わったのは、AIとのやり取りの往復回数と、説明し直すストレスの方だ。OpenClaw側で方針を決め、Claude Code側に引き継ぐという分業に…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェントでAI経営OSを運用してわかったこと、正直に書く。\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostという役割ごとのエージェントを動かしていると、一番の壁は技術的な精度より、エージェント間の情報の受け渡しだと気づく。CFOが出した財務判断をCEO側が知らないまま動くと、方針がズレる。役割を増やすほど、この受け渡しの経路も比例して増えていく。最初はこの部分を軽く見ていて、後から一番時間を取られた。\n\nこれに対処するために効いたのが、思考・記憶を担うレイヤーと開発・実行を担うレイヤーを分ける発想…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は全部の判断をOpenClaw側に任せようとして失敗した。結局、実行の裏取りはClaude Code側に残すのが正解だった。\n\n思考・記憶・指示を担うレイヤーを作ったとき、最初にやったミスは、OpenClaw側の判断をそのままClaude Codeに丸投げすることだった。ctoヘルスチェックで出てきた優先度リストを鵜呑みにして、確認なしに実装を始めてしまう。すると、実際のログを見たら状況が既に変わっていて、無駄な修正を書く羽目になった。指示を信じすぎたのが原因だ。当時は分業さえすれば自動的にうまくいくと思い込んでいた。\n\n原因は単純で、OpenCl…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
