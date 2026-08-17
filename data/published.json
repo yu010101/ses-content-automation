@@ -2091,6 +2091,33 @@
           "url": "https://note.com/sescore/n/n9a98a22e6d13"
         }
       ]
+    },
+    {
+      "title": "SES脱出を目指すエンジニアのためのAI開発ツール実践ガイド2026",
+      "date": "2026-08-16T23:03:40.286Z",
+      "articleId": "00093c39cb6629c43d8f",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n62c86d1bb6dd"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/00093c39cb6629c43d8f"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260816-sesai2026"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
