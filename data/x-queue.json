@@ -3009,6 +3009,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SESエンジニアがClaude Codeを毎日使って分かった実務Tips7選",
+      "articleUrl": "https://qiita.com/sescore/items/091b92445433463f6cd5",
+      "createdAt": "2026-08-17T23:07:21.790Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeにCLAUDE.mdを書かせてみたら、毎回同じ指摘をする作業から解放された。\n\n最初は普通に `claude` を起動してコードを書かせるだけだった。でも同じプロジェクトを触るたびに「テストはVitestで」「DBは直接SQL書かないで」みたいな指摘を繰り返してることに気づいて、さすがに無駄だと思った。\n\nそこで `/init` を叩いてCLAUDE.mdの雛形を作り、プロジェクト固有のルールを書き足していった。\n\n```markdown\n## コーディング規約\n- コンポーネントは関数コンポーネント + TypeScript\n-…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのPlan Mode、まだ使わずにいきなり編集させてない？\n\n自分は最初、複雑なリファクタリングもそのまま「これ直して」と投げていた。結果、想定してなかったファイルまで巻き込まれて差し戻す羽目になったことが何度かある。\n\n今はShift+Tabで切り替えるか、起動時に\n\n```bash\nclaude --permission-mode plan\n```\n\nを付けて、まず計画だけを立てさせるようにしている。ファイルは一切編集させず、「どういう手順で進めるか」だけを出させて、それを読んでから実装に移らせる流れだ。\n\n3ステップ以上かか…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで一番効いてるTipsを一つだけ挙げるなら、カスタムスラッシュコマンドだと思う。\n\n`.claude/commands/` 配下にMarkdownファイルを置くだけで、独自コマンドが作れる。PRを出す前の確認作業を毎回手打ちしていたので、こういうファイルを作ってみた。\n\n```markdown\n---\ndescription: PRを出す前の最終チェック\n---\n\n以下を順番に実行して結果を報告して:\n1. npm run lint を実行しエラーがあれば修正\n2. npm run test を実行し失敗があれば原因を調査\n3. …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeを導入してから作業時間がどう変わったか、盛らずに正直に書く。\n\n劇的に「時間が半分になった」みたいな話ではない。変わったのは作業の中身の配分だ。\n\n以前はコードを書く時間そのものに加えて、書いたあとに「これで規約通りか」「テストは網羅できてるか」を自分で見直す時間が結構かかっていた。CLAUDE.mdに規約を書いてからは、その見直しの手戻りが目に見えて減った。最初から規約に沿ったコードが出てくるので、レビュー段階で指摘することが減った。\n\nPlan Modeを使うようになってからは、逆に「計画を立てさせて確認する」という一手間が増…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostの9エージェントでAI経営OSを回してみて、一番の学びは何だったか。\n\n最初は「エージェントを増やせば増やすほど経営が自動化される」と思っていた。でも実際に運用してみると、エージェントの数よりも「誰が最終判断するか」の設計の方がずっと重要だと分かった。\n\nCFOが財務データをまとめても、COOが進捗を横断的に見ても、最後にCEOエージェントが矛盾なく統合してダッシュボードに落とし込む役割を持っていないと、結局人間が全部の報告を読んで自分で統合する羽目になる。こ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに何でもかんでも一気に投げていた。結局、権限とルールを先に決めるのが正解だった。\n\n導入したての頃は「AIエージェントなんだから任せておけば大丈夫」という感覚で、大きめのリファクタリングもそのまま依頼していた。ある時、想定していなかったファイルまで巻き込んで変更されていて、差分を確認するだけで結構な時間を使う羽目になった。CLAUDE.mdも書いていなかったし、Plan Modeも使っていなかった。全部が後手に回っていた。\n\n失敗してから考え方を変えた。まずCLAUDE.mdにプロジェクトのルールを書き、破壊的な操作の前には…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
