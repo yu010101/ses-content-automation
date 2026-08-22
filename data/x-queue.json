@@ -3068,6 +3068,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SES単価相場を自力で底上げする2026年最新AI活用術【保存版チェックリスト】",
+      "articleUrl": "https://qiita.com/sescore/items/f0228b3567fb8e7b1c77",
+      "createdAt": "2026-08-22T03:21:52.176Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを本気で書いたら、Claude Codeの手戻りが目に見えて減った。\n\n毎日Claude Codeを使っているが、正直最初は「プロンプトで毎回指示すればいいだろう」と思っていた。これが甘かった。同じリポジトリなのに、実装のたびにコードのスタイルがバラバラになったり、any型が紛れ込んだり、本番DBに直接クエリを投げるコードが出てきたこともあった。\n\nそこでリポジトリ直下にCLAUDE.mdを置いて、\n・技術スタックの前提(tRPC構成なら「REST APIは新規追加しない」まで明記)\n・コーディング規約(any型禁止、テストはVite…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ空のままにしてない?\n\nClaude Codeを導入している人は増えたが、CLAUDE.mdを本気で運用している人はまだ少ない印象がある。自分も最初は「AIだから勝手に文脈を読んでくれるだろう」と甘く見ていた。実際には同じプロジェクトなのに、実装のたびにコードのスタイルがバラバラになり、any型が紛れ込んだり、本番DBに直接クエリを投げるコードが出てきたこともあった。\n\n実際にやってみたのは、リポジトリ直下にCLAUDE.mdを置いて\n・技術スタックの前提(tRPC構成なら「REST APIは新規追加しない」まで明記)\n・コーデ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "定型作業をスラッシュコマンド化したら、毎回同じ説明を書く時間がなくなった。\n\nClaude Codeを実務で使い込んでいくと、必ず「毎回同じような指示を打っている作業」に気づく瞬間が来る。自分の場合はレビュー観点の指示、テスト実行後のログ整理、コミットメッセージのフォーマット統一あたりがそれだった。最初のうちはその都度プロンプトを打ち直していて、地味に時間を食っていた。\n\nこれをコマンド定義ファイルとしてMarkdownで書き、スラッシュコマンド化する。たとえばレビュー用のコマンドファイルに「変更差分に対してセキュリティ・パフォーマンス・テストカバレッ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に書くと、レビューの往復回数がはっきり減った。盛った数字は書きたくないので、実感ベースで正確に書く。\n\nCLAUDE.mdを整備する前は、AIが出したコードに対して「ここはany型使わないで」「このクエリは直接DBに投げないで」という同じ指摘を、1つの変更の中で何度も繰り返していた。レビューコメントを書く、修正が返ってくる、また同じ観点で指摘する、というループが実装のたびに発生していた感覚がある。案件が重なるとこの繰り返し自体がストレスになっていた。\n\nCLAUDE.mdにコーディング規約と禁止事項を明文化してからは、この手の指摘がほぼ最初の1回で…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost。9エージェントでAI経営OSを回してみて、一番学んだことは何か。\n\n答えは「エージェントを増やすことより、エージェント間の情報の受け渡し方を設計することの方が重要」だった。\n\n最初は各エージェントに個別のタスクを投げるだけで満足していた。CFOには財務データ、CMOにはマーケデータ、という具合に。ところがこれだと、CEOエージェントが全体を統合しようとした時に、各エージェントの前提条件や出力フォーマットがバラバラで、整合性のない報告が出てくることに気づいた。…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAIに丸投げしていた。結局CLAUDE.mdでルールを渡すのが正解だった。\n\nClaude Codeを使い始めた頃、こちらの指示が雑でも「察してくれるだろう」と期待していた。実際にはそんなことはなく、同じプロジェクトなのに実装のたびにコードのスタイルがバラバラになった。any型を使われたり、本番DBに直接クエリを投げるコードが出てきたこともあった。レビューのたびに同じ注意を繰り返すことになり、正直「これなら自分で書いた方が早いのでは」と思った時期もある。\n\nそこで発想を変えて、リポジトリ直下にCLAUDE.mdを置き、技術スタックの前提・コーディ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
