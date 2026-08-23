@@ -2172,6 +2172,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "Claude Codeを毎日使って分かった実践Tips｜SESつらいから抜け出すデータ分析力の鍛え方",
+      "date": "2026-08-22T23:05:19.150Z",
+      "articleId": "a8042d386c331e767e1c",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n5f21089498a6"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/a8042d386c331e767e1c"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260822-claude-codetipsses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール徹底比較｜Claude Code・Copilot・Cursorどれを使う？",
+      "date": "2026-08-22T23:18:08.728Z",
+      "articleId": "66e7e4fc5aee3be4ed5d",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/66e7e4fc5aee3be4ed5d"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260822-20268aiclaude-codecopilotcurso"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nfcbd46119f13"
+        }
+      ]
     }
   ]
 }

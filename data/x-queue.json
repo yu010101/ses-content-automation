@@ -3127,6 +3127,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Codeを毎日使って分かった実践Tips｜SESつらいから抜け出すデータ分析力の鍛え方",
+      "articleUrl": "https://qiita.com/sescore/items/a8042d386c331e767e1c",
+      "createdAt": "2026-08-22T23:11:14.852Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "毎日Claude Codeを触るようになって、開発の進め方そのものが変わった。\n\nきっかけは単純だ。常駐先だと使える開発ツールが制限されがちな一方、自分の手元環境やちょっとした検証作業では自由にCLIツールを選べる。だから空いた時間にClaude Codeを触り込むようになった。\n\n一番効果を感じたのは、プロジェクトルートに置く`CLAUDE.md`だ。\n\n```markdown\n## Core Principles\n- Simplicity First: 変更は必要最小限にする\n- No Laziness: 場当たり的な修正ではなく根本原因を直す\n-…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ一度も編集したことない?\n\nそのまま使っていると、Claude Codeは毎回ゼロから状況を推測することになる。プロジェクトの方針もテストの実行コマンドも、セッションが変わるたびに説明し直す羽目になる。\n\n自分もしばらくはそうだった。だが試しにプロジェクトルートに`CLAUDE.md`を置いて、こう書いてみた。\n\nSimplicity First: 変更は必要最小限にする\nNo Laziness: 場当たり的な修正ではなく根本原因を直す\nMinimal Impact: 影響範囲を広げない\n\nたったこれだけで、セッションのたびに同…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで一番地味に効いているのは、実はサブエージェントとカスタムスラッシュコマンドの組み合わせだ。\n\n`.claude/commands/`にMarkdownファイルを置くと、独自のスラッシュコマンドを作れる。自分は繰り返し頼むレビュー系のプロンプトが面倒だったので、こういうコマンドを作った。\n\n```markdown\n---\ndescription: 変更内容の要点とリスクを整理してレビューする\n---\n\n以下の変更内容について、変更点の要約・想定されるリスク・\nテストで確認すべき観点を整理してください。\n不明な点は「要確認」と明記し…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に数字で振り返ってみる。話を盛るつもりはないので、事実だけ書く。\n\n今使っているセットアップは、プロジェクト用の`CLAUDE.md`が1本、グローバル用の`~/.claude/CLAUDE.md`が1本、カスタムスラッシュコマンドが`.claude/commands/`に数個、サブエージェントが`.claude/agents/`に数体という規模だ。派手な数ではない。\n\n変わったのは速度そのものより、繰り返しの手間が減ったことだ。CLAUDE.mdを置く前は、新しいセッションを開くたびに「このリポジトリの方針は」「テストはこう実行して」と同じ説明を…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSとして9つのエージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を組んで運用してみて、一番の学びは「エージェントを増やすほど、情報の重複と食い違いが起きやすくなる」ということだった。\n\n例えばCFOが財務データから拾ってきた数字と、COOが案件管理側で見ている数字が微妙にズレる、といったことが普通に起きる。エージェントごとに参照するデータソースを分けていると、どちらが正しいかを人間が最終的に判断する場面が必ず出てくる。\n\nこれに対して効いたのが、各エージェントの役割と参照範囲を`CL…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はサブエージェントに`tools: Bash, Read, Write, Edit`を全部渡していた。結局これは失敗だった。\n\n理由は単純で、調査目的で投げたはずのサブエージェントが、途中の判断で勝手にファイルを書き換えてしまうことがあったからだ。メインの会話に戻ってdiffを見て、「これは頼んでいない変更だ」と気づいて青ざめたことが何度かある。幸い致命的な変更ではなかったが、気づくのが遅れていたらと思うとゾッとした。\n\n原因は自分の設計にあった。`.claude/agents/`でエージェントを定義するとき、「便利だから」という理由で`tools…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
