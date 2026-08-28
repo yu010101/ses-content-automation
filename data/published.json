@@ -2226,6 +2226,33 @@
           "url": "https://note.com/sescore/n/nfcbd46119f13"
         }
       ]
+    },
+    {
+      "title": "Claude Codeを1年運用して分かった実務Tips5選とAI時代のキャリア戦略",
+      "date": "2026-08-27T23:07:24.066Z",
+      "articleId": "808c52d228dbfb088676",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/ne2ff22d11eee"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/808c52d228dbfb088676"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260827-claude-code1tips5ai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
