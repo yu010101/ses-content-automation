@@ -3186,6 +3186,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SES1年目が知るべきAI経営OS実践術｜年収を上げるデータ分析視点",
+      "articleUrl": "https://qiita.com/sescore/items/d3ab000ab90c1fa9463e",
+      "createdAt": "2026-08-28T23:05:07.772Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🧠 OpenClawで経営OSを組んでみたら、Claude Codeの「スキル選択の曖昧さ」が一番のボトルネックだった。\n\n自分は今、OpenClaw上にCEO・CFO・CTO・COO・CMO・秘書という役割ごとのエージェントを立てて、毎朝ダッシュボードを確認するところから1日を始めている。\n\n仕組みはシンプルで、`.claude/skills/<name>/SKILL.md` にYAML frontmatterと手順を書くだけ。CFO役のスキルなら、descriptionに「財務データ取得・PL生成・仕訳計上・キャッシュフロー予測」と書いておく。\n…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのSKILL.md、descriptionは書きっぱなしになってない?\n\n自分はOpenClaw上でCEO・CFO・CTO・COO・CMO・秘書役のエージェントを立てて経営OSを運用している。毎朝、各役員のダッシュボードを確認するところから1日が始まる。\n\n仕組みの実体は`.claude/skills/<name>/SKILL.md`にYAML frontmatterと手順を書くだけとシンプル。CFO役なら、descriptionに「財務データ取得・PL生成・仕訳計上・キャッシュフロー予測」と書き、実行手順として会計APIからの仕…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawでCFO役のエージェントを作るとき、SKILL.mdの構造をそのまま公開する。\n\n自分が経営OSで使っている雛形はこんな感じだ。\n\n```\n---\nname: cfo\ndescription: >\n  CFO(最高財務責任者)。会計クラウド連携で財務データ取得・\n  PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\n---\n\n## 実行手順\n1. 会計API経由で当月の仕訳データを取得する\n2. PLフォーマットに整形し、前月比を算出する\n3. 未決済項目を抽出し、優先度順にリスト化する\n4. 結果を `data/cfo/YY…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "毎朝、経営OSのダッシュボードを見るところから1日が始まる。数字を盛らずに、実際の構成だけ書く。\n\nOpenClaw上で動かしている役員エージェントは今のところ6つ。CEO・CFO・CTO・COO・CMO、それに秘書系エージェントが1つ。\n\n技術的な実体は3層構造で、\n1. Skill(`.claude/skills/<name>/SKILL.md`にYAML frontmatterと手順を書いたもの)\n2. Agent(独立したコンテキストウィンドウを持つ実行単位。使えるツールを役割ごとに制限できる)\n3. Workflow(複数のAgentをパイプ…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "6つの役員エージェントを運用してわかったこと、正直に書く。\n\nOpenClaw上でCEO・CFO・CTO・COO・CMO・秘書系エージェントを立てて経営OSを回しているが、一番の学びは「エージェントを増やすほど、description設計の重要性が跳ね上がる」ということだった。\n\nClaude Codeはユーザーの発話やタスク文脈とSKILL.mdのdescriptionの類似度を見てスキルを自動選択する。役員が1〜2体のうちは多少曖昧でも動いていたが、6体になると「CFOに聞いたつもりがCOOが発火した」というようなことが起きるようになった。\n\n対策…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はSKILL.mdのdescriptionを雑に書いていて失敗した。結局、担当領域とデータソースを明記するのが正解だった。\n\nOpenClaw上で経営OSを組み始めた頃、CFO役のSKILL.mdのdescriptionを「財務を管理するエージェント」くらいの短い一文で済ませていた。\n\n結果、CFOに聞きたいタイミングでCOOが発火したり、逆に必要な場面でCFOが読み込まれなかったりすることが何度も起きた。Claude Codeはユーザーの発話やタスク文脈とdescriptionの類似度を見てスキルを自動選択する仕組みなので、description…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
