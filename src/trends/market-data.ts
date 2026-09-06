@@ -52,6 +52,22 @@ function saveCache(data: MarketData): void {
   }
 }
 
+// 取れなかった時に入る文言。これを「事実1件」と数えると、
+// 市場データが取れていないこと自体が見えなくなる(実測: 2026-04-21のキャッシュは全項目これ)。
+const PLACEHOLDERS = ["データなし", "データ取得失敗", "不明", "N/A", ""];
+
+function isPlaceholder(v: string): boolean {
+  return PLACEHOLDERS.includes((v ?? "").trim());
+}
+
+// 古いキャッシュを無期限に使うと、いつまでも古い数字を「今の市場」として配ることになる。
+// 実データが入っていた場合に効く安全弁。
+const STALE_MAX_DAYS = 30;
+
+function cacheAgeDays(cached: CachedMarketData): number {
+  return (Date.now() - new Date(cached.fetchedAt).getTime()) / (1000 * 60 * 60 * 24);
+}
+
 function isCacheFresh(cached: CachedMarketData): boolean {
   const ageMs = Date.now() - new Date(cached.fetchedAt).getTime();
   const ageDays = ageMs / (1000 * 60 * 60 * 24);
@@ -137,8 +153,16 @@ export async function fetchMarketData(): Promise<MarketData> {
     const msg = e instanceof Error ? e.message : String(e);
     console.warn(`[market-data] Grok fetch failed: ${msg}`);
     if (cached) {
-      console.log(`[market-data] falling back to stale cache (age: ${cached.fetchedAt})`);
-      return cached.data;
+      const age = cacheAgeDays(cached);
+      if (age <= STALE_MAX_DAYS) {
+        console.log(
+          `[market-data] falling back to stale cache (age: ${age.toFixed(0)}日 / ${cached.fetchedAt})`,
+        );
+        return cached.data;
+      }
+      console.warn(
+        `[market-data] キャッシュが${age.toFixed(0)}日前(上限${STALE_MAX_DAYS}日)なので使いません: ${cached.fetchedAt}`,
+      );
     }
     console.warn("[market-data] no cache, returning FALLBACK");
     return FALLBACK;
@@ -149,8 +173,9 @@ export async function fetchMarketData(): Promise<MarketData> {
  * Format market data as context string for article generation.
  */
 export function formatMarketContext(data: MarketData): string {
-  const facts = data.rawFacts.length > 0
-    ? data.rawFacts.map((f) => `- ${f}`).join("\n")
+  const realFacts = (data.rawFacts ?? []).filter((f) => !isPlaceholder(f));
+  const facts = realFacts.length > 0
+    ? realFacts.map((f) => `- ${f}`).join("\n")
     : "（ファクトデータなし）";
 
   const sources = data.sources.length > 0

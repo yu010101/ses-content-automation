@@ -3245,6 +3245,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SESからフリーランスへ:AI駆動で武装する独立エンジニアの徹底比較ガイド",
+      "articleUrl": "https://qiita.com/sescore/items/26c4b4eccceaf13d576d",
+      "createdAt": "2026-09-05T23:21:25.033Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを1個置いただけで、AIへの説明時間がほぼゼロになった。\n\n複数のプロジェクトを並行して触っていると、毎回同じ説明を繰り返すことになる。「TypeScriptはstrictモードで」「テストはVitestでカバレッジ80%以上」「コミットメッセージはConventional Commits形式」。新しいセッションを開くたびにこれをタイプしていた。\n\n試しにプロジェクトルートに CLAUDE.md を置いてみた。\n\n```markdown\n# CLAUDE.md\n\n## この案件のルール\n- TypeScript strict モード必…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだプロジェクトルートに置いてない？\n\n複数の案件やリポジトリを行き来していると、Claude Codeに毎回同じ前提を説明することになる。「このプロジェクトはTypeScriptのstrictモードです」「テストはVitestです」「本番DBには直接触らないでください」。これを新しいセッションのたびに打ち込むのは地味に消耗する。\n\n答えは単純で、CLAUDE.mdというファイルをプロジェクトルートに置くだけでいい。\n\n```markdown\n# CLAUDE.md\n\n## この案件のルール\n- TypeScript strict …",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeの権限設定、.claude/settings.jsonを甘く見ない方がいい。\n\n複数のプロジェクトを並行して触るようになると、一番怖いのは「間違ったプロジェクトのコマンドを実行してしまう」事故だ。A社のディレクトリにいるつもりで、実はB社のディレクトリでnpm testを叩いていた、みたいなケースは普通に起こり得る。\n\nこれを防ぐために、プロジェクトごとに.claude/settings.jsonで許可コマンドを絞っている。\n\n```json\n{\n  \"permissions\": {\n    \"allow\": [\"Bash(npm…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に書くと、CLAUDE.mdを整えてから劇的に速くなったわけではない。\n\nよく「AIツール導入で生産性が何倍になった」みたいな話を見るが、実際の体感はもっと地味だ。変わったのは作業の総時間そのものより、セッションの立ち上げにかかる時間だ。\n\n以前は新しいタスクに取りかかるたびに、コーディング規約やディレクトリ構成、テストの流儀を毎回説明していた。この「前置き」の時間が、体感で1回あたり数分は確実にかかっていた。CLAUDE.mdを置いてからは、この前置きがほぼゼロになった。\n\nただし、これは「タスクが速く終わる」のとは別の話だ。CLAUDE.mdは…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を動かしてみて、一番意外だったことは何か。\n\nAI経営OSを組むとき、最初は「エージェントを増やせば増やすほど自動化が進む」と思っていた。実際にCFO(財務)、COO(運営)、CMO(マーケ)、CEO(意思決定統合)、Brain(知識管理)、Kaizen(改善提案)、Screen(監視)、CareerBoost(育成支援)まで揃えて動かしてみると、想像と違う課題が見えてきた。\n\nエージェントの数が増えるほど、実は「誰が何を最終判断するか」の線…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCLAUDE.mdに禁止事項だけをずらずら書いていた。結局、望ましい振る舞いを具体例で書いた方が圧倒的に効いた。\n\n「本番環境に触らない」「rm -rfは使わない」「force pushはしない」。最初はこういう禁止のリストばかり並べていた。事故は減ったが、Claude Codeの提案があまり気が利かない状態が続いた。何をしてはいけないかは分かっても、何をすべきかが伝わっていなかったからだ。\n\n途中で方針を変えて、禁止事項に加えて「このプロジェクトではこう書く」という具体例を足すようにした。\n\n```markdown\n## コミット例\nfeat:…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

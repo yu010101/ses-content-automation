@@ -437,7 +437,46 @@ export const ROUNDUP_QIITA_REWRITE_SYSTEM_PROMPT = `あなたはAI/開発ツー�
 JSONのみを返してください。`;
 
 export function getQiitaTags(keywords: string[]): string[] {
+  // 2026-09-06 実測で並べ替え。照合は break 無しで全件足し先頭5個を採るので**順序が結果**。
+  // 旧版は SES/フリーランス/エンジニア/転職/キャリア が先頭5個を常に占有していた。
+  // 実測(Qiita API): ClaudeCode 8,446本/フォロワー21,746 ・生成AI 9,625/51,655 ・
+  //   AIエージェント 5,837/22,724 ・個人開発 7,871/14,795 に対し、
+  //   年収 64本/フォロワー3 ・契約 76/6 ・ses 832/33 ・フリーランス 638/129。
+  // 大きい棚を先に、SES系は残すが後ろへ(CTAの受け皿として本文には残す)。
   const tagMap: Record<string, string> = {
+    // --- 到達の大きい順(実測) ---
+    "Claude Code": "ClaudeCode",
+    生成AI: "生成AI",
+    AIエージェント: "AIエージェント",
+    個人開発: "個人開発",
+    Cursor: "Cursor",
+    "GitHub Copilot": "GitHubCopilot",
+    MCP: "MCP",
+    LLM: "LLM",
+    RAG: "RAG",
+    Claude: "Claude",
+    ChatGPT: "ChatGPT",
+    OpenAI: "OpenAI",
+    プロンプト: "プロンプトエンジニアリング",
+    エージェント: "AIAgent",
+    自動化: "自動化",
+    AI: "AI",
+    // --- 技術 ---
+    TypeScript: "TypeScript",
+    Python: "Python",
+    "Next.js": "nextjs",
+    React: "React",
+    AWS: "AWS",
+    Docker: "Docker",
+    "GitHub Actions": "GitHubActions",
+    Terraform: "Terraform",
+    VSCode: "VSCode",
+    Git: "Git",
+    Linux: "Linux",
+    CI: "CI",
+    CD: "CD",
+    開発: "開発",
+    // --- SES/キャリア系(CTAの文脈。棚は小さいので後ろ) ---
     SES: "SES",
     フリーランス: "フリーランス",
     エンジニア: "エンジニア",
@@ -446,40 +485,10 @@ export function getQiitaTags(keywords: string[]): string[] {
     単価: "フリーランス",
     案件: "案件",
     リモート: "リモートワーク",
-    AI: "AI",
-    データ: "データ分析",
-    年収: "年収",
-    副業: "副業",
     独立: "独立",
+    副業: "副業",
     スキル: "スキルアップ",
-    面談: "面接",
-    契約: "契約",
-    派遣: "派遣",
-    常駐: "客先常駐",
-    開発: "開発",
-    TypeScript: "TypeScript",
-    Python: "Python",
-    AWS: "AWS",
-    Docker: "Docker",
-    "GitHub Actions": "GitHubActions",
-    "GitHub Copilot": "GitHubCopilot",
-    Claude: "Claude",
-    ChatGPT: "ChatGPT",
-    OpenAI: "OpenAI",
-    LLM: "LLM",
-    RAG: "RAG",
-    Terraform: "Terraform",
-    React: "React",
-    "Next.js": "nextjs",
-    VSCode: "VSCode",
-    Git: "Git",
-    Linux: "Linux",
-    CI: "CI",
-    CD: "CD",
-    自動化: "自動化",
-    プロンプト: "プロンプトエンジニアリング",
-    エージェント: "AIAgent",
-    MCP: "MCP",
+    データ: "データ分析",
   };
 
   const tags = new Set<string>();
@@ -490,5 +499,23 @@ export function getQiitaTags(keywords: string[]): string[] {
   }
   // Ensure at least one relevant tag
   if (tags.size === 0) tags.add("AI");
-  return [...tags].slice(0, 5);
+
+  // 5枠しか無いので、**当たったタグの中で**到達の大きい順に詰める。
+  // 当たっていないタグは足さないので誤タグにはならない。
+  // 数字は 2026-09-06 に Qiita API /tags で実測したフォロワー数。
+  // 旧実装は挿入順で切っており、フォロワー3人の「年収」が
+  // フォロワー21,746の「ClaudeCode」を押し出すことがあった。
+  const TAG_REACH: Record<string, number> = {
+    Python: 257517, 初心者: 152772, ChatGPT: 108704, AI: 107011, Git: 97194,
+    TypeScript: 60811, 生成AI: 51655, LLM: 29710, AIエージェント: 22724,
+    ClaudeCode: 21746, 個人開発: 14795, Claude: 13623, MCP: 8928,
+    OpenAI: 4177, AWS: 3000, Docker: 3000, React: 3000,
+    データ分析: 1589, Cursor: 478, 転職: 402, GitHubCopilot: 322,
+    エンジニア: 254, フリーランス: 129, AIAgent: 32, SES: 33,
+    独立: 20, 案件: 20, キャリア: 20, リモートワーク: 20,
+    スキルアップ: 20, 副業: 20, 契約: 6, 年収: 3,
+  };
+  return [...tags]
+    .sort((a, b) => (TAG_REACH[b] ?? 10) - (TAG_REACH[a] ?? 10))
+    .slice(0, 5);
 }

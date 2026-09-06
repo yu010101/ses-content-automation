@@ -8,6 +8,7 @@
 // --dry-run / --skip-approval / --category= のフラグを受ける。
 import { runPipeline } from "./pipeline.js";
 import { runRoundupPipeline } from "./roundup-pipeline.js";
+import { existsSync } from "node:fs";
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -17,6 +18,20 @@ const flags = {
   skipApproval: args.includes("--skip-approval"),
   category: args.find((a) => a.startsWith("--category="))?.split("=")[1],
 };
+
+// [2026-09-06] 生成の一時停止スイッチ。
+// crontab を直接編集できない(sshd にフルディスクアクセスが無く
+// crontab: Interrupted system call で弾かれる)ため、実行側で止める。
+// 再開: rm ~/ses-content-automation/.STOP-PIPELINE
+// analytics / feedback / report は対象外なので日次の計測は止まらない。
+// --dry-run は公開しないので止めない(中身の確認まで塞ぐと、直したか確かめられない)
+if ((command === "pipeline" || command === "roundup") && !flags.dryRun) {
+  const stopMarker = new URL("../.STOP-PIPELINE", import.meta.url);
+  if (existsSync(stopMarker)) {
+    console.log(`[STOPPED] .STOP-PIPELINE があるため ${command} は実行しません`);
+    process.exit(78);
+  }
+}
 
 async function main() {
   switch (command) {

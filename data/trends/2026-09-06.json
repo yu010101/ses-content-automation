@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-06T08:10:31.956Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "AIに設計を任せるときに気をつけたい。「正しく動く」と「増えても耐えられる」は別だった",
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍",
+    "「ハーネス」ってなんぞ？ Claudeに“性格”と“記憶”を持たせる仕組みを、おじさんでも分かるように調べてみた"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍",
+    "「ハーネス」ってなんぞ？ Claudeに“性格”と“記憶”を持たせる仕組みを、おじさんでも分かるように調べてみた",
+    "Claude Code に制限モードが入った。自作スキル47本が0本になった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた",
+    "「ハーネス」ってなんぞ？ Claudeに“性格”と“記憶”を持たせる仕組みを、おじさんでも分かるように調べてみた",
+    "【2026年版】無料から使えるパブリックAPI 16選！定番からおもしろAPIまで"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍",
+    "Claude Code に制限モードが入った。自作スキル47本が0本になった"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "LLM",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた",
+    "Claudeのキャッシュを使い倒す",
+    "【ローカルLLM】国産LLM「LLM-jp-4-33B」と「Qwen3.8-27B」の推論性能比較（RTX 5070 Ti + RTX 3070 Ti）"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "202608個人的claude code設定",
+   "summary": "Zennの日次トレンド上位(いいね換算 688)",
+   "tweetExamples": [
+    "202608個人的claude code設定"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "「ページのトップへ戻るボタン」はなぜ非推奨か",
+   "summary": "Zennの日次トレンド上位(いいね換算 184)",
+   "tweetExamples": [
+    "「ページのトップへ戻るボタン」はなぜ非推奨か"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Google提唱の「SKILL.state」について。プロンプトに型の概念を導入",
+   "summary": "Zennの日次トレンド上位(いいね換算 121)",
+   "tweetExamples": [
+    "Google提唱の「SKILL.state」について。プロンプトに型の概念を導入"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "トークン2000分の1——オントロジー×ナレッジグラフでClaude Codeの推測を消す",
+   "summary": "Zennの日次トレンド上位(いいね換算 116)",
+   "tweetExamples": [
+    "トークン2000分の1——オントロジー×ナレッジグラフでClaude Codeの推測を消す"
+   ],
+   "relevanceScore": 1
+  }
+ ]
+}

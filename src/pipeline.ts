@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
+import { discoverPlatformTrends } from "./trends/platform.js";
 import { fetchMarketData, formatMarketContext } from "./trends/market-data.js";
 import { generateArticle, generateNoteVariation, generateZennVariation, generateQiitaVariation } from "./content/generator.js";
 import { insertRelatedLinks } from "./content/internal-links.js";
@@ -168,8 +169,18 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     console.log(`Found ${trends.length} trends:`);
     trends.forEach((t) => console.log(`  - ${t.topic} (${t.relevanceScore.toFixed(2)})`));
   } catch (err) {
+    // Grok(x.ai)は与信切れで 403 を返す(2026-09-06 実測)。ここを握り潰すと
+    // トレンド入力ゼロのまま記事が量産されるので、投稿先の実トレンドへ落とす。
     console.log(`  Grok API unavailable (${err instanceof Error ? err.message : err})`);
-    console.log("  Falling back to keyword-only article generation.");
+    try {
+      console.log("  Falling back to platform trends (Zenn daily + Qiita stocks)...");
+      trends = await discoverPlatformTrends();
+      console.log(`  Found ${trends.length} platform trends:`);
+      trends.forEach((t) => console.log(`    - ${t.topic} (${t.relevanceScore.toFixed(2)})`));
+    } catch (err2) {
+      console.log(`  Platform trends also unavailable (${err2 instanceof Error ? err2.message : err2})`);
+      console.log("  Falling back to keyword-only article generation.");
+    }
   }
 
   // Step 1.5: Fetch market data
@@ -216,15 +227,25 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   // Step 2.5-2.7: Platform variations
   // Skip separate LLM calls for speed (each adds 2-3 min).
   // Use base article for all platforms. Formatter handles CTA/frontmatter differences.
+  // 2026-09-06: 一律スキップをやめ、面ごとに選べるようにした。
+  // 実測(自社211本): note スキ107/71本 > Qiita LGTM41/89本 > Zenn いいね2/51本。
+  // いちばん効いている note にだけ専用の書き分けを戻す(1回あたり2-3分)。
+  // Zenn/Qiita は反応が小さく、増える時間に見合わないので既定OFFのまま。
+  // 全部戻す: VARIATION_ZENN=true VARIATION_QIITA=true
+  // note も止める: VARIATION_NOTE=false
   const SKIP_VARIATIONS = process.env.SKIP_VARIATIONS !== "false";
+  const VARIATION_NOTE = process.env.VARIATION_NOTE !== "false";
+  const VARIATION_ZENN = process.env.VARIATION_ZENN === "true";
+  const VARIATION_QIITA = process.env.VARIATION_QIITA === "true";
 
   let noteArticle: GeneratedArticle = article;
   let zennArticle: GeneratedArticle = article;
   let qiitaArticle: GeneratedArticle = article;
 
-  if (SKIP_VARIATIONS) {
-    console.log("\n[2.5-2.7/5] Using base article for all platforms (SKIP_VARIATIONS=true)");
+  if (SKIP_VARIATIONS && !VARIATION_NOTE && !VARIATION_ZENN && !VARIATION_QIITA) {
+    console.log("\n[2.5-2.7/5] Using base article for all platforms (全て無効)");
   } else {
+    if (VARIATION_NOTE) {
     console.log("\n[2.5/5] Generating Note variation...");
     try {
       noteArticle = await generateNoteVariation(article);
@@ -232,7 +253,9 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     } catch (err) {
       console.log(`  Note variation failed (${err instanceof Error ? err.message : err}), using base`);
     }
+    }
 
+    if (VARIATION_ZENN) {
     console.log("\n[2.6/5] Generating Zenn AI article...");
     try {
       zennArticle = await generateZennVariation(article);
@@ -240,13 +263,16 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     } catch (err) {
       console.log(`  Zenn variation failed (${err instanceof Error ? err.message : err}), using base`);
     }
+    }
 
+    if (VARIATION_QIITA) {
     console.log("\n[2.7/5] Generating Qiita tech article...");
     try {
       qiitaArticle = await generateQiitaVariation(article);
       console.log(`Qiita tech variation: ${qiitaArticle.body.length} chars`);
     } catch (err) {
       console.log(`  Qiita tech variation failed (${err instanceof Error ? err.message : err}), using base`);
+    }
     }
   }
 

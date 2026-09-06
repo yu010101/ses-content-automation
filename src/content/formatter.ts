@@ -66,18 +66,26 @@ export function formatForQiita(
   };
 }
 
+// 2026-09-06 実測で並べ替え。照合は最初の一致で break するので**順序が結果**。
+// 旧版は "Claude Code" が必ず claude に落ち、claudecode(Zenn 13,624件)へ一度も載らなかった
+// (実測: 自社51本中22本のタイトルに Claude Code とあるのに claudecode トピックは0本)。
+// 汎用の ai は何にでも当たるので最後に置く。
 const TOPIC_MAP: Record<string, string> = {
-  ai: "ai", llm: "llm", gpt: "gpt", claude: "claude", gemini: "gemini",
-  機械学習: "machinelearning", rag: "rag", プロンプト: "prompt",
-  python: "python", typescript: "typescript", openai: "openai",
-  langchain: "langchain", データ: "data", 自動化: "automation",
-  エージェント: "agent", ファインチューニング: "finetuning",
+  claudecode: "claudecode", "claude code": "claudecode",
+  生成ai: "生成ai", aiエージェント: "aiagent",
+  cursor: "cursor", copilot: "githubcopilot", mcp: "mcp",
+  claude: "claude", gpt: "gpt", gemini: "gemini", openai: "openai",
+  llm: "llm", rag: "rag", プロンプト: "prompt", 個人開発: "個人開発",
+  機械学習: "machinelearning", ファインチューニング: "finetuning",
+  langchain: "langchain", dify: "dify", n8n: "n8n",
+  crewai: "crewai", autogen: "autogen", エージェント: "agent",
+  python: "python", typescript: "typescript", react: "react",
+  nextjs: "nextjs", docker: "docker", github: "github",
+  aws: "aws", terraform: "terraform", vscode: "vscode",
+  自動化: "automation", 開発: "development",
   ses: "ses", エンジニア: "engineer", フリーランス: "freelance",
-  キャリア: "career", 転職: "career", 開発: "development",
-  docker: "docker", github: "github", aws: "aws", terraform: "terraform",
-  react: "react", nextjs: "nextjs", vscode: "vscode",
-  copilot: "githubcopilot", cursor: "cursor", mcp: "mcp",
-  dify: "dify", n8n: "n8n", crewai: "crewai", autogen: "autogen",
+  キャリア: "career", 転職: "career", データ: "data",
+  ai: "ai",
 };
 
 function toEnglishTopics(keywords: string[]): string[] {
