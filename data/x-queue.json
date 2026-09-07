@@ -3304,6 +3304,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Codeを1年使い倒して分かった、年収を上げる実践Tips9選",
+      "articleUrl": "https://qiita.com/sescore/items/78e3dee00b5e7c414fd4",
+      "createdAt": "2026-09-06T23:10:13.184Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "text": "Claude CodeのCLAUDE.mdを1年間書き直し続けて、ようやく「これだ」という型に落ち着いた。\n\n最初はREADMEの弟分くらいの感覚で、技術スタックとディレクトリ構成だけ書いていた。これだと毎回のセッションで同じ説明を繰り返す羽目になる。Claude Codeは会話が変わるたびに文脈をゼロから積み直すので「察してほしい」は通用しない。\n\n今はCLAUDE.mdを「初日に配属された新人に渡す資料」のつもりで書いている。\n\n絶対に守ることの欄には\n・DBマイグレーションは npx prisma migrate dev を使う。手動SQL禁止\n…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "text": "CLAUDE.md、まだREADMEのコピペみたいな内容で止まってない？\n\n自分も最初はそうだった。技術スタックとディレクトリ構成を書いておけば十分だと思っていたが、それだとClaude Codeに毎回同じ前提を説明し直す羽目になる。会話が変わるたびに文脈はゼロからで、「前も言ったよね」は通用しない相手だと気づいてから書き方を変えた。\n\n今は「初日に配属された新人に渡す資料」のつもりで書いている。中身はこんな感じだ。\n\n絶対に守ること\n・DBマイグレーションは npx prisma migrate dev を使う。手動SQLは書かない\n・テストなしでコ…",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "text": "Claude Codeのhooksで「うっかり本番を触る」を仕組みで潰した話。\n\n.claude/settings.json にPreToolUseフックを書くと、Bashツールが呼ばれる直前に任意のスクリプトを差し込める。設定はこんな感じだ。\n\n「hooks」の下に「PreToolUse」を配列で並べ、matcherに「Bash」を指定、実行するコマンドとしてscripts/block-prod-db.shを登録する。たったこれだけの設定だ。\n\nblock-prod-db.sh の中身はシンプルで、実行されようとしているコマンドに本番のホスト名や接続…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "text": "Claude Codeを1年使って、正直な工数の変化を書いておく。誇張はしない。\n\n一番変わったのは「調査にかかる体感時間」だ。大きめのリポジトリで「この関数どこで呼ばれてる？」レベルの調査をメインの会話で自分でgrepし続けると、あっという間にコンテキストが埋まって会話が重くなる。これを探索専用のサブエージェントに投げて要約だけ受け取るようにしてから、メインの会話が汚れなくなった。体感としては、同じ調査を3〜4回繰り返すような場面が減った、という程度の変化で、劇的な倍率で語れるようなものではない。\n\n並列で投げられる調査タスクは、1回のメッセージでま…",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "text": "AI経営OSとしてCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostの9エージェントを運用してみて、一番の学びは何だったと思う？\n\n自分の答えは「エージェントを増やすほど、統合役の重要性が上がる」だった。\n\n最初は各エージェントに役割を割り振れば自動的にうまく回ると思っていた。CFOに財務、COOに進捗管理、CMOにマーケデータ、Screenに情報収集、CareerBoostにスキル面の助言、という具合に。でも実際に動かしてみると、それぞれが正しい仕事をしていても、情報がバラバラに出てくるだけでは意思決定にな…",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "text": "最初はClaude Codeのサブエージェントを「なんでも屋」として1体だけ育てようとしていた。結局、探索用と実装用を分けるのが正解だった。\n\nリードオンリーの探索と、ファイルを実際に書き換える実装を同じエージェントにやらせていた時期がある。一見効率的に見えるが、大きめのリポジトリで「この関数どこで呼ばれてる」レベルの調査を挟むと、メインの会話のコンテキストがどんどん埋まっていく。しかも調査の途中経過まで全部会話に残るので、後から本題の実装方針を思い出すのに苦労した。\n\n結局、調査はExplore系のリードオンリーなサブエージェントに投げて、要約だけメ…",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
