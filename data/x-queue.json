@@ -3363,6 +3363,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを構築した実践記録",
+      "articleUrl": "https://qiita.com/sescore/items/0c1f0b6168e5199847ff",
+      "createdAt": "2026-09-07T23:38:31.216Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🤖 OpenClawで経営陣を9体のAIエージェントに分解してみた。\n\nCEO、CFO、CTO、COO、CMO、そして秘書役。\n\n最初は「多すぎるだろう」と思っていた。だが実際に組んでみると、人間の役員会議の構造をそのままエージェント化するのは理にかなっていた。\n\nエージェント定義は`.claude/agents/*.md`にfrontmatterを書くだけ。\n\n```\n---\nname: cfo\ndescription: CFO。会計データ連携でPL生成・キャッシュフロー予測\ntools: Bash, Read, Grep\nmodel: sonne…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "❓ そのAIエージェント、本番デプロイ権限まで持ってない？\n\nOpenClawで9体のエージェント経営OSを組んでいて、一番最初につまずいたのがここだった。\n\nCFO役のエージェントを作ったとき、最初は「便利だから」とほぼ全ツールを許可していた。だがこれは危険だと途中で気づいた。\n\n`.claude/agents/cfo.md`のfrontmatterで`tools: Bash, Read, Grep`のように絞り込むだけで、財務エージェントが誤ってコードをデプロイしたり、無関係なファイルを書き換えたりするリスクを構造的に潰せる。\n\nCEO、CFO、C…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "📋 OpenClawのエージェント間連携、YAMLファイル3つだけで回している。\n\n`inbox.yaml` / `today.yaml` / `archive.yaml`\n\n秘書役のエージェントがこの3ファイルを管理し、他のエージェントは読み書きするだけ。DBもAPIも要らない、驚くほどシンプルな構成。\n\n複数のエージェントが非同期に動くと「誰が今どの状態を持っているか」が分からなくなりがちだが、ローカルのYAMLに状態を寄せることで解決した。\n\nCEOエージェントの設計も同じ思想でやっている。CEO自身は一次データを持たず、CFO/CTO/COO…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "📊 正直な数字を書く。盛った成果報告はしない。\n\nOpenClawで組んだ経営OSは、エージェント9体、状態管理ファイル3つ（inbox/today/archive）、役職に応じたtools権限設定は各エージェントごとに個別。\n\nここ数ヶ月かけて少しずつ組み上げてきたもので、一気に完成したわけではない。CEOエージェント、CFOエージェント、CTOエージェント……と一つずつ役割を切り出しては、権限を絞り、動作確認して、また次のエージェントに手をつける、という地味な繰り返しだった。\n\n「9倍速くなった」とか「生産性◯◯%向上」みたいな数字は一切出せない…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "🧭 9体のAIエージェントで経営を回してみて、一番学んだのは「分業の設計」だった。\n\nOpenClawでCEO・CFO・CTO・COO・CMO・秘書役をそれぞれ独立したエージェントとして定義し、Claude Codeの`.claude/agents/*.md`でtools権限を絞り込む。ここまでは技術的な話。\n\nだが本当に効いてくるのは、人間の組織論とまったく同じ問いだった。\n\n「誰が一次情報を持ち、誰が統合するだけの立場か」\n\nCEOエージェントに何でもできる権限を持たせてしまうと、各部門の報告を待たずに数字を勝手に作り出してしまう。これは人間の経…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "😅 最初はCEOエージェントに何でも読み書きできる権限を渡していた。結局、それが一番のハマりポイントだった。\n\nOpenClawで経営OSを組み始めた頃、「統合する役割なんだから、全部見えた方が便利だろう」と考えて、CEOエージェントにBashもRead/Writeも会計データへのアクセスも全部許可していた。\n\n一見便利そうに見えたが、実際に動かしてみると、CEOエージェントが各部門の報告を待たずに自分で数字を読みに行き、CFOエージェントの報告と微妙に違う数字を出してくることがあった。人間の組織で言えば、社長が経理を飛び越えて自分で帳簿を読み、部下…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
