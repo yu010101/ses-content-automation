@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-08T23:00:06.574Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "AIっぽくない画像を作る画風プロンプト38種類＋テンプレート",
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "AIに設計を任せるときに気をつけたい。「正しく動く」と「増えても耐えられる」は別だった",
+    "Anthropic がコマース用エージェントをオープンソース化した"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例",
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Code でモデルを切り替えると、そのターンだけ書き直しが287倍"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた",
+    "「ハーネス」ってなんぞ？ Claudeに“性格”と“記憶”を持たせる仕組みを、おじさんでも分かるように調べてみた",
+    "【2026年版】無料から使えるパブリックAPI 16選！定番からおもしろAPIまで"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "LLM",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた",
+    "Claudeのキャッシュを使い倒す"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AIに「中学生でもわかるように1枚のHTMLで図解して」が、複雑なコードを読む前の最良の準備運動かも",
+   "summary": "Zennの日次トレンド上位(いいね換算 127)",
+   "tweetExamples": [
+    "AIに「中学生でもわかるように1枚のHTMLで図解して」が、複雑なコードを読む前の最良の準備運動かも"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "不具合はCIに刻もう。「Red-Green Stacked PR」のすすめ",
+   "summary": "Zennの日次トレンド上位(いいね換算 125)",
+   "tweetExamples": [
+    "不具合はCIに刻もう。「Red-Green Stacked PR」のすすめ"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "HTMLを社内共有するサービスを、コードを読まずに作る - 1人で25万行を回す自動運用の記録",
+   "summary": "Zennの日次トレンド上位(いいね換算 104)",
+   "tweetExamples": [
+    "HTMLを社内共有するサービスを、コードを読まずに作る - 1人で25万行を回す自動運用の記録"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ドメインモデル貧血症はなぜ生まれるのか — Decision パターンで DDD トリレンマを解く",
+   "summary": "Zennの日次トレンド上位(いいね換算 88)",
+   "tweetExamples": [
+    "ドメインモデル貧血症はなぜ生まれるのか — Decision パターンで DDD トリレンマを解く"
+   ],
+   "relevanceScore": 0.8800000000000001
+  }
+ ]
+}
