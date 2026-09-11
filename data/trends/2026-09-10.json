@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-10T23:00:31.266Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事9本がこのタグを付けている",
+   "tweetExamples": [
+    "AIっぽくない画像を作る画風プロンプト38種類＋テンプレート",
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事9本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "AIに設計を任せるときに気をつけたい。「正しく動く」と「増えても耐えられる」は別だった",
+    "Anthropic がコマース用エージェントをオープンソース化した"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例",
+    "Claude Fable 5.1、キャッシュ読みは4分の1。ただし tool_choice が400を返す"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Fable 5.1、キャッシュ読みは4分の1。ただし tool_choice が400を返す"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ",
+    "カジュアル面談で「特に質問ないです」が、実は一番もったいない理由",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "パスキーでも被害に遭うデバイスコードフロー攻撃とは？ ～ Entra ID での防御と検証方法を解説",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた",
+    "Claude Code に制限モードが入った。自作スキル47本が0本になった"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "不具合はCIに刻もう。「Red-Green Stacked PR」のすすめ",
+   "summary": "Zennの日次トレンド上位(いいね換算 153)",
+   "tweetExamples": [
+    "不具合はCIに刻もう。「Red-Green Stacked PR」のすすめ"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "HTMLを社内共有するサービスを、コードを読まずに作る - 1人で25万行を回す自動運用の記録",
+   "summary": "Zennの日次トレンド上位(いいね換算 133)",
+   "tweetExamples": [
+    "HTMLを社内共有するサービスを、コードを読まずに作る - 1人で25万行を回す自動運用の記録"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ドメインモデル貧血症はなぜ生まれるのか — Decision パターンで DDD トリレンマを解く",
+   "summary": "Zennの日次トレンド上位(いいね換算 114)",
+   "tweetExamples": [
+    "ドメインモデル貧血症はなぜ生まれるのか — Decision パターンで DDD トリレンマを解く"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ルービックキューブを一撃で解く専用LLMを作った",
+   "summary": "Zennの日次トレンド上位(いいね換算 93)",
+   "tweetExamples": [
+    "ルービックキューブを一撃で解く専用LLMを作った"
+   ],
+   "relevanceScore": 0.93
+  }
+ ]
+}

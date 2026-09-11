@@ -3422,6 +3422,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code実践連携ガイド｜思考は記憶に、実行はコードに",
+      "articleUrl": "https://qiita.com/sescore/items/4f2a17be7b4bfc507be2",
+      "createdAt": "2026-09-09T23:07:30.261Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeだけで開発していたら、あるプロジェクトで学んだ教訓が次のプロジェクトに全く引き継がれないことに気づいた。\n\nセッションが終われば記憶は消える。同じ失敗を別のリポジトリでもう一度やらかす。これがずっと地味にストレスだった。\n\n試しにOpenClawを「思考・記憶・指示」の層として立てて、Claude Codeを「開発・実行」の層として完全に役割分担してみた。\n\nOpenClaw側には秘書エージェントを置いてYAMLでinbox/today/archiveを管理させ、CEO/CFO/CTO/COO/CMOのエージェントに経営判断とKP…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのセッション、毎回同じ前提を説明し直していないだろうか?\n\n自分はしばらくの間、Claude Code単体で全部やろうとしていた。コードを書かせるのも、日々のタスク管理をさせるのも、経営判断の材料を集めさせるのも同じセッションの中で。\n\n結果、あるプロジェクトで学んだ教訓が別のプロジェクトに引き継がれず、日々のタスクや経営判断のコンテキストがセッションをまたぐたびに消えていくという状態になった。\n\nそこでOpenClawを「思考・記憶・指示」の層、Claude Codeを「開発・実行」の層として明確に切り分けてみた。OpenCla…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawとClaude Codeを連携させる上で、一番実践的だったのはこの3つのコマンドの組み合わせだった。\n\n```\n/cc-secretary list   # inboxの未処理タスクを一覧表示\n/coo tasks           # タスク進捗をCOOエージェントが横断集計\n/cto priority        # 技術的優先度をCTOエージェントが提案\n```\n\n内部的には単なるYAMLファイルの読み書きとサブエージェントへの委譲で構成されている。だが効いているのは仕組みそのものより「どこで何を判断するか」を分けた設計の方だ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9つのエージェントを同時運用してみて、正直に工数感を書いておきたい。\n\nCEO/CFO/CTO/COO/CMOの5つの経営エージェントと、秘書エージェント、そしてClaude Code側の実行レイヤーを合わせると、体感では「思考」と「実行」の2レイヤーに完全に分かれた状態で動いている。\n\n数字を盛るつもりはないので正直に言うと、劇的に時間が減ったという実感はまだない。むしろ最初は設定とメモリ構造を整えるのに手間がかかった。ただ、同じ説明を毎回セッションの冒頭でやり直す時間は明確に減った。教訓を書き込むmemoryファイルが積み上がるほど、Claude …",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost+秘書)を運用してみて、一番の学びは「エージェントを増やすこと」自体には価値がなかったという点だ。\n\n最初はエージェントを増やせば増やすほど判断が速くなると思っていた。実際にやってみると、境界が曖昧なまま増やしたエージェントは、お互いの領域に口を出し合ってノイズが増えるだけだった。\n\n効いたのは、OpenClaw側の「思考・記憶・指示」とClaude Code側の「開発・実行」を分けた上で、さらにOpenClaw内部でも経営判断(CEO/CFO…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はOpenClawとClaude Codeのメモリを同じ感覚で扱っていて、結構ハマった。\n\nClaude Code側のセッションで学んだ細かい実装上の教訓を、そのままOpenClaw側の経営判断用メモリにも書き込んでいた時期がある。結果、CEO/CFOエージェントのダッシュボードに「このバグはこう直した」レベルの実装ログが混ざり込み、経営判断に必要な情報がノイズに埋もれてしまった。\n\n逆にOpenClaw側で積み上げた経営判断の文脈をClaude Codeのセッションにそのまま流し込んだこともある。こちらも失敗で、実装タスクのはずが余計な背景情報で…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
