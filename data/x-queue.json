@@ -3481,6 +3481,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール徹底比較｜Claude Code・Copilot・Cursor完全ガイド",
+      "articleUrl": "https://qiita.com/sescore/items/c189e6040b4a63c994fc",
+      "createdAt": "2026-09-12T23:50:05.902Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.mdを本気で書き込んでみたら、指示の手戻りがはっきり減った。\n\nうちの会社では毎日Claude Codeを使っている。最初はCLAUDE.mdをほぼ空のまま運用していたが、あるとき「コーディング規約」「テストの書き方」「コミットメッセージの形式」を細かく書き込んだところ、同じ確認を何度も聞き返されることがなくなった。\n\n具体的にはプロジェクトルートに置いたCLAUDE.mdにこう書いている。\n\n# コーディング規約\n- テストはVitestを使用し、新規関数には必ずユニットテストを追加する\n- APIレスポンスの型…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの中身、まだデフォルトのまま放置してない？\n\n正直、自分も最初はそうだった。Claude Codeを導入した直後は「まあエージェントが賢いから勝手に察してくれるだろう」と思って、CLAUDE.mdをほぼ空で運用していた。結果、同じプロジェクトなのに毎回テストの書き方やコミットメッセージの形式を聞き返される羽目になった。\n\n試しにプロジェクトルートのCLAUDE.mdにルールを書き込んでみた。\n\n# コーディング規約\n- テストはVitestを使用し、新規関数には必ずユニットテストを追加する\n- APIレスポンスの型はzodスキーマで定…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeのPlan Modeを使わずに大きな変更を投げるのは、正直もったいない。\n\n最近気づいたのは、いきなり実装させるより一度計画を出させたほうが結果的に速いということ。やり方はシンプルで、通常の対話モードのまま\n\nclaude\n\nで起動して、大きめの変更を頼むときは先に「まず計画を立てて、実装はまだしないで」と一言添えるだけ。すると複数ファイルにまたがる変更でも、どのファイルを触るか・どんな順番で進めるかを箇条書きで返してくるので、そこで方向性がズレていれば実装前に修正できる。\n\nさらにMCP（Model Context Protoc…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeを導入して何が一番変わったかと聞かれたら、コード修正の「着手までの時間」だと答えている。\n\n盛った数字を出すつもりはない。実感として変わったのは、リポジトリ全体を自分で読み直してから直す作業が減ったということだ。以前は「このバグ、どのファイルが原因だっけ」と探すところから始めていたが、今はターミナルで\n\nclaude \"このリポジトリの認証まわりのバグを直して、テストも通して\"\n\nと投げて、まず読み取り・調査の部分をエージェントに任せられる。自分の作業は、返ってきた変更案をレビューして規約に沿っているか確認するところから始まる。\n…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost——9エージェントを実際に回してみてわかったことがある。\n\nエージェントの数を増やせば増やすほど良くなるわけではない、ということだ。最初は「役割を細かく分ければ分けるほど賢くなる」と思っていたが、実際にはエージェント同士の報告が噛み合わなくなる瞬間が出てくる。CFOが出した数字とCOOが見ている進捗が、微妙にタイミングでズレるといった具合だ。\n\n結局効いたのは、各エージェントに渡す指示をCLAUDE.mdのように文章として固定し、「誰が何を最終判断するか」をC…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeにとにかく細かく指示を出すのが正解だと思っていた。結局それは間違いで、正解は「CLAUDE.mdに書いて渡す」ことだった。\n\n導入初期、毎回のプロンプトに「テストはVitestで」「型はzodで」「コミットはConventional Commitsで」と書き足していた時期がある。効果はあったが、同じことを何度も打つのが面倒になり、そのうち省略するようになって、規約から外れた変更が混ざるようになった。\n\n転機は、その指示をプロンプトではなくプロジェクトルートのCLAUDE.mdに移したことだった。\n\n# コーディング規約\n- …",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
