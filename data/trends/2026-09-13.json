@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-13T23:00:24.732Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "元ヤフーエンジニア社長が考える、AIに仕事が奪われないと思う理由",
+    "AIっぽくない画像を作る画風プロンプト38種類＋テンプレート",
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "AIに設計を任せるときに気をつけたい。「正しく動く」と「増えても耐えられる」は別だった",
+    "Anthropic がコマース用エージェントをオープンソース化した"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "Anthropic がコマース用エージェントをオープンソース化した",
+    "Claude Fable 5.1、キャッシュ読みは4分の1。ただし tool_choice が400を返す"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "最近取り入れたClaude Codeの個人的tips 4選",
+    "CLAUDE.mdをそろそろ見直す時期かも ── Claude 5世代向けの最適化手順・スキル・プロジェクト種類別の例",
+    "Claude Fable 5.1、キャッシュ読みは4分の1。ただし tool_choice が400を返す"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "アクセスログから不正アクセスの兆候を見つける7つの集計(nginx/Apache対応・コピペOK)",
+    "パスキーでも被害に遭うデバイスコードフロー攻撃とは？ ～ Entra ID での防御と検証方法を解説",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ",
+    "カジュアル面談で「特に質問ないです」が、実は一番もったいない理由",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "Herdr × git worktree × Claude Codeの相性がいい話",
+   "summary": "Zennの日次トレンド上位(いいね換算 110)",
+   "tweetExamples": [
+    "Herdr × git worktree × Claude Codeの相性がいい話"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "LLMのトークン効率化で気をつけたいことまとめ",
+   "summary": "Zennの日次トレンド上位(いいね換算 88)",
+   "tweetExamples": [
+    "LLMのトークン効率化で気をつけたいことまとめ"
+   ],
+   "relevanceScore": 0.8800000000000001
+  },
+  {
+   "topic": "クロスプラットフォーム開発が解決するコスト、解決しないコスト",
+   "summary": "Zennの日次トレンド上位(いいね換算 83)",
+   "tweetExamples": [
+    "クロスプラットフォーム開発が解決するコスト、解決しないコスト"
+   ],
+   "relevanceScore": 0.8300000000000001
+  },
+  {
+   "topic": "iPhone Duoに備える(SwiftUI/UIKit対応)",
+   "summary": "Zennの日次トレンド上位(いいね換算 83)",
+   "tweetExamples": [
+    "iPhone Duoに備える(SwiftUI/UIKit対応)"
+   ],
+   "relevanceScore": 0.8300000000000001
+  }
+ ]
+}
