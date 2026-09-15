@@ -1,3 +1,4 @@
+import { createArticleCheckpoint } from './utils/article-checkpoint.js';
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { discoverTrends } from "./trends/grok.js";
@@ -207,6 +208,7 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   }
 
   const article: GeneratedArticle = await generateArticle(trends, keywords, marketContext, learningContext);
+  const checkpoint = createArticleCheckpoint(join(process.cwd(), 'data/article-checkpoints'), article, !!dryRun);
   console.log(`Title: ${article.title}`);
   console.log(`Length: ${article.body.length} chars`);
   console.log(`Keywords: ${article.keywords.join(", ")}`);
@@ -276,6 +278,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     }
   }
 
+  checkpoint.save('variants_unreviewed', { variants: { note: noteArticle, zenn: zennArticle, qiita: qiitaArticle } });
+
   // Step 3: Telegram approval
   const hasTelegram = !!process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_BOT_TOKEN !== "your-telegram-bot-token";
   if (!skipApproval && !dryRun && hasTelegram) {
@@ -291,6 +295,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     const reason = !hasTelegram ? "no Telegram token" : dryRun ? "dry-run" : "--skip-approval";
     console.log(`\n[3/5] Skipping approval (${reason})`);
   }
+
+  checkpoint.save(dryRun ? 'dry_run_started' : 'publication_attempt_started');
 
   // Step 4: Publish to all platforms
   // Order: Note first → get URL → X with note link (OGP card) → Qiita → Zenn
@@ -362,6 +368,8 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
       results.push({ platform: pub.platform, success: false, error: message });
     }
   }
+
+  checkpoint.save(dryRun ? 'dry_run_completed' : 'publication_results_recorded', { results });
 
   // Step 5: Record results
   console.log("\n[5/5] Recording results...");

@@ -1,5 +1,5 @@
 import { chromium, type Browser, type BrowserContext } from "playwright";
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const NOTE_API = "https://note.com/api";
@@ -81,6 +81,10 @@ export class NoteClient {
 
     this.browser = await chromium.launch({
       headless: true,
+      // Verified on M4: reuse the installed browser when this Playwright build is absent.
+      ...(existsSync(chromium.executablePath()) ? {} : {
+        executablePath: join(process.env.HOME ?? "~", "Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell"),
+      }),
       args: ["--disable-blink-features=AutomationControlled"],
     });
     this.context = await this.browser.newContext({
