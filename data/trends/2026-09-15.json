@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-15T23:00:17.641Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事10本がこのタグを付けている",
+   "tweetExamples": [
+    "2026年9月時点 Microsoft の AI 戦略について",
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった",
+    "最近取り入れたClaude Codeの個人的tips 4選"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった",
+    "最近取り入れたClaude Codeの個人的tips 4選"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった",
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策",
+    "Anthropic がコマース用エージェントをオープンソース化した"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AWS",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所",
+    "AI駆動開発のためのオントロジー",
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "アクセスログから不正アクセスの兆候を見つける7つの集計(nginx/Apache対応・コピペOK)",
+    "パスキーでも被害に遭うデバイスコードフロー攻撃とは？ ～ Entra ID での防御と検証方法を解説",
+    "ChatGPT・Gemini・Claude…データはAIの学習に使われるのか？情報漏洩のリスクは？　34製品の利用規約を読み比べてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "クロスプラットフォーム開発が解決するコスト、解決しないコスト",
+   "summary": "Zennの日次トレンド上位(いいね換算 121)",
+   "tweetExamples": [
+    "クロスプラットフォーム開発が解決するコスト、解決しないコスト"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "重みは学習するのか、測るのか。ハエの脳が問い直すAIのつくり方",
+   "summary": "Zennの日次トレンド上位(いいね換算 116)",
+   "tweetExamples": [
+    "重みは学習するのか、測るのか。ハエの脳が問い直すAIのつくり方"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "トークンをケチってレビューをローカルLLMにやらせた話",
+   "summary": "Zennの日次トレンド上位(いいね換算 64)",
+   "tweetExamples": [
+    "トークンをケチってレビューをローカルLLMにやらせた話"
+   ],
+   "relevanceScore": 0.64
+  },
+  {
+   "topic": "Fragment Refsのずるい使い方",
+   "summary": "Zennの日次トレンド上位(いいね換算 29)",
+   "tweetExamples": [
+    "Fragment Refsのずるい使い方"
+   ],
+   "relevanceScore": 0.29
+  }
+ ]
+}
