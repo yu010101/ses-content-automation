@@ -3540,6 +3540,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code実務Tips7選【2026年最新】年収データ分析とSES比較",
+      "articleUrl": "https://qiita.com/sescore/items/aff17dc2a577e81f21b8",
+      "createdAt": "2026-09-16T23:09:09.691Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdを1本のファイルに全部書いていたら、そのうち収拾がつかなくなった。\n\nClaude Codeを毎日メインの開発ツールとして使っている。最初のうちは「その日だけ守ってほしい指示」も「今後ずっと守ってほしいルール」も同じCLAUDE.mdにまとめて書いていた。結果、ファイルはどんどん肥大化して、セッションの読み込みコストが増える一方だった。\n\n今は3層に分けて運用している。\n\n~/.claude/CLAUDE.md → 全プロジェクト共通のワークフロー方針\n<project>/CLAUDE.md → そのリポジトリ固有の規約・アーキテクチ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "そのCLAUDE.md、まだ1ファイルに全部詰め込んだままじゃない?\n\nClaude Codeを日常的に使っていて一番効いたのは、実はコマンドやモデルの使い分けより「ルールの置き場所」を見直したことだった。\n\n最初は「今日だけ守ってほしい指示」も「ずっと守ってほしい方針」も同じCLAUDE.mdにベタ書きしていた。当然ファイルは肥大化し、Claude Codeが毎回読み込む量が増えていく。これでは長時間セッションでコンテキストが圧迫されるのも当然だった。\n\n今の構成はこう分けている。\n\n~/.claude/CLAUDE.md（全プロジェクト共通の方針）…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeでPlan Modeを「3ステップ以上は強制」にしたら、手戻りが目に見えて減った。\n\n「とりあえずコード書いて」で進めると、途中で方針がズレていることに後から気づいて手戻りが発生する。これを防ぐためにClaude CodeのPlan Modeを、自分の中で明確なルールとして固定した。\n\nCLAUDE.mdにはこう書いている。\n\n### Plan Mode Default\n- 非自明なタスク（3ステップ以上 or アーキテクチャ判断）は必ずPlan Modeに入る\n- 想定外の事態が起きたら、押し切らずに即座に再計画する\n\nこれをC…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "サブエージェントに「調査」を切り出してから、メインセッションでgrepしまくることがなくなった。\n\n盛った数字は書きたくないので正直に書く。作業時間が何%短縮したとかは計測していない。ただ、メインのセッションで自分でファイル検索や定義探しをしまくると、その途中結果がコンテキストを圧迫して、肝心の実装フェーズで使える余力が減るのは体感として明確だった。\n\n今の運用ルールはシンプルで、\n\n- ファイルパターン検索や「このシンボルがどこで定義されているか」系のクエリは読み取り専用の探索エージェントに投げる\n- 独立して並列実行できる調査は複数のサブエージェン…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost、9エージェントを回してみて一番学んだのは「統合役がいないと経営情報は分散したまま死ぬ」ということだった。\n\nAI経営OSを組むとき、最初は各エージェントに担当領域を切り分けることばかり考えていた。CFOに財務、COOに運営、CMOにマーケ、という具合に。でも実際に回してみると、各エージェントが独立して優秀なレポートを出しても、それを統合して意思決定に落とし込む役がいないと、結局人間が全部読んで頭の中で統合する羽目になる。\n\nそこでCEOエージェントを「各エー…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はHooksで全部自動化しようとして失敗した。結局、承認を挟む場所を人間側に残すのが正解だった。\n\nClaude CodeのHooks機能を知った時、真っ先に「これで全部自動化できる」と思って、コミットもデプロイも通知も全部フックに繋いでみた。動くには動いた。でもしばらく運用してみて気づいたのは、フックで自動実行できることと、自動実行して良いことは別物だということだった。\n\n特に痛かったのが、意図しないタイミングでコミットやデプロイまで走るように組んでしまっていたケース。ローカルの検証が甘いまま次の処理に進んでしまい、後から手動で巻き戻す羽目になっ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
