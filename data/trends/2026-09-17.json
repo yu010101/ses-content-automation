@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-17T23:00:05.259Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事9本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "2026年9月時点 Microsoft の AI 戦略について",
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった",
+    "ジュニアの「AIが書いたコードが理解できない」問題の対応策"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "AWS",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所",
+    "AI駆動開発のためのオントロジー",
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "42日でバックエンドエンジニアの基礎を完全に理解する #32 - Webアプリの3層アーキテクチャ",
+    "【採用担当の本音】入社1ヶ月目で「この人を採用して本当に良かった」と思われる人の特徴",
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "バイブコーディングで GUI が壊れていく理由とその対策プロンプト",
+   "summary": "Zennの日次トレンド上位(いいね換算 183)",
+   "tweetExamples": [
+    "バイブコーディングで GUI が壊れていく理由とその対策プロンプト"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "クロスプラットフォーム開発が解決するコスト、解決しないコスト",
+   "summary": "Zennの日次トレンド上位(いいね換算 131)",
+   "tweetExamples": [
+    "クロスプラットフォーム開発が解決するコスト、解決しないコスト"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "トークンをケチってレビューをローカルLLMにやらせた話",
+   "summary": "Zennの日次トレンド上位(いいね換算 76)",
+   "tweetExamples": [
+    "トークンをケチってレビューをローカルLLMにやらせた話"
+   ],
+   "relevanceScore": 0.76
+  },
+  {
+   "topic": "1日の開発の流れをスキル化してみたら、想像以上に快適だった",
+   "summary": "Zennの日次トレンド上位(いいね換算 49)",
+   "tweetExamples": [
+    "1日の開発の流れをスキル化してみたら、想像以上に快適だった"
+   ],
+   "relevanceScore": 0.49000000000000005
+  }
+ ]
+}

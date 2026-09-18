@@ -3599,6 +3599,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを作った話｜Claude Code実践ログ",
+      "articleUrl": "https://qiita.com/sescore/items/85da19e77bdad85bbdc4",
+      "createdAt": "2026-09-17T23:05:56.245Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "OpenClawでCEOエージェントを作ってみたら、経営会議の相手が増えた。\n\nClaude CodeのSkill機能を使うと、`/cfo`や`/coo`みたいなスラッシュコマンドで役割ごとのAIを常駐させられる。SKILL.mdにこう書くだけだ。\n\n---\nname: cfo\ndescription: CFO。freee連携で財務データ取得・PL生成・仕訳計上・キャッシュフロー予測を実行\n---\n\nこれを置いておくと、`/cfo 未決済`と打った瞬間にCFOエージェントが起動して、freee APIから未決済請求書のリストを引っ張ってくる。\n\n同じ要…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "その`/cfo`や`/coo`、まだ一人の万能エージェントに全部投げてない?\n\nClaude CodeのSkillは、SKILL.mdをYAMLフロントマター付きで書いておくと、役割ごとに独立したコンテキストを持つエージェントとして呼び出せる。たとえばCFO役ならこう定義する。\n\n---\nname: cfo\ndescription: CFO。freee連携で財務データ取得・PL生成・仕訳計上・キャッシュフロー予測を実行\n---\n\nこれで`/cfo 未決済`と打つだけで、freee APIから未決済請求書一覧を取ってきてくれる。\n\n自分はこれをCFO・C…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawで一番効いてるのは、実はSkillのフロントマター設計だった。\n\n各エージェントはYAMLフロントマター付きのMarkdown(SKILL.md)として定義する。CFOならこんな形だ。\n\n---\nname: cfo\ndescription: CFO。freee連携で財務データ取得・PL生成・仕訳計上・キャッシュフロー予測を実行\n---\n\n## 役割\n- freee APIから月次PLを取得し差分を報告\n- 未決済請求書のリストアップ\n- 資金繰り予測(3ヶ月先まで)\n\nこれをそのまま置くだけで`/cfo`コマンドとして呼び出せるようにな…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェントを常駐させて、正直まだ生産性の数字は出せない。\n\nOpenClawでCEO・CFO・CTO・COO・CMOに秘書・ナレッジ管理・プロダクト管理・全体統合を足した9体構成を組んで運用を始めたけど、運用歴が浅いうちに盛った数字を語るのは違うと思っている。\n\nただ、可視化できた具体的な事実はいくつかある。\n\n・cronで毎朝9:00にCOOエージェントが起動し、前日のタスク完了率を集計してCEOに引き渡す\n・毎週月曜9:30にCFOエージェントが起動し、キャッシュフロー予測を3ヶ月先まで更新する\n・freee連携で未決済請求書のリストア…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のエージェントを運用してみて、一番わかったことは何か?\n\nOpenClawでCEO・CFO・CTO・COO・CMO・秘書・ナレッジ管理・プロダクト管理・全体統合の9体を組んでみて感じたのは、役割を分けること自体よりも「誰が最終的に統合するか」を決めておくことのほうが重要だということだった。\n\nCFOが財務、CTOが技術、COOが運営、CMOがマーケをそれぞれ見ても、それぞれの報告がバラバラに転がっているだけでは意味がない。CEOエージェント側で各部門の出力を受け取って経営ダッシュボードとして提示する設計にして初めて、「聞けば状況が一覧で出てくる」状…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は1体の万能エージェントに全部やらせようとして失敗した。結局、役割を分けるのが正解だった。\n\nOpenClawを組む前は、Claude Codeに「経理も見て、営業も見て、マーケも見て」と一つの会話でまとめて投げていた。最初のうちは動くんだけど、会話が長くなるほど文脈がごちゃつき、CFO的な財務の話をしている途中でCTO的な技術の話が混ざってきたりして、回答の質がじわじわ落ちていった。\n\n結局たどり着いたのが、SKILL.mdで役割ごとに独立したコンテキストを持つエージェントとして切り出す方法だった。CFOはfreee連携で財務データとPL生成に専…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
