@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-18T23:00:07.049Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "2026年9月時点 Microsoft の AI 戦略について",
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "生成AIが書いたドキュメントを読みたくない",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "Jevとは何か？ 従来型LLMやAIエージェントとの違いを理解する",
+    "Claude Code のスキルを47本運用して測った、7つのこと",
+    "3万スターの Claude Code スキルを入れたら、出力が43%短くなった"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "42日でバックエンドエンジニアの基礎を完全に理解する #32 - Webアプリの3層アーキテクチャ",
+    "【採用担当の本音】入社1ヶ月目で「この人を採用して本当に良かった」と思われる人の特徴",
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AWS",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "AWSのインフラ導入でAIを使っている箇所と手でやっている箇所",
+    "AI駆動開発のためのオントロジー",
+    "【AWS初心者向け】インフラ構成を図解で理解しよう！ALB・ECS・RDS・Lambda・NAT Gateway・VPCエンドポイントを一気に学ぶ"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "既存の LLM が CPU なら、 Jev はその GPU 版みたいなやつ",
+   "summary": "Zennの日次トレンド上位(いいね換算 214)",
+   "tweetExamples": [
+    "既存の LLM が CPU なら、 Jev はその GPU 版みたいなやつ"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "バイブコーディングで GUI が壊れていく理由とその対策プロンプト",
+   "summary": "Zennの日次トレンド上位(いいね換算 195)",
+   "tweetExamples": [
+    "バイブコーディングで GUI が壊れていく理由とその対策プロンプト"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "TypeSafeのJevを正しく驚く、それってLLMでできませんか？",
+   "summary": "Zennの日次トレンド上位(いいね換算 142)",
+   "tweetExamples": [
+    "TypeSafeのJevを正しく驚く、それってLLMでできませんか？"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。",
+   "summary": "Zennの日次トレンド上位(いいね換算 79)",
+   "tweetExamples": [
+    "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。"
+   ],
+   "relevanceScore": 0.79
+  }
+ ]
+}
