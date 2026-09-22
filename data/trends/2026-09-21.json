@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-21T23:02:39.957Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事16本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "話題のJevとは？文章を書かずに判断だけを返すAIモデルをざっくり解説",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事13本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "話題のJevとは？文章を書かずに判断だけを返すAIモデルをざっくり解説",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事12本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった",
+    "拒否ルールを全部消しても、Claude Code は eval を止めた。守っていたのは別の仕組みだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事10本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Jevとは何か？ 従来型LLMやAIエージェントとの違いを理解する",
+    "Claude Code のサブエージェントにも CLAUDE.md は全部渡る。外す設定ができた"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Claude",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった",
+    "拒否ルールを全部消しても、Claude Code は eval を止めた。守っていたのは別の仕組みだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "なぜSMS認証は弱いと言われるのか",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった",
+    "アクセスログから不正アクセスの兆候を見つける7つの集計(nginx/Apache対応・コピペOK)"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "既存の LLM が CPU なら、 Jev はその GPU 版みたいなやつ",
+   "summary": "Zennの日次トレンド上位(いいね換算 444)",
+   "tweetExamples": [
+    "既存の LLM が CPU なら、 Jev はその GPU 版みたいなやつ"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "TypeSafeのJevを正しく驚く、それってLLMでできませんか？",
+   "summary": "Zennの日次トレンド上位(いいね換算 175)",
+   "tweetExamples": [
+    "TypeSafeのJevを正しく驚く、それってLLMでできませんか？"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Jevでハーネスエンジニアリング",
+   "summary": "Zennの日次トレンド上位(いいね換算 155)",
+   "tweetExamples": [
+    "Jevでハーネスエンジニアリング"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。",
+   "summary": "Zennの日次トレンド上位(いいね換算 114)",
+   "tweetExamples": [
+    "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。"
+   ],
+   "relevanceScore": 1
+  }
+ ]
+}
