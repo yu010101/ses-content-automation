@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-22T23:00:23.637Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事15本がこのタグを付けている",
+   "tweetExamples": [
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "話題のJevとは？文章を書かずに判断だけを返すAIモデルをざっくり解説"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事13本がこのタグを付けている",
+   "tweetExamples": [
+    "生成AIセキュリティを学んで変わった「AIを安全に使う」という考え方",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "話題のJevとは？文章を書かずに判断だけを返すAIモデルをざっくり解説"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事12本がこのタグを付けている",
+   "tweetExamples": [
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事9本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Jevとは何か？ 従来型LLMやAIエージェントとの違いを理解する",
+    "Claude Code のサブエージェントにも CLAUDE.md は全部渡る。外す設定ができた"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Claude",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった",
+    "拒否ルールを全部消しても、Claude Code は eval を止めた。守っていたのは別の仕組みだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "生成AIセキュリティを学んで変わった「AIを安全に使う」という考え方",
+    "なぜSMS認証は弱いと言われるのか",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "TypeSafeのJevを正しく驚く、それってLLMでできませんか？",
+   "summary": "Zennの日次トレンド上位(いいね換算 186)",
+   "tweetExamples": [
+    "TypeSafeのJevを正しく驚く、それってLLMでできませんか？"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Jevでハーネスエンジニアリング",
+   "summary": "Zennの日次トレンド上位(いいね換算 169)",
+   "tweetExamples": [
+    "Jevでハーネスエンジニアリング"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。",
+   "summary": "Zennの日次トレンド上位(いいね換算 121)",
+   "tweetExamples": [
+    "WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "C言語のコードをRustの中に書けるライブラリを作った",
+   "summary": "Zennの日次トレンド上位(いいね換算 67)",
+   "tweetExamples": [
+    "C言語のコードをRustの中に書けるライブラリを作った"
+   ],
+   "relevanceScore": 0.67
+  }
+ ]
+}
