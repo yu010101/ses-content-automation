@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-24T23:00:09.044Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事14本がこのタグを付けている",
+   "tweetExamples": [
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "元ヤフーエンジニア社長が考える、AIを使いこなす人と使えない人の決定的な差"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事11本がこのタグを付けている",
+   "tweetExamples": [
+    "生成AIセキュリティを学んで変わった「AIを安全に使う」という考え方",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "話題のJevとは？文章を書かずに判断だけを返すAIモデルをざっくり解説"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事10本がこのタグを付けている",
+   "tweetExamples": [
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Jevとは何か？ 従来型LLMやAIエージェントとの違いを理解する"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Claude",
+   "summary": "Qiitaで直近14日にストック20超の記事8本がこのタグを付けている",
+   "tweetExamples": [
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Write() で拒否しても、Claude Code は12回とも書き込んだ。効いていたのは Edit() だけだった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた",
+    "攻撃者の視点でセキュリティを理解したいエンジニアへ。bashで学ぶ侵入技術の実践書",
+    "生成AIセキュリティを学んで変わった「AIを安全に使う」という考え方"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "C言語のコードをRustの中に書けるライブラリを作った",
+   "summary": "Zennの日次トレンド上位(いいね換算 137)",
+   "tweetExamples": [
+    "C言語のコードをRustの中に書けるライブラリを作った"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Re: Vercel に Go サーバーを無料でデプロイできるんです！",
+   "summary": "Zennの日次トレンド上位(いいね換算 56)",
+   "tweetExamples": [
+    "Re: Vercel に Go サーバーを無料でデプロイできるんです！"
+   ],
+   "relevanceScore": 0.5599999999999999
+  },
+  {
+   "topic": "みんなJevの話してる。やってないの俺だけ",
+   "summary": "Zennの日次トレンド上位(いいね換算 43)",
+   "tweetExamples": [
+    "みんなJevの話してる。やってないの俺だけ"
+   ],
+   "relevanceScore": 0.43
+  },
+  {
+   "topic": "Claude Opus 5.5によるピクセルアニメーション生成の検証",
+   "summary": "Zennの日次トレンド上位(いいね換算 33)",
+   "tweetExamples": [
+    "Claude Opus 5.5によるピクセルアニメーション生成の検証"
+   ],
+   "relevanceScore": 0.32999999999999996
+  }
+ ]
+}
