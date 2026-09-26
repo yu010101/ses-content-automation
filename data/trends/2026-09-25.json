@@ -1,0 +1,98 @@
+{
+ "at": "2026-09-25T23:00:07.467Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事13本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code の拒否ルールを7つの形で測った。最新版でまだ4つ残っている",
+    "許可ルールを settings.json に書いても効かなかった。分かれ目はフォルダを信頼したかどうか",
+    "Claude Opus 5.5 の「40%安い」は、キャッシュの当たり方で24%にも59%にもなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事12本がこのタグを付けている",
+   "tweetExamples": [
+    "JenkinsのPRレビューでテストとセキュリティスキャンも回す ― AIのAPPROVEを機械的に覆すMineWatchのCI",
+    "Claude Code の拒否ルールを7つの形で測った。最新版でまだ4つ残っている",
+    "許可ルールを settings.json に書いても効かなかった。分かれ目はフォルダを信頼したかどうか"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事12本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code の拒否ルールを7つの形で測った。最新版でまだ4つ残っている",
+    "許可ルールを settings.json に書いても効かなかった。分かれ目はフォルダを信頼したかどうか",
+    "Claude Opus 5.5 の「40%安い」は、キャッシュの当たり方で24%にも59%にもなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Claude",
+   "summary": "Qiitaで直近14日にストック20超の記事9本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code の拒否ルールを7つの形で測った。最新版でまだ4つ残っている",
+    "許可ルールを settings.json に書いても効かなかった。分かれ目はフォルダを信頼したかどうか",
+    "Claude Opus 5.5 の「40%安い」は、キャッシュの当たり方で24%にも59%にもなった"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事7本がこのタグを付けている",
+   "tweetExamples": [
+    "Claude Code の拒否ルールを7つの形で測った。最新版でまだ4つ残っている",
+    "許可ルールを settings.json に書いても効かなかった。分かれ目はフォルダを信頼したかどうか",
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた",
+    "Claude Code が AGENTS.md を読むようになった。ただし1回目のセッションでは読まれない",
+    "Jevとは何か？ 従来型LLMやAIエージェントとの違いを理解する"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "C言語のコードをRustの中に書けるライブラリを作った",
+   "summary": "Zennの日次トレンド上位(いいね換算 144)",
+   "tweetExamples": [
+    "C言語のコードをRustの中に書けるライブラリを作った"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "みんなJevの話してる。やってないの俺だけ",
+   "summary": "Zennの日次トレンド上位(いいね換算 107)",
+   "tweetExamples": [
+    "みんなJevの話してる。やってないの俺だけ"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "高速判断AI Jevのユースケースとオープン実装を雑にまとめる",
+   "summary": "Zennの日次トレンド上位(いいね換算 86)",
+   "tweetExamples": [
+    "高速判断AI Jevのユースケースとオープン実装を雑にまとめる"
+   ],
+   "relevanceScore": 0.86
+  },
+  {
+   "topic": "age40 - 30代でやってよかったこと",
+   "summary": "Zennの日次トレンド上位(いいね換算 69)",
+   "tweetExamples": [
+    "age40 - 30代でやってよかったこと"
+   ],
+   "relevanceScore": 0.6900000000000001
+  }
+ ]
+}
