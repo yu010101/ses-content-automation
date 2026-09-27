@@ -2577,6 +2577,33 @@
           "url": "https://note.com/sescore/n/nf458090c1be9"
         }
       ]
+    },
+    {
+      "title": "Claude Code実践Tips15選：フリーランスエンジニアの市場価値を上げる設定術",
+      "date": "2026-09-26T23:04:55.019Z",
+      "articleId": "70cccbb575e6f5d02508",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n1f1bf37a7c8e"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/70cccbb575e6f5d02508"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20260926-claude-codetips15"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

@@ -3658,6 +3658,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Code実践Tips15選：フリーランスエンジニアの市場価値を上げる設定術",
+      "articleUrl": "https://qiita.com/sescore/items/70cccbb575e6f5d02508",
+      "createdAt": "2026-09-26T23:05:55.864Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🖥️Claude CodeのCLAUDE.mdに何でも書き込んでみたら、逆にAIの挙動がブレるようになった。\n\n最初は「コーディング規約」「禁止事項」「使ってるライブラリ」「過去のハマりポイント」を全部1つのCLAUDE.mdに詰め込んでいた。量が増えるほど賢くなると思っていたが、実際は逆だった。指示が長すぎると優先順位が曖昧になり、前に書いたルールを後半で無視するような動きが出てくる。\n\n今はプロジェクト固有のCLAUDE.mdには「このプロジェクトだけの制約」だけを書く。\n\n```markdown\n# CLAUDE.md\n## コーディング規約\n…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "❓CLAUDE.mdに規約もコーディングスタイルも過去の失敗談も全部書いてる、まだそのままにしてない？\n\n半年以上毎日Claude Codeを触っていて、最初にやりがちなミスがこれだった。プロジェクトのCLAUDE.mdに情報を詰め込めば詰め込むほどAIが賢くなると思っていたが、実際には情報過多になるとAIの判断がブレる。長い指示の中で優先順位がつけられず、前半に書いたルールが後半で薄まっていく感覚があった。\n\n今のやり方はシンプルで、プロジェクト側のCLAUDE.mdには「このプロジェクト固有のルール」だけを書く。\n\n```markdown\n# CL…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで一番効いてる設定は、settings.jsonのpermissions＋hooksの組み合わせだった。\n\n--dangerously-skip-permissionsを常用するのは危なすぎるので使っていない。かといって毎回の許可プロンプトに付き合うのも作業が止まって面倒。今はallow/denyリストとPreToolUseフックを組み合わせて「事故る前に止める」構成にしている。\n\n```json\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(git status)\",\n     …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "📊サブエージェントを使う前と後で、正直どれくらい変わったか記録してみた。\n\n盛った数字は出したくないので体感ベースで書くと、変わったのは「速さ」より「メインの会話が崩れなくなったこと」だった。大きめのリファクタや調査タスクをメインのコンテキストでやると、すぐウィンドウが埋まって前の指示を忘れたようなブレが出る。これが一番のストレスだった。\n\n今は用途別にサブエージェントを.claude/agents/配下に置いている。\n\n```markdown\n---\nname: code-reviewer\ndescription: 変更差分のバグ・簡略化ポイントを…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "❓CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostと9エージェント体制でAI経営OSを回してみて、一番学んだことは何だったか。\n\n最初に思っていたのは「エージェントを増やせば増やすほど経営判断が楽になる」ということだった。実際にやってみると、増えるほど楽になったのは情報収集の部分だけで、最終的な意思決定の負荷はむしろ人間側に残ることに気づいた。CFOが数字を出し、CMOが施策を出し、COOが実行状況を出しても、それらを統合して「今週どれを優先するか」を決めるのは結局自分自身の仕事だった。\n\nだからこそCEO…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude CodeのCLAUDE.mdに情報を盛れば盛るほど精度が上がると思っていた。結局、薄く書くほうが正解だった。\n\nコーディング規約、禁止事項、過去のハマりポイント、使っているライブラリの一覧、チーム内の暗黙ルール。良かれと思って全部CLAUDE.mdに書き込んでいた時期がある。当時の感覚では「情報量＝精度」だったが、実際にはAIが指示の優先順位をつけられなくなり、大事な禁止事項が埋もれて無視されることがあった。特に「mainブランチへの直接push禁止」のような重要ルールが、他の細かい規約に埋もれて機能しなかったことがある。\n\n結局落…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
