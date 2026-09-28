@@ -3717,6 +3717,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを構築した実装ノート",
+      "articleUrl": "https://qiita.com/sescore/items/677c914edf350cf34c98",
+      "createdAt": "2026-09-27T23:06:30.376Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "OpenClawでCEO/CFO/CTO/COO/CMOの9体AIエージェント経営OSを組んでみた。\n\n一人で経営してると、会計処理しながら見積もりを出して、その合間に技術選定して、SNS投稿のネタも考える。どのタスクも「今すぐやらなきゃ」に見えるのに、優先順位をつけてくれる相手がいない。これは一人経営者特有の孤独だ。\n\nこれ、実はClaude CodeのSkill機構とスラッシュコマンドとCLAUDE.mdの3つの標準機能だけで解決できた。特別な独自ランタイムは一切使ってない。\n\n各エージェントはMarkdownファイル1本で定義する。YAML fr…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "経営の意思決定、まだ全部自分の頭の中でやってる?\n\nSESから独立してフリーランス、法人化と進んだエンジニアなら誰でもぶつかる壁がある。技術力があっても、財務・営業・技術戦略・マーケを一人で回すのは物理的に無理という事実だ。会計しながら見積もり出して、その合間に技術選定して、SNS投稿も考える。優先順位をつけてくれる相手がいないのが一人経営者の孤独だと思う。\n\n自分はこれをClaude Codeの上に「OpenClaw」という仕組みで解決した。Skill機構・スラッシュコマンド・CLAUDE.mdという3つの標準機能を組み合わせるだけで、独自ランタイム…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "OpenClawのエージェント定義、コピペで使える骨格を晒しておく。\n\nSkillはMarkdownファイル1本で書く。冒頭にYAML frontmatter、本文に振る舞いルールという構造だ。\n\n---\nname: cfo\ndescription: CFO(最高財務責任者)。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\ntools: [Bash, Read, WebFetch]\n---\n\n# CFOエージェント振る舞いルール\n- 起動時は必ず未決済一覧を先に確認する\n- 数値を提案する前に実データ(fre…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェント経営OSを運用してみて、正直な工数の変化を書く。盛った数字は一切なし。\n\n一番効いたのは「情報を集める時間」が減ったことだ。以前は財務状況を確認するのに会計freeeの画面を開いて、タスク進捗はプロジェクト管理ツールを開いて、マーケの数字はGA4を開いてと、朝一で3〜4個のツールを行き来してから初めて「今日何をやるか」を考え始めていた。\n\n今は /cfo で未決済一覧とキャッシュフロー予測、/coo でタスク進捗とクライアント状況、/cmo でGA4・Google Ads・GSCの統合サマリが出てくる。ツールを開く回数そのものが減…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを経営OSとして実際に運用してみて、一番学んだことは何だと思う?\n\n自分の答えは「役員の数を増やすことに価値はない」だった。\n\n最初はCEO・CFO・CTO・COO・CMOの5体だけで始めた。でもすぐに気づいたのが、各役員が出してくる情報や提案がその場限りで消えていくという問題だった。CFOが先月指摘した課題を、今月のCTOが知らずに矛盾する優先度をつけてくる、みたいなことが起きる。\n\nそこで足したのがCC Knowledge、ナレッジ管理役だ。教訓・パターン・インシデントを記録して検索できるようにしたことで、役員間の提案に一貫性…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は9体のエージェントに全部同じ強さの権限を与えていた。結局それが失敗の原因だった。\n\nCFOエージェントにもCTOエージェントにも同じくBash・Read・WebFetchを無制限に許可していたら、CFOのはずのエージェントがGitHubのコード状況を調べ始めたり、CTOのはずのエージェントが会計freeeのAPIを叩こうとしたりする場面が出てきた。役割の境界がSkillのdescriptionだけでは曖昧になって、エージェント同士の提案が噛み合わなくなった。\n\n結局正解だったのは、Skillのtools欄で権限を役割ごとに絞り込むことと、CLAU…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
