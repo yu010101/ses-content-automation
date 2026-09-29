@@ -3776,6 +3776,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "月商250万円の3人会社、Claude CodeでAI経営OSを内製した記録",
+      "articleUrl": "https://qiita.com/sescore/items/10e46a658e28d332c0ca",
+      "createdAt": "2026-09-28T23:08:44.908Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのSubagent機能で、会社の経営判断を役割ごとに分けてみた。\n\n3人・月商250万円の小さな会社にCFOやCOOを雇う余力なんてない。でも「役割ごとに考える」ことには価値があると気づいた。そこでCLAUDE.mdを役割単位で分けて、company-os/agents/配下にcfo.md・coo.md・cmo.md・ceo.mdを並べる構成にした。\n\nCFOエージェントには資金繰りとPLの監視、COOには日次タスクの棚卸し、CMOにはコンテンツ生成とSNS運用の効果測定を任せる。CEOエージェントは週次で各エージェントの報告を統…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "経営の意思決定、まだ代表の頭の中だけで抱えてない?\n\n3人・月商250万円の会社をやっていて一番のボトルネックは「経営情報が自分の記憶とスプレッドシートに散らばっている」ことだった。CFOもCOOも雇えないなら、役割ごとにClaude CodeのSubagentを立てればいいと思いついた。\n\ncompany-os/agents/にcfo.md・coo.md・cmo.md・ceo.mdを置き、それぞれ専用のCLAUDE.mdで役割・権限・NGラインを明記する。CFOには資金繰りと単価/粗利のデータ分析、COOには日次タスク進捗、CMOにはコンテンツ生成と…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "各エージェントのCLAUDE.mdに「NGライン」を書く、これが一番効いた運用ルールだった。\n\nAI経営OSを組む中で、権限とNGラインを明記したCLAUDE.mdをエージェントごとに持たせる設計にした。抽象的な「気をつけて」ではなく、実際に事故を起こしたあとに具体的な禁止事項を追記していく方式だ。\n\n例えばCFOエージェントのCLAUDE.mdにはこう書いてある。\n\n```\n### コスト事故防止\n- 有料LLM/APIはClaude CLIのみ\n- Anthropic API直叩き・従量課金APIの新規呼出は禁止 (¥34万事故)\n- Vercel…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "盛らずに数字だけ書く。AI経営OS、稼働してまだ1〜2週間の正直な現在地。\n\n会社の規模は3人、月商250万円。ここにCFO・COO・CMO・CEOの4つのエージェントを立てて、資金繰り・タスク進捗・コンテンツ生成・意思決定支援を任せる構成を組んだ。\n\n踏んだ地雷も正直に書く。\n\n・Anthropic APIを直接叩くコードを書いたことで¥34万円の課金事故\n・Vercelの新規プロジェクトでFluid Computeを切っておらず$1,160の請求\n・同一SNSアカウントへの連投を15分15件やってしまい、shadow ban\n\nこの3つが実際に起き…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9つのエージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostほか)を動かしてわかったこと、ひとつ挙げるなら「無人運用は認証が切れた瞬間に全滅する」だった。\n\nClaude Codeの認証セッションが切れると、そこにぶら下がっている全cronジョブが一斉に401エラーで落ちる。経営OS全体が同時に止まるということなので、今はこの認証keepaliveの監視を最優先事項にしている。\n\nもうひとつは常駐プロセスの管理方法。macOSのlaunchdは条件によって無音で停止することがあり、気づかないまま数日…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はエラー出力を`2>/dev/null`で握りつぶしていた。結局それが初期トラブルへの気づきを数日遅らせる原因になった。\n\n無人運用のcronスクリプトを組んだとき、ログを汚したくなくてエラー出力を捨てる設定にしていた。動いているように見えるログだけが残り、実際には裏でエラーが出続けていたことに数日気づけなかった。今はエラーも必ずログに残す運用に変えている。\n\n似た失敗がもうひとつあった。Linux前提で書いたスクリプトをmacOSにそのまま持ってきたら、`timeout`コマンドが存在せずエラーになった。macOSには標準で`timeout`がな…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
