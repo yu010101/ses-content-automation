@@ -3835,6 +3835,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携実践ガイド｜SESエンジニアの独立準備と単価戦略",
+      "articleUrl": "https://qiita.com/sescore/items/1e035c8609da4bc0335c",
+      "createdAt": "2026-09-29T23:07:25.168Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeをHeadlessモードで毎朝自動起動してみた。\n\ncrontabに1行書くだけで、`claude -p \"$(cat prompts/daily_trend_research.md)\" --output-format json`という形で完全に無人で動く。\n\n最初は「プロンプトファイルを読ませるだけで本当に毎日ちゃんと動くのか」と半信半疑だった。実際にやってみると、思考の部分(何を調べるか、どのルールに従うか)をOpenClaw側のメモリファイルに持たせて、実行の部分だけをClaude Codeに渡す構成にしたら驚くほど安定した…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "`daily_trend_research.md`の中身、まだ「今日のトレンドを調べて」くらいの雑な指示のままにしてないか?\n\nOpenClaw側でメモリファイルに過去記事のパフォーマンスを記録しておき、Claude Code側のプロンプトに「過去記事のパフォーマンスデータと照らし合わせる」「同じ切り口が3回続いていたら別角度を提案する」という条件を書き込むと、下書きの質が明らかに変わる。\n\n実行はこうだ。\n\n```\n0 8 * * 1-5 cd ~/projects/blog-automation && \\\n  claude -p \"$(cat pr…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": ".claude/agents/配下にファイルを置くだけで、Claude Codeのサブエージェントは驚くほど簡単に増やせる。\n\n実際に組んでいる構成はこうだ。\n\n```\n.claude/agents/\n  ├── deploy-verifier.md   # デプロイ前の差分検証専任\n  ├── site-auditor.md      # SEO/構造化データの定期監査\n  └── research-scout.md    # 市場調査・競合調査を独立コンテキストで実施\n```\n\nそれぞれ独立したコンテキストで動くので、メインの会話ウィンドウが調査ロ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "盛った数字は書かない。実際に数えられる範囲だけ書く。\n\n今動かしている構成は、サブエージェントが3つ(deploy-verifier / site-auditor / research-scout)、無人パイプラインのルールは「人間承認前は絶対に公開しない」というたった1行。\n\nこれだけのルールで、毎朝のトレンド調査から下書き生成までが平日5日間、人が張り付かなくても回るようになった。\n\n正直に書くと、最初からこの形だったわけではない。1つのチャットで思考も実行も済ませていた頃は、毎回同じ確認を人間がやり直していた。OpenClawに「思考・記憶・指示…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OS、CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostと9エージェントで運用してみてわかったことがある。\n\nエージェントの数を増やすこと自体には意味がない。効いてくるのは「思考を担うエージェント」と「実行を担うエージェント」を混ぜないことだ。\n\nOpenClaw×Claude Codeの構成でも同じ発見があった。OpenClaw側に「何を」「いつ」「どんなルールで」判断するかというメモリと指示を持たせ、Claude Code側には開発・実行だけを渡す。この境界線を曖昧にした瞬間、どちらのエージェント…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は思考も実行も1つのチャットで済ませようとして失敗した。\n\n日次のトレンド調査、記事の下書き生成、デプロイ前の差分チェック、全部同じ会話ウィンドウでClaude Codeに投げていた。数日は動くが、コンテキストが長くなるほど「さっき決めたルール」を忘れたようにブレていく。「同じ切り口を3回続けない」と決めたはずなのに、気づけば同じ角度の下書きが並んでいた。\n\n結局、正解は役割を分離することだった。OpenClawに「思考・記憶・指示」を持たせ、過去記事のパフォーマンスデータや「人間承認前は絶対に公開しない」というルールをメモリとして管理する。Cla…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
