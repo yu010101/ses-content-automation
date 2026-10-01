@@ -3894,6 +3894,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Cloudflareでほぼ0円のページ内検索を作る｜SESからフリーランス転向で年収を上げる方法",
+      "articleUrl": "https://qiita.com/sescore/items/640fb130eb781419a63f",
+      "createdAt": "2026-09-30T23:10:03.828Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔍Pagefindで検索を実装したら、package.jsonに1行足すだけで終わった。\n\n最近Zennのトレンドで「Cloudflare上でほぼ0円運用できるページ内検索」の記事が上位に入っているのを見て、手元のpSEOサイトでも実際に試してみた。\n\nうちは元々Vercelを使っていたが、無関係な試作サイトがAIクローラーに叩かれて高額請求された事例を見て以降、配信は全部Cloudflareに寄せる方針にしている。今回のPagefindの話はちょうどそのタイミングにハマった。\n\nやったことは単純だ。まず\n\nnpm install -D pagefi…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "ページ内検索にSaaS課金してる人、まだいる？\n\nZennのトレンドでCloudflare上でほぼ0円運用できるページ内検索の記事が上位に入っていたのを見て、うちのpSEOサイトでも実際にPagefindを試してみた。\n\nAlgoliaのようなマネージド全文検索は便利だが、月額課金がスモビジのオウンドメディアには地味に重い。トレンドは「ビルド時に検索インデックスを静的ファイルとして生成し、ブラウザ側で完結させる」方式で、サーバー側で検索クエリを一切処理しない。\n\n手順はこうだ。\n\nnpm install -D pagefind\nnpx pagefind…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Pagefind導入で一番効いたのはpackage.jsonの1行、これだけ書けば動く。\n\n\"build\": \"astro build && npx pagefind --site dist\"\n\nこれをbuildスクリプトに追記するだけで、Cloudflare Pagesのビルドコマンドをnpm run buildにしておけばデプロイのたびに検索インデックスが自動更新される。事前に\n\nnpm install -D pagefind\n\nでインストールし、静的ファイル出力後に\n\nnpx pagefind --site dist\n\nを叩けばdist配下にpa…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Pagefind導入、正直どれくらい時間かかったか書く。盛った数字は出さない。\n\nZennのトレンドでCloudflare×低コスト検索の記事を見て、その日のうちに手元のpSEOサイトで試した。作業は\n\nnpm install -D pagefind\n\nでインストールしてから、package.jsonのbuildスクリプトに\n\n\"build\": \"astro build && npx pagefind --site dist\"\n\nを追記し、Claude Codeに既存のビルド構成を読ませて差分を作らせ、\n\nnpx wrangler pages depl…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェントでAI経営OSを運用してわかったこと、正直に書く。\n\nCFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostという構成で日々の判断を分担させているが、一番効いているのはCFOとCEOの役割分担だと最近感じている。\n\n例えば今回、ZennのトレンドでCloudflare上の低コスト検索の記事を見つけたとき、「面白いから試そう」で終わらせずに、Cloudflareへの移行方針とどう整合するかをCEO視点で一度整理し直した。うちは無関係な試作サイトがAIクローラーに叩かれて高額請求された事例をきっかけに、…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAlgoliaの無料枠で試した。結局Pagefindの静的インデックスに切り替えたのが正解だった。\n\nきっかけはZennのトレンドでCloudflare×低コスト検索の記事が上位に入っていたのを見たことだ。前にオウンドメディアの検索を実装したとき、まずAlgoliaの無料枠で組んだ経験がある。機能自体は十分だったし、管理画面も使いやすかった。ただサーバー側にクエリを投げる構成なので、将来的にページ数やクエリ数が増えたときの課金増加が気になっていて、結局その懸念を解消できずに放置していた。\n\n今回Pagefindを触ってみて、思想がまるで違うことに…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
