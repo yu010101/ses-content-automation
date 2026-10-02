@@ -3953,6 +3953,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "Claude Codeを1年使って固まった実践Tipsと、単価を見直した夜の話",
+      "articleUrl": "https://qiita.com/sescore/items/93fec44ce16c433ad726",
+      "createdAt": "2026-10-01T23:06:21.105Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.md、最初は『今日はこれをやって』という単発の指示文を書いていた。\n\n結果、次のセッションでは何も覚えていない状態からまた同じ説明をする羽目になった。当然だ。CLAUDE.mdはチャットの続きではなく、プロジェクト直下に置く「憲法」だと気づくまで1年近くかかった。\n\n今はこう書いている。\n\n## コーディング規約\n- 型は any を使わない。unknown + 型ガードで絞る\n- テストはVitest。モックはDBアクセス層のみ許可\n\n## 絶対にやってはいけないこと\n- .env ファイルをgit addしない…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.md、まだ『今日はこれをやって』って単発指示を書いてない?\n\n正直、自分は1年近くそれをやっていた。毎回のセッションで前回の文脈を引き継げると思い込んでいたからだ。結果、同じ注意をチャットで繰り返す羽目になっていた。\n\n転機は、CLAUDE.mdを「指示書」ではなく「憲法」として書き直したこと。\n\n## 絶対にやってはいけないこと\n- .env ファイルをgit addしない\n- 本番DBのマイグレーションは必ずdry-runしてから実行\n\n恒久的なルールだけを本体に残し、詳細は docs/testing-poli…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで一番最初にやってはいけないのが `claude --dangerously-skip-permissions` で全部許可することだ。\n\nこれをやると、`rm -rf` も `git push --force` も確認なしで通る。便利だが、事故る時は一撃で終わる。\n\n代わりに `.claude/settings.json` に許可リストと拒否リストを明示的に書く。\n\n```json\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(git status)\",\n      \"Bash(…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "Claude Codeを実務で使い始めて、もうすぐ1年になる。\n\nこの1年で「これは外せない」と固まった設定は結局4つしかない。CLAUDE.md、permissionsのallow/deny、PostToolUseのhooks、そしてsubagentsへのタスク切り出し。\n\n多機能なツールだが、常用して残ったのはこの4つだけというのが正直な実感だ。逆に言うと、最初の数ヶ月は試行錯誤で設定を増やしたり減らしたりしていて、今の形に落ち着くまでに時間がかかった。\n\n数字で盛った話をするつもりはない。「何倍速くなった」とかは言わない。実感として言えるのは、同…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "Claude Codeのsubagentsを使い始めて気づいたことがある。これ、うちのAI経営OSで9エージェント(CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostなど)を分けて運用しているのと、考え方がほぼ同じだ。\n\n1つのエージェントに全部やらせると、コンテキストが混ざって判断の質が落ちる。調査はCFO、改善提案はKaizen、採用判断はCareerBoostというように役割を分けると、それぞれの出力がぶれにくくなる。Claude Codeで調査タスクをメインのやり取りでやらずに`.claude/age…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は`claude --dangerously-skip-permissions`で全部許可して使っていた。確認プロンプトが出るたびに止まるのが面倒だったからだ。\n\n結局これが正解じゃなかった。全許可にしていると、危険なコマンドも安全なコマンドも区別なく素通りする。止めてくれる仕組みが無いのに、止めてほしい瞬間だけ都合よく止まってはくれない。\n\n結局正解だったのは逆の発想だった。`.claude/settings.json`にallowとdenyを明示的に書いて、`git push --force`や`rm -rf`をdeny側に入れる。安全なコマン…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
