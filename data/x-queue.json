@@ -4012,6 +4012,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを構築した実践記録【2026年10月】",
+      "articleUrl": "https://qiita.com/sescore/items/b21bc67c1c26ecd92167",
+      "createdAt": "2026-10-02T23:06:49.334Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのSkill機能とAgent機能を組み合わせて、9体のAIエージェントが分業する経営OSを構築してみた。\n\nCEO・CFO・CTO・COO・CMOの経営5役に加えて、秘書・ナレッジ管理・サイト監査・デプロイ検証の運用支援4体を動かしている。\n\n最初に詰まったのは、1つの巨大なプロンプトに全業務を詰め込むアプローチだった。役割が混ざって指示が効かなくなる。\n\n解決したのはSkill（SKILL.md）とAgent（サブエージェント）の使い分けだ。`/cfo`のようなスラッシュコマンドで手順書を呼び出すのがSkill、独立したコンテキ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude CodeのSkillのdescription、まだ適当なまま書いてない？\n\n9体のAIエージェントが分業する経営OSをOpenClaw上で動かしてみて、一番効いたのがここだった。\n\nCEO・CFO・CTO・COO・CMOの経営5役と、秘書・ナレッジ管理・サイト監査・デプロイ検証の運用支援4体、合計9体で業務を分担している。\n\n最初は1つの巨大なプロンプトに全部詰め込んでいた。役割が混ざって、指示を出しても狙った担当が動かない。\n\n切り替えたのがSkill（SKILL.md）とAgent（サブエージェント）の分離。`/cfo`のようなスラッ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "AIエージェントを複数動かすとき、一番効くセキュリティ対策は複雑な防御ロジックじゃなく、権限のスコープ分離だと実感した。\n\n9体のAIエージェント経営OSを運用していて、設計ルールはこの3つに尽きる。\n\n1. 書き込み権限は業務上必須なエージェントにしか渡さない\n2. 外部発信（SNS投稿・API書き込み）は自動化しない。下書き生成までで人間承認を挟む\n3. 役職ごとに触れるデータと実行できる操作を最小限にする\n\n実際の割り振りはこうなっている。\n\n- CEO: 読み取り専用、集計のみ\n- CFO: freee APIと会計データへのアクセスのみ\n- …",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "数字の話を正直に書く。\n\n9体のAIエージェント経営OS、経営5役（CEO/CFO/CTO/COO/CMO）＋運用支援4体（秘書・ナレッジ管理・サイト監査・デプロイ検証）で構成している。\n\nここで白状しておきたいのは、「生産性が何倍になった」とか「作業時間が何%減った」みたいな数字は、今の時点では一切出せないということだ。\n\n構築してから日が浅く、1〜2週間の運用実績もまだない。「実装が完了した」ことと「安定稼働している」ことは別物だと考えているので、検証できていない成果を書くつもりはない。\n\n出せるのは設計上の数字だけだ。\n\n- エージェント数: 9…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントを分業させて経営OSを運用してみてわかったことを書く。\n\n一番の発見は、エージェントを増やすほど難しくなるのは「性能」じゃなく「権限設計」だったということだ。\n\nCEOに全データへのアクセス権を渡したくなる誘惑は正直あった。経営ダッシュボードを作る役なんだから、全部見られた方が便利そうに思える。でも実際にやると、1つのエージェントの誤動作や誤発火が全体に波及するリスクが上がる。\n\n結局CEOも「読み取り専用、集計のみ」に絞った。CFOのfreeeデータも、COOのタスクDBも、CEOは直接触らず各役職の報告を受け取る形にしている。…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は9体のエージェント全部に同じくらいの権限を渡そうとして失敗した。結局、役職ごとに権限を絞り切るのが正解だった。\n\n経営OSを作ろうと思ったとき、最初に考えたのは「とにかく便利にしたい」だった。CTOにもCMOにも秘書にも、必要そうな権限は広めに渡しておけばいいだろうと。\n\n実際にそれで動かしてみると、想定外の挙動が出た。本来COOが触るはずのタスクDBに別のエージェントがアクセスしようとしたり、Skillのdescriptionが曖昧だったせいで聞いてもいない役職が勝手に発火したりした。\n\n便利さを優先した結果、むしろ「誰が何をしたか」が追いにく…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
