@@ -4071,6 +4071,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "月商250万・社員3人がAI経営OS(CFO/COO/CMO)を自作した話",
+      "articleUrl": "https://qiita.com/sescore/items/ccc6252c25f71049593e",
+      "createdAt": "2026-10-03T23:06:07.504Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "社員3人、月商250万円の会社で、Claude CodeでCFO/COO/CMOのAIエージェントを自作してみた。\n\nきっかけは単純だった。ChatGPTに毎回状況を説明してから質問するのが非効率すぎたことだ。財務の話をするたびに売上構成を説明し、マーケの話をするたびにGA4の数字を手打ちでコピペする。これではAIを使っているというより、AIに情報を食べさせる作業をしているだけだった。\n\n発想を変えた。役割ごとに専用のエージェントを作り、そのエージェントが自分でfreee APIやGA4、Google Search Consoleにアクセスしに行く仕組…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "「今月のキャッシュフロー、いくら?」この質問に答えるのに毎回30分かかってる、そんな会社ない?\n\n社員3人・月商250万円のうちの会社は、まさにそれだった。見積もり、請求書、freeeの仕訳確認、SNS運用の進捗、営業パイプライン――経営判断に必要な情報がSlack・スプレッドシート・会計ソフト・GA4にバラバラに散らばっていた。\n\n3人しかいないので、CFOもCOOもCMOも実質「代表である自分」が兼任している。専任の経営幹部を雇う余力はないが、情報整理の負荷は大企業と変わらない。むしろ人数が少ない分、1人あたりの負荷は重くなる。\n\nそこでClaud…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude CodeのSKILL.mdの書き方、まだ適当にやってない?\n\nCFO/COO/CMO/CEOのAIエージェントを自作したとき、一番効いたのはSKILL.mdの設計ルールだった。ディレクトリ構成はこうだ。\n\n.claude/\n  skills/\n    cfo/SKILL.md\n    coo/SKILL.md\n    cmo/SKILL.md\n    ceo/SKILL.md\n\nそれぞれのSKILL.mdには「役割の説明」「使っていいツール」「出力フォーマット」を明記する。CFOエージェントの冒頭はこんな感じだ。\n\n---\nname: c…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直な数字の話をする。盛った%は一切使わない。\n\n社員3人、月商250万円。キャッシュフローを答えるのに毎回30分かかっていた、というのが導入前の実態だ。見積もり、請求書、freeeの仕訳確認、SNS運用の進捗チェック、営業パイプライン管理が、Slack・スプレッドシート・会計ソフト・GA4の4箇所に散らばっていたのが原因だった。\n\nClaude Codeで作ったのはCFO/COO/CMO/CEOの4つのエージェントだけだ。9個も10個も作ったわけじゃない。役割を絞って、各エージェントが自分のデータソース(freee API、GA4、Googleスプレ…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEOの4つのAIエージェントを運用してみて、一番の学びは何だったと思う?\n\n答えは「1つのエージェントに全部やらせない」ことだった。最初はCEOエージェント1つに財務もマーケも進捗管理も全部任せようとしたが、プロンプトが肥大化してすぐに破綻した。指示が多すぎて、どのタスクも中途半端にしか実行されなくなる。\n\n結局、CFOはfreee連携の財務データだけ、COOはタスク進捗とクライアント管理だけ、CMOはGA4とGoogle Adsの統合ダッシュボードだけ、CEOは他3エージェントの報告を集約して意思決定支援に徹する、という役割…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAnthropic APIを直接叩く実験スクリプトで試した。結局、本番運用はClaude CLI経由に戻すのが正解だった。\n\nCFO/COO/CMOのAIエージェントを構築している途中、一時的にAnthropic APIを直接叩くスクリプトを動かしていた。ちょっとした自動化のつもりだった。ところが、リトライ処理にループバグがあり、失敗するたびに同じ長いコンテキストを再送信し続けていた。気づいたときには、想定よりはるかに大きい、数十万円規模の請求が来ていた。\n\n原因はシンプルだった。従量課金のAPIを直接叩く仕組みは、エラー処理を一つ間違えるだけで…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール徹底比較|Claude Code・Copilot・Cursor・Windsurf・Codeiumの選び方",
+      "articleUrl": "https://qiita.com/sescore/items/80adc15d3f9e3da8ce30",
+      "createdAt": "2026-10-03T23:09:35.512Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🛠 CLAUDE.mdを書いたら、Claude Codeが別のツールになった。\n\n最初は普通にclaude起動して「このAPI直してほしい」と頼むだけだった。でも複数ファイルにまたがる変更を頼むたびに、意図しない箇所まで触られて差し戻しが発生していた。\n\n試しにプロジェクトルートに CLAUDE.md を置いてみた。\n\n```\n# プロジェクトルール\n- テストは npm test で実行し、パスを確認してからコミット\n- API層の変更は src/api/ 配下のみ。DB直接操作は禁止\n- コミットメッセージは Conventional Commi…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "🤔 CLAUDE.md、まだ置いてない?\n\nClaude Codeを素のまま使っていると、複数ファイルにまたがるリファクタリングで意図しない箇所まで触られることがある。自分も最初はそうだった。\n\n原因は単純で、プロジェクト固有のルールをその都度チャットで説明していたから。毎回同じ注意を書くのは面倒だし、書き忘れると事故る。\n\nそこでプロジェクトルートに CLAUDE.md を置いてみた。\n\n```\n# プロジェクトルール\n- API層の変更は src/api/ 配下のみ\n- DB直接操作は禁止\n- コミットは Conventional Commits…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🔑 Claude CodeのPlan Mode、使わないのはもったいない。\n\n複雑なタスクを頼むとき、いきなり実行させると大量の差分が返ってきて、レビューだけで疲れることがある。認証まわりのような重要な部分だとなおさら怖い。\n\nそこで使っているのが Plan Mode だ。\n\n```\nclaude --permission-mode plan \"認証ミドルウェアをJWTベースに置き換えたい\"\n```\n\nこのコマンドを叩くと、Claude Codeはいきなりファイルを編集せず、まず「どういう手順で進めるか」をテキストで提示してくる。影響範囲、変更するフ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "📊 計画レビューに数分使うようになってから、大きな手戻りが減った。\n\n正直に書くと、劇的な生産性向上みたいな話はしない。測定もしていないし、盛った数字を出すのは意味がないと思っている。\n\nただ体感として変わったことが一つある。Claude Codeで複雑な変更を頼むとき、以前はいきなり実行モードで投げていた。差分が返ってきてから「あ、ここは触ってほしくなかった」と気づいて手戻りする、というのがそれなりの頻度で起きていた。\n\nPlan Modeを使うようになってからは、実行前の計画テキストを読む数分が増えた代わりに、実行後の「想定外の差分を読んで巻き戻…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "🤔 9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を運用してみてわかったことがある。\n\nAI経営OSを作るとき、最初は「とにかく多くの役割を作れば経営が自動化される」と思っていた。実際には違った。\n\n一番効いたのは、各エージェントの責任範囲をCLAUDE.mdレベルで明確に縛ることだった。例えばCFOエージェントには「財務データの取得と仕訳提案までで、実際の振込や決済承認はしない」と明記している。COOエージェントにはタスク進捗とクライアント管理だけを持たせ、採用やマーケティング判断に…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "💭 最初はCursorに全部任せようとして失敗した。結局Claude Codeに戻すのが正解だった。\n\nAIコーディングツールを比較していたとき、エディタ統合型のCursorは補完の体感が良くて、しばらくメインで使っていた。ただ複数ファイルにまたがる大きめのタスクを頼むと、途中で文脈を見失ったような変更が混ざることがあり、結局自分で差分を細かく追う作業が増えていった。\n\n原因を振り返ると、IDE統合型は「今開いているファイル周辺」を中心にコンテキストを組み立てる設計で、リポジトリ全体を横断する自律タスクにはあまり向いていなかった。\n\n一方でClaud…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

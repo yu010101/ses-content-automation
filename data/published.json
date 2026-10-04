@@ -2766,6 +2766,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "月商250万・社員3人がAI経営OS(CFO/COO/CMO)を自作した話",
+      "date": "2026-10-03T23:04:40.538Z",
+      "articleId": "ccc6252c25f71049593e",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n994e3c817057"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/ccc6252c25f71049593e"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261003-2503aioscfocoocmo"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール徹底比較|Claude Code・Copilot・Cursor・Windsurf・Codeiumの選び方",
+      "date": "2026-10-03T23:08:20.152Z",
+      "articleId": "80adc15d3f9e3da8ce30",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/80adc15d3f9e3da8ce30"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261003-claude-codegithub-copilotcurso"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n925c9f27f73c"
+        }
+      ]
     }
   ]
 }
