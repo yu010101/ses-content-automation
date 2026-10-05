@@ -1,0 +1,97 @@
+{
+ "at": "2026-10-04T23:00:13.606Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "AI感のないAWS構成図をAIエージェントに描かせたい！",
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "2026年9月25日に発表された新しい Microsoft Copilot についての整理",
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "0から学ぶセキュリティの基礎　〜CSRF編〜",
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた",
+    "攻撃者の視点でセキュリティを理解したいエンジニアへ。bashで学ぶ侵入技術の実践書"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "高校の文化祭でPOSシステムをCloudflare上に1から構築/運用した話 〜短期開発から本番障害、そして完売まで〜",
+    "エンジニア不要論の真実！AIの進化と具体抽象から完全解説",
+    "みのるん式 登壇資料の作成ノウハウをスキルとして公開しました！"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "Jev",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "ローカル動作するJevっぽいものを調べてたら、なんとマルチモーダル対応もできてた！",
+    "JevでRAG検索の爆速化＆コスト削減は実現できるのか検証してみた",
+    "AWSの最軽量LLM「Amazon Nova Micro」がJevの代わりとなるか検証してみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "生成AI",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "自分の頭で考えることって重要だよなと改めて思わされた話"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "【最新v1.0.6公開】AI-Slopな日本語を構造レベルで読みやすくするSkill『yomiyasu（よみやす）』を作りました",
+   "summary": "Zennの日次トレンド上位(いいね換算 493)",
+   "tweetExamples": [
+    "【最新v1.0.6公開】AI-Slopな日本語を構造レベルで読みやすくするSkill『yomiyasu（よみやす）』を作りました"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AI開発時代だからこそ、テストの役割を見つめ直す",
+   "summary": "Zennの日次トレンド上位(いいね換算 232)",
+   "tweetExamples": [
+    "AI開発時代だからこそ、テストの役割を見つめ直す"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Jujutsu と出会い、15 年使った Git にもう戻れなくなった理由",
+   "summary": "Zennの日次トレンド上位(いいね換算 143)",
+   "tweetExamples": [
+    "Jujutsu と出会い、15 年使った Git にもう戻れなくなった理由"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "３分で読めるトランザクション設計のコツ",
+   "summary": "Zennの日次トレンド上位(いいね換算 128)",
+   "tweetExamples": [
+    "３分で読めるトランザクション設計のコツ"
+   ],
+   "relevanceScore": 1
+  }
+ ]
+}

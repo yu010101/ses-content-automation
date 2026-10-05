@@ -2820,6 +2820,33 @@
           "url": "https://note.com/sescore/n/n925c9f27f73c"
         }
       ]
+    },
+    {
+      "title": "OpenClawの記憶×Claude Codeの実行で開発を自律化する実践録",
+      "date": "2026-10-04T23:04:15.042Z",
+      "articleId": "8bafdfa611a93bb18986",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n9af9dcae31e0"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/8bafdfa611a93bb18986"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261004-openclawclaude-code"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

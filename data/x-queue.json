@@ -4189,6 +4189,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawの記憶×Claude Codeの実行で開発を自律化する実践録",
+      "articleUrl": "https://qiita.com/sescore/items/8bafdfa611a93bb18986",
+      "createdAt": "2026-10-04T23:11:42.029Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeにCLAUDE.mdを書き足したら、同じ指摘を二度言わなくて済むようになった。\n\nこれまでは「本番でない重い処理は優先度下げて」「push前に差分見て」と、タスクのたびに同じ注意をチャットで繰り返していた。Claude Codeはそのセッション内では覚えていても、次に開いたときには綺麗に忘れている。当然だ、チャットの文脈はセッションが切れればリセットされる。\n\nそこでリポジトリ直下にCLAUDE.mdを置き、恒久的に守ってほしいルールを自然文で書くようにした。\n\n```markdown\n## デプロイ鉄則\n- 未コミットのWIPが…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだデフォルトのまま運用していないか?\n\n自分は半年前まさにそうだった。Claude Codeに毎回「push前に差分見てね」「本番じゃない重い処理は優先度下げてね」と同じ注意をチャットで繰り返し、セッションが切れるたびにゼロから言い直していた。\n\nある日さすがに面倒になって、リポジトリ直下にCLAUDE.mdを置き、恒久的なルールをまとめて書いた。\n\n```markdown\n## デプロイ鉄則\n- 未コミットのWIPがある状態でビルドしない\n- push前に必ず差分検証を行う\n- 本番でない重い処理は優先度を下げて実行する\n```…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのmemoryディレクトリ構成、実際に使っている形をそのまま書く。\n\n```\nmemory/\n  feedback_testing_approach.md\n  feedback_commit_style.md\n  project_deploy_freeze.md\n  reference_ci_dashboard.md\nMEMORY.md  # 索引ファイル\n```\n\nポイントは2段構成にしていることだ。CLAUDE.mdは「プロジェクト全体の恒久ルール」を書く場所、memory配下の各ファイルは「このユーザーは何を好み、過去にどう…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "MEMORY.mdの索引、200行を超えた分は切り捨てられる。\n\nこれは盛った数字じゃなく、実際にClaude Codeのメモリ機構がそういう仕様になっている。索引ファイルは毎回コンテキストに読み込まれる前提の設計だから、無限に行を増やせるわけではない。\n\n最初これを知らずに、思いついたことを全部memoryに書いていた。feedbackもprojectもreferenceも区別なくMEMORY.mdに1行ずつ追加し続けた結果、古いエントリがいつの間にか読み込まれなくなっていることに気づいた。原因を調べてようやく200行の制限に当たっていたと分かった。…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoostほか)を運用してみて、一番の学びは「エージェントを増やすほど経営が楽になるわけではない」ということだった。\n\n最初は財務・営業・マーケ・技術をそれぞれ別エージェントに任せれば、報告を読むだけで経営判断ができると思っていた。実際は逆で、エージェントの数が増えるほど「誰が何を把握していて、誰がまだ把握していないか」を管理するコストが増えた。\n\n結局落ち着いたのは、各エージェントに固有の役割と出力フォーマットを持たせ、CEOエージェント的な立場のもの…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeとのチャットに全部覚えさせようとして失敗した。結局、ファイルに永続化するのが正解だった。\n\n半年前、新しいセッションを開くたびに「このプロジェクトはこういう方針で」「このルールは絶対守って」と毎回同じ説明を書いていた。チャットの冒頭に長い前置きを貼り付けるのが日課になっていて、タスクの本題に入る前に力尽きることもあった。\n\nそれでも「どうせまた同じこと言うんだから、次はもっと詳しく書けばいいのでは」と思い、前置きをさらに長くしてみた。結果は悪化した。長くなった分だけ読み込みに時間がかかり、Claude Codeが本当に重要な…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
