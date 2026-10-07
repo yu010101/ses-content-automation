@@ -1,0 +1,96 @@
+{
+ "at": "2026-10-06T23:00:11.905Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事6本がこのタグを付けている",
+   "tweetExamples": [
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "日本企業「ハッキングされないでくれ」ランキング",
+    "0から学ぶセキュリティの基礎　〜CSRF編〜"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた",
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "2026年9月25日に発表された新しい Microsoft Copilot についての整理"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた",
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "文章で要件定義するのをやめた。AIでモックを先に作ったら、認識ズレが実装前に全部見つかった"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "MCP",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "AI感のないAWS構成図をAIエージェントに描かせたい！",
+    "MCP サーバーと繋いだだけで情報漏洩？ 危険の4パターンと事前に確認すべき7つのことをまとめてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "高校の文化祭でPOSシステムをCloudflare上に1から構築/運用した話 〜短期開発から本番障害、そして完売まで〜"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "0から学ぶセキュリティの基礎　〜CSRF編〜"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "俺のAIプログラミング手法(2026/10/05)",
+   "summary": "Zennの日次トレンド上位(いいね換算 531)",
+   "tweetExamples": [
+    "俺のAIプログラミング手法(2026/10/05)"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "技術ブログはゆるやかに衰退している",
+   "summary": "Zennの日次トレンド上位(いいね換算 79)",
+   "tweetExamples": [
+    "技術ブログはゆるやかに衰退している"
+   ],
+   "relevanceScore": 0.79
+  },
+  {
+   "topic": "JSONはシンプルで明快な仕様が魅力ですが、そんなJSONでも微妙な実装差異が生じる罠がいくつかあります。本稿はこうした機微を実装の比較を通",
+   "summary": "Zennの日次トレンド上位(いいね換算 75)",
+   "tweetExamples": [
+    "JSONはシンプルで明快な仕様が魅力ですが、そんなJSONでも微妙な実装差異が生じる罠がいくつかあります。本稿はこうした機微を実装の比較を通"
+   ],
+   "relevanceScore": 0.75
+  },
+  {
+   "topic": "本当に「判断」していますか？",
+   "summary": "Zennの日次トレンド上位(いいね換算 73)",
+   "tweetExamples": [
+    "本当に「判断」していますか？"
+   ],
+   "relevanceScore": 0.73
+  }
+ ]
+}
