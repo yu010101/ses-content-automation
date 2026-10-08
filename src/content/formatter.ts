@@ -30,17 +30,45 @@ function buildFreelanceCta(platform: string, slug: string): string {
 
 ---
 
-## 💼 フリーランスエンジニアの案件をお探しですか？
+この記事は、フリーランス向け案件サイト「FreelanceDB」（合同会社Radineer）の運営者が書きました。
+コンサル・PMO領域の非公開案件を扱っており、希望条件を登録いただいた方に個別にご連絡しています。
 
-**SES解体新書 フリーランスDB**では、高単価案件を多数掲載中です。
-
-- ✅ マージン率公開で透明な取引
-- ✅ AI/クラウド/Web系の厳選案件
-- ✅ 専任コーディネーターが単価交渉をサポート
-
-▶ **[無料でエンジニア登録する](${url})**
+[希望条件を登録する](${url})
 
 `;
+}
+
+// 2026-10-09 外部上位(Qiita100/Zenn40/note30本)の実測: 題に【最新】【年版】【徹底】等を付ける記事は0〜5%。自社は48〜56%。
+// 【】のうち年号・最新・徹底・完全・保存版を含むものだけ外す。
+export function cleanTitle(title: string): string {
+  return title
+    .replace(/【[^】]*(?:20\d\d|最新|徹底|完全|保存版|決定版)[^】]*】/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+// Qiita 上位100本で登録への誘導は0%。Qiita は筆者の1行だけにする(規約 第11条1項3号 宣伝主目的の回避)
+function buildAuthorLine(): string {
+  return `\n\n---\n\n書いた人: 合同会社Radineer（フリーランス向け案件サイト FreelanceDB を運営）\n`;
+}
+
+const CAREER_WORDS = ["キャリア", "転職", "フリーランス", "ses", "年収", "単価", "働き方", "独立", "副業", "面談", "営業"];
+function isCareerArticle(article: GeneratedArticle): boolean {
+  const text = (article.title + " " + article.keywords.join(" ")).toLowerCase();
+  return CAREER_WORDS.some((w) => text.includes(w));
+}
+
+// Zenn 上位40本で emoji は35種類。🤖固定(自社63/64)をやめ、トピックで選ぶ
+const EMOJI_BY_TOPIC: Record<string, string> = {
+  claudecode: "🧑‍💻", claude: "🧠", cursor: "🖱️", githubcopilot: "🛩️", mcp: "🔌",
+  aiagent: "🕹️", agent: "🕹️", rag: "📚", llm: "💬", prompt: "✍️", python: "🐍",
+  typescript: "🔷", react: "⚛️", nextjs: "▲", docker: "🐳", aws: "☁️", terraform: "🏗️",
+  github: "🐙", automation: "⚙️", data: "📊", career: "🧭", freelance: "🧳", ses: "🏢",
+};
+function pickEmoji(topics: string[], career: boolean): string {
+  if (career) return EMOJI_BY_TOPIC.career;
+  for (const t of topics) if (EMOJI_BY_TOPIC[t]) return EMOJI_BY_TOPIC[t];
+  return "📝";
 }
 
 function slugify(s: string): string {
@@ -56,9 +84,9 @@ export function formatForQiita(
   isPrivate = false,
 ): QiitaPayload {
   const orgName = config.qiita.organizationName();
-  const bodyWithCta = article.body + buildFreelanceCta("qiita", slugify(article.title));
+  const bodyWithCta = article.body + buildAuthorLine();
   return {
-    title: article.title,
+    title: cleanTitle(article.title),
     body: bodyWithCta,
     tags: getQiitaTags(article.keywords).map((name) => ({ name })),
     private: isPrivate,
@@ -108,10 +136,12 @@ export function formatForZenn(
 ): string {
   const topics = toEnglishTopics(article.keywords);
 
+  const career = isCareerArticle(article);
   const frontmatter: ZennFrontmatter = {
-    title: article.title.slice(0, 60),
-    emoji: "🤖",
-    type: "tech",
+    title: cleanTitle(article.title).slice(0, 60),
+    emoji: pickEmoji(topics, career),
+    // Zenn の定義で idea = キャリア・マネジメント等。上位のキャリア系は idea 38/40
+    type: career ? "idea" : "tech",
     topics,
     published,
   };
@@ -124,12 +154,8 @@ export function formatForZenn(
     })
     .join("\n");
 
-  let body = article.body + buildFreelanceCta("zenn", slugify(article.title));
-
-  // Add cross-platform link for Zenn
-  if (crossLinks?.qiitaUrl) {
-    body += `\nQiitaでコード付き解説も公開しています: ${crossLinks.qiitaUrl}`;
-  }
+  void crossLinks; // 2026-10-09: 同じ内容の重複を示す相互リンクは付けない(Zenn 規約 第4条11号)
+  const body = article.body + buildFreelanceCta("zenn", slugify(article.title));
 
   return `---\n${fm}\n---\n\n${body}`;
 }
@@ -138,24 +164,11 @@ export function formatForNote(article: GeneratedArticle, crossLinks?: { qiitaUrl
   title: string;
   body: string;
 } {
-  let body = article.body + buildFreelanceCta("note", slugify(article.title));
-
-  // Add cross-platform links at the end
-  if (crossLinks) {
-    const links: string[] = [];
-    if (crossLinks.qiitaUrl) {
-      links.push(`技術的な詳細はQiitaでも解説しています: ${crossLinks.qiitaUrl}`);
-    }
-    if (crossLinks.zennUrl) {
-      links.push(`Zennでも記事を公開中: ${crossLinks.zennUrl}`);
-    }
-    if (links.length > 0) {
-      body += `\n\n---\n\n${links.join("\n\n")}`;
-    }
-  }
+  void crossLinks; // 2026-10-09: 他媒体への相互リンクは付けない(同じ内容の重複になるため)
+  const body = article.body + buildFreelanceCta("note", slugify(article.title));
 
   return {
-    title: article.title,
+    title: cleanTitle(article.title),
     body,
   };
 }
