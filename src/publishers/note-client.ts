@@ -483,7 +483,7 @@ export class NoteClient {
       await this.dismissModalWithRetry(page, 2);
 
       // Click "投稿する" (final publish)
-      const publishTexts = ["投稿する", "投稿", "公開する", "公開"];
+      const publishTexts = ["投稿する", "更新する", "投稿", "公開する", "公開"]; // 更新する=公開済み記事の編集(2026-10-09)
       clicked = false;
 
       // Strategy 1: getByRole with exact match
