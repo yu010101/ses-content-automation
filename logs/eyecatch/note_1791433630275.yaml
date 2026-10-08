@@ -1,0 +1,26 @@
+canvas:
+  size: "1280x670"
+  edge: none
+theme:
+  ink: "#1B2A4A"
+  accent: "#F7D24B"
+  accent2: "#5BC2D6"
+  swap_color: "#E24A3B"
+title:
+  lead_in: ""
+  main: "SESで「記憶ゼロ」のまま働き続けていた"
+  tail: ""
+  align: left
+emphasis:
+  style: marker
+  decor_slashes: false
+  swoosh: false
+badge:
+  type: none
+illustration:
+  density: sparse
+lockup:
+  enabled: true
+  label: ""
+  wordmark: "SES解体新書"
+  boxed_final: false

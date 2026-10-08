@@ -1,0 +1,26 @@
+canvas:
+  size: "1280x670"
+  edge: none
+theme:
+  ink: "#1B2A4A"
+  accent: "#F7D24B"
+  accent2: "#5BC2D6"
+  swap_color: "#E24A3B"
+title:
+  lead_in: "3年目で気づいた"
+  main: "単価が上がらない理由"
+  tail: "SESの構造から逆算する交渉のコツ"
+  align: left
+emphasis:
+  style: marker
+  decor_slashes: false
+  swoosh: false
+badge:
+  type: none
+illustration:
+  density: sparse
+lockup:
+  enabled: true
+  label: ""
+  wordmark: "SES解体新書"
+  boxed_final: false

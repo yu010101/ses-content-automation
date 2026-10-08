@@ -362,6 +362,21 @@ export class NoteClient {
     }
   }
 
+  /** 見出し画像(アイキャッチ)を下書きに付ける。2026-10-08 に非公開の下書きで 201 と反映を確認 */
+  async setEyecatch(draftId: number, pngPath: string): Promise<string> {
+    const headers = await this.apiHeaders();
+    delete headers["Content-Type"]; // multipart は fetch に境界を付けさせる
+    const fd = new FormData();
+    fd.append("note_id", String(draftId));
+    fd.append("file", new Blob([readFileSync(pngPath)], { type: "image/png" }), "eyecatch.png");
+    fd.append("width", "1280");
+    fd.append("height", "670");
+    const res = await fetch(`${NOTE_API}/v1/image_upload/note_eyecatch`, { method: "POST", headers, body: fd });
+    if (!res.ok) throw new Error(`eyecatch upload ${res.status} ${(await res.text()).slice(0, 200)}`);
+    const j = (await res.json()) as { data?: { url?: string } };
+    return j?.data?.url ?? "";
+  }
+
   // --- Publish via Playwright Editor ---
 
   async publishViaEditor(
@@ -576,9 +591,9 @@ export class NoteClient {
   async createAndPublish(
     title: string,
     htmlBody: string,
-    options: { hashtags?: string[]; isPaid?: boolean; price?: number } = {},
+    options: { hashtags?: string[]; isPaid?: boolean; price?: number; eyecatchPath?: string | null } = {},
   ): Promise<string> {
-    const { hashtags = [], isPaid = false, price = 0 } = options;
+    const { hashtags = [], isPaid = false, price = 0, eyecatchPath = null } = options;
 
     await this.login();
 
@@ -589,6 +604,16 @@ export class NoteClient {
     console.log("[Note] Saving content...");
     await this.saveDraftContent(draft.id, title, htmlBody, hashtags);
     console.log("[Note] Content saved");
+
+    if (eyecatchPath) {
+      try {
+        const u = await this.setEyecatch(draft.id, eyecatchPath);
+        console.log(`[Note] Eyecatch set: ${u}`);
+      } catch (e) {
+        // アイキャッチが付かなくても公開は止めない(ログで気づけるようにする)
+        console.error(`[Note] Eyecatch failed (公開は続行): ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
 
     console.log("[Note] Publishing via editor...");
     const url = await this.publishViaEditor(draft.key, isPaid, price);

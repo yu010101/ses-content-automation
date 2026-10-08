@@ -1,3 +1,5 @@
+import { mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import OpenAI from "openai";
 import { config } from "../config.js";
 import { claudeCli } from "../utils/claude-cli.js";
@@ -25,6 +27,28 @@ export interface GeneratedArticle {
   xPost: string;
   xThread: string[];
   articleType: string;
+  /** アイキャッチ用の短い3行(lead=前置き / main=主題 / tail=補足)。無ければ題名から作る */
+  eyecatch?: { lead?: string; main: string; tail?: string };
+}
+
+/** 記事JSONを読む。読めなければ null。コードフェンス除去 → そのまま → 最初の{〜最後の} の順に試す。 */
+export function parseArticleJson(text: string): Omit<GeneratedArticle, "xPost" | "xThread" | "articleType"> | null {
+  let cleaned = text.trim();
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+  }
+  const tries = [cleaned];
+  const m = cleaned.match(/\{[\s\S]*\}/);
+  if (m) tries.push(m[0]);
+  for (const t of tries) {
+    try {
+      const a = JSON.parse(t);
+      if (a && typeof a.title === "string" && typeof a.body === "string") return a;
+    } catch {
+      /* 次を試す */
+    }
+  }
+  return null;
 }
 
 export async function generateArticle(
@@ -83,39 +107,35 @@ ${marketContext && !marketContext.includes("（ファクトデータなし）") 
   "title": "記事タイトル（SEO最適化、30-50文字）",
   "body": "記事本文（Markdown形式、5000文字以上）",
   "keywords": ["キーワード1", "キーワード2", ...],
-  "summary": "記事の要約（200文字以内）"
+  "summary": "記事の要約（200文字以内）",
+  "eyecatch": {"lead": "アイキャッチ上段の前置き（12文字以内）", "main": "アイキャッチ中央の主題（12文字以内・記事の主張）", "tail": "アイキャッチ下段の補足（24文字以内）"}
 }
 
 JSONのみを返してください。`;
 
   const fullPrompt = systemPrompt + "\n\n" + userContent;
   console.log(`  Prompt length: ${fullPrompt.length} chars`);
-  const articleText = claudeCli(fullPrompt);
-
-  if (!articleText) {
-    throw new Error("Claude CLI returned empty response (possible timeout)");
-  }
-
-  let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType">;
-  try {
-    // Strip markdown code fences if present
-    let cleaned = articleText.trim();
-    if (cleaned.startsWith("```")) {
-      cleaned = cleaned.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+  // 2026-10-08: 107回中23回 "Failed to parse article response" で止まっていた(元の出力が残らず原因未確定)。
+  // 読めなかった出力は logs/parse_fail/ に保存し、記事の生成を1回だけやり直す。
+  let article: Omit<GeneratedArticle, "xPost" | "xThread" | "articleType"> | null = null;
+  for (let attempt = 1; attempt <= 2 && !article; attempt++) {
+    const articleText = claudeCli(fullPrompt);
+    if (!articleText) {
+      throw new Error("Claude CLI returned empty response (possible timeout)");
     }
-    // Try direct parse first, then regex fallback
-    try {
-      article = JSON.parse(cleaned);
-    } catch {
-      const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) throw new Error("No JSON found in response");
-      article = JSON.parse(jsonMatch[0]);
+    article = parseArticleJson(articleText);
+    if (!article) {
+      const dir = join(process.cwd(), "logs", "parse_fail");
+      mkdirSync(dir, { recursive: true });
+      const f = join(dir, `${new Date().toISOString().replace(/[:.]/g, "-")}_try${attempt}.txt`);
+      writeFileSync(f, articleText, "utf-8");
+      console.error(`[generator] 記事JSONを読めなかった(試行${attempt}/2)。元の出力を保存: ${f}`);
+      if (attempt === 2) {
+        throw new Error(`Failed to parse article response: ${articleText.slice(0, 200)}`);
+      }
     }
-  } catch {
-    throw new Error(
-      `Failed to parse article response: ${articleText.slice(0, 200)}`,
-    );
   }
+  if (!article) throw new Error("article not generated");
 
   // Generate X thread (3-5 tweets)
   const xText = claudeCli(X_THREAD_SYSTEM_PROMPT + "\n\n" + `以下の記事のXスレッドを作成してください:
@@ -376,7 +396,8 @@ ${marketContext ? `\n## 市場データ\n${marketContext}` : ""}${extraInstructi
   "title": "記事タイトル（SEO最適化、「【2026年最新】」を含む、30-60文字）",
   "body": "記事本文（Markdown形式、8000文字以上、Tier分類+比較テーブル+コード例必須）",
   "keywords": ["キーワード1", "キーワード2", ...],
-  "summary": "記事の要約（200文字以内）"
+  "summary": "記事の要約（200文字以内）",
+  "eyecatch": {"lead": "アイキャッチ上段の前置き（12文字以内）", "main": "アイキャッチ中央の主題（12文字以内・記事の主張）", "tail": "アイキャッチ下段の補足（24文字以内）"}
 }
 
 JSONのみを返してください。`;

@@ -2,6 +2,8 @@ import { formatForNote } from "../content/formatter.js";
 import { NoteClient, markdownToNoteHtml } from "./note-client.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { IPublisher, PublishResult } from "./types.js";
+import { renderEyecatch, copyFromTitle } from "../utils/eyecatch.js";
+import { join } from "node:path";
 
 // Article types that should be published as paid on Note
 const PAID_ARTICLE_TYPES = ["data-analysis", "howto"];
@@ -28,6 +30,10 @@ export class NotePublisher implements IPublisher {
     const isPaid = PAID_ARTICLE_TYPES.includes(article.articleType);
     const htmlBody = markdownToNoteHtml(body);
     const hashtags = toHashtags(article.keywords);
+    const slug = `note_${Date.now()}`;
+    const eyecatchPath = renderEyecatch(article.eyecatch?.main ? article.eyecatch : copyFromTitle(title),
+      join(process.cwd(), "logs", "eyecatch"), slug);
+    console.log(`[Note] Eyecatch: ${eyecatchPath ?? "(なし)"}`);
 
     if (dryRun) {
       console.log(`[Note] DRY RUN - Would publish: "${title}"`);
@@ -45,6 +51,7 @@ export class NotePublisher implements IPublisher {
         hashtags,
         isPaid,
         price: isPaid ? PAID_PRICE : 0,
+        eyecatchPath,
       });
 
       // Detect draft-publish-failed fallback URL
