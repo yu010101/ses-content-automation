@@ -4248,6 +4248,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "3人・月商250万円の会社がAI経営OS(CFO/COO/CMO)を作った記録",
+      "articleUrl": "https://qiita.com/sescore/items/6a5d162146a68c69cc46",
+      "createdAt": "2026-10-08T23:10:44.436Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeでサブエージェントに役職を持たせてみたら、権限設計の甘さが一瞬で事故になった。\n\nうちは代表含めて3人、月商250万円前後の会社。案件が増えても人数は増やせない。見積もり承認待ち、請求書の消込待ち、SNS投稿の確認待ち——全部が代表の手元で詰まっていた。\n\n2026年に入ってから、Claude CodeのサブエージェントでCFO・COO・CMO・CEOという役職を社内に置いた。最初に誤解していたのは「CFOエージェント=会計ソフトのAPIを呼ぶbot」という発想だ。それだと結局、人間が毎回プロンプトを書く作業代行にしかならない。\n…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "サブエージェントの権限、まだ全部同じスコープのままですか?\n\nうちは代表含めて3人、月商250万円前後の会社でコンテンツ自動化とSES関連の受託を回している。人数が増えないまま案件が増えると、現場が止まる理由はコードじゃなく「誰が何を決めるか」だった。見積もり承認待ち、請求書の消込待ち、SNS投稿の確認待ち、全部が代表の手元で詰まる。\n\n2026年からClaude CodeのサブエージェントでCFO・COO・CMO・CEOという役職を作った。最初は「CFOエージェント=会計ソフトのAPIを呼ぶbot」だと思っていたが、それだと人間が毎回プロンプトを書く…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "COOエージェントのタスク優先度、LLMに丸投げしたら毎回結果がぶれて使い物にならなかった。\n\nAI経営OSを作る過程で一番学びになったのがCOOエージェントの実装だ。最初は「タスクの優先順位をつけて」とLLMに毎回投げていたが、同じ入力でも出力が毎回微妙に違う。これでは運用に乗らない。\n\n結局、優先度のロジックはLLMに任せず、決定論的なコードに落とした。実際のdispatch.pyがこれだ。\n\n```python\ndef score_task(task):\n    deadline_weight = max(0, 14 - task.days_un…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "3人、月商250万円、役職は4つ、踏んだ事故は3つ。AI経営OSを作る過程で正直に数えられる数字はこれだけだった。\n\nよくある「AI導入で生産性が何倍になった」系の話はうちにはない。見積もり承認待ち、請求書の消込待ち、SNS投稿の確認待ち、全部が代表の手元で詰まっていたのが元々の課題で、それをCFO・COO・CMO・CEOという4つの役職に分散させたのが今回やったことだ。\n\n正直に書くと、最初の1ヶ月は「動いた」と「安全に動いた」を混同していた。踏んだ事故は3つ。cronで動かしたエージェントが深夜に暴走して同じ処理を数百回リトライしたこと、CMOエー…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "複数の役職エージェントを無人運用してわかったこと、一番は「権限の最小化」が事故防止の核だった。\n\nCFO・COO・CMO・CEOという役職をClaude Codeのサブエージェントで作って気づいたのは、役職を増やすこと自体は難しくない。難しいのは、各エージェントが触れるツールをどこまで絞るかという設計だった。\n\nCFOエージェントに本番のSNS投稿権限を持たせない。CMOエージェントに銀行APIを触らせない。これを最初から徹底していなかった時期に、下書きのつもりの文章が本番投稿された事故を起こした。それ以降、生成は下書きまで、公開は人間承認という一段を…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は「エージェント同士でコンテキストを共有した方が賢く動く」と思っていた。結局、情報を分離した方が圧倒的に安全だった。\n\nAI経営OSを作る過程で一番ヒヤッとしたのはCFOエージェントの事故だ。CFOには取引先名や金額が入ったログを持たせていて、それを他のエージェントも参照できる設計にしていた。狙いは「CMOがCFOの財務状況を踏まえてSNS投稿の企画を立てる」みたいな連携だったが、実際にはCFOのログがそのまま他のエージェントのプロンプトに混入しかけた。\n\nもう一つの失敗はCMOエージェントだ。SNS投稿の「公開」権限を直接渡していた時期があり、下…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
