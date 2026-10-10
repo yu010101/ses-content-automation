@@ -4307,6 +4307,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携実践|記憶と実行を分離するAI開発フロー",
+      "articleUrl": "https://qiita.com/sescore/items/1f5faa0bc45f4cbf5069",
+      "createdAt": "2026-10-09T23:08:31.677Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdに「無人運用の安全鉄則」を書き込んでみたら、Claude Codeが自分でSNS投稿を止めるようになった。\n\nこれまではcronから起動するたびに「投稿は15分空けて」「課金リソースはデフォルトOFFで」みたいな注意を、プロンプトに毎回書き直していた。正直これが地味にしんどい。タスクを投げるたびに同じ文章をコピペして、抜け漏れがあるとそのまま実行されてしまう。\n\n発想を変えて、OpenClaw側の記憶層(CLAUDE.md・memoryディレクトリ)にルールを一度だけ書き込み、Claude Code起動時に自動で読み込まれる構成にした…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "そのClaude Code、起動するたびに同じ注意書きをプロンプトに貼ってない?\n\nうちは最近までそうだった。cronから「今日のトレンドで記事案を作って」と投げるたびに、「SNS投稿は15分空けて」「課金リソースはデフォルトOFFで」といった注意を毎回コピペしていた。抜け漏れが起きるのは当然で、書き忘れた回に限って変な投稿が走りそうになる。\n\nこれを解消したのが、OpenClaw側の記憶層(CLAUDE.md)にルールを集約する構成。思考・記憶・指示はOpenClawが持ち、開発・実行はClaude Codeが持つ、という役割分担を明確に分けた。\n\n…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのcron運用で一番効いているのは、--allowedToolsで権限を絞り込むことだった。\n\n無人のcronジョブからClaude Codeにタスクを投げる構成だと、「生成はさせたいが公開はさせたくない」という場面が必ず出てくる。これをプロンプトの文章だけで守らせるのは怖い。読み飛ばされたら終わりだからだ。\n\n実際に使っているラッパースクリプトのイメージはこうだ。\n\n```bash\n# cronから呼ばれるラッパースクリプト例\nclaude -p \"今日のトレンドを元に記事案を1本作成し、\\\n  data/drafts/ に保存…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に書くと、今回のCLAUDE.md整備で書いたルールは最初はたった3行だった。\n\n「同一SNSアカウントへの連投は最低15分間隔を強制する」「クラウドの新規課金リソースはデフォルトOFFで作成する」「実装完了と稼働中を書き分ける」。これだけ。\n\n最初から完璧な記憶層を作ろうとすると絶対に挫折するので、事故が起きた直後にその場で1行追記するという運用にしている。ルールを先に全部洗い出す方式ではなく、実際に痛い目を見た分だけ増えていく方式だ。\n\nこの3行を書いてから、Claude Codeに同じ指示を何度口頭(プロンプト)で繰り返していたか数えてみたら…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostの9エージェントを運用してみて、一番の教訓は「エージェントを増やすほど、記憶の一元管理が重要になる」ということだった。\n\n最初はエージェントごとに個別の指示を書いていたが、それだとCFOエージェントに教えたルールがCOOエージェントには伝わらない、という状態になる。例えばCFO側で「この取引先は支払いが遅れがち」と学んだことが、COO側の案件管理に全く反映されない。\n\nこれを解消するために、エージェント個別の判断ロジックではなく、OpenClaw側の記憶層(m…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに投げるプロンプトの中に、安全ルールを全部書き込んでいた。結局それは失敗だった。\n\n毎回「SNS投稿は15分空けて」「課金リソースはデフォルトOFFで」「稼働実績が出るまで稼働中と書かない」といった文章を頭に貼り付けてから本題の指示を書く、というやり方をしばらく続けていた。プロンプトがどんどん長くなるし、タスクの種類が増えるたびに貼り付ける文章も増えていく。そしてどこかで必ず貼り忘れる。\n\n実際に貼り忘れた回があって、短時間に連続投稿が走りそうになったことがあった。そこで構成を変えた。\n\nルールはOpenClaw側の記憶層(…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

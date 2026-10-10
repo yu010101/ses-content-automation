@@ -1,0 +1,98 @@
+{
+ "at": "2026-10-09T23:00:08.772Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか",
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "日本企業「ハッキングされないでくれ」ランキング"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた",
+    "Jev・Clef・d1・Jeff・Kev…意思決定モデル（System One）を仕組みから比較する【2026年10月版】",
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事4本がこのタグを付けている",
+   "tweetExamples": [
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた",
+    "新しい日本語推敲スキル「yomiyasu」がバズっていたので、Claudeで日本語推敲スキル3つを比べてみた",
+    "文章で要件定義するのをやめた。AIでモックを先に作ったら、認識ズレが実装前に全部見つかった"
+   ],
+   "relevanceScore": 0.8
+  },
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか",
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "Jev・Clef・d1・Jeff・Kev…意思決定モデル（System One）を仕組みから比較する【2026年10月版】"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか",
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた",
+    "0から学ぶセキュリティの基礎　〜CSRF編〜"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "情報漏洩",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "2026年の情報漏洩を手口で分類してみた",
+    "最近サイバー攻撃多いから、基本対策を見直そう",
+    "日本企業「ハッキングされないでくれ」ランキング"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "俺のAIプログラミング手法(2026/10/05)",
+   "summary": "Zennの日次トレンド上位(いいね換算 823)",
+   "tweetExamples": [
+    "俺のAIプログラミング手法(2026/10/05)"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "嫌われるデザインの歴史",
+   "summary": "Zennの日次トレンド上位(いいね換算 371)",
+   "tweetExamples": [
+    "嫌われるデザインの歴史"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "技術ブログはゆるやかに衰退している",
+   "summary": "Zennの日次トレンド上位(いいね換算 270)",
+   "tweetExamples": [
+    "技術ブログはゆるやかに衰退している"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "本当に「判断」していますか？",
+   "summary": "Zennの日次トレンド上位(いいね換算 115)",
+   "tweetExamples": [
+    "本当に「判断」していますか？"
+   ],
+   "relevanceScore": 1
+  }
+ ]
+}
