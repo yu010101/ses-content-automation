@@ -4366,6 +4366,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "SES多重下請け構造を規模別に解剖:独立準備とAI活用の完全ロードマップ",
+      "articleUrl": "https://qiita.com/sescore/items/a920450da0bcf68b34a7",
+      "createdAt": "2026-10-10T23:10:14.725Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude CodeのCLAUDE.mdに「無人運用の鉄則」を書いてみたら、事故の再発が止まった話。\n\n最初はCLAUDE.mdを「コーディングルールを書くだけの設定ファイル」だと思っていた。モデル指定とか、インデントの好みとか、そのレベルの認識だった。\n\nでも実際に毎日何本もエージェントを無人で回すようになってから、認識が変わった。\n\nある日、研究用に流した重い処理が優先度を指定せずに走り続け、CPU負荷が上がったまま他の定時処理が待たされる事故があった。原因は単純で、「重い処理は専用コマンド経由で流す」というルールをどこにも書いていなかったことだ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.md、まだ「コーディングルールを書くだけのファイル」だと思っていない?\n\n自分も最初はそうだった。インデントの好みやモデル指定を書くだけの、いわばREADMEの延長くらいの認識。\n\nでも無人運用でエージェントを何本も回すようになってから、その認識が完全に崩れた。\n\nきっかけは、研究用に流した重い処理が優先度指定なしで走り続け、負荷が上がったまま他の定時処理が待たされた事故だった。振り返ると原因は明確で、「重い処理はどう流すべきか」というルールがCLAUDE.mdのどこにも書かれていなかった。\n\nそこで「研究・実験系の重い処理は専用ラッパー…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのplan modeとサブエージェント、設定を具体的に書いておく。\n\n3ステップ以上ある非自明なタスクは、必ずplan modeに入ってから実装させる運用にしている。理由は単純で、計画を見ずに実装させると、途中で方向がズレたときに気づくのが遅れるからだ。CLAUDE.mdには「3ステップ以上または設計判断を含むタスクは必ずplan modeに入る」「おかしくなったら即座に止めて再計画する」とだけ書いてある。\n\nもう一つ効いているのがサブエージェントの使い分けだ。コードを探すだけなら探索専用のエージェント(読み取り専用、ファイル書き…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直な数字を書く。盛った数字は出さない。\n\nAI経営OSで契約書レビューのチェック項目を整理したとき、最初はバラバラにメモしていた注意点を、保存版のチェックリストとして17項目にまとめ直した。\n\n項目を減らしたわけではない。むしろ増えた。これまで見落としがちだった項目(契約の多段階構造における取り分の確認項目など)を言語化して追加したら、結果的に項目数は増えている。\n\nただ、チェックリスト化してから変わったのは「毎回何を確認すべきか考える時間」だ。以前は確認漏れがないか毎回頭の中で組み立てていたが、今はリストを順番に当てはめるだけで済む。この「考える時…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSで9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)を運用してみてわかったこと。\n\n一番の発見は、エージェントの数を増やすほど良くなるわけではないということだ。役割を分けすぎると、どのエージェントが最終判断を下すのかが曖昧になる場面が出てくる。CEOエージェントが最終承認を持つ、という上下関係をはっきり決めてから、判断が割れる場面が減った。\n\nもう一つの発見は、Kaizen(改善)役のエージェントが一番サボりやすいということだ。日々のタスクに追われるCFOやCOOと違って、Kai…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はエージェントを増やせば増やすほど楽になると思っていた。結局、増やしすぎて逆に遅くなった、というのが正直な失敗談だ。\n\nCFO/COO/CMOと役割を細分化した直後は良い感触だった。でも似たようなタスクを複数のエージェントに投げたとき、同じ調査を別々のエージェントが重複してやっていることに気づいた。コンテキストウィンドウは守られていたが、無駄な待ち時間がむしろ増えていた。\n\n結局正解だったのは、「このタスクは本当に並列化が必要か」を先に自分で判断してから投げることだった。独立した調査なら並列に投げる。一方の結果が他方の前提になるタスクは、順番に投げ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール5選比較|Claude Code・Copilot・Cursorの使い分け",
+      "articleUrl": "https://qiita.com/sescore/items/e4cd3cf40fe529cf336b",
+      "createdAt": "2026-10-10T23:13:29.490Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdに「コミット前に必ずnpm run lintを通す」と書いただけで、Claude Codeの挙動が目に見えて変わった。\n\nAIコーディングツール5選を比較する記事を書くために、Claude Code・GitHub Copilot・Cursor・Windsurf・Codeiumを一通り触り直した。その過程で改めて実感したのが、Claude Codeは「ルールを後から足せる」設計になっているということだ。\n\nやっていることは単純で、プロジェクトルートに\n\ncat > CLAUDE.md << 'EOF'\n# コーディング規約\n- テストは…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdの設定、まだデフォルトのまま放置していないか?\n\nAIコーディングツール5選の比較記事を書くために、Claude Code・GitHub Copilot・Cursor・Windsurf・Codeiumを改めて触り直した。どのツールもエージェント的な自動化は進んでいるが、Claude Codeで一番差を感じたのは「プロジェクトルールを明示的に育てられる」ところだった。\n\n試したのはこれだけ。\n\ncat > CLAUDE.md << 'EOF'\n# コーディング規約\n- テストはVitestを使う\n- コミット前に npm run lin…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeの--output-format jsonオプション、CI組み込みで地味に効く。\n\nAIコーディングツール比較記事を書く過程で、各ツールのエコシステムの広さを改めて調べ直したが、Claude Codeが他と一線を画すのは「ターミナル常駐かつheadlessモードでCI/CDに組み込める」点だった。\n\n具体的にはこういう使い方ができる。\n\nclaude -p \"failing testを修正してdiffだけ出力して\" --output-format json\n\n-pで非対話モードに切り替え、--output-format jsonで…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "AIコーディングツール5選を比較する記事、下調べだけで数時間かかった。\n\nClaude Code・GitHub Copilot・Cursor・Windsurf・Codeiumの5つを、セットアップ方法・料金体系・開発元の動向まで含めて調べ直す作業は、思っていたより時間がかかった。特にCodeiumが2024年にWindsurfへブランド変更し、2025年にWindsurf本体がCognitionに買収されたという経緯は、公式情報を遡って確認するだけで時間を使った。\n\nここで正直に書いておくと、「AIツールを使えば記事作成が一瞬で終わる」という実感はない…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9エージェント(CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost)でAI経営OSを回してみて、一番わかったのは「エージェントを増やすほど、人間の確認ポイントも増える」ということだった。\n\n今回AIコーディングツール比較の記事を書くにあたって、Claude Code・Cursor・Windsurfなど各ツールの「チーム・エンタープライズ対応」の評価軸を整理し直したが、これは自分のAI経営OS運用とも重なる話だった。\n\nCFOが財務データをまとめ、COOがタスクとクライアント管理を横断し、CMOがマーケティング…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初、CodeiumとWindsurfを「別の2つのツール」として比較しようとして、普通に書き始めてから手が止まった。\n\nAIコーディングツール5選の比較記事を書くために最初に立てた構成案は、Claude Code・GitHub Copilot・Cursor・Windsurf・Codeiumを横並びで5項目評価するだけのシンプルなものだった。ところが調べていくと、Codeiumは2024年にブランドを「Windsurf」へ変更し、2025年にはWindsurf本体がAIエージェント企業Cognition(Devinの開発元)に買収されている、という経緯…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

@@ -2928,6 +2928,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "SES多重下請け構造を規模別に解剖:独立準備とAI活用の完全ロードマップ",
+      "date": "2026-10-10T23:05:51.212Z",
+      "articleId": "a920450da0bcf68b34a7",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n75973b6565bb"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/a920450da0bcf68b34a7"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261010-sesai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール5選比較|Claude Code・Copilot・Cursorの使い分け",
+      "date": "2026-10-10T23:11:55.728Z",
+      "articleId": "e4cd3cf40fe529cf336b",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/e4cd3cf40fe529cf336b"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261010-claude-codegithub-copilotcurso"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n0ab5f86401f9"
+        }
+      ]
     }
   ]
 }
