@@ -4484,6 +4484,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "フリーランスエンジニア年収データ比較2026｜地方リモート単価とSES契約の注意点",
+      "articleUrl": "https://qiita.com/sescore/items/b151bb6ecb8170cafffc",
+      "createdAt": "2026-10-11T23:09:20.555Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🤖 Claude CodeのCLAUDE.mdに、ただのコーディング規約じゃなく『運用ルール』を書き込んでみた。\n\nきっかけは単純。同じ指摘をAIに何度も繰り返す自分に疲れたから。\n\nやったことはこれだけ。ユーザーから修正が入ったら、必ずtasks/lessons.mdにそのパターンを書く。次のセッションの最初にそのファイルを読ませる。CLAUDE.mdには『Self-Improvement Loop』という項目として明文化した。\n\n効果はすぐに出た。『前にも同じこと言ったよね』という会話が目に見えて減った。Claude Code自体が賢くなったわけ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "📌 そのCLAUDE.md、まだ『コーディング規約』だけで終わってない?\n\n自分も最初はそうだった。インデントのルール、命名規則、使う言語のバージョン。たしかに必要な情報だけど、それだけだとCLAUDE.mdの半分の力しか使っていない。\n\n変えたのは、修正が入ったときの振る舞いを書き込んだこと。ユーザーから指摘が入ったら、tasks/lessons.mdにそのパターンを残す。次に起動したセッションでそのファイルを読む。これを『Self-Improvement Loop』としてCLAUDE.mdに明記した。\n\n地味だけど効果は実感できる。同じ注意を二度…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeで『完了』と報告する前に、必ず踏ませているステップがある。CLAUDE.mdの『Verification Before Done』という項目だ。\n\n内容はシンプル。「テストを実行したか」「ログを確認したか」「挙動の差分を示したか」を自分に問わずに完了報告を出すのを禁止するというルール。これを入れる前は、コードを書き終えた時点で『できました』と報告が来て、実際に動かすと落ちていることがあった。\n\n運用はタスク管理と組み合わせている。まず`tasks/todo.md`にチェック可能な項目でプランを書かせる。実装前に一度立ち止まって確認…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "98対9万〜69万。この数字の差が、AI経営OSの候補選定ロジックを丸ごと見直すきっかけになった。\n\nきっかけはポケカのKaggleシミュレーション部門。結果は6,807チーム中4,549位だった。順位だけ見れば普通の失敗に見えるけど、原因を掘ったら根が深かった。選別の仕組み自体は上位チームと同じ作りだった。違ったのは教師データの出どころ。上位チームは他チームの一流の実データ、具体的には上位勢の棋譜を9万件から69万件規模で教師に使っていた。こちらは自分で作った候補データ、わずか98判断だけで回していた。\n\n桁が3つ以上違う。ここに気づいてから、社内の…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoost。9エージェント構成でAI経営OSを運用してみて、一番わかったことは『エージェントを増やすほど、人間が見る場所を絞る設計が重要になる』ということだった。\n\n最初はエージェントごとに個別に結果を見ていた。数が増えるとこれがそのまま確認コストになる。9個あれば9箇所を見る羽目になる。\n\n今は役割を分けて設計し直している。CEO役のエージェントが他のエージェントの出力を一段上から見て要約を出す、Kaizen役が『直した方がいいこと』だけを拾って報告する、という形。人…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAnthropic APIを直接叩いて自動化しようとした。結局、それが一番高いコストを払う選択だった。\n\n無人運用のcronやエージェント処理を作るとき、「従量課金のAPIを直接呼べば細かく制御できて効率がいい」と考えてしまった時期がある。実際、細かい制御はできた。ただ、呼び出し回数や使うモデルの管理が甘くなり、気づかないうちに課金が積み上がっていた。最終的な請求は約34万円。想定していた金額とはかけ離れていた。\n\n原因は単純だった。Claude CLI経由であれば使用量や挙動がこちらの管理下に収まるのに対して、API直叩きは『動くからOK』で進…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

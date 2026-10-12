@@ -2982,6 +2982,33 @@
           "url": "https://note.com/sescore/n/n0ab5f86401f9"
         }
       ]
+    },
+    {
+      "title": "フリーランスエンジニア年収データ比較2026｜地方リモート単価とSES契約の注意点",
+      "date": "2026-10-11T23:07:39.358Z",
+      "articleId": "b151bb6ecb8170cafffc",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/na03620eea3c9"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/b151bb6ecb8170cafffc"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261011-2026ses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
