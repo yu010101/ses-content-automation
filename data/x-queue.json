@@ -4543,6 +4543,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを作った話｜設定と権限設計を全公開",
+      "articleUrl": "https://qiita.com/sescore/items/1d2743916da65a40d4e3",
+      "createdAt": "2026-10-12T23:13:26.670Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェント機構で、経営の意思決定補助をAIに分担させてみたら思った以上に頭が軽くなった。\n\n個人で経営をしていると、財務・技術・運営・マーケティング・全体統括を同時に持ち続けるのがしんどい。NotionやExcelで管理しようとしても「今日はどの数字を見るべきか」を思い出すコスト自体がボトルネックになっていた。\n\nそこで役職ごとに専用のエージェントを定義することにした。Claude Codeのサブエージェントは`.claude/agents/*.md`にYAMLフロントマター付きのMarkdownを置くだけで作れる。\n\n`…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェント、まだ1個のエージェントに全部の作業をやらせてる？\n\n自分も最初はそうだった。だが個人で経営をしていると、財務（CFO視点）・技術（CTO視点）・運営（COO視点）・マーケティング（CMO視点）・全体統括（CEO視点）を1個のコンテキストで同時に持ち続けるのは無理がある。\n\nClaude Codeのサブエージェントは役職ごとに分けて定義できる。`.claude/agents/*.md`にYAMLフロントマターでdescriptionとtoolsを書くだけだ。\n\n```\nname: cfo\ndescription:…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのサブエージェントを経営OSとして使うなら、`.claude/agents/*.md`のYAMLフロントマターの書き方がすべての土台になる。\n\n中身はこういう形だ。\n\n```\nname: cfo\ndescription: CFO（最高財務責任者）。freee連携で財務データ取得・PL生成・仕訳計上・未決済管理・キャッシュフロー予測を実行\ntools: Bash, Read, Edit\n```\n\nポイントは2つある。\n\n1つ目は`description`。ここに役割と担当業務を具体的に書くことで、メインのClaude Codeが「こ…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "9体のAIエージェント経営OSを作って、実際に減ったのは「見るべき場所を思い出すコスト」だった。盛った数字は書きたくないので、正直に増減を書く。\n\n構成はCEO/CFO/CTO/COO/CMO、それにcc-secretary・cc-knowledge・cc-company・cc-productsを足した9体。毎朝の巡回は、ダッシュボード確認・財務の未決済確認・タスク確認・プロダクトのヘルスチェック・inboxの一覧表示をそれぞれ短い一語のコマンドで呼び出す形にしている。\n\n地味な変化だが、「今日はどの数字を見るべきか」を思い出す工程そのものが、巡回を1…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "9体のAIエージェントで経営OSを組んでみて、一番わかったことは「仕組みそのものより、何を誰に渡すかの設計が全部を決める」ということだった。\n\nClaude Codeのサブエージェントは`.claude/agents/*.md`にdescriptionとtoolsを書くだけで作れる。CEO/CFO/CTO/COO/CMOに加えて、cc-secretary（inbox管理）・cc-knowledge（教訓やインシデントの記録）・cc-company（全社横断の整理）・cc-products（プロダクト別管理）を足した9体で動かしている。\n\nここで気づいた…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初は9体のエージェント全部に`Bash, Read, Edit`を渡そうとしていた。設定が楽だったからだ。結局それは正解じゃなかった。\n\nマルチエージェント構成を実際に組むと、「AIエージェントにAPIキーや編集権限を渡しても大丈夫か」という問題は避けて通れない。全エージェントに同じ権限を渡すのは、設定の手間は減るが、1体が暴走したり誤操作したりしたときの被害範囲がそのまま全体に広がる設計になる。\n\nClaude Codeのサブエージェントは`.claude/agents/*.md`のYAMLフロントマターで`tools:`を個別に絞れる。だから最終…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
