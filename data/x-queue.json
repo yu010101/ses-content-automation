@@ -4602,6 +4602,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "社員3人・月商250万円の会社がAI経営OSを作った実装記",
+      "articleUrl": "https://qiita.com/sescore/items/e85eed865d8264f87648",
+      "createdAt": "2026-10-13T23:06:15.319Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "社員3人、月商およそ250万円。その小さな会社でCFO/COO/CMOのAIエージェントをClaude Codeで組んでみた。\n\n経理は自分が兼任、営業資料は代表がExcel手打ち、月次の数字は税理士に渡す前に自分でダブルチェック。人を増やす余裕はないが、意思決定に使う時間は削りたい。そこでClaude Codeのサブエージェント機能を使い、役割ごとにディレクトリとCLAUDE.mdを分けて、資金繰りチェック・業務進捗管理・コンテンツ企画を担当するエージェントをそれぞれ立てた。\n\nポイントは「実行」権限を一切持たせていないこと。CFOエージェントは読み…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdに「役割」だけ書いて、権限の線引きは後回し――その設定、まだデフォルトのまま？\n\n社員3人・月商およそ250万円の会社でAI経営OSを作った話。Claude CodeのサブエージェントでCFO/COO/CMO/CEO補佐の4役を動かしているが、最初に一番時間を使ったのは「何をさせるか」より「何をさせないか」の設計だった。\n\n各エージェント用にディレクトリを分けてCLAUDE.mdを置き、CFOエージェントには読み取りのみ、COOエージェントには読み取り＋ステータス更新、CMOエージェントには下書き作成のみという権限を明示した。振込やS…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeでエージェントごとに役割を分けるなら、CLAUDE.mdの「絶対ルール」の書き方が一番効く。\n\n実際にCFOエージェント用に置いているfinance/CLAUDE.mdはこんな構成だ。\n\n```\n# CFOエージェント設定 (finance/CLAUDE.md)\n\n## 役割\nあなたは当社のCFO補佐です。資金繰り・請求状況を毎週チェックし、\nリスクがあれば数値で指摘してください。\n\n## 絶対ルール\n- 振込・送金の実行は行わない（読み取りと提案のみ）\n- 数値は必ず実データ（会計CSV・入出金明細）から算出する\n- 推測値を使…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "社員3人、月商およそ250万円。盛った数字は一切なしで、今の実態をそのまま書く。\n\n経理は自分が兼任、営業資料は代表がExcelで手打ち、月次の数字は税理士に渡す前に自分でダブルチェックしている――これが今の体制だ。人を増やす余裕はないが、経営の意思決定に使う時間は減らしたい。そこでClaude Codeのサブエージェントで、資金繰りチェック・業務進捗管理・コンテンツ企画を担当する4つのエージェントを動かし始めた。\n\n正直に言うと、導入してすぐに業務時間が大きく減ったという実感はまだない。むしろ最初の数週間は、権限設計やCLAUDE.mdの「絶対ルール…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEO補佐の4エージェントを並べて動かしてわかったこと、ある？\n\n社員3人・月商およそ250万円の会社でAI経営OSを作る過程で一番学んだのは、「エージェントを増やすほど、権限設計の難易度が指数的に上がる」ということだった。1体だけなら読み取り権限を与えるか迷う程度だが、4体が互いの出力を参照し始めると、どのエージェントの出力を誰が信用して次の判断に使うのか、という連鎖の設計が必要になる。\n\n今回はCEO補佐エージェントが他の3エージェントの出力を読み取り専用でまとめる形にして、CEO補佐自身には何も実行させないという構成に落ち…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はCLAUDE.mdの「絶対ルール」を軽く書いていた。結局、断定を禁止する一文を足すのが正解だった。\n\nCFOエージェント用に finance/CLAUDE.md を作ったとき、最初に書いた役割定義はこんな感じだった。「あなたは当社のCFO補佐です。資金繰り・請求状況を毎週チェックし、リスクがあれば数値で指摘してください。」――これだけ。シンプルで悪くないと思っていた。\n\nところが動かしてみると、CFOエージェントが根拠の薄い「来月は黒字化します」的な楽観的コメントを平気で出してくる。会計CSVや入出金明細を見ているはずなのに、推測と事実の境界があ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
