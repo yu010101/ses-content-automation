@@ -4661,6 +4661,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClaw×Claude Code連携実践：思考と実行を分離するAI開発設計",
+      "articleUrl": "https://qiita.com/sescore/items/fbb23520b1a754f4d929",
+      "createdAt": "2026-10-14T23:06:41.706Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "「Claude CodeとOpenClawを分けて動かしてみたら、エージェントの迷子が減った。」\n\n以前はClaude Codeだけで全部やらせていた。長期的な方針も、今書いているコードの文脈も、同じエージェントに全部持たせていた。結果、「前に決めたはずの方針」を平気で忘れて、毎回違う判断をする。\n\n試しにOpenClaw側に「思考・記憶・指示」を持たせて、Claude Code側は「開発・実行」だけに絞ってみた。具体的には、CLAUDE.mdに記憶ファイルを参照する指示を書き、memory/MEMORY.mdをインデックスにして、過去の指摘はtask…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "「CLAUDE.mdに書いた指示、Claude Codeは毎回ちゃんと参照してる？」\n\n正直、最初は自信がなかった。プロジェクトルートにCLAUDE.mdを置いて「記憶を参照しろ」と書いても、実行エージェントが本当にそれを踏まえて動いているのか、見た目では判断しづらい。\n\nそこで試したのが、思考・記憶・指示をOpenClaw側に集約して、Claude Code側は開発・実行だけに専念させる構成だ。memory/ディレクトリにMEMORY.mdをインデックスとして置き、feedback_xxx.mdやproject_xxx.mdで過去の判断や修正パターン…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "「OpenClaw×Claude Codeの連携で一番効いたのは、ディレクトリ構成を先に固めたことだった。」\n\n運用を始める前に、こういう構成をプロジェクトルートに用意した。\n\nproject-root/\n├── CLAUDE.md\n├── memory/\n│   ├── MEMORY.md\n│   ├── feedback_xxx.md\n│   └── project_xxx.md\n├── tasks/\n│   ├── todo.md\n│   └── lessons.md\n└── .claude/\n    └── settings.json\n\nCLA…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "「CLAUDE.mdに追加した記憶運用ルールは、たった3行だった。」\n\nOpenClawとClaude Codeを連携させるとき、複雑な仕組みを作り込みたくなる。だが実際に効いたのは、CLAUDE.mdに書いたごく短いルールだけだった。\n\n1. 非自明なタスクの前にmemory/MEMORY.mdを確認する\n2. 訂正を受けたらtasks/lessons.mdに教訓を追記する\n3. 記憶ファイルに機密情報を書き込まない\n\nこの3行を足しただけで、実行エージェントが「前にどう判断したか」を自分で参照する動きが増えた。正直、作業時間がどれだけ短縮したかを厳…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "「9つの経営エージェントを同時に動かして、一番崩れやすかったのはどこだと思う？」\n\nCFO・COO・CMO・CEO・Brain・Kaizen・Screen・CareerBoostという9エージェント構成でAI経営OSを運用している。崩れやすいのは、実は「実行」の精度ではなく「記憶」の持ち方だった。\n\nCEOエージェントが前回の意思決定を覚えていないと、CFOやCOOに矛盾した指示を出す。Kaizenエージェントが過去の改善提案を忘れると、同じ提案を繰り返して現場が混乱する。1つのエージェントに「長期方針の記憶」と「その場の実行」を同時に持たせると、どの…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "「最初は記憶も実行も1つのClaude Codeエージェントに全部持たせていた。結局、分けるのが正解だった。」\n\n最初に組んだ構成は、CLAUDE.mdに全部の指示を詰め込むやり方だった。長期的な方針も、過去の失敗パターンも、今のタスクの文脈も、同じファイルに書いて同じエージェントに読ませていた。最初は動いているように見えた。\n\nだが複雑なタスクが増えるにつれて、エージェントが「今回の作業」と「過去の方針」を混同し始めた。コンテキストウィンドウの中で両方がごちゃ混ぜになって、どちらの精度も落ちていく感覚があった。\n\n結局、OpenClaw側に「思考・記…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

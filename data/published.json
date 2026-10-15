@@ -3063,6 +3063,33 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "OpenClaw×Claude Code連携実践：思考と実行を分離するAI開発設計",
+      "date": "2026-10-14T23:05:17.920Z",
+      "articleId": "fbb23520b1a754f4d929",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n7b4464dfd354"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/fbb23520b1a754f4d929"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261014-openclawclaude-codeai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }
