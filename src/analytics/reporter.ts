@@ -38,39 +38,20 @@ export async function sendDailyReport(): Promise<void> {
     // Learning state is optional
   }
 
-  // Build report
-  const top3 = snapshot.articles.slice(0, 3);
-  const bottom = snapshot.articles.length > 0
-    ? snapshot.articles[snapshot.articles.length - 1]
-    : null;
-
-  let report = `<b>SES Content Daily Report</b>\n`;
-  report += `<i>${new Date().toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}</i>\n\n`;
-
-  report += `<b>Summary</b>\n`;
-  report += `Articles: ${snapshot.summary.totalArticles}\n`;
-  report += `Views: ${snapshot.summary.totalViews}\n`;
-  report += `Likes: ${snapshot.summary.totalLikes}\n`;
-  report += `Stocks: ${snapshot.summary.totalStocks}\n\n`;
-
-  report += `<b>Top 3</b>\n`;
-  for (let i = 0; i < top3.length; i++) {
-    const a = top3[i];
-    const q = a.platforms.qiita;
-    report += `${i + 1}. ${escapeHtml(a.title)}\n`;
-    if (q) {
-      report += `   ${q.views}v / ${q.likes}L / ${q.stocks}S\n`;
-    }
+  // Report observations and coverage without cross-platform ranking.
+  let report = `<b>SES Content Observations</b>\n`;
+  report += `Observed: ${escapeHtml(snapshot.collectedAt)}\n`;
+  report += `Ledger/observed records: ${snapshot.summary.recordCount ?? snapshot.articles.length}\n`;
+  const platforms = snapshot.summary.platforms;
+  if (platforms) {
+    report += `Qiita measured views (${platforms.qiita.measuredViews}/${platforms.qiita.articles}): ${platforms.qiita.views ?? "unmeasured"}\n`;
+    report += `Qiita likes: ${platforms.qiita.likes ?? "unmeasured"}; stocks: ${platforms.qiita.stocks ?? "unmeasured"}\n`;
+    report += `Zenn likes (${platforms.zenn.articles} records): ${platforms.zenn.likes ?? "unmeasured"}\n`;
+    report += `note: ${platforms.note.urlRecords} URLs, reactions unmeasured\n`;
+  } else {
+    report += "Legacy snapshot: platform coverage unavailable; refresh analytics.\n";
   }
-
-  if (bottom && snapshot.articles.length > 3) {
-    report += `\n<b>Lowest Performer</b>\n`;
-    report += `${escapeHtml(bottom.title)}\n`;
-    const bq = bottom.platforms.qiita;
-    if (bq) {
-      report += `${bq.views}v / ${bq.likes}L / ${bq.stocks}S\n`;
-    }
-  }
+  report += "Cumulative observations; no causal/viral ranking.\n";
 
   if (learning && learning.recommendations.length > 0) {
     report += `\n<b>Tomorrow's Recommendations</b>\n`;

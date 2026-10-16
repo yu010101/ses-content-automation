@@ -17,19 +17,15 @@ export async function generateMetaArticle(): Promise<GeneratedArticle> {
     throw new Error(`Need at least 5 articles for meta-analysis, have ${snapshot.articles.length}`);
   }
 
-  // Prepare real data for the meta article
-  const topArticles = snapshot.articles.slice(0, 5);
-  const bottomArticles = snapshot.articles.slice(-3);
-
   const articleData = snapshot.articles.map((a) => ({
     title: a.title,
     date: a.publishedDate,
-    qiitaViews: a.platforms.qiita?.views ?? 0,
-    qiitaLikes: a.platforms.qiita?.likes ?? 0,
-    qiitaStocks: a.platforms.qiita?.stocks ?? 0,
-    zennLikes: a.platforms.zenn?.likes ?? 0,
+    qiitaViews: a.platforms.qiita?.views ?? null,
+    qiitaLikes: a.platforms.qiita?.likes ?? null,
+    qiitaStocks: a.platforms.qiita?.stocks ?? null,
+    zennLikes: a.platforms.zenn?.likes ?? null,
     tags: a.platforms.qiita?.tags ?? [],
-    engagement: a.totalEngagement,
+
   }));
 
   const systemPrompt = `あなたはSES/エンジニア向けコンテンツマーケティングの専門家です。
@@ -44,25 +40,18 @@ export async function generateMetaArticle(): Promise<GeneratedArticle> {
 
   const userContent = `以下の実際のパフォーマンスデータに基づいて、メタ記事を執筆してください。
 
-## 全体サマリー
-- 総記事数: ${snapshot.summary.totalArticles}
-- 総閲覧数: ${snapshot.summary.totalViews}
-- 総いいね数: ${snapshot.summary.totalLikes}
-- 総ストック数: ${snapshot.summary.totalStocks}
-- 平均閲覧数/記事: ${snapshot.summary.avgViewsPerArticle}
-
-## 全記事データ
+## 観測時点
+${snapshot.collectedAt}
+## 媒体別の観測値（順序に優劣の意味はない）
 ${JSON.stringify(articleData, null, 2)}
 
-## Top 5記事
-${topArticles.map((a, i) => `${i + 1}. "${a.title}" - engagement: ${a.totalEngagement}`).join("\n")}
-
-## Bottom 3記事
-${bottomArticles.map((a, i) => `${i + 1}. "${a.title}" - engagement: ${a.totalEngagement}`).join("\n")}
+欠損nullは未取得。媒体横断の合算スコアや順位は作らない。
+累積値であり公開後経過日もテーマも揃っていないため、タイトルや投稿時間の効果・バズる法則を推定しない。
+数値は観測と限界の説明だけに用い、効果の結論は出さない。
 
 以下のJSON形式で返してください:
 {
-  "title": "メタ記事タイトル（例: Qiita/Zennで○○本のSES記事を書いて分かったバズる記事の法則）",
+  "title": "メタ記事タイトル（例: 記事の反応を媒体別に記録するときの欠損と限界）",
   "body": "記事本文（Markdown形式、5000文字以上）",
   "keywords": ["キーワード1", "キーワード2", ...],
   "summary": "要約（200文字以内）"
