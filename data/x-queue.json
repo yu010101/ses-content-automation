@@ -4720,6 +4720,124 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "OpenClawで9体のAIエージェント経営OSを構築した実践記録｜設定とSES市場分析への活用法",
+      "articleUrl": "https://qiita.com/sescore/items/cf57317fffda0ceb88af",
+      "createdAt": "2026-10-17T23:14:09.770Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "🔧 Claude Codeのサブエージェント機能で「経営を9分割」してみた。\n\n経営をしていると、市場データ、契約書、コード品質、セキュリティ、SNS運用——見るべき対象が多すぎて、どこかで必ず抜け漏れが出る。1人で全部見るのは、どこかで必ず無理が来る。\n\nこれを解決するために、`.claude/agents/*.md` に役割ごとのエージェント定義を1ファイル1責務で切り分け、cronとPM2で常時稼働させる「運用レイヤー」を作った。社内では「OpenClaw」と呼んでいる。\n\nポイントは3つだけだ。\n\n1. エージェントは役割単位でMarkdow…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "⚙️ そのcrontab、常駐プロセスも一緒に殴り込んでない？\n\nClaude Codeのエージェントを本番運用に乗せ始めた頃、最初は全部cronに任せていた。市場データ分析も、認証のkeepaliveも、通知ワーカーも、ぜんぶcrontab -eに時刻指定で並べていた。\n\nこれがハマりどころだった。\n\ncronは「落ちても気づかない」。時刻になれば起動するが、プロセスが死んでいても誰も教えてくれない。一方で認証のkeepaliveや通知ワーカーのような「常時動いていてほしいプロセス」は、落ちたら即座に再起動してほしい。この性質の違いを無視して全部cr…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "🛠️ コピペで使えるClaude Codeエージェント定義、公開する。\n\nOpenClawで一番最初に作ったエージェントがmarket-data-analystだ。定義は.claude/agents/market-data-analyst.mdに置いていて、構造はこうなっている。\n\n---\nname: market-data-analyst\ndescription: 市場データを日次で収集し異常値を検知する\ntools: WebSearch, WebFetch, Bash, Write\nmodel: sonnet\n---\n\nあなたは市場データの分析官…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "📋 9体のエージェントを運用して、正直な工数の話をする。\n\n結論から言うと「劇的に時間が減った」とは言わない。盛った数字は書かない。\n\n変わったのは「見る順番」と「見る回数」だ。\n\n以前は市場データ、セキュリティアラート、コード品質、SNS運用、請求の整合性——これを自分であちこち見に行っていた。見る対象が多い日はどれかを見逃す。見逃しに気づくのは数日後、ということがよくあった。見に行く順番も毎回違っていたので、確認済みかどうかの記憶も曖昧になっていた。チェックリストを作ってもすぐ更新が止まり、結局は記憶とその日の気分で見に行く対象を決めていた。\n\n…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "🤔 9体のAIエージェントを運用してわかったこと。\n\n一番の学びは「エージェントを増やすこと自体は簡単で、減らす判断が難しい」ということだ。\n\n最初は役割を思いつくたびにエージェントを追加していった。市場データ分析、セキュリティ監視、テスト品質レビュー、コンテンツ生成……気づいたら9体になっていた。増やす判断には迷わなかったのに、減らす・統合する判断には毎回迷う。一度動き出したエージェントは「いつか使うかもしれない」という理由で残しがちになる。\n\nここで問題が出た。エージェントが増えるほど、それぞれの出力を「誰が読むのか」が曖昧になる。レポートは生成…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "😅 最初は全エージェントを1つの巨大プロンプトで動かそうとして失敗した。\n\nOpenClawを作り始めた最初の頃、「どうせ全部Claude Codeなんだから、1つのエージェントに全部の役割を詰め込めばいい」と思っていた。市場データ分析も、セキュリティ監視も、コンテンツ生成も、1つの長大なシステムプロンプトに全部書いた。最初はそれでも動いていたので、特に問題を感じていなかった。むしろファイルが1つにまとまっている分、管理が楽だと思い込んでいた。\n\n結果、挙動が不安定になった。ある日は市場データの異常値検知がちゃんと動くのに、別の日は同じ入力でコンテン…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "articleTitle": "【2026年最新】AIコーディングツール5選比較｜結局どれを使うべきか徹底検証",
+      "articleUrl": "https://qiita.com/sescore/items/b6ba418a6573c6c636a3",
+      "createdAt": "2026-10-17T23:15:11.185Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "CLAUDE.mdに1行書いただけで、Claude Codeの挙動が変わった。\n\n『テストを書かずに実装を完了としない』\n『package.jsonへの依存追加は事前に理由を明記する』\n\nこの2行をCLAUDE.mdに追記してから、毎回のセッションでClaude Codeが自動的にこのルールを読み込んで守るようになった。以前は会話の最初に毎回同じ注意を打ち込んでいたので、正直かなり手間が減った。\n\nCLAUDE.mdはプロジェクトルートに置くだけのただのMarkdownファイルだが、起動時に自動で読み込まれる仕組みが地味に効く。`/init`コマンドを…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "そのCLAUDE.md、まだ空っぽのまま放置してない？\n\nClaude Codeを`npm install -g @anthropic-ai/claude-code`で入れたまま、`/init`を一度も打たずに使っている人、意外と多い気がする。CLAUDE.mdを書かないと、毎回のセッションで同じ注意を手入力する羽目になる。\n\n自分は最初そうだった。「テストを書いて」「依存追加の理由を書いて」と毎回同じことを打っていて、これが地味にストレスだった。CLAUDE.mdに\n\n```\n## コーディング規約\n- テストを書かずに実装を完了としない\n- 外部A…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "Claude Codeのフック機構、使ってみたら思った以上に実務向きだった。\n\nフックとは、ツール実行の前後に任意のシェルコマンドを挟める仕組みのこと。たとえばファイル編集の直後にlintを強制実行したり、危険なコマンド（`rm -rf`系）が走る前にブロックしたりできる。\n\n設定は`.claude/settings.json`にhooksのキーを追加するだけで、たとえば編集系ツールの後にlintを走らせる構成なら、PostToolUseイベントにコマンドを紐づける形になる。細かい書式は公式ドキュメント通りだが、「イベント」「対象ツール」「実行コマンド…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "正直に書く。Claude Codeを使い始めて、作業時間が何倍になったとかいう話はしない。盛った数字を出すくらいなら、何が分かっていないかを書く方が誠実だと思っている。\n\n自分が体感として言えるのは、「調査フェーズにかかる時間の質が変わった」ということだけだ。以前は大きめのリポジトリで「このロジックどこにある？」を探すのに、grepを何度も打って、関連ファイルを手で開いて回っていた。今はExploreエージェントに「〇〇の実装を探して」と投げて、結果を待つだけになった。かかる時間そのものを正確に測ったことはないので、数字は出さない。測っていないものを測…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "AI経営OSを9エージェント（CFO/COO/CMO/CEO/Brain/Kaizen/Screen/CareerBoost）構成で動かしてみてわかったことがある。\n\nエージェントの数を増やすほど「誰が最終判断するか」が曖昧になる、ということだ。CFOエージェントとCOOエージェントが別々の提案を出してきたとき、それを統合する層（自分の場合はCEOエージェント）がちゃんと機能していないと、提案が宙に浮いたまま誰も実行しない状態になる。これは最初の構成で実際にハマったポイントだった。\n\n対処として、各エージェントの役割をCLAUDE.md的な個別ルールフ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はClaude Codeに「全部任せればいい」と思っていた。結局、権限の線引きを自分で決めておく方が正解だった。\n\nAI経営OSの構築を始めた頃、Claude Codeに大きめのタスクを丸ごと渡して、実装からコミットまで一気にやらせようとしていた時期がある。便利ではあったが、無人のcron実行と組み合わせたときに、意図しない破壊的な操作（git reset --hard相当の操作や、確認なしの依存追加）が走るリスクに気づいて止めた。便利さと安全性はトレードオフになる場面があると実感した瞬間だった。\n\n結局うまくいったのは、フック機構で危険な操作を物…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }

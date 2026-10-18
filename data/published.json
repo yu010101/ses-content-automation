@@ -3090,6 +3090,60 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "OpenClawで9体のAIエージェント経営OSを構築した実践記録｜設定とSES市場分析への活用法",
+      "date": "2026-10-17T23:07:59.689Z",
+      "articleId": "cf57317fffda0ceb88af",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n266036936e8a"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/cf57317fffda0ceb88af"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261017-openclaw9aiosses"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
+    },
+    {
+      "title": "【2026年最新】AIコーディングツール5選比較｜結局どれを使うべきか徹底検証",
+      "date": "2026-10-17T23:13:52.909Z",
+      "articleId": "b6ba418a6573c6c636a3",
+      "platforms": [
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/b6ba418a6573c6c636a3"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261017-claude-codegithub-copilotcurso"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        },
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n5b602d1e61db"
+        }
+      ]
     }
   ]
 }
