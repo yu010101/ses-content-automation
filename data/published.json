@@ -3144,6 +3144,33 @@
           "url": "https://note.com/sescore/n/n5b602d1e61db"
         }
       ]
+    },
+    {
+      "title": "月商250万の3人会社がAI経営OSを作った話 CFOもCOOもAIエージェント",
+      "date": "2026-10-18T23:05:02.010Z",
+      "articleId": "a1b034368f5bf5fe2247",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/ne1ab1f83a781"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/a1b034368f5bf5fe2247"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261018-2503aios-cfocooai"
+        },
+        {
+          "platform": "x",
+          "success": false,
+          "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
+        }
+      ]
     }
   ]
 }

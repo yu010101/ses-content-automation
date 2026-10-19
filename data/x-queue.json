@@ -4838,6 +4838,65 @@
         false,
         false
       ]
+    },
+    {
+      "articleTitle": "月商250万の3人会社がAI経営OSを作った話 CFOもCOOもAIエージェント",
+      "articleUrl": "https://qiita.com/sescore/items/a1b034368f5bf5fe2247",
+      "createdAt": "2026-10-18T23:08:58.146Z",
+      "variations": [
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェントで「CFO」を作ってみたら、思ったより地味な運用がハマった件。\n\nうちは社員3人、月商250万ほどの小さな会社。経理も採用も案件回しも全部自分たちでやる規模なので、「意思決定の下書き」をAIに任せる方向でCFO/COO/CMO/CEOという名前のサブエージェントをClaude Codeに作った。\n\nCFOエージェントの定義はこんな感じ。\n\n---\nname: cfo\ndescription: 月次の原価・キャッシュフロー・請求状況をレビューし、異常値をレポートする\ntools: Read, Bash, Grep\n…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "abVariant": "A",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "teaser",
+          "text": "Claude Codeのサブエージェント、権限をReadとBashだけに絞ってる？\n\nうちは社員3人、月商250万の小さな会社で、CFO/COO/CMO/CEOという名前のAIサブエージェントをClaude Code上に作っている。きっかけは単純で、3人だと経理も採用も案件回しも全部自分でやるしかなく、どれも中途半端になるから。「意思決定の下書き」をAIに任せて、人間は最終判断と実行だけに集中する設計にした。\n\n例えばCFOエージェントの定義はこう。\n\n---\nname: cfo\ndescription: 月次の原価・キャッシュフロー・請求状況をレビュ…",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "abVariant": "B",
+          "scheduledSlot": "morning"
+        },
+        {
+          "type": "key-point",
+          "text": "ClaudeCodeのCLAUDE.mdに「外部データ優先」ルールを書き込んだら、企画が止まる頻度が増えた。これは良い意味で。\n\nきっかけは社内でやっていたKaggleのシミュレーションコンペ。結果は6,807チーム中4,549位。振り返ると、選別の仕組み自体は上位チームと同じ作りだったのに、仕組みに入れる「候補」を自分たちで生成して自分たちで採点していた。上位チームは他チームの実戦データ（公開されている対戦ログ、9万〜69万件規模）を教師データにしていたのに、こちらは自前で作った候補わずか98件。桁が3桁以上違う。\n\nこれをそのままCLAUDE.md…",
+          "postType": "long_text",
+          "hookStyle": "statement",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "data-highlight",
+          "text": "4,549位/6,807チーム。これがうちの「候補を自分で作って自分で採点していた」結果の数字。\n\n社内でやっていたKaggleのポケモンカードAI対戦シミュレーションの話。選別の仕組み自体は上位チームと同じ作りだったのに、仕組みに入れる候補データが全然違った。上位は他チームの実戦対局ログを9万〜69万件規模で教師データにしていた。こちらは自前で作った候補、98件。\n\nこの「桁が3桁違う」という事実を、そのまま本業のコンテンツ企画・LP制作の仕組みに当てはめ直した。AIに記事やコピーを作らせてAI自身に採点させるのは、構造としてはKaggleで負けたと…",
+          "postType": "long_text",
+          "hookStyle": "number",
+          "scheduledSlot": "noon"
+        },
+        {
+          "type": "discussion",
+          "text": "CFO/COO/CMO/CEOの4エージェント運用してわかったこと、一番効いたのは「提案と実行を分ける」設計だった。\n\nうちは社員3人、月商250万の小さな会社。経理も採用も案件回しも自分でやるしかない規模だからこそ、「意思決定の下書き」をAIに任せて人間は最終判断と実行だけに集中する、という割り切りでCFO/COO/CMO/CEOというClaude Codeサブエージェントを作った。\n\n- CFO: freee/請求書データと銀行残高の突き合わせ、異常値（20%以上の変動）だけ報告\n- COO: 日々のタスク進行とcron/PM2の実行状況監視\n- …",
+          "postType": "long_text",
+          "hookStyle": "question",
+          "scheduledSlot": "evening"
+        },
+        {
+          "type": "quote",
+          "text": "最初はAnthropic APIを直接呼ぶコードをあちこちに書いていた。結局、有料LLM呼び出しをClaude CLI一本に絞るのが正解だった。\n\n無人でcron/PM2を動かす仕組みを作ったあと、実際に起きた事故がいくつかある。\n\n一つ目はLLM APIの想定外課金。従量課金のAPIを直接叩くコードを放置していて、約34万円の請求が来た。これを機に「有料LLM/APIの新規呼出は禁止、使うのはClaude CLIのみ」という社内ルールに変えた。\n\n二つ目はSNS投稿。同一アカウントに15分で15件連投して、アカウントの機能が制限される事態になった。こ…",
+          "postType": "long_text",
+          "hookStyle": "contrast",
+          "scheduledSlot": "evening"
+        }
+      ],
+      "posted": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
     }
   ]
 }
