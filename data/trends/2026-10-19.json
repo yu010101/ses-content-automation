@@ -1,0 +1,96 @@
+{
+ "at": "2026-10-19T23:00:10.552Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "CVE-2026-99999（PwnEscape）を読み解く──「KVMの脆弱性」ではなく、Linuxネットワークスタックの脆弱性",
+    "Jevにウォーリーを探させたら0.4秒で見つけやがった!!",
+    "サイバーセキュリティを勉強するなら今？おすすめリソース紹介"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "どのようなサイトが狙われているか？Cloudflareセキュリティログから見る攻撃の傾向と対策",
+    "サイバーセキュリティを勉強するなら今？おすすめリソース紹介",
+    "攻撃者はWebアプリのどこを狙う？ 初心者でも今すぐできるセキュリティチェックリスト"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "AWS",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "CVE-2026-99999（PwnEscape）を読み解く──「KVMの脆弱性」ではなく、Linuxネットワークスタックの脆弱性",
+    "判断特化型GraphRAGをJevを使って構築してみた（ベクトル未使用）",
+    "2026年の情報漏洩を手口で分類してみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "攻撃者はWebアプリのどこを狙う？ 初心者でも今すぐできるセキュリティチェックリスト",
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか",
+    "API キーはどこから漏れるのか？ 自分のサイトに来た .env 探し 1,566 件と、公開事例を 7 つの経路に分けてみた"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "今日から使える AI との会話術 — Claude・Gemini・Codex に指示を守らせる 6 つの原則【2026年版】",
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "ClaudeCode",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "今日から使える AI との会話術 — Claude・Gemini・Codex に指示を守らせる 6 つの原則【2026年版】",
+    "AI エージェントに API キーを渡しても大丈夫か？ 対話文・.env・環境変数・MCP・OAuth — 6 つの渡し方を Claude Code・Codex・Gemini CLI・Copilot・Cursor で調べてみた"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "改めて考える、AIエンジニアリングの今",
+   "summary": "Zennの日次トレンド上位(いいね換算 88)",
+   "tweetExamples": [
+    "改めて考える、AIエンジニアリングの今"
+   ],
+   "relevanceScore": 0.8800000000000001
+  },
+  {
+   "topic": "有名 OSS が PR を閉じはじめた。何が起きていて、どう向き合うか",
+   "summary": "Zennの日次トレンド上位(いいね換算 87)",
+   "tweetExamples": [
+    "有名 OSS が PR を閉じはじめた。何が起きていて、どう向き合うか"
+   ],
+   "relevanceScore": 0.8699999999999999
+  },
+  {
+   "topic": "ポートフォリオをVoidで作り直したので、Voidの来歴と中身を整理する",
+   "summary": "Zennの日次トレンド上位(いいね換算 45)",
+   "tweetExamples": [
+    "ポートフォリオをVoidで作り直したので、Voidの来歴と中身を整理する"
+   ],
+   "relevanceScore": 0.45
+  },
+  {
+   "topic": "技術書を年に数冊しか買わない自分に、O'Reillyのサブスク年$150は割に合うか（ACM経由で契約してMCPまで）",
+   "summary": "Zennの日次トレンド上位(いいね換算 41)",
+   "tweetExamples": [
+    "技術書を年に数冊しか買わない自分に、O'Reillyのサブスク年$150は割に合うか（ACM経由で契約してMCPまで）"
+   ],
+   "relevanceScore": 0.41
+  }
+ ]
+}

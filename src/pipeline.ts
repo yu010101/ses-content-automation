@@ -17,6 +17,7 @@ import { extractQiitaItemId } from "./analytics/qiita-stats.js";
 import { extractZennSlug } from "./analytics/zenn-stats.js";
 import type { PublishResult } from "./publishers/types.js";
 import type { GeneratedArticle } from "./content/generator.js";
+import { assertSources } from "./utils/source-gate.js";
 
 interface PublishedRecord {
   articles: Array<{
@@ -186,9 +187,11 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
 
   // Step 1.5: Fetch market data
   let marketContext = "";
+  let gateSources: string[] = [];
   try {
     console.log("\n[1.5/5] Fetching market data via Grok...");
     const marketData = await fetchMarketData();
+    gateSources = marketData.sources;
     marketContext = formatMarketContext(marketData);
     console.log(`  Sources: ${marketData.sources.length}, Facts: ${marketData.rawFacts.length}`);
   } catch (err) {
@@ -295,6 +298,9 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
     const reason = !hasTelegram ? "no Telegram token" : dryRun ? "dry-run" : "--skip-approval";
     console.log(`\n[3/5] Skipping approval (${reason})`);
   }
+
+  // 2026-10-20: 出典ゲート。出典0件・本文に出典が無い記事は公開しない（10/20 08:06 に Sources: 0 のまま公開していた）
+  if (!assertSources(gateSources, noteArticle.body, !!dryRun, "pipeline")) return;
 
   checkpoint.save(dryRun ? 'dry_run_started' : 'publication_attempt_started');
 

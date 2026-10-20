@@ -48,8 +48,9 @@ export function cleanTitle(title: string): string {
 }
 
 // Qiita 上位100本で登録への誘導は0%。Qiita は筆者の1行だけにする(規約 第11条1項3号 宣伝主目的の回避)
+// 2026-10-20 本人「ok」: 筆者の1行の FreelanceDB だけをリンクにする（登録ページへは誘導しない・既存記事は書き換えない）
 function buildAuthorLine(): string {
-  return `\n\n---\n\n書いた人: 合同会社Radineer（フリーランス向け案件サイト FreelanceDB を運営）\n`;
+  return `\n\n---\n\n書いた人: 合同会社Radineer（フリーランス向け案件サイト [FreelanceDB](https://radineer.asia/freelance?utm_source=qiita&utm_medium=article&utm_campaign=author) を運営）\n`;
 }
 
 const CAREER_WORDS = ["キャリア", "転職", "フリーランス", "ses", "年収", "単価", "働き方", "独立", "副業", "面談", "営業"];
