@@ -188,10 +188,12 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   // Step 1.5: Fetch market data
   let marketContext = "";
   let gateSources: string[] = [];
+  let gateFacts: string[] = [];
   try {
     console.log("\n[1.5/5] Fetching market data via Grok...");
     const marketData = await fetchMarketData();
     gateSources = marketData.sources;
+    gateFacts = marketData.rawFacts;
     marketContext = formatMarketContext(marketData);
     console.log(`  Sources: ${marketData.sources.length}, Facts: ${marketData.rawFacts.length}`);
   } catch (err) {
@@ -300,7 +302,10 @@ export async function runPipeline(options: { dryRun?: boolean; skipApproval?: bo
   }
 
   // 2026-10-20: 出典ゲート。出典0件・本文に出典が無い記事は公開しない（10/20 08:06 に Sources: 0 のまま公開していた）
-  if (!assertSources(gateSources, noteArticle.body, !!dryRun, "pipeline")) return;
+  // 2026-10-21: note・Qiita・Zenn の3本とも、出典と数字を照合する（どれか1本でも止まれば全部出さない）
+  for (const [name, a] of [["note", noteArticle], ["qiita", qiitaArticle], ["zenn", zennArticle]] as const) {
+    if (!assertSources(gateSources, a.body, !!dryRun, "pipeline:" + name, gateFacts)) return;
+  }
 
   checkpoint.save(dryRun ? 'dry_run_started' : 'publication_attempt_started');
 

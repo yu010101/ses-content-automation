@@ -6,12 +6,17 @@ import { tmpdir } from "node:os";
 
 const OWN = ["note.com/sescore", "qiita.com/sescore", "zenn.dev/ailmarketing", "ses-core"];
 
-export function assertSources(sources: string[], body: string, dry: boolean, where: string): boolean {
+// 2026-10-21: facts を渡すと、本文の単位つきの数字を取得した事実と照合する（source_gate.py --facts）
+export function assertSources(sources: string[], body: string, dry: boolean, where: string, facts?: string[]): boolean {
   const d = mkdtempSync(join(tmpdir(), "sg-"));
   const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" });
   writeFileSync(join(d, "body.md"), body);
   writeFileSync(join(d, "src.json"), JSON.stringify((sources ?? []).map((u) => ({ url: u, checked: today }))));
   const args = [join(process.env.HOME ?? "", "openclaw-gates/source_gate.py"), join(d, "body.md"), "--sources", join(d, "src.json")];
+  if (facts) {
+    writeFileSync(join(d, "facts.json"), JSON.stringify(facts));
+    args.push("--facts", join(d, "facts.json"));
+  }
   for (const o of OWN) args.push("--own", o);
   try {
     console.log(execFileSync("/usr/bin/python3", args, { encoding: "utf8" }).trim());

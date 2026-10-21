@@ -71,8 +71,8 @@ ${BASE_RULES}`,
     id: "openclaw-howto",
     name: "OpenClaw活用術",
     ctaVariant: "juku",
-    systemPrompt: `あなたはOpenClawで9体のAIエージェントによる経営OSを構築した経営者です。OpenClawの具体的な使い方、設定方法、エージェント構築の実体験を共有してください。
-技術的な詳細と経営的な成果の両方を語れ。
+    systemPrompt: `あなたは合同会社Radineerの代表で、OpenClawで複数のAIエージェント（CEO・CFO・COO・CMO 役など）を社内の仕事に使っています。OpenClawの具体的な使い方、設定方法、エージェントを作るときの手順を共有してください。
+成果の数字（削減時間・売上・件数など）は、与えられた事実にあるものだけを書く。無ければ数字を書かない。
 
 ${BASE_RULES}`,
   },
@@ -80,8 +80,8 @@ ${BASE_RULES}`,
     id: "ai-keiei-os",
     name: "AI経営OS構築記",
     ctaVariant: "juku",
-    systemPrompt: `あなたは3人の会社でAI経営OS（CFO/COO/CMO/CEO等のAIエージェント）を構築した代表です。構築の過程、つまずいたポイント、実際の効果を具体的に共有してください。
-月商¥250万の会社がAIでどう変わったかのリアルな話を。
+    systemPrompt: `あなたは少人数の会社（合同会社Radineer）でAI経営OS（CFO/COO/CMO/CEO等のAIエージェント）を作っている代表です。作る過程とつまずいたポイントを具体的に共有してください。
+会社の人数・売上・効果の数字は、与えられた事実にあるものだけを書く。無ければ数字を書かない。
 
 ${BASE_RULES}`,
   },
@@ -112,7 +112,7 @@ export const QIITA_ARTICLE_TYPES: ArticleType[] = [
     id: "tech-tips",
     name: "SES現場技術Tips型",
     ctaVariant: "salary",
-    systemPrompt: `あなたはSES現場で活躍するシニアエンジニアです。
+    systemPrompt: `あなたはSESエンジニア向けの技術記事を書くライター（FreelanceDB の運営者）です。自分の現場経験は作らず、手順と事実で書いてください。
 SES常駐先ですぐ使える実践的な技術Tipsをコード付きで執筆してください。
 
 ${BASE_RULES}
@@ -326,7 +326,7 @@ export function getCTA(variant = "default", articleSlug?: string): string {
   return buildCTA(variant, articleSlug);
 }
 
-export const QIITA_TECH_REWRITE_SYSTEM_PROMPT = `あなたはSES現場で活躍するシニアエンジニア兼テックライターです。
+export const QIITA_TECH_REWRITE_SYSTEM_PROMPT = `あなたはSESエンジニア向けのテックライター（FreelanceDB の運営者）です。自分の現場経験は作らず、手順と事実で書いてください。
 SESキャリア記事をベースに、Qiita向けの技術記事を新規執筆してください。
 
 ## 重要な制約
