@@ -1,0 +1,96 @@
+{
+ "at": "2026-10-21T05:29:48.456Z",
+ "source": "zenn+qiita",
+ "results": [
+  {
+   "topic": "AI",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "CVE-2026-99999（PwnEscape）を読み解く──「KVMの脆弱性」ではなく、Linuxネットワークスタックの脆弱性",
+    "Jevにウォーリーを探させたら0.4秒で見つけやがった!!",
+    "AIで作ったらオリジナルじゃないらしい。んなわけあるか。"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "Security",
+   "summary": "Qiitaで直近14日にストック20超の記事5本がこのタグを付けている",
+   "tweetExamples": [
+    "私はGemini。env 認証情報を、うっかりチャット対話文に漏洩してしまいました — AIエージェント内側の告白",
+    "どのようなサイトが狙われているか？Cloudflareセキュリティログから見る攻撃の傾向と対策",
+    "サイバーセキュリティを勉強するなら今？おすすめリソース紹介"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "個人開発",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "個人開発で月17万稼いでみたので生々しいスクショとともに振り返る",
+    "AIで作ったらオリジナルじゃないらしい。んなわけあるか。",
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "初心者",
+   "summary": "Qiitaで直近14日にストック20超の記事3本がこのタグを付けている",
+   "tweetExamples": [
+    "JS初心者が『非同期』を理解してみた",
+    "攻撃者はWebアプリのどこを狙う？ 初心者でも今すぐできるセキュリティチェックリスト",
+    "【もう無理だよ…】免許証画像まで流出する時代に、エンジニアは何をすればいいのか"
+   ],
+   "relevanceScore": 0.6
+  },
+  {
+   "topic": "AIエージェント",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "今日から使える AI との会話術 — Claude・Gemini・Codex に指示を守らせる 6 つの原則【2026年版】",
+    "私はGemini。env 認証情報を、うっかりチャット対話文に漏洩してしまいました — AIエージェント内側の告白"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "Claude",
+   "summary": "Qiitaで直近14日にストック20超の記事2本がこのタグを付けている",
+   "tweetExamples": [
+    "今日から使える AI との会話術 — Claude・Gemini・Codex に指示を守らせる 6 つの原則【2026年版】",
+    "私はGemini。env 認証情報を、うっかりチャット対話文に漏洩してしまいました — AIエージェント内側の告白"
+   ],
+   "relevanceScore": 0.4
+  },
+  {
+   "topic": "有名 OSS が PR を閉じはじめた。何が起きていて、どう向き合うか",
+   "summary": "Zennの日次トレンド上位(いいね換算 102)",
+   "tweetExamples": [
+    "有名 OSS が PR を閉じはじめた。何が起きていて、どう向き合うか"
+   ],
+   "relevanceScore": 1
+  },
+  {
+   "topic": "ポートフォリオをVoidで作り直したので、Voidの来歴と中身を整理する",
+   "summary": "Zennの日次トレンド上位(いいね換算 56)",
+   "tweetExamples": [
+    "ポートフォリオをVoidで作り直したので、Voidの来歴と中身を整理する"
+   ],
+   "relevanceScore": 0.5599999999999999
+  },
+  {
+   "topic": "技術書を年に数冊しか買わない自分に、O'Reillyのサブスク年$150は割に合うか（ACM経由で契約してMCPまで）",
+   "summary": "Zennの日次トレンド上位(いいね換算 53)",
+   "tweetExamples": [
+    "技術書を年に数冊しか買わない自分に、O'Reillyのサブスク年$150は割に合うか（ACM経由で契約してMCPまで）"
+   ],
+   "relevanceScore": 0.53
+  },
+  {
+   "topic": "Oxlint + Oxfmt で規約をコード化するモノレポ運用",
+   "summary": "Zennの日次トレンド上位(いいね換算 36)",
+   "tweetExamples": [
+    "Oxlint + Oxfmt で規約をコード化するモノレポ運用"
+   ],
+   "relevanceScore": 0.36
+  }
+ ]
+}
