@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-26T13:00:28.800Z",
+  "collectedAt": "2026-10-27T13:09:04.006Z",
   "collection": {
     "qiita": "ok",
     "zenn": "unavailable"
@@ -18,7 +18,7 @@
         "qiita": {
           "id": "3265bfdc78c635323c63",
           "url": "https://qiita.com/sescore/items/3265bfdc78c635323c63",
-          "views": 627,
+          "views": 629,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -38,7 +38,7 @@
         "qiita": {
           "id": "b28ba40ebcb7f6272251",
           "url": "https://qiita.com/sescore/items/b28ba40ebcb7f6272251",
-          "views": 563,
+          "views": 564,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -59,7 +59,7 @@
         "qiita": {
           "id": "8d82c9550c7da188f5fc",
           "url": "https://qiita.com/sescore/items/8d82c9550c7da188f5fc",
-          "views": 817,
+          "views": 818,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -80,7 +80,7 @@
         "qiita": {
           "id": "9aeb9a0038fa8eadc3ad",
           "url": "https://qiita.com/sescore/items/9aeb9a0038fa8eadc3ad",
-          "views": 3834,
+          "views": 3836,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -107,7 +107,7 @@
         "qiita": {
           "id": "8e8b08744e207ac82dc3",
           "url": "https://qiita.com/sescore/items/8e8b08744e207ac82dc3",
-          "views": 1000,
+          "views": 1008,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -128,7 +128,7 @@
         "qiita": {
           "id": "fdb53bbe89968830ddc8",
           "url": "https://qiita.com/sescore/items/fdb53bbe89968830ddc8",
-          "views": 629,
+          "views": 631,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -149,7 +149,7 @@
         "qiita": {
           "id": "27a7ca88ac546a4dd62b",
           "url": "https://qiita.com/sescore/items/27a7ca88ac546a4dd62b",
-          "views": 1217,
+          "views": 1218,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -170,7 +170,7 @@
         "qiita": {
           "id": "bb25abfa81eb40321423",
           "url": "https://qiita.com/sescore/items/bb25abfa81eb40321423",
-          "views": 714,
+          "views": 718,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -194,7 +194,7 @@
         "qiita": {
           "id": "8165d5559d45275914c5",
           "url": "https://qiita.com/sescore/items/8165d5559d45275914c5",
-          "views": 1697,
+          "views": 1708,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -218,7 +218,7 @@
         "qiita": {
           "id": "b4c043fc3b8565c53c49",
           "url": "https://qiita.com/sescore/items/b4c043fc3b8565c53c49",
-          "views": 3834,
+          "views": 3930,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -242,7 +242,7 @@
         "qiita": {
           "id": "98788e5bdf19c8445389",
           "url": "https://qiita.com/sescore/items/98788e5bdf19c8445389",
-          "views": 13153,
+          "views": 13494,
           "likes": 2,
           "stocks": 0,
           "tags": [
@@ -286,7 +286,7 @@
         "qiita": {
           "id": "80a9af046eef5aae59d0",
           "url": "https://qiita.com/sescore/items/80a9af046eef5aae59d0",
-          "views": 627,
+          "views": 629,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -310,7 +310,7 @@
         "qiita": {
           "id": "e6516b35858e635475f0",
           "url": "https://qiita.com/sescore/items/e6516b35858e635475f0",
-          "views": 1616,
+          "views": 1625,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -334,7 +334,7 @@
         "qiita": {
           "id": "116c660825f6bc579a44",
           "url": "https://qiita.com/sescore/items/116c660825f6bc579a44",
-          "views": 6914,
+          "views": 6958,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -382,7 +382,7 @@
         "qiita": {
           "id": "06d437d72924c362c2cd",
           "url": "https://qiita.com/sescore/items/06d437d72924c362c2cd",
-          "views": 935,
+          "views": 938,
           "likes": 1,
           "stocks": 3,
           "tags": [
@@ -430,7 +430,7 @@
         "qiita": {
           "id": "2e0a84c7f0c300cc3f1f",
           "url": "https://qiita.com/sescore/items/2e0a84c7f0c300cc3f1f",
-          "views": 1610,
+          "views": 1611,
           "likes": 3,
           "stocks": 7,
           "tags": [
@@ -454,7 +454,7 @@
         "qiita": {
           "id": "f80187de48a28fa1d045",
           "url": "https://qiita.com/sescore/items/f80187de48a28fa1d045",
-          "views": 3657,
+          "views": 3665,
           "likes": 5,
           "stocks": 11,
           "tags": [
@@ -478,7 +478,7 @@
         "qiita": {
           "id": "d103dc09f28def807de2",
           "url": "https://qiita.com/sescore/items/d103dc09f28def807de2",
-          "views": 1168,
+          "views": 1171,
           "likes": 2,
           "stocks": 0,
           "tags": [
@@ -502,7 +502,7 @@
         "qiita": {
           "id": "2ae5af475b64119ac364",
           "url": "https://qiita.com/sescore/items/2ae5af475b64119ac364",
-          "views": 732,
+          "views": 733,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -550,7 +550,7 @@
         "qiita": {
           "id": "0da5767dce8f76a457fb",
           "url": "https://qiita.com/sescore/items/0da5767dce8f76a457fb",
-          "views": 938,
+          "views": 942,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -574,7 +574,7 @@
         "qiita": {
           "id": "e9170e79f50188f8e3c4",
           "url": "https://qiita.com/sescore/items/e9170e79f50188f8e3c4",
-          "views": 1050,
+          "views": 1051,
           "likes": 1,
           "stocks": 4,
           "tags": [
@@ -598,7 +598,7 @@
         "qiita": {
           "id": "f44b8737600596fdc55d",
           "url": "https://qiita.com/sescore/items/f44b8737600596fdc55d",
-          "views": 960,
+          "views": 966,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -622,7 +622,7 @@
         "qiita": {
           "id": "3e4a86e275574f9902e8",
           "url": "https://qiita.com/sescore/items/3e4a86e275574f9902e8",
-          "views": 938,
+          "views": 939,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -670,7 +670,7 @@
         "qiita": {
           "id": "ea07f1d533d13bcb8cf9",
           "url": "https://qiita.com/sescore/items/ea07f1d533d13bcb8cf9",
-          "views": 500,
+          "views": 503,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -694,7 +694,7 @@
         "qiita": {
           "id": "d1ec36c803d97c6fb87e",
           "url": "https://qiita.com/sescore/items/d1ec36c803d97c6fb87e",
-          "views": 761,
+          "views": 765,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -718,7 +718,7 @@
         "qiita": {
           "id": "22cbc5b534e4db342e77",
           "url": "https://qiita.com/sescore/items/22cbc5b534e4db342e77",
-          "views": 779,
+          "views": 782,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -742,7 +742,7 @@
         "qiita": {
           "id": "5b73544a40f4ac623da2",
           "url": "https://qiita.com/sescore/items/5b73544a40f4ac623da2",
-          "views": 661,
+          "views": 662,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -766,7 +766,7 @@
         "qiita": {
           "id": "b2bd53ebed7c63e11223",
           "url": "https://qiita.com/sescore/items/b2bd53ebed7c63e11223",
-          "views": 556,
+          "views": 557,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -790,7 +790,7 @@
         "qiita": {
           "id": "d67da3910ca99effb1fb",
           "url": "https://qiita.com/sescore/items/d67da3910ca99effb1fb",
-          "views": 1016,
+          "views": 1018,
           "likes": 3,
           "stocks": 2,
           "tags": [
@@ -814,7 +814,7 @@
         "qiita": {
           "id": "8a25772fdb0f2e12681c",
           "url": "https://qiita.com/sescore/items/8a25772fdb0f2e12681c",
-          "views": 927,
+          "views": 941,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -838,7 +838,7 @@
         "qiita": {
           "id": "c23dd0264cb1b26158f1",
           "url": "https://qiita.com/sescore/items/c23dd0264cb1b26158f1",
-          "views": 808,
+          "views": 810,
           "likes": 2,
           "stocks": 1,
           "tags": [
@@ -862,7 +862,7 @@
         "qiita": {
           "id": "a6d40ea3e2ec927fd8f1",
           "url": "https://qiita.com/sescore/items/a6d40ea3e2ec927fd8f1",
-          "views": 648,
+          "views": 649,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -886,7 +886,7 @@
         "qiita": {
           "id": "3bebfa78a916ca44316f",
           "url": "https://qiita.com/sescore/items/3bebfa78a916ca44316f",
-          "views": 525,
+          "views": 526,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -910,7 +910,7 @@
         "qiita": {
           "id": "c413bd43e7d293acff2b",
           "url": "https://qiita.com/sescore/items/c413bd43e7d293acff2b",
-          "views": 530,
+          "views": 533,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -934,7 +934,7 @@
         "qiita": {
           "id": "65ea2e8d04eec3470d3c",
           "url": "https://qiita.com/sescore/items/65ea2e8d04eec3470d3c",
-          "views": 448,
+          "views": 451,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -955,7 +955,7 @@
         "qiita": {
           "id": "bdef4c1cc3ebba9253a7",
           "url": "https://qiita.com/sescore/items/bdef4c1cc3ebba9253a7",
-          "views": 404,
+          "views": 405,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -976,7 +976,7 @@
         "qiita": {
           "id": "06bf73a2d3ea40213026",
           "url": "https://qiita.com/sescore/items/06bf73a2d3ea40213026",
-          "views": 411,
+          "views": 412,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1024,7 +1024,7 @@
         "qiita": {
           "id": "ab45a950e1837918df5c",
           "url": "https://qiita.com/sescore/items/ab45a950e1837918df5c",
-          "views": 885,
+          "views": 886,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1048,7 +1048,7 @@
         "qiita": {
           "id": "198b36e173d7b7bcd1fd",
           "url": "https://qiita.com/sescore/items/198b36e173d7b7bcd1fd",
-          "views": 747,
+          "views": 751,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -1072,7 +1072,7 @@
         "qiita": {
           "id": "95f9406f1de07e1ce237",
           "url": "https://qiita.com/sescore/items/95f9406f1de07e1ce237",
-          "views": 827,
+          "views": 831,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -1096,7 +1096,7 @@
         "qiita": {
           "id": "608d91c23773f56b1245",
           "url": "https://qiita.com/sescore/items/608d91c23773f56b1245",
-          "views": 414,
+          "views": 415,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1120,7 +1120,7 @@
         "qiita": {
           "id": "775341ba6f0d106fd7d0",
           "url": "https://qiita.com/sescore/items/775341ba6f0d106fd7d0",
-          "views": 3744,
+          "views": 3746,
           "likes": 2,
           "stocks": 3,
           "tags": [
@@ -1144,7 +1144,7 @@
         "qiita": {
           "id": "5f6385661452f45dae54",
           "url": "https://qiita.com/sescore/items/5f6385661452f45dae54",
-          "views": 796,
+          "views": 798,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1168,7 +1168,7 @@
         "qiita": {
           "id": "0874fd5363e1fd43afd4",
           "url": "https://qiita.com/sescore/items/0874fd5363e1fd43afd4",
-          "views": 417,
+          "views": 418,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1192,7 +1192,7 @@
         "qiita": {
           "id": "25c7b6f65e6722115c32",
           "url": "https://qiita.com/sescore/items/25c7b6f65e6722115c32",
-          "views": 410,
+          "views": 412,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1216,7 +1216,7 @@
         "qiita": {
           "id": "1b0f47d7d3885a38995e",
           "url": "https://qiita.com/sescore/items/1b0f47d7d3885a38995e",
-          "views": 524,
+          "views": 528,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1240,7 +1240,7 @@
         "qiita": {
           "id": "0a54bf1232c0b290cbf4",
           "url": "https://qiita.com/sescore/items/0a54bf1232c0b290cbf4",
-          "views": 631,
+          "views": 635,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -1288,7 +1288,7 @@
         "qiita": {
           "id": "697565e13dd51e76b935",
           "url": "https://qiita.com/sescore/items/697565e13dd51e76b935",
-          "views": 433,
+          "views": 438,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1312,7 +1312,7 @@
         "qiita": {
           "id": "a2aeb5058ad5f90c89f7",
           "url": "https://qiita.com/sescore/items/a2aeb5058ad5f90c89f7",
-          "views": 538,
+          "views": 544,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1336,7 +1336,7 @@
         "qiita": {
           "id": "919fc2c210407303f471",
           "url": "https://qiita.com/sescore/items/919fc2c210407303f471",
-          "views": 620,
+          "views": 621,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1360,7 +1360,7 @@
         "qiita": {
           "id": "508398300d7d26e26a40",
           "url": "https://qiita.com/sescore/items/508398300d7d26e26a40",
-          "views": 381,
+          "views": 382,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1384,7 +1384,7 @@
         "qiita": {
           "id": "88f8ce268734e761bcac",
           "url": "https://qiita.com/sescore/items/88f8ce268734e761bcac",
-          "views": 560,
+          "views": 563,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1408,7 +1408,7 @@
         "qiita": {
           "id": "d0457d54d5a53495b286",
           "url": "https://qiita.com/sescore/items/d0457d54d5a53495b286",
-          "views": 360,
+          "views": 361,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1432,7 +1432,7 @@
         "qiita": {
           "id": "448066259b0395586f21",
           "url": "https://qiita.com/sescore/items/448066259b0395586f21",
-          "views": 353,
+          "views": 354,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1456,7 +1456,7 @@
         "qiita": {
           "id": "76a4a560b04fe90c5dcd",
           "url": "https://qiita.com/sescore/items/76a4a560b04fe90c5dcd",
-          "views": 466,
+          "views": 467,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1480,7 +1480,7 @@
         "qiita": {
           "id": "89f8b679e1faf6c5d034",
           "url": "https://qiita.com/sescore/items/89f8b679e1faf6c5d034",
-          "views": 965,
+          "views": 972,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1504,7 +1504,7 @@
         "qiita": {
           "id": "c3bbe363e13f713a2bc6",
           "url": "https://qiita.com/sescore/items/c3bbe363e13f713a2bc6",
-          "views": 445,
+          "views": 446,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1528,7 +1528,7 @@
         "qiita": {
           "id": "f42658a32bfc896669f8",
           "url": "https://qiita.com/sescore/items/f42658a32bfc896669f8",
-          "views": 491,
+          "views": 492,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1549,7 +1549,7 @@
         "qiita": {
           "id": "00dfc682ba3398e3a035",
           "url": "https://qiita.com/sescore/items/00dfc682ba3398e3a035",
-          "views": 532,
+          "views": 533,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -1573,7 +1573,7 @@
         "qiita": {
           "id": "84f6f4524b7a34830bb5",
           "url": "https://qiita.com/sescore/items/84f6f4524b7a34830bb5",
-          "views": 418,
+          "views": 421,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1597,7 +1597,7 @@
         "qiita": {
           "id": "083afa2b61b35f2eb5d6",
           "url": "https://qiita.com/sescore/items/083afa2b61b35f2eb5d6",
-          "views": 360,
+          "views": 362,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1621,7 +1621,7 @@
         "qiita": {
           "id": "5862090655e4e39be0ab",
           "url": "https://qiita.com/sescore/items/5862090655e4e39be0ab",
-          "views": 343,
+          "views": 344,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1645,7 +1645,7 @@
         "qiita": {
           "id": "0ecc8dded92646448bd6",
           "url": "https://qiita.com/sescore/items/0ecc8dded92646448bd6",
-          "views": 1461,
+          "views": 1467,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1669,7 +1669,7 @@
         "qiita": {
           "id": "8b52428d6c450f6cab39",
           "url": "https://qiita.com/sescore/items/8b52428d6c450f6cab39",
-          "views": 600,
+          "views": 602,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1693,7 +1693,7 @@
         "qiita": {
           "id": "a7ea5c702f78a8618fc0",
           "url": "https://qiita.com/sescore/items/a7ea5c702f78a8618fc0",
-          "views": 367,
+          "views": 368,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1717,7 +1717,7 @@
         "qiita": {
           "id": "537cec6b05026a0184d7",
           "url": "https://qiita.com/sescore/items/537cec6b05026a0184d7",
-          "views": 567,
+          "views": 568,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1741,7 +1741,7 @@
         "qiita": {
           "id": "3772c5b1daab7fb20bc0",
           "url": "https://qiita.com/sescore/items/3772c5b1daab7fb20bc0",
-          "views": 552,
+          "views": 553,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1762,7 +1762,7 @@
         "qiita": {
           "id": "d3314a8367cefde4caa8",
           "url": "https://qiita.com/sescore/items/d3314a8367cefde4caa8",
-          "views": 578,
+          "views": 579,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1786,7 +1786,7 @@
         "qiita": {
           "id": "216e6f75dff95bf1c661",
           "url": "https://qiita.com/sescore/items/216e6f75dff95bf1c661",
-          "views": 1475,
+          "views": 1478,
           "likes": 1,
           "stocks": 2,
           "tags": [
@@ -1834,7 +1834,7 @@
         "qiita": {
           "id": "091b92445433463f6cd5",
           "url": "https://qiita.com/sescore/items/091b92445433463f6cd5",
-          "views": 942,
+          "views": 943,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -1882,7 +1882,7 @@
         "qiita": {
           "id": "a8042d386c331e767e1c",
           "url": "https://qiita.com/sescore/items/a8042d386c331e767e1c",
-          "views": 493,
+          "views": 504,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1906,7 +1906,7 @@
         "qiita": {
           "id": "66e7e4fc5aee3be4ed5d",
           "url": "https://qiita.com/sescore/items/66e7e4fc5aee3be4ed5d",
-          "views": 1189,
+          "views": 1201,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -1930,7 +1930,7 @@
         "qiita": {
           "id": "808c52d228dbfb088676",
           "url": "https://qiita.com/sescore/items/808c52d228dbfb088676",
-          "views": 577,
+          "views": 580,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1954,7 +1954,7 @@
         "qiita": {
           "id": "d3ab000ab90c1fa9463e",
           "url": "https://qiita.com/sescore/items/d3ab000ab90c1fa9463e",
-          "views": 316,
+          "views": 319,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -1978,7 +1978,7 @@
         "qiita": {
           "id": "26c4b4eccceaf13d576d",
           "url": "https://qiita.com/sescore/items/26c4b4eccceaf13d576d",
-          "views": 657,
+          "views": 663,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -1999,7 +1999,7 @@
         "qiita": {
           "id": "759b40df743961448da4",
           "url": "https://qiita.com/sescore/items/759b40df743961448da4",
-          "views": 842,
+          "views": 854,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2020,7 +2020,7 @@
         "qiita": {
           "id": "78e3dee00b5e7c414fd4",
           "url": "https://qiita.com/sescore/items/78e3dee00b5e7c414fd4",
-          "views": 1164,
+          "views": 1174,
           "likes": 1,
           "stocks": 2,
           "tags": [
@@ -2041,7 +2041,7 @@
         "qiita": {
           "id": "0c1f0b6168e5199847ff",
           "url": "https://qiita.com/sescore/items/0c1f0b6168e5199847ff",
-          "views": 824,
+          "views": 825,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2062,7 +2062,7 @@
         "qiita": {
           "id": "4f2a17be7b4bfc507be2",
           "url": "https://qiita.com/sescore/items/4f2a17be7b4bfc507be2",
-          "views": 743,
+          "views": 744,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2083,7 +2083,7 @@
         "qiita": {
           "id": "b3ebef2a1f727e3eca28",
           "url": "https://qiita.com/sescore/items/b3ebef2a1f727e3eca28",
-          "views": 967,
+          "views": 970,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2104,7 +2104,7 @@
         "qiita": {
           "id": "c189e6040b4a63c994fc",
           "url": "https://qiita.com/sescore/items/c189e6040b4a63c994fc",
-          "views": 1253,
+          "views": 1267,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2125,7 +2125,7 @@
         "qiita": {
           "id": "aff17dc2a577e81f21b8",
           "url": "https://qiita.com/sescore/items/aff17dc2a577e81f21b8",
-          "views": 917,
+          "views": 918,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -2149,7 +2149,7 @@
         "qiita": {
           "id": "85da19e77bdad85bbdc4",
           "url": "https://qiita.com/sescore/items/85da19e77bdad85bbdc4",
-          "views": 825,
+          "views": 827,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2173,7 +2173,7 @@
         "qiita": {
           "id": "5836d47f648ac9c11fd0",
           "url": "https://qiita.com/sescore/items/5836d47f648ac9c11fd0",
-          "views": 496,
+          "views": 498,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2197,7 +2197,7 @@
         "qiita": {
           "id": "f1504153a8a43a20358d",
           "url": "https://qiita.com/sescore/items/f1504153a8a43a20358d",
-          "views": 871,
+          "views": 886,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2221,7 +2221,7 @@
         "qiita": {
           "id": "70cccbb575e6f5d02508",
           "url": "https://qiita.com/sescore/items/70cccbb575e6f5d02508",
-          "views": 568,
+          "views": 569,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2245,7 +2245,7 @@
         "qiita": {
           "id": "677c914edf350cf34c98",
           "url": "https://qiita.com/sescore/items/677c914edf350cf34c98",
-          "views": 580,
+          "views": 581,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2269,7 +2269,7 @@
         "qiita": {
           "id": "10e46a658e28d332c0ca",
           "url": "https://qiita.com/sescore/items/10e46a658e28d332c0ca",
-          "views": 857,
+          "views": 859,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2293,7 +2293,7 @@
         "qiita": {
           "id": "1e035c8609da4bc0335c",
           "url": "https://qiita.com/sescore/items/1e035c8609da4bc0335c",
-          "views": 842,
+          "views": 843,
           "likes": 2,
           "stocks": 1,
           "tags": [
@@ -2317,7 +2317,7 @@
         "qiita": {
           "id": "640fb130eb781419a63f",
           "url": "https://qiita.com/sescore/items/640fb130eb781419a63f",
-          "views": 563,
+          "views": 566,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2341,7 +2341,7 @@
         "qiita": {
           "id": "93fec44ce16c433ad726",
           "url": "https://qiita.com/sescore/items/93fec44ce16c433ad726",
-          "views": 795,
+          "views": 800,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2365,7 +2365,7 @@
         "qiita": {
           "id": "b21bc67c1c26ecd92167",
           "url": "https://qiita.com/sescore/items/b21bc67c1c26ecd92167",
-          "views": 518,
+          "views": 519,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2389,7 +2389,7 @@
         "qiita": {
           "id": "ccc6252c25f71049593e",
           "url": "https://qiita.com/sescore/items/ccc6252c25f71049593e",
-          "views": 636,
+          "views": 647,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2413,7 +2413,7 @@
         "qiita": {
           "id": "80adc15d3f9e3da8ce30",
           "url": "https://qiita.com/sescore/items/80adc15d3f9e3da8ce30",
-          "views": 721,
+          "views": 726,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -2437,7 +2437,7 @@
         "qiita": {
           "id": "8bafdfa611a93bb18986",
           "url": "https://qiita.com/sescore/items/8bafdfa611a93bb18986",
-          "views": 593,
+          "views": 602,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -2461,7 +2461,7 @@
         "qiita": {
           "id": "50b7142e5164d9f7f7bf",
           "url": "https://qiita.com/sescore/items/50b7142e5164d9f7f7bf",
-          "views": 718,
+          "views": 731,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2485,7 +2485,7 @@
         "qiita": {
           "id": "6a5d162146a68c69cc46",
           "url": "https://qiita.com/sescore/items/6a5d162146a68c69cc46",
-          "views": 531,
+          "views": 533,
           "likes": 0,
           "stocks": 1,
           "tags": [
@@ -2509,7 +2509,7 @@
         "qiita": {
           "id": "1f5faa0bc45f4cbf5069",
           "url": "https://qiita.com/sescore/items/1f5faa0bc45f4cbf5069",
-          "views": 314,
+          "views": 317,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2533,7 +2533,7 @@
         "qiita": {
           "id": "a920450da0bcf68b34a7",
           "url": "https://qiita.com/sescore/items/a920450da0bcf68b34a7",
-          "views": 541,
+          "views": 557,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -2557,7 +2557,7 @@
         "qiita": {
           "id": "e4cd3cf40fe529cf336b",
           "url": "https://qiita.com/sescore/items/e4cd3cf40fe529cf336b",
-          "views": 693,
+          "views": 697,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2581,7 +2581,7 @@
         "qiita": {
           "id": "b151bb6ecb8170cafffc",
           "url": "https://qiita.com/sescore/items/b151bb6ecb8170cafffc",
-          "views": 384,
+          "views": 393,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2605,7 +2605,7 @@
         "qiita": {
           "id": "1d2743916da65a40d4e3",
           "url": "https://qiita.com/sescore/items/1d2743916da65a40d4e3",
-          "views": 594,
+          "views": 595,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2629,7 +2629,7 @@
         "qiita": {
           "id": "e85eed865d8264f87648",
           "url": "https://qiita.com/sescore/items/e85eed865d8264f87648",
-          "views": 702,
+          "views": 707,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2677,7 +2677,7 @@
         "qiita": {
           "id": "cf57317fffda0ceb88af",
           "url": "https://qiita.com/sescore/items/cf57317fffda0ceb88af",
-          "views": 551,
+          "views": 558,
           "likes": 1,
           "stocks": 1,
           "tags": [
@@ -2701,7 +2701,7 @@
         "qiita": {
           "id": "b6ba418a6573c6c636a3",
           "url": "https://qiita.com/sescore/items/b6ba418a6573c6c636a3",
-          "views": 817,
+          "views": 823,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2725,7 +2725,7 @@
         "qiita": {
           "id": "a1b034368f5bf5fe2247",
           "url": "https://qiita.com/sescore/items/a1b034368f5bf5fe2247",
-          "views": 842,
+          "views": 850,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2749,7 +2749,7 @@
         "qiita": {
           "id": "d29e8ca41ceb207c10ed",
           "url": "https://qiita.com/sescore/items/d29e8ca41ceb207c10ed",
-          "views": 694,
+          "views": 707,
           "likes": 1,
           "stocks": 0,
           "tags": [
@@ -2773,7 +2773,7 @@
         "qiita": {
           "id": "249af2b529c860224156",
           "url": "https://qiita.com/sescore/items/249af2b529c860224156",
-          "views": 120,
+          "views": 123,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2791,7 +2791,7 @@
         "qiita": {
           "id": "fa5a0ca2114f4b690fdc",
           "url": "https://qiita.com/sescore/items/fa5a0ca2114f4b690fdc",
-          "views": 653,
+          "views": 661,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2812,7 +2812,7 @@
         "qiita": {
           "id": "ed8bf8678f65fe62c147",
           "url": "https://qiita.com/sescore/items/ed8bf8678f65fe62c147",
-          "views": 1936,
+          "views": 1946,
           "likes": 0,
           "stocks": 2,
           "tags": [
@@ -2833,7 +2833,7 @@
         "qiita": {
           "id": "dcc33c58461cc092d186",
           "url": "https://qiita.com/sescore/items/dcc33c58461cc092d186",
-          "views": 968,
+          "views": 969,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2853,7 +2853,7 @@
         "qiita": {
           "id": "2abaa05d0dff0bbc3f56",
           "url": "https://qiita.com/sescore/items/2abaa05d0dff0bbc3f56",
-          "views": 2233,
+          "views": 2249,
           "likes": 0,
           "stocks": 0,
           "tags": [
@@ -2866,17 +2866,17 @@
   ],
   "summary": {
     "recordCount": 124,
-    "totalViews": 120124,
+    "totalViews": 121052,
     "totalLikes": null,
     "totalStocks": 74,
-    "avgViewsPerArticle": 985,
+    "avgViewsPerArticle": 992,
     "avgLikesPerArticle": null,
     "topPerformer": null,
     "platforms": {
       "qiita": {
         "articles": 122,
         "measuredViews": 122,
-        "views": 120124,
+        "views": 121052,
         "likes": 64,
         "stocks": 74
       },
