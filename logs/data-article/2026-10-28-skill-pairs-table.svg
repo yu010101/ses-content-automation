@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1184" viewBox="0 0 1200 1184" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="1184" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">スキルの組み合わせ別の件数と単価の上限（月額・件数の多い順）</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">件数の多い15組 / 点=中央値 / 線=真ん中の半分</text>
+<text x="32" y="179" font-size="18" fill="#666666" text-anchor="start" font-weight="700">組み合わせ</text>
+<text x="530.4954128440368" y="179" font-size="18" fill="#666666" text-anchor="start" font-weight="700">件数</text>
+<text x="657.3211009174313" y="179" font-size="18" fill="#666666" text-anchor="start" font-weight="700">中央値</text>
+<text x="858.1284403669725" y="179" font-size="18" fill="#666666" text-anchor="start" font-weight="700">真ん中の半分</text>
+<line x1="24" y1="194" x2="1176" y2="194" stroke="#111111" stroke-width="2"/>
+<text x="32" y="223" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Ruby + Ruby on Rails</text>
+<text x="530.4954128440368" y="223" font-size="20" fill="#111111" text-anchor="start" font-weight="400">57件</text>
+<text x="657.3211009174313" y="223" font-size="20" fill="#111111" text-anchor="start" font-weight="400">90万円</text>
+<text x="858.1284403669725" y="223" font-size="20" fill="#111111" text-anchor="start" font-weight="700">75万円〜100万円</text>
+<line x1="24" y1="238" x2="1176" y2="238" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="267" font-size="20" fill="#111111" text-anchor="start" font-weight="700">React + TypeScript</text>
+<text x="530.4954128440368" y="267" font-size="20" fill="#111111" text-anchor="start" font-weight="400">52件</text>
+<text x="657.3211009174313" y="267" font-size="20" fill="#111111" text-anchor="start" font-weight="400">85万円</text>
+<text x="858.1284403669725" y="267" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜100万円</text>
+<line x1="24" y1="282" x2="1176" y2="282" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="311" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Laravel + PHP</text>
+<text x="530.4954128440368" y="311" font-size="20" fill="#111111" text-anchor="start" font-weight="400">36件</text>
+<text x="657.3211009174313" y="311" font-size="20" fill="#111111" text-anchor="start" font-weight="400">75万円</text>
+<text x="858.1284403669725" y="311" font-size="20" fill="#111111" text-anchor="start" font-weight="700">60万円〜80万円</text>
+<line x1="24" y1="326" x2="1176" y2="326" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="355" font-size="20" fill="#111111" text-anchor="start" font-weight="700">JavaScript + TypeScript</text>
+<text x="530.4954128440368" y="355" font-size="20" fill="#111111" text-anchor="start" font-weight="400">26件</text>
+<text x="657.3211009174313" y="355" font-size="20" fill="#111111" text-anchor="start" font-weight="400">82.5万円</text>
+<text x="858.1284403669725" y="355" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜100万円</text>
+<line x1="24" y1="370" x2="1176" y2="370" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="399" font-size="20" fill="#111111" text-anchor="start" font-weight="700">CSS + HTML</text>
+<text x="530.4954128440368" y="399" font-size="20" fill="#111111" text-anchor="start" font-weight="400">24件</text>
+<text x="657.3211009174313" y="399" font-size="20" fill="#111111" text-anchor="start" font-weight="400">72.5万円</text>
+<text x="858.1284403669725" y="399" font-size="20" fill="#111111" text-anchor="start" font-weight="700">60万円〜80万円</text>
+<line x1="24" y1="414" x2="1176" y2="414" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="443" font-size="20" fill="#111111" text-anchor="start" font-weight="700">HTML + JavaScript</text>
+<text x="530.4954128440368" y="443" font-size="20" fill="#111111" text-anchor="start" font-weight="400">21件</text>
+<text x="657.3211009174313" y="443" font-size="20" fill="#111111" text-anchor="start" font-weight="400">65万円</text>
+<text x="858.1284403669725" y="443" font-size="20" fill="#111111" text-anchor="start" font-weight="700">55万円〜80万円</text>
+<line x1="24" y1="458" x2="1176" y2="458" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="487" font-size="20" fill="#111111" text-anchor="start" font-weight="700">JavaScript + React</text>
+<text x="530.4954128440368" y="487" font-size="20" fill="#111111" text-anchor="start" font-weight="400">21件</text>
+<text x="657.3211009174313" y="487" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="487" font-size="20" fill="#111111" text-anchor="start" font-weight="700">75万円〜90万円</text>
+<line x1="24" y1="502" x2="1176" y2="502" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="531" font-size="20" fill="#111111" text-anchor="start" font-weight="700">CSS + JavaScript</text>
+<text x="530.4954128440368" y="531" font-size="20" fill="#111111" text-anchor="start" font-weight="400">20件</text>
+<text x="657.3211009174313" y="531" font-size="20" fill="#111111" text-anchor="start" font-weight="400">70万円</text>
+<text x="858.1284403669725" y="531" font-size="20" fill="#111111" text-anchor="start" font-weight="700">60万円〜80万円</text>
+<line x1="24" y1="546" x2="1176" y2="546" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="575" font-size="20" fill="#111111" text-anchor="start" font-weight="700">JavaScript + PHP</text>
+<text x="530.4954128440368" y="575" font-size="20" fill="#111111" text-anchor="start" font-weight="400">20件</text>
+<text x="657.3211009174313" y="575" font-size="20" fill="#111111" text-anchor="start" font-weight="400">85万円</text>
+<text x="858.1284403669725" y="575" font-size="20" fill="#111111" text-anchor="start" font-weight="700">65万円〜100万円</text>
+<line x1="24" y1="590" x2="1176" y2="590" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="619" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Java + JavaScript</text>
+<text x="530.4954128440368" y="619" font-size="20" fill="#111111" text-anchor="start" font-weight="400">18件</text>
+<text x="657.3211009174313" y="619" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="619" font-size="20" fill="#111111" text-anchor="start" font-weight="700">65万円〜80万円</text>
+<line x1="24" y1="634" x2="1176" y2="634" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="663" font-size="20" fill="#111111" text-anchor="start" font-weight="700">JavaScript + Vue</text>
+<text x="530.4954128440368" y="663" font-size="20" fill="#111111" text-anchor="start" font-weight="400">17件</text>
+<text x="657.3211009174313" y="663" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="663" font-size="20" fill="#111111" text-anchor="start" font-weight="700">75万円〜100万円</text>
+<line x1="24" y1="678" x2="1176" y2="678" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="707" font-size="20" fill="#111111" text-anchor="start" font-weight="700">React + Vue</text>
+<text x="530.4954128440368" y="707" font-size="20" fill="#111111" text-anchor="start" font-weight="400">17件</text>
+<text x="657.3211009174313" y="707" font-size="20" fill="#111111" text-anchor="start" font-weight="400">75万円</text>
+<text x="858.1284403669725" y="707" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜90万円</text>
+<line x1="24" y1="722" x2="1176" y2="722" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="751" font-size="20" fill="#111111" text-anchor="start" font-weight="700">TypeScript + Vue</text>
+<text x="530.4954128440368" y="751" font-size="20" fill="#111111" text-anchor="start" font-weight="400">16件</text>
+<text x="657.3211009174313" y="751" font-size="20" fill="#111111" text-anchor="start" font-weight="400">95万円</text>
+<text x="858.1284403669725" y="751" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜100万円</text>
+<line x1="24" y1="766" x2="1176" y2="766" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="795" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Java + Spring</text>
+<text x="530.4954128440368" y="795" font-size="20" fill="#111111" text-anchor="start" font-weight="400">15件</text>
+<text x="657.3211009174313" y="795" font-size="20" fill="#111111" text-anchor="start" font-weight="400">65万円</text>
+<text x="858.1284403669725" y="795" font-size="20" fill="#111111" text-anchor="start" font-weight="700">65万円〜80万円</text>
+<line x1="24" y1="810" x2="1176" y2="810" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="839" font-size="20" fill="#111111" text-anchor="start" font-weight="700">AWS + GCP</text>
+<text x="530.4954128440368" y="839" font-size="20" fill="#111111" text-anchor="start" font-weight="400">14件</text>
+<text x="657.3211009174313" y="839" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="839" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜90万円</text>
+<line x1="24" y1="854" x2="1176" y2="854" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="883" font-size="20" fill="#111111" text-anchor="start" font-weight="700">AWS + PHP</text>
+<text x="530.4954128440368" y="883" font-size="20" fill="#111111" text-anchor="start" font-weight="400">13件</text>
+<text x="657.3211009174313" y="883" font-size="20" fill="#111111" text-anchor="start" font-weight="400">85万円</text>
+<text x="858.1284403669725" y="883" font-size="20" fill="#111111" text-anchor="start" font-weight="700">65万円〜110万円</text>
+<line x1="24" y1="898" x2="1176" y2="898" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="927" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Java + PHP</text>
+<text x="530.4954128440368" y="927" font-size="20" fill="#111111" text-anchor="start" font-weight="400">13件</text>
+<text x="657.3211009174313" y="927" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="927" font-size="20" fill="#111111" text-anchor="start" font-weight="700">80万円〜95万円</text>
+<line x1="24" y1="942" x2="1176" y2="942" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="971" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Java + Python</text>
+<text x="530.4954128440368" y="971" font-size="20" fill="#111111" text-anchor="start" font-weight="400">13件</text>
+<text x="657.3211009174313" y="971" font-size="20" fill="#111111" text-anchor="start" font-weight="400">80万円</text>
+<text x="858.1284403669725" y="971" font-size="20" fill="#111111" text-anchor="start" font-weight="700">70万円〜85万円</text>
+<line x1="24" y1="986" x2="1176" y2="986" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="1015" font-size="20" fill="#111111" text-anchor="start" font-weight="700">AWS + TypeScript</text>
+<text x="530.4954128440368" y="1015" font-size="20" fill="#111111" text-anchor="start" font-weight="400">12件</text>
+<text x="657.3211009174313" y="1015" font-size="20" fill="#111111" text-anchor="start" font-weight="400">90万円</text>
+<text x="858.1284403669725" y="1015" font-size="20" fill="#111111" text-anchor="start" font-weight="700">75万円〜100万円</text>
+<line x1="24" y1="1030" x2="1176" y2="1030" stroke="#d9d9d9" stroke-width="1"/>
+<text x="32" y="1059" font-size="20" fill="#111111" text-anchor="start" font-weight="700">Java + TypeScript</text>
+<text x="530.4954128440368" y="1059" font-size="20" fill="#111111" text-anchor="start" font-weight="400">12件</text>
+<text x="657.3211009174313" y="1059" font-size="20" fill="#111111" text-anchor="start" font-weight="400">65万円</text>
+<text x="858.1284403669725" y="1059" font-size="20" fill="#111111" text-anchor="start" font-weight="700">62万円〜80万円</text>
+<line x1="24" y1="1074" x2="1176" y2="1074" stroke="#d9d9d9" stroke-width="1"/>
+<line x1="24" y1="1134" x2="1176" y2="1134" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1164" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

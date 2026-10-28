@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="480" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">題名の役割名別 単価の上限（月額）</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">点=中央値 / 線=真ん中の半分</text>
+<line x1="300" y1="140" x2="300" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="300" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">60万</text><line x1="411.42857142857144" y1="140" x2="411.42857142857144" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="411.42857142857144" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">70万</text><line x1="522.8571428571429" y1="140" x2="522.8571428571429" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="522.8571428571429" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">80万</text><line x1="634.2857142857142" y1="140" x2="634.2857142857142" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="634.2857142857142" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">90万</text><line x1="745.7142857142857" y1="140" x2="745.7142857142857" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="745.7142857142857" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">100万</text><line x1="857.1428571428571" y1="140" x2="857.1428571428571" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="857.1428571428571" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">110万</text><line x1="968.5714285714286" y1="140" x2="968.5714285714286" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="968.5714285714286" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">120万</text><line x1="1080" y1="140" x2="1080" y2="370" stroke="#d9d9d9" stroke-width="1"/><text x="1080" y="398" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">130万</text>
+<text x="280" y="179" font-size="20" fill="#111111" text-anchor="end" font-weight="600">PMO</text>
+<line x1="522.8571428571429" y1="172" x2="912.8571428571429" y2="172" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="578.5714285714286" cy="172" r="9" fill="#c8102e"/>
+<text x="1096" y="179" font-size="18" fill="#111111" text-anchor="start" font-weight="600">85万円</text>
+<text x="24" y="179" font-size="16" fill="#666666" text-anchor="start" font-weight="400">11件</text>
+<text x="280" y="223" font-size="20" fill="#111111" text-anchor="end" font-weight="600">PM</text>
+<line x1="522.8571428571429" y1="216" x2="1024.2857142857142" y2="216" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="690" cy="216" r="9" fill="#c8102e"/>
+<text x="1096" y="223" font-size="18" fill="#111111" text-anchor="start" font-weight="600">95万円</text>
+<text x="24" y="223" font-size="16" fill="#666666" text-anchor="start" font-weight="400">28件</text>
+<text x="280" y="267" font-size="20" fill="#111111" text-anchor="end" font-weight="600">PL・リーダー</text>
+<line x1="411.42857142857144" y1="260" x2="578.5714285714286" y2="260" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="522.8571428571429" cy="260" r="9" fill="#c8102e"/>
+<text x="1096" y="267" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="267" font-size="16" fill="#666666" text-anchor="start" font-weight="400">12件</text>
+<text x="280" y="311" font-size="20" fill="#111111" text-anchor="end" font-weight="600">コンサルタント</text>
+<line x1="745.7142857142857" y1="304" x2="857.1428571428571" y2="304" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="790.2857142857142" cy="304" r="9" fill="#c8102e"/>
+<text x="1096" y="311" font-size="18" fill="#111111" text-anchor="start" font-weight="600">104万円</text>
+<text x="24" y="311" font-size="16" fill="#666666" text-anchor="start" font-weight="400">5件</text>
+<text x="280" y="355" font-size="20" fill="#111111" text-anchor="end" font-weight="600">役割名なし</text>
+<line x1="355.7142857142857" y1="348" x2="634.2857142857142" y2="348" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="522.8571428571429" cy="348" r="9" fill="#c8102e"/>
+<text x="1096" y="355" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="355" font-size="16" fill="#666666" text-anchor="start" font-weight="400">724件</text>
+<line x1="24" y1="430" x2="1176" y2="430" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="460" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="470" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">集計の流れ</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">2026-10-28 に公開APIから取得した集計値</text>
+<rect x="24" y="160" width="246" height="180" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="44" y="194" font-size="18" fill="#666666" text-anchor="start" font-weight="700">1</text>
+<text x="44" y="252" font-size="44" fill="#111111" text-anchor="start" font-weight="800">780件</text>
+<text x="44" y="292" font-size="18" fill="#111111" text-anchor="start" font-weight="400">掲載中・募集中の案件</text>
+<line x1="280" y1="250" x2="312" y2="250" stroke="#111111" stroke-width="2"/><polygon points="312,243 324,250 312,257" fill="#111111"/>
+<rect x="326" y="160" width="246" height="180" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="346" y="194" font-size="18" fill="#666666" text-anchor="start" font-weight="700">2</text>
+<text x="346" y="252" font-size="44" fill="#111111" text-anchor="start" font-weight="800">759件</text>
+<text x="346" y="292" font-size="18" fill="#111111" text-anchor="start" font-weight="400">うち単価の上限あり</text>
+<line x1="582" y1="250" x2="614" y2="250" stroke="#111111" stroke-width="2"/><polygon points="614,243 626,250 614,257" fill="#111111"/>
+<rect x="628" y="160" width="246" height="180" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="648" y="194" font-size="18" fill="#666666" text-anchor="start" font-weight="700">3</text>
+<text x="648" y="252" font-size="44" fill="#111111" text-anchor="start" font-weight="800">20行</text>
+<text x="648" y="292" font-size="18" fill="#111111" text-anchor="start" font-weight="400">スキルごとにリモート可と</text>
+<text x="648" y="318" font-size="18" fill="#111111" text-anchor="start" font-weight="400">出社に分ける</text>
+<line x1="884" y1="250" x2="916" y2="250" stroke="#111111" stroke-width="2"/><polygon points="916,243 928,250 916,257" fill="#111111"/>
+<rect x="930" y="160" width="246" height="180" fill="#ffffff" stroke="#c8102e" stroke-width="3"/>
+<text x="950" y="194" font-size="18" fill="#666666" text-anchor="start" font-weight="700">4</text>
+<text x="950" y="252" font-size="44" fill="#c8102e" text-anchor="start" font-weight="800">中央値</text>
+<text x="950" y="292" font-size="18" fill="#111111" text-anchor="start" font-weight="400">中央値の差を見る</text>
+<line x1="24" y1="420" x2="1176" y2="420" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="450" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

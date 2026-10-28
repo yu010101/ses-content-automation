@@ -31,7 +31,7 @@ export class NotePublisher implements IPublisher {
     const htmlBody = markdownToNoteHtml(body);
     const hashtags = toHashtags(article.keywords);
     const slug = `note_${Date.now()}`;
-    const eyecatchPath = renderEyecatch(article.eyecatch?.main ? article.eyecatch : copyFromTitle(title),
+    const eyecatchPath = article.eyecatchPath ?? renderEyecatch(article.eyecatch?.main ? article.eyecatch : copyFromTitle(title),
       join(process.cwd(), "logs", "eyecatch"), slug);
     console.log(`[Note] Eyecatch: ${eyecatchPath ?? "(なし)"}`);
 

@@ -3198,6 +3198,28 @@
           "error": "401 Unauthorized: Check X API credentials (consumer key/secret, access token/secret). Keys may be expired or revoked."
         }
       ]
+    },
+    {
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "date": "2026-10-28T05:13:14.993Z",
+      "articleId": "03dd9e8b41d48df6f730",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n3a998e014475"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/03dd9e8b41d48df6f730"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261028-780"
+        }
+      ]
     }
   ]
 }

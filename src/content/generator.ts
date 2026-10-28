@@ -29,6 +29,8 @@ export interface GeneratedArticle {
   articleType: string;
   /** アイキャッチ用の短い3行(lead=前置き / main=主題 / tail=補足)。無ければ題名から作る */
   eyecatch?: { lead?: string; main: string; tail?: string };
+  /** 2026-10-28: 集計記事は図をそのままアイキャッチにする（note） */
+  eyecatchPath?: string;
 }
 
 /** 記事JSONを読む。読めなければ null。コードフェンス除去 → そのまま → 最初の{〜最後の} の順に試す。 */

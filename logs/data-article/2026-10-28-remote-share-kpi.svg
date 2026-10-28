@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="490" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">要点</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">スキル別 働き方の内訳</text>
+<text x="24" y="180" font-size="20" fill="#666666" text-anchor="start" font-weight="600">フルリモートか一部リモートが最も多い</text>
+<text x="24" y="270" font-size="68" fill="#c8102e" text-anchor="start" font-weight="800">82%</text>
+<text x="24" y="320" font-size="19" fill="#111111" text-anchor="start" font-weight="400">PM（50件）</text>
+<line x1="408" y1="150" x2="408" y2="370" stroke="#d9d9d9" stroke-width="1"/>
+<text x="436" y="180" font-size="20" fill="#666666" text-anchor="start" font-weight="600">フルリモートか一部リモートが最も少ない</text>
+<text x="436" y="270" font-size="68" fill="#111111" text-anchor="start" font-weight="800">56%</text>
+<text x="436" y="320" font-size="19" fill="#111111" text-anchor="start" font-weight="400">JavaScript（95件）</text>
+<line x1="792" y1="150" x2="792" y2="370" stroke="#d9d9d9" stroke-width="1"/>
+<text x="820" y="180" font-size="20" fill="#666666" text-anchor="start" font-weight="600">フルリモートだけで最も多い</text>
+<text x="820" y="270" font-size="68" fill="#111111" text-anchor="start" font-weight="800">35%</text>
+<text x="820" y="320" font-size="19" fill="#111111" text-anchor="start" font-weight="400">React（77件）</text>
+<line x1="24" y1="440" x2="1176" y2="440" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="470" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

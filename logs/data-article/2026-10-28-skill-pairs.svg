@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="920" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">よく一緒に求められる組み合わせ 単価の上限（月額）</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">件数の多い15組 / 点=中央値 / 線=真ん中の半分</text>
+<line x1="300" y1="140" x2="300" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="300" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">50万</text><line x1="456" y1="140" x2="456" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="456" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">60万</text><line x1="612" y1="140" x2="612" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="612" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">70万</text><line x1="768" y1="140" x2="768" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="768" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">80万</text><line x1="924" y1="140" x2="924" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="924" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">90万</text><line x1="1080" y1="140" x2="1080" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="1080" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">100万</text>
+<text x="280" y="179" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Ruby + Ruby on Rails</text>
+<line x1="690" y1="172" x2="1080" y2="172" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="924" cy="172" r="9" fill="#c8102e"/>
+<text x="1096" y="179" font-size="18" fill="#111111" text-anchor="start" font-weight="600">90万円</text>
+<text x="24" y="179" font-size="16" fill="#666666" text-anchor="start" font-weight="400">57件</text>
+<text x="280" y="223" font-size="20" fill="#111111" text-anchor="end" font-weight="600">React + TypeScript</text>
+<line x1="612" y1="216" x2="1080" y2="216" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="846" cy="216" r="9" fill="#c8102e"/>
+<text x="1096" y="223" font-size="18" fill="#111111" text-anchor="start" font-weight="600">85万円</text>
+<text x="24" y="223" font-size="16" fill="#666666" text-anchor="start" font-weight="400">52件</text>
+<text x="280" y="267" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Laravel + PHP</text>
+<line x1="456" y1="260" x2="768" y2="260" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="690" cy="260" r="9" fill="#c8102e"/>
+<text x="1096" y="267" font-size="18" fill="#111111" text-anchor="start" font-weight="600">75万円</text>
+<text x="24" y="267" font-size="16" fill="#666666" text-anchor="start" font-weight="400">36件</text>
+<text x="280" y="311" font-size="20" fill="#111111" text-anchor="end" font-weight="600">JavaScript + TypeScript</text>
+<line x1="612" y1="304" x2="1080" y2="304" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="807" cy="304" r="9" fill="#c8102e"/>
+<text x="1096" y="311" font-size="18" fill="#111111" text-anchor="start" font-weight="600">82.5万円</text>
+<text x="24" y="311" font-size="16" fill="#666666" text-anchor="start" font-weight="400">26件</text>
+<text x="280" y="355" font-size="20" fill="#111111" text-anchor="end" font-weight="600">CSS + HTML</text>
+<line x1="456" y1="348" x2="768" y2="348" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="651" cy="348" r="9" fill="#c8102e"/>
+<text x="1096" y="355" font-size="18" fill="#111111" text-anchor="start" font-weight="600">72.5万円</text>
+<text x="24" y="355" font-size="16" fill="#666666" text-anchor="start" font-weight="400">24件</text>
+<text x="280" y="399" font-size="20" fill="#111111" text-anchor="end" font-weight="600">HTML + JavaScript</text>
+<line x1="378" y1="392" x2="768" y2="392" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="534" cy="392" r="9" fill="#c8102e"/>
+<text x="1096" y="399" font-size="18" fill="#111111" text-anchor="start" font-weight="600">65万円</text>
+<text x="24" y="399" font-size="16" fill="#666666" text-anchor="start" font-weight="400">21件</text>
+<text x="280" y="443" font-size="20" fill="#111111" text-anchor="end" font-weight="600">JavaScript + React</text>
+<line x1="690" y1="436" x2="924" y2="436" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="768" cy="436" r="9" fill="#c8102e"/>
+<text x="1096" y="443" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="443" font-size="16" fill="#666666" text-anchor="start" font-weight="400">21件</text>
+<text x="280" y="487" font-size="20" fill="#111111" text-anchor="end" font-weight="600">CSS + JavaScript</text>
+<line x1="456" y1="480" x2="768" y2="480" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="612" cy="480" r="9" fill="#c8102e"/>
+<text x="1096" y="487" font-size="18" fill="#111111" text-anchor="start" font-weight="600">70万円</text>
+<text x="24" y="487" font-size="16" fill="#666666" text-anchor="start" font-weight="400">20件</text>
+<text x="280" y="531" font-size="20" fill="#111111" text-anchor="end" font-weight="600">JavaScript + PHP</text>
+<line x1="534" y1="524" x2="1080" y2="524" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="846" cy="524" r="9" fill="#c8102e"/>
+<text x="1096" y="531" font-size="18" fill="#111111" text-anchor="start" font-weight="600">85万円</text>
+<text x="24" y="531" font-size="16" fill="#666666" text-anchor="start" font-weight="400">20件</text>
+<text x="280" y="575" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Java + JavaScript</text>
+<line x1="534" y1="568" x2="768" y2="568" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="768" cy="568" r="9" fill="#c8102e"/>
+<text x="1096" y="575" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="575" font-size="16" fill="#666666" text-anchor="start" font-weight="400">18件</text>
+<text x="280" y="619" font-size="20" fill="#111111" text-anchor="end" font-weight="600">JavaScript + Vue</text>
+<line x1="690" y1="612" x2="1080" y2="612" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="768" cy="612" r="9" fill="#c8102e"/>
+<text x="1096" y="619" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="619" font-size="16" fill="#666666" text-anchor="start" font-weight="400">17件</text>
+<text x="280" y="663" font-size="20" fill="#111111" text-anchor="end" font-weight="600">React + Vue</text>
+<line x1="612" y1="656" x2="924" y2="656" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="690" cy="656" r="9" fill="#c8102e"/>
+<text x="1096" y="663" font-size="18" fill="#111111" text-anchor="start" font-weight="600">75万円</text>
+<text x="24" y="663" font-size="16" fill="#666666" text-anchor="start" font-weight="400">17件</text>
+<text x="280" y="707" font-size="20" fill="#111111" text-anchor="end" font-weight="600">TypeScript + Vue</text>
+<line x1="612" y1="700" x2="1080" y2="700" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="1002" cy="700" r="9" fill="#c8102e"/>
+<text x="1096" y="707" font-size="18" fill="#111111" text-anchor="start" font-weight="600">95万円</text>
+<text x="24" y="707" font-size="16" fill="#666666" text-anchor="start" font-weight="400">16件</text>
+<text x="280" y="751" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Java + Spring</text>
+<line x1="534" y1="744" x2="768" y2="744" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="534" cy="744" r="9" fill="#c8102e"/>
+<text x="1096" y="751" font-size="18" fill="#111111" text-anchor="start" font-weight="600">65万円</text>
+<text x="24" y="751" font-size="16" fill="#666666" text-anchor="start" font-weight="400">15件</text>
+<text x="280" y="795" font-size="20" fill="#111111" text-anchor="end" font-weight="600">AWS + GCP</text>
+<line x1="612" y1="788" x2="924" y2="788" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="768" cy="788" r="9" fill="#c8102e"/>
+<text x="1096" y="795" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="24" y="795" font-size="16" fill="#666666" text-anchor="start" font-weight="400">14件</text>
+<line x1="24" y1="870" x2="1176" y2="870" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="900" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

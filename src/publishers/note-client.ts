@@ -1,6 +1,7 @@
 import { chromium, type Browser, type BrowserContext } from "playwright";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
-import { join } from "node:path";
+import { join, basename } from "node:path";
+import { randomUUID } from "node:crypto";
 
 const NOTE_API = "https://note.com/api";
 const NOTE_EDITOR = "https://editor.note.com";
@@ -377,6 +378,23 @@ export class NoteClient {
     return j?.data?.url ?? "";
   }
 
+  /** 本文の画像をアップロードして公開URLを返す。2026-10-28 に非公開の下書きで、保存した本文に figure が残ることを確認 */
+  async uploadBodyImage(pngPath: string): Promise<string> {
+    const headers = await this.apiHeaders();
+    delete headers["Content-Type"];
+    const fd = new FormData();
+    fd.append("filename", basename(pngPath));
+    const res = await fetch(`${NOTE_API}/v3/images/upload/presigned_post`, { method: "POST", headers, body: fd });
+    if (!res.ok) throw new Error(`presigned_post ${res.status}`);
+    const pre = ((await res.json()) as { data: { url: string; action: string; post: Record<string, string> } }).data;
+    const s3 = new FormData();
+    for (const [k, v] of Object.entries(pre.post)) s3.append(k, String(v));
+    s3.append("file", new Blob([readFileSync(pngPath)], { type: "image/png" }), basename(pngPath));
+    const up = await fetch(pre.action, { method: "POST", body: s3 });
+    if (!up.ok) throw new Error(`image upload ${up.status}`);
+    return pre.url;
+  }
+
   // --- Publish via Playwright Editor ---
 
   async publishViaEditor(
@@ -601,6 +619,18 @@ export class NoteClient {
     const draft = await this.createDraft();
     console.log(`[Note] Draft created: id=${draft.id}, key=${draft.key}`);
 
+    // 本文の画像がローカルのパスなら、アップロードしてURLに差し替える。失敗した画像は図ごと外す
+    for (const m of [...htmlBody.matchAll(/<figure[^>]*><img src="(\/[^"]+\.png)"[^>]*>(?:<figcaption>[^<]*<\/figcaption>)?<\/figure>/g)]) {
+      try {
+        const url = await this.uploadBodyImage(m[1]);
+        htmlBody = htmlBody.replace(m[1], url);
+        console.log(`[Note] Body image: ${url}`);
+      } catch (e) {
+        htmlBody = htmlBody.replace(m[0], "");
+        console.error(`[Note] Body image failed (図を外して続行): ${e instanceof Error ? e.message : String(e)}`);
+      }
+    }
+
     console.log("[Note] Saving content...");
     await this.saveDraftContent(draft.id, title, htmlBody, hashtags);
     console.log("[Note] Content saved");
@@ -628,6 +658,7 @@ export function markdownToNoteHtml(markdown: string): string {
   const lines = markdown.split("\n");
   const htmlParts: string[] = [];
   let inList = false;
+  let inQuote = false;
 
   for (const line of lines) {
     const trimmed = line.trim();
@@ -637,8 +668,30 @@ export function markdownToNoteHtml(markdown: string): string {
       htmlParts.push("</ul>");
       inList = false;
     }
+    if (inQuote && !trimmed.startsWith("> ")) {
+      htmlParts.push("</blockquote>");
+      inQuote = false;
+    }
 
     if (!trimmed) {
+      continue;
+    }
+
+    // 引用（連続する行を1つの枠にする）
+    if (trimmed.startsWith("> ")) {
+      if (!inQuote) {
+        htmlParts.push("<blockquote>");
+        inQuote = true;
+      }
+      htmlParts.push(`<p>${inlineFormat(trimmed.slice(2))}</p>`);
+      continue;
+    }
+
+    // 画像だけの行は図にする（キャプションは alt の文字）
+    const img = trimmed.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
+    if (img) {
+      const id = randomUUID();
+      htmlParts.push(`<figure name="${id}" id="${id}"><img src="${escapeHtml(img[2])}" alt=""><figcaption>${escapeHtml(img[1])}</figcaption></figure>`);
       continue;
     }
 
@@ -672,6 +725,7 @@ export function markdownToNoteHtml(markdown: string): string {
   }
 
   if (inList) htmlParts.push("</ul>");
+  if (inQuote) htmlParts.push("</blockquote>");
 
   return htmlParts.join("\n");
 }

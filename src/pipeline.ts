@@ -130,7 +130,7 @@ function checkDiversity(title: string): DiversityCheck {
   }
 }
 
-function recordPublished(title: string, results: PublishResult[]) {
+export function recordPublished(title: string, results: PublishResult[]) {
   const filePath = join(process.cwd(), "data/published.json");
   let data: PublishedRecord;
   try {

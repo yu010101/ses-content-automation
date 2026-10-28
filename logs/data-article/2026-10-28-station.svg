@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="920" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">勤務地の駅別 案件数</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">上位15駅</text>
+<text x="280" y="179" font-size="20" fill="#111111" text-anchor="end" font-weight="600">渋谷駅</text>
+<rect x="300" y="159" width="780" height="26" fill="#c8102e"/>
+<text x="1090" y="179" font-size="18" fill="#111111" text-anchor="start" font-weight="600">82件</text>
+<text x="280" y="223" font-size="20" fill="#111111" text-anchor="end" font-weight="600">目黒駅</text>
+<rect x="300" y="203" width="199.7560975609756" height="26" fill="#bdbdbd"/>
+<text x="509.7560975609756" y="223" font-size="18" fill="#111111" text-anchor="start" font-weight="600">21件</text>
+<text x="280" y="267" font-size="20" fill="#111111" text-anchor="end" font-weight="600">六本木一丁目駅</text>
+<rect x="300" y="247" width="199.7560975609756" height="26" fill="#bdbdbd"/>
+<text x="509.7560975609756" y="267" font-size="18" fill="#111111" text-anchor="start" font-weight="600">21件</text>
+<text x="280" y="311" font-size="20" fill="#111111" text-anchor="end" font-weight="600">浜松町駅</text>
+<rect x="300" y="291" width="152.1951219512195" height="26" fill="#bdbdbd"/>
+<text x="462.1951219512195" y="311" font-size="18" fill="#111111" text-anchor="start" font-weight="600">16件</text>
+<text x="280" y="355" font-size="20" fill="#111111" text-anchor="end" font-weight="600">西新宿駅</text>
+<rect x="300" y="335" width="142.6829268292683" height="26" fill="#bdbdbd"/>
+<text x="452.6829268292683" y="355" font-size="18" fill="#111111" text-anchor="start" font-weight="600">15件</text>
+<text x="280" y="399" font-size="20" fill="#111111" text-anchor="end" font-weight="600">東京駅</text>
+<rect x="300" y="379" width="123.65853658536585" height="26" fill="#bdbdbd"/>
+<text x="433.6585365853658" y="399" font-size="18" fill="#111111" text-anchor="start" font-weight="600">13件</text>
+<text x="280" y="443" font-size="20" fill="#111111" text-anchor="end" font-weight="600">六本木駅</text>
+<rect x="300" y="423" width="123.65853658536585" height="26" fill="#bdbdbd"/>
+<text x="433.6585365853658" y="443" font-size="18" fill="#111111" text-anchor="start" font-weight="600">13件</text>
+<text x="280" y="487" font-size="20" fill="#111111" text-anchor="end" font-weight="600">恵比寿駅</text>
+<rect x="300" y="467" width="104.63414634146342" height="26" fill="#bdbdbd"/>
+<text x="414.6341463414634" y="487" font-size="18" fill="#111111" text-anchor="start" font-weight="600">11件</text>
+<text x="280" y="531" font-size="20" fill="#111111" text-anchor="end" font-weight="600">赤羽橋駅</text>
+<rect x="300" y="511" width="104.63414634146342" height="26" fill="#bdbdbd"/>
+<text x="414.6341463414634" y="531" font-size="18" fill="#111111" text-anchor="start" font-weight="600">11件</text>
+<text x="280" y="575" font-size="20" fill="#111111" text-anchor="end" font-weight="600">市ヶ谷駅</text>
+<rect x="300" y="555" width="95.1219512195122" height="26" fill="#bdbdbd"/>
+<text x="405.1219512195122" y="575" font-size="18" fill="#111111" text-anchor="start" font-weight="600">10件</text>
+<text x="280" y="619" font-size="20" fill="#111111" text-anchor="end" font-weight="600">新宿駅</text>
+<rect x="300" y="599" width="95.1219512195122" height="26" fill="#bdbdbd"/>
+<text x="405.1219512195122" y="619" font-size="18" fill="#111111" text-anchor="start" font-weight="600">10件</text>
+<text x="280" y="663" font-size="20" fill="#111111" text-anchor="end" font-weight="600">大崎駅</text>
+<rect x="300" y="643" width="95.1219512195122" height="26" fill="#bdbdbd"/>
+<text x="405.1219512195122" y="663" font-size="18" fill="#111111" text-anchor="start" font-weight="600">10件</text>
+<text x="280" y="707" font-size="20" fill="#111111" text-anchor="end" font-weight="600">品川駅</text>
+<rect x="300" y="687" width="95.1219512195122" height="26" fill="#bdbdbd"/>
+<text x="405.1219512195122" y="707" font-size="18" fill="#111111" text-anchor="start" font-weight="600">10件</text>
+<text x="280" y="751" font-size="20" fill="#111111" text-anchor="end" font-weight="600">虎ノ門駅</text>
+<rect x="300" y="731" width="85.60975609756098" height="26" fill="#bdbdbd"/>
+<text x="395.609756097561" y="751" font-size="18" fill="#111111" text-anchor="start" font-weight="600">9件</text>
+<text x="280" y="795" font-size="20" fill="#111111" text-anchor="end" font-weight="600">田町駅</text>
+<rect x="300" y="775" width="85.60975609756098" height="26" fill="#bdbdbd"/>
+<text x="395.609756097561" y="795" font-size="18" fill="#111111" text-anchor="start" font-weight="600">9件</text>
+<line x1="24" y1="870" x2="1176" y2="870" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="900" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-28時点・780件）</text>
+</svg>

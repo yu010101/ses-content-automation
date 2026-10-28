@@ -17,6 +17,7 @@ const flags = {
   dryRun: args.includes("--dry-run"),
   skipApproval: args.includes("--skip-approval"),
   category: args.find((a) => a.startsWith("--category="))?.split("=")[1],
+  cut: args.find((a) => a.startsWith("--cut="))?.split("=")[1],
 };
 
 // [2026-09-06] 生成の一時停止スイッチ。
@@ -25,7 +26,7 @@ const flags = {
 // 再開: rm ~/ses-content-automation/.STOP-PIPELINE
 // analytics / feedback / report は対象外なので日次の計測は止まらない。
 // --dry-run は公開しないので止めない(中身の確認まで塞ぐと、直したか確かめられない)
-if ((command === "pipeline" || command === "roundup") && !flags.dryRun) {
+if ((command === "pipeline" || command === "roundup" || command === "data-article") && !flags.dryRun) {
   const stopMarker = new URL("../.STOP-PIPELINE", import.meta.url);
   if (existsSync(stopMarker)) {
     console.log(`[STOPPED] .STOP-PIPELINE があるため ${command} は実行しません`);
@@ -38,6 +39,20 @@ async function main() {
     case "pipeline":
       await runPipeline(flags);
       break;
+
+    // 2026-10-28: 実データの集計＋図の日次記事（src/data-article）
+    case "data-article": {
+      const { runDataArticle } = await import("./data-article/index.js");
+      await runDataArticle(flags);
+      break;
+    }
+
+    // 2026-10-28: Zenn の24時間間隔で公開待ちになった集計記事の反映を促す（公開済みの承認内容だけ。新しい記事は作らない）
+    case "zenn-nudge": {
+      const { runZennNudge } = await import("./data-article/zenn-nudge.js");
+      await runZennNudge();
+      break;
+    }
 
     case "publish": {
       const platform = args[1];

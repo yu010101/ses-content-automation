@@ -1,0 +1,243 @@
+{
+  "lastUsed": {
+    "skill-rates": "2026-10-20",
+    "remote-gap": "2026-10-28"
+  },
+  "runs": [
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "station",
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "role",
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-share",
+      "title": "リモートで探しやすいスキルはどれか。掲載中780件の働き方をスキル別に数えた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-pairs",
+      "title": "一緒に求められることが多いスキルの組み合わせと、その単価の上限（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "rate-bands",
+      "title": "月100万円を超える案件は何件あるか。単価の上限の分布を759件で見た",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-count",
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-rates",
+      "title": "フリーランス案件780件の単価の上限を、スキル別に集計した（2026年10月28日時点）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n3a998e014475",
+        "https://qiita.com/sescore/items/03dd9e8b41d48df6f730",
+        "https://zenn.dev/ailmarketing/articles/20261028-780"
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-rates",
+      "title": "フリーランス案件780件の単価の上限を、スキル別に集計した（2026年10月28日時点）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-rates",
+      "title": "フリーランス案件780件の単価の上限を、スキル別に集計した（2026年10月28日時点）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "station",
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "role",
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-share",
+      "title": "リモートで探しやすいスキルはどれか。掲載中780件の働き方をスキル別に数えた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-pairs",
+      "title": "一緒に求められることが多いスキルの組み合わせと、その単価の上限（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-count",
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-rates",
+      "title": "フリーランス案件780件の単価の上限を、スキル別に集計した（2026年10月28日時点）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に780件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "station",
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "role",
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "remote-share",
+      "title": "リモートで探しやすいスキルはどれか。掲載中780件の働き方をスキル別に数えた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-pairs",
+      "title": "一緒に求められることが多いスキルの組み合わせと、その単価の上限（780件）",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "rate-bands",
+      "title": "月100万円以上の案件は何件あるか。単価の上限の分布を759件で見た",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-count",
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "rate-bands",
+      "title": "月100万円以上の案件は何件あるか。単価の上限の分布を759件で見た",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-28",
+      "cut": "skill-count",
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で780件を分けた",
+      "dryRun": true,
+      "urls": []
+    }
+  ]
+}
