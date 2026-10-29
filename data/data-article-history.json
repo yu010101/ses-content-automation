@@ -1,7 +1,8 @@
 {
   "lastUsed": {
     "skill-rates": "2026-10-20",
-    "remote-gap": "2026-10-28"
+    "remote-gap": "2026-10-28",
+    "station": "2026-10-29"
   },
   "runs": [
     {
@@ -238,6 +239,18 @@
       "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で780件を分けた",
       "dryRun": true,
       "urls": []
+    },
+    {
+      "date": "2026-10-29",
+      "cut": "station",
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（782件）",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n6ac4b1abea2c",
+        "https://qiita.com/sescore/items/bac09fad201c5898c04c",
+        "https://zenn.dev/ailmarketing/articles/20261028-782"
+      ]
     }
-  ]
+  ],
+  "zennNudgedAt": "2026-10-29T05:30:07.907Z"
 }
