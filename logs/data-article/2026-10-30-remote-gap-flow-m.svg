@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="846" viewBox="0 0 760 846" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="760" height="846" fill="#ffffff"/>
+<line x1="24" y1="20" x2="736" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="44" fill="#111111" text-anchor="start" font-weight="700">集計の流れ</text>
+<text x="24" y="114" font-size="25" fill="#666666" text-anchor="start" font-weight="400">2026-10-30 に公開APIから取得した集計値</text>
+<rect x="24" y="166" width="712" height="104" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="48" y="206" font-size="25" fill="#666666" text-anchor="start" font-weight="700">1  掲載中・募集中の案件</text>
+<text x="48" y="252" font-size="48" fill="#111111" text-anchor="start" font-weight="800">785件</text>
+<polygon points="368,282 392,282 380,302" fill="#111111"/>
+<rect x="24" y="316" width="712" height="104" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="48" y="356" font-size="25" fill="#666666" text-anchor="start" font-weight="700">2  うち単価の上限あり</text>
+<text x="48" y="402" font-size="48" fill="#111111" text-anchor="start" font-weight="800">762件</text>
+<polygon points="368,432 392,432 380,452" fill="#111111"/>
+<rect x="24" y="466" width="712" height="104" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="48" y="506" font-size="25" fill="#666666" text-anchor="start" font-weight="700">3  スキルごとにリモート可と出社に分ける</text>
+<text x="48" y="552" font-size="48" fill="#111111" text-anchor="start" font-weight="800">20行</text>
+<polygon points="368,582 392,582 380,602" fill="#111111"/>
+<rect x="24" y="616" width="712" height="104" fill="#ffffff" stroke="#c8102e" stroke-width="3"/>
+<text x="48" y="656" font-size="25" fill="#666666" text-anchor="start" font-weight="700">4  中央値の差を見る</text>
+<text x="48" y="702" font-size="48" fill="#c8102e" text-anchor="start" font-weight="800">中央値</text>
+<line x1="24" y1="796" x2="736" y2="796" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="826" font-size="22" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-30時点・785件）</text>
+</svg>

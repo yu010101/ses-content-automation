@@ -2,7 +2,8 @@
   "lastUsed": {
     "skill-rates": "2026-10-20",
     "remote-gap": "2026-10-28",
-    "station": "2026-10-29"
+    "station": "2026-10-29",
+    "role": "2026-10-30"
   },
   "runs": [
     {
@@ -250,7 +251,53 @@
         "https://qiita.com/sescore/items/bac09fad201c5898c04c",
         "https://zenn.dev/ailmarketing/articles/20261028-782"
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "role",
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で785件を分けた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/nf10454fc4f41",
+        "https://qiita.com/sescore/items/8ce3ffa95941ff1bff19",
+        "https://zenn.dev/ailmarketing/articles/20261029-pmpmo785"
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に785件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に785件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に785件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に785件を比べた",
+      "dryRun": true,
+      "urls": []
+    },
+    {
+      "date": "2026-10-30",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に785件を比べた",
+      "dryRun": true,
+      "urls": []
     }
   ],
-  "zennNudgedAt": "2026-10-29T05:30:07.907Z"
+  "zennNudgedAt": "2026-10-30T06:03:15.698Z"
 }

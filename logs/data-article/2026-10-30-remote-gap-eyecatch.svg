@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="670" viewBox="0 0 1280 670" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1280" height="670" fill="#ffffff"/>
+<rect x="0" y="0" width="1280" height="14" fill="#c8102e"/>
+<text x="56" y="84" font-size="28" fill="#666666" font-weight="700">SES案件を数える ／ 2026-10-30</text>
+<text x="56" y="170" font-size="64" fill="#111111" font-weight="800">リモート可と出社で、</text>
+<text x="56" y="246" font-size="64" fill="#111111" font-weight="800">単価の上限は違うのか</text>
+<line x1="56" y1="300" x2="1224" y2="300" stroke="#d9d9d9" stroke-width="2"/>
+<text x="56" y="360" font-size="32" fill="#666666" font-weight="700">リモート可が最も高い</text>
+<text x="56" y="500" font-size="132" fill="#c8102e" font-weight="800">+15万円</text>
+<text x="56" y="560" font-size="32" fill="#111111" font-weight="600">PM リモート可 100万円・出社 85万円</text>
+<text x="56" y="640" font-size="20" fill="#666666" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-30時点・785件）</text>
+</svg>

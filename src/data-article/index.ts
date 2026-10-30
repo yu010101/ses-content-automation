@@ -15,7 +15,7 @@ import { recordPublished } from "../pipeline.js";
 import type { GeneratedArticle } from "../content/generator.js";
 import type { PublishResult } from "../publishers/types.js";
 import { pickCut, type CutResult, type MarketStats } from "./cuts.js";
-import { renderPng, renderEyecatch, type ChartSpec } from "./chart.js";
+import { renderPng, renderEyecatch, renderCover, type ChartSpec } from "./chart.js";
 
 const STATS_URL = "https://freelance.radineer.asia/api/public/market-stats";
 const HISTORY = "data/data-article-history.json";
@@ -131,6 +131,48 @@ function boldFacts(t: string, facts: string[]): string {
   });
 }
 
+/** 2026-10-30 採点（note-score-20261030）で「読者が自分の判断に使う手順と目安が薄い」（K1・K4）と出た。表の行から、自分の条件に当てはめる目安を決まった形で作る。
+ * 数字は表の文字列（facts に入っている）だけを使う */
+function usage(cut: CutResult): string[] {
+  const { head, rows } = cut.table;
+  const col = (name: string) => head.indexOf(name);
+  const [lab, med, mid] = [0, col("中央値"), col("真ん中の半分")];
+  if (med > 0 && mid > 0) {
+    const r = rows.find((x) => x[mid].includes("〜")) ?? rows[0];
+    const [lo, hi] = r[mid].split("〜");
+    return [
+      `表で自分の${head[lab]}の行を探します（例: ${r[lab]}）`,
+      `提示された単価の上限が${lo}より低いなら、その行の真ん中の半分より下です。ほかの案件と比べてから決める目安になります`,
+      `${r[med]}（中央値）前後なら真ん中、${hi}を超えるなら高い側です`,
+      "件数の少ない行は、数件で中央値が動きます。目安にとどめてください",
+    ];
+  }
+  const rc = col("リモート可");
+  if (rc > 0 && col("差") > 0) {
+    // 差の欄は「リモート可が15万円高い」「出社が22.5万円高い」「差なし」の文（cuts.ts の signed）
+    const d = col("差");
+    const amount = (v: string) => parseFloat(v.replace(/^.*が/, "")) || 0;
+    const remote = rows.filter((x) => x[d].startsWith("リモート可が")).sort((a, b) => amount(b[d]) - amount(a[d]));
+    const cell = (v: string) => v.replace(/（.*$/, "");
+    const out = [`表で自分のスキルの行を探し、差の欄を見ます`];
+    if (remote.length) {
+      const r = remote[0];
+      out.push(`差の欄がリモート可の側に高い行は、リモートを条件にしても単価の上限が下がりにくい行です（例: ${r[0]}はリモート可${cell(r[rc])}・出社${cell(r[col("出社")])}）`);
+    }
+    out.push("差の欄が出社の側に高い行は、リモートを条件にすると上限が下がりやすい行です。出社の案件も並べて比べる目安になります");
+    return out;
+  }
+  const share = col("リモート可の割合");
+  if (share > 0) {
+    const r = rows[0];
+    return [
+      `リモートで働きたいなら、割合の高い行から探すと見つけやすくなります（例: ${r[0]}は${r[share]}）`,
+      "割合の低いスキルは、出社の案件が多い行です。リモートにこだわるなら、組み合わせる別のスキルも見てください",
+    ];
+  }
+  return [];
+}
+
 function callout(t: Target, kind: "info" | "warn", lines: string[]): string {
   const body = lines.map((l) => `- ${l}`).join("\n");
   if (t === "qiita") return `:::note ${kind}\n${body}\n:::`;
@@ -166,7 +208,7 @@ ${mdTable(cut.table)}
 - 15字以上のかぎかっこ「」の引用を書かない
 ${retryReasons ? `\n前回の下書きは次の理由で止まった。直して書き直す: ${retryReasons}\n` : ""}
 出力はJSONのみ:
-{"intro": "冒頭の2〜3文。1文目は題名の問いへの答えを表の数字で言い切る。2文目で読むときの注意（単価の上限であること等）", "findings": ["表から読めること。表の数字を1つ以上含む1文", "同", "同"], "howTo": "読者が自分の単価や案件の探し方にこの表をどう当てるか。2〜4文。表の数字を例に1つ使う", "headings": {"findings": "この記事の一番の結論を1文で。表の数字を含む。35字以内", "howTo": "読者が次にやることを1文で。35字以内"}}
+{"intro": "冒頭の2〜3文。1文目は題名の問いへの答えを表の数字で言い切る（意外な差や逆転があればそれを先に）。2文目で読むときの注意（単価の上限であること等）。最後の文は、読者に自分のスキルの行を表で確かめてから次の案件や単価を決めるよう促す", "findings": ["表から読めること。表の数字を1つ以上含む1文", "同", "同"], "howTo": "読者が自分の単価や案件の探し方にこの表をどう当てるか。2〜4文。表の数字を例に1つ使う", "headings": {"findings": "この記事の一番の結論を1文で。表の数字を含む。35字以内", "howTo": "読者が次にやることを1文で。35字以内"}}
 
 見出しは「〜について」「まとめ」のような札にしない。その節を読まなくても結論がわかる文にする。
 図の節の見出しは「${chartH}」に決まっている。headings.findings はこれと同じ内容（同じ行・同じ数字）にせず、表の別の行か別の比べ方から結論を出す。`;
@@ -184,7 +226,7 @@ ${retryReasons ? `\n前回の下書きは次の理由で止まった。直して
   return p;
 }
 
-function assemble(cut: CutResult, p: Prose, figs: Figures, t: Target): string {
+function assemble(cut: CutResult, p: Prose, figs: Figures, t: Target, next?: string): string {
   const B = (x: string) => boldFacts(x, cut.facts);
   let no = 0;
   const fig = (src: string, cap: string) => figure(t, src, `図${++no} ${cap}`);
@@ -205,8 +247,11 @@ function assemble(cut: CutResult, p: Prose, figs: Figures, t: Target): string {
     callout(t, "info", cut.notes),
     `\n## ${p.headings.howTo}\n`,
     B(p.howTo),
+    usage(cut).length ? `\n**自分の条件に当てはめる目安**\n\n${usage(cut).map((u, i) => `${i + 1}. ${B(u)}`).join("\n")}` : "",
     "\n## この集計で言えないこと\n",
     callout(t, "warn", cut.limits),
+    // 2026-10-30 採点で「続きものの仕組みが見えない」（K5）。次の切り口を予告する（題名でなく主題。題名の件数は今日の facts に無い。かぎかっこで囲むと出典ゲートが引用と見て止める）
+    next ? `\n## 次回\n\n毎朝8時に、掲載中の案件を1つの切り口で数えて出しています。次回は、${next}を数える予定です。自分のスキルの数字が出たときに見逃さないよう、フォローしておいてください。` : "",
   ].join("\n");
 }
 
@@ -251,20 +296,32 @@ export async function runDataArticle(flags: { dryRun?: boolean; cut?: string }) 
   const base = `${date}-${cut.id}`;
   const source = `出典: FreelanceDB 掲載中の案件（${date}時点・${stats.total}件）`;
   const kpiSpec = highlights(cut.chart);
+  const tableSpec: ChartSpec = {
+    kind: "table", title: cut.tableHeading, subtitle: cut.chart.kind === "dumbbell" ? `赤=${cut.chart.legend[0]}が高いスキル` : cut.chart.subtitle,
+    head: cut.table.head, rows: cut.table.rows, accent: cut.chart.kind === "dumbbell" ? `${cut.chart.legend[0]}が` : undefined,
+  };
   const local = {
     main: await renderPng(cut.chart, source, join(OUT_DIR, `${base}.png`)),
     kpi: kpiSpec ? await renderPng(kpiSpec, source, join(OUT_DIR, `${base}-kpi.png`)) : null,
     flow: await renderPng(flow(cut, stats), source, join(OUT_DIR, `${base}-flow.png`)),
-    table: await renderPng({
-      kind: "table", title: cut.tableHeading, subtitle: cut.chart.kind === "dumbbell" ? `赤=${cut.chart.legend[0]}が高いスキル` : cut.chart.subtitle,
-      head: cut.table.head, rows: cut.table.rows, accent: cut.chart.kind === "dumbbell" ? `${cut.chart.legend[0]}が` : undefined,
-    }, source, join(OUT_DIR, `${base}-table.png`)),
+    table: await renderPng(tableSpec, source, join(OUT_DIR, `${base}-table.png`)),
   };
-  const eyecatch = await renderEyecatch(cut.chart, source, join(OUT_DIR, `${base}-eyecatch.png`));
+  // note 用（スマホ幅で読める縦長の図）。Qiita/Zenn は横長のまま
+  const mob = {
+    main: await renderPng(cut.chart, source, join(OUT_DIR, `${base}-m.png`), true),
+    kpi: kpiSpec ? await renderPng(kpiSpec, source, join(OUT_DIR, `${base}-kpi-m.png`), true) : null,
+    flow: await renderPng(flow(cut, stats), source, join(OUT_DIR, `${base}-flow-m.png`), true),
+    table: await renderPng(tableSpec, source, join(OUT_DIR, `${base}-table-m.png`), true),
+  };
+  const eyecatch = kpiSpec && kpiSpec.kind === "kpi"
+    ? await renderCover({ kicker: `SES案件を数える ／ ${date}`, question: cut.title.split("。")[0], item: kpiSpec.items[0], foot: source }, join(OUT_DIR, `${base}-eyecatch.png`))
+    : await renderEyecatch(cut.chart, source, join(OUT_DIR, `${base}-eyecatch.png`));
+  const nextCut = pickCut(stats, { ...history.lastUsed, [cut.id]: date });
+  const next = nextCut && nextCut.id !== cut.id ? nextCut.subject.replace(/（[^）]*）/g, "") : undefined;
   const raw = (p: string) => `https://raw.githubusercontent.com/${config.zenn.repo}/main/images/data/${basename(p)}`;
   const web: Figures = { main: raw(local.main), kpi: local.kpi && raw(local.kpi), flow: raw(local.flow), table: raw(local.table) };
   // note は本文の画像を公開時にアップロードする（ローカルの絶対パスを入れておき、NoteClient が差し替える）
-  const noteFigs: Figures = { main: resolve(local.main), kpi: local.kpi && resolve(local.kpi), flow: resolve(local.flow), table: resolve(local.table) };
+  const noteFigs: Figures = { main: resolve(mob.main), kpi: mob.kpi && resolve(mob.kpi), flow: resolve(mob.flow), table: resolve(mob.table) };
   console.log(`[3/5] 図: ${Object.values(local).filter(Boolean).join(", ")} / 見出し画像 ${eyecatch}`);
 
   // 出典は集計APIと図の置き場。数字は cut.facts（表と前提に出した文字列）だけ許す
@@ -280,7 +337,7 @@ export async function runDataArticle(flags: { dryRun?: boolean; cut?: string }) 
       reasons = e instanceof Error ? e.message : String(e);
       continue;
     }
-    const blocked = targets.map((t) => assertSources(sources, assemble(cut, p, t === "note" ? noteFigs : web, t), false, `data-article:${t}`, cut.facts));
+    const blocked = targets.map((t) => assertSources(sources, assemble(cut, p, t === "note" ? noteFigs : web, t, next), false, `data-article:${t}`, cut.facts));
     if (blocked.every(Boolean)) prose = p;
     else reasons = "本文の数字か引用が表と前提に無い。表と前提にある数字だけを使う";
   }
@@ -289,11 +346,14 @@ export async function runDataArticle(flags: { dryRun?: boolean; cut?: string }) 
   const article = (body: string, eyecatchPath?: string): GeneratedArticle => ({
     title: cut.title, body, keywords: cut.keywords, summary: prose!.intro, xPost: "", xThread: [], articleType: "data-cut", eyecatchPath,
   });
-  const qiita = article(assemble(cut, prose, web, "qiita"));
-  const zenn = article(assemble(cut, prose, web, "zenn"));
-  const note = article(assemble(cut, prose, noteFigs, "note"), eyecatch);
+  const qiita = article(assemble(cut, prose, web, "qiita", next));
+  const zenn = article(assemble(cut, prose, web, "zenn", next));
+  // 2026-10-30 本人「強めの訴求で」: note の題名だけ「問い｜単価交渉の前に見る表（件数）」にする。Qiita・Zenn は検索向けの題名のまま
+  const q = cut.title.split("。")[0];
+  const noteTitle = cut.title.includes("。") ? `${q}｜単価交渉の前に見る表（${stats.total}件）` : cut.title;
+  const note = { ...article(assemble(cut, prose, noteFigs, "note", next), eyecatch), title: noteTitle };
   mkdirSync(OUT_DIR, { recursive: true });
-  for (const [t, a] of [["qiita", qiita], ["zenn", zenn], ["note", note]] as const) writeFileSync(join(OUT_DIR, `${base}.${t}.md`), `# ${cut.title}\n\n${a.body}`, "utf-8");
+  for (const [t, a] of [["qiita", qiita], ["zenn", zenn], ["note", note]] as const) writeFileSync(join(OUT_DIR, `${base}.${t}.md`), `# ${a.title}\n\n${a.body}`, "utf-8");
   console.log(`[4/5] 本文: ${join(OUT_DIR, `${base}.{qiita,zenn,note}.md`)}`);
 
   if (dryRun) {
