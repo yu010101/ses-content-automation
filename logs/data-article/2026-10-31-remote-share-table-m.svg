@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="2730" viewBox="0 0 760 2730" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="760" height="2730" fill="#ffffff"/>
+<line x1="24" y1="20" x2="736" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="44" fill="#111111" text-anchor="start" font-weight="700">スキル別 働き方の内訳（リモート</text>
+<text x="24" y="124" font-size="44" fill="#111111" text-anchor="start" font-weight="700">可の割合の高い順）</text>
+<text x="24" y="168" font-size="25" fill="#666666" text-anchor="start" font-weight="400">濃い赤=フルリモート / 薄い赤=一部リモート / 灰=出社</text>
+<text x="24" y="258" font-size="28" fill="#111111" text-anchor="start" font-weight="700">PM</text>
+<text x="736" y="258" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>82%</text>
+<text x="24" y="298" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 51件　フルリモート 12件　一部リモート 30件　出社 9件</text>
+<line x1="24" y1="312" x2="736" y2="312" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="354" font-size="28" fill="#111111" text-anchor="start" font-weight="700">React</text>
+<text x="736" y="354" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>82%</text>
+<text x="24" y="394" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 79件　フルリモート 27件　一部リモート 38件　出社 14件</text>
+<line x1="24" y1="408" x2="736" y2="408" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="450" font-size="28" fill="#111111" text-anchor="start" font-weight="700">TypeScript</text>
+<text x="736" y="450" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>80%</text>
+<text x="24" y="490" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 96件　フルリモート 29件　一部リモート 48件　出社 19件</text>
+<line x1="24" y1="504" x2="736" y2="504" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="546" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Spring</text>
+<text x="736" y="546" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>79%</text>
+<text x="24" y="586" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 19件　フルリモート 6件　一部リモート 9件　出社 4件</text>
+<line x1="24" y1="600" x2="736" y2="600" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="642" font-size="28" fill="#111111" text-anchor="start" font-weight="700">GCP</text>
+<text x="736" y="642" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>74%</text>
+<text x="24" y="682" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 23件　フルリモート 3件　一部リモート 14件　出社 6件</text>
+<line x1="24" y1="696" x2="736" y2="696" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="738" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Go</text>
+<text x="736" y="738" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>74%</text>
+<text x="24" y="778" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 42件　フルリモート 9件　一部リモート 22件　出社 11件</text>
+<line x1="24" y1="792" x2="736" y2="792" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="834" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Python</text>
+<text x="736" y="834" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>73%</text>
+<text x="24" y="874" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 70件　フルリモート 10件　一部リモート 41件　出社 19件</text>
+<line x1="24" y1="888" x2="736" y2="888" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="930" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Ruby</text>
+<text x="736" y="930" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>71%</text>
+<text x="24" y="970" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 80件　フルリモート 22件　一部リモート 35件　出社 23件</text>
+<line x1="24" y1="984" x2="736" y2="984" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1026" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Vue</text>
+<text x="736" y="1026" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>71%</text>
+<text x="24" y="1066" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 48件　フルリモート 8件　一部リモート 26件　出社 14件</text>
+<line x1="24" y1="1080" x2="736" y2="1080" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1122" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Kotlin</text>
+<text x="736" y="1122" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>67%</text>
+<text x="24" y="1162" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 27件　フルリモート 7件　一部リモート 11件　出社 9件</text>
+<line x1="24" y1="1176" x2="736" y2="1176" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1218" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Ruby on Rails</text>
+<text x="736" y="1218" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>66%</text>
+<text x="24" y="1258" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 73件　フルリモート 21件　一部リモート 27件　出社 25件</text>
+<line x1="24" y1="1272" x2="736" y2="1272" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1314" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Laravel</text>
+<text x="736" y="1314" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>65%</text>
+<text x="24" y="1354" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 37件　フルリモート 5件　一部リモート 19件　出社 13件</text>
+<line x1="24" y1="1368" x2="736" y2="1368" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1410" font-size="28" fill="#111111" text-anchor="start" font-weight="700">AWS</text>
+<text x="736" y="1410" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>63%</text>
+<text x="24" y="1450" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 81件　フルリモート 12件　一部リモート 39件　出社 30件</text>
+<line x1="24" y1="1464" x2="736" y2="1464" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1506" font-size="28" fill="#111111" text-anchor="start" font-weight="700">SQL</text>
+<text x="736" y="1506" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>63%</text>
+<text x="24" y="1546" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 40件　フルリモート 5件　一部リモート 20件　出社 15件</text>
+<line x1="24" y1="1560" x2="736" y2="1560" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1602" font-size="28" fill="#111111" text-anchor="start" font-weight="700">JavaScript</text>
+<text x="736" y="1602" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>56%</text>
+<text x="24" y="1642" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 96件　フルリモート 12件　一部リモート 42件　出社 42件</text>
+<line x1="24" y1="1656" x2="736" y2="1656" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1698" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Java</text>
+<text x="736" y="1698" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>52%</text>
+<text x="24" y="1738" font-size="24" fill="#666666" text-anchor="start" font-weight="400">件数 91件　フルリモート 12件　一部リモート 35件　出社 44件</text>
+<line x1="24" y1="1752" x2="736" y2="1752" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1794" font-size="28" fill="#111111" text-anchor="start" font-weight="700">PHP</text>
+<text x="736" y="1794" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>49%</text>
+<text x="24" y="1834" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 99件　フルリモート 8件　一部リモート 41件　出社 50件</text>
+<line x1="24" y1="1848" x2="736" y2="1848" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1890" font-size="28" fill="#111111" text-anchor="start" font-weight="700">C++</text>
+<text x="736" y="1890" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>48%</text>
+<text x="24" y="1930" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 21件　フルリモート 1件　一部リモート 9件　出社 11件</text>
+<line x1="24" y1="1944" x2="736" y2="1944" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1986" font-size="28" fill="#111111" text-anchor="start" font-weight="700">HTML</text>
+<text x="736" y="1986" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>41%</text>
+<text x="24" y="2026" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 29件　フルリモート 2件　一部リモート 10件　出社 17件</text>
+<line x1="24" y1="2040" x2="736" y2="2040" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2082" font-size="28" fill="#111111" text-anchor="start" font-weight="700">CSS</text>
+<text x="736" y="2082" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>41%</text>
+<text x="24" y="2122" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 27件　フルリモート 1件　一部リモート 10件　出社 16件</text>
+<line x1="24" y1="2136" x2="736" y2="2136" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2178" font-size="28" fill="#111111" text-anchor="start" font-weight="700">C#</text>
+<text x="736" y="2178" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>38%</text>
+<text x="24" y="2218" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 37件　フルリモート 1件　一部リモート 13件　出社 23件</text>
+<line x1="24" y1="2232" x2="736" y2="2232" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2274" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Swift</text>
+<text x="736" y="2274" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>38%</text>
+<text x="24" y="2314" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 45件　フルリモート 9件　一部リモート 8件　出社 28件</text>
+<line x1="24" y1="2328" x2="736" y2="2328" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2370" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Unity</text>
+<text x="736" y="2370" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>30%</text>
+<text x="24" y="2410" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 23件　フルリモート 1件　一部リモート 6件　出社 16件</text>
+<line x1="24" y1="2424" x2="736" y2="2424" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2466" font-size="28" fill="#111111" text-anchor="start" font-weight="700">Java(Android)</text>
+<text x="736" y="2466" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>22%</text>
+<text x="24" y="2506" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 23件　フルリモート 3件　一部リモート 2件　出社 18件</text>
+<line x1="24" y1="2520" x2="736" y2="2520" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2562" font-size="28" fill="#111111" text-anchor="start" font-weight="700">ゲーム</text>
+<text x="736" y="2562" text-anchor="end" font-size="28" font-weight="700" fill="#111111"><tspan font-size="21" font-weight="400" fill="#666666">リモート可の割合 </tspan>8%</text>
+<text x="24" y="2602" font-size="25" fill="#666666" text-anchor="start" font-weight="400">件数 39件　フルリモート 0件　一部リモート 3件　出社 36件</text>
+<line x1="24" y1="2616" x2="736" y2="2616" stroke="#d9d9d9" stroke-width="1"/>
+<line x1="24" y1="2680" x2="736" y2="2680" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="2710" font-size="22" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-31時点・793件）</text>
+</svg>

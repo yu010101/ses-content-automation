@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="670" viewBox="0 0 1280 670" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1280" height="670" fill="#ffffff"/>
+<rect x="0" y="0" width="1280" height="14" fill="#c8102e"/>
+<text x="56" y="84" font-size="28" fill="#666666" font-weight="700">SES案件を数える ／ 2026-10-31</text>
+<text x="56" y="170" font-size="64" fill="#111111" font-weight="800">リモートで探しやすいスキルはどれか</text>
+<line x1="56" y1="230" x2="1224" y2="230" stroke="#d9d9d9" stroke-width="2"/>
+<text x="56" y="300" font-size="32" fill="#666666" font-weight="700">フルリモートか一部リモートが最も多い</text>
+<text x="56" y="450" font-size="132" fill="#c8102e" font-weight="800">82%</text>
+<text x="56" y="520" font-size="32" fill="#111111" font-weight="600">PM（51件）</text>
+<text x="56" y="640" font-size="20" fill="#666666" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-31時点・793件）</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="920" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">スキル別 働き方の内訳</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">濃い赤=フルリモート / 薄い赤=一部リモート / 灰=出社</text>
+<text x="280" y="179" font-size="20" fill="#111111" text-anchor="end" font-weight="600">PM</text><text x="24" y="179" font-size="16" fill="#666666" text-anchor="start" font-weight="400">51件</text>
+<rect x="300" y="159" width="183.52941176470588" height="26" fill="#c8102e"/>
+<rect x="483.52941176470586" y="159" width="458.8235294117647" height="26" fill="#f2a3ae"/>
+<rect x="942.3529411764705" y="159" width="137.64705882352942" height="26" fill="#bdbdbd"/>
+<text x="1096" y="179" font-size="18" fill="#111111" text-anchor="start" font-weight="600">82%</text>
+<text x="280" y="223" font-size="20" fill="#111111" text-anchor="end" font-weight="600">React</text><text x="24" y="223" font-size="16" fill="#666666" text-anchor="start" font-weight="400">79件</text>
+<rect x="300" y="203" width="266.5822784810126" height="26" fill="#c8102e"/>
+<rect x="566.5822784810126" y="203" width="375.1898734177215" height="26" fill="#f2a3ae"/>
+<rect x="941.7721518987341" y="203" width="138.22784810126583" height="26" fill="#bdbdbd"/>
+<text x="1096" y="223" font-size="18" fill="#111111" text-anchor="start" font-weight="600">82%</text>
+<text x="280" y="267" font-size="20" fill="#111111" text-anchor="end" font-weight="600">TypeScript</text><text x="24" y="267" font-size="16" fill="#666666" text-anchor="start" font-weight="400">96件</text>
+<rect x="300" y="247" width="235.62499999999997" height="26" fill="#c8102e"/>
+<rect x="535.625" y="247" width="390" height="26" fill="#f2a3ae"/>
+<rect x="925.625" y="247" width="154.375" height="26" fill="#bdbdbd"/>
+<text x="1096" y="267" font-size="18" fill="#111111" text-anchor="start" font-weight="600">80%</text>
+<text x="280" y="311" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Spring</text><text x="24" y="311" font-size="16" fill="#666666" text-anchor="start" font-weight="400">19件</text>
+<rect x="300" y="291" width="246.3157894736842" height="26" fill="#c8102e"/>
+<rect x="546.3157894736842" y="291" width="369.4736842105263" height="26" fill="#f2a3ae"/>
+<rect x="915.7894736842104" y="291" width="164.21052631578945" height="26" fill="#bdbdbd"/>
+<text x="1096" y="311" font-size="18" fill="#111111" text-anchor="start" font-weight="600">79%</text>
+<text x="280" y="355" font-size="20" fill="#111111" text-anchor="end" font-weight="600">GCP</text><text x="24" y="355" font-size="16" fill="#666666" text-anchor="start" font-weight="400">23件</text>
+<rect x="300" y="335" width="101.73913043478261" height="26" fill="#c8102e"/>
+<rect x="401.7391304347826" y="335" width="474.7826086956522" height="26" fill="#f2a3ae"/>
+<rect x="876.5217391304348" y="335" width="203.47826086956522" height="26" fill="#bdbdbd"/>
+<text x="1096" y="355" font-size="18" fill="#111111" text-anchor="start" font-weight="600">74%</text>
+<text x="280" y="399" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Go</text><text x="24" y="399" font-size="16" fill="#666666" text-anchor="start" font-weight="400">42件</text>
+<rect x="300" y="379" width="167.14285714285714" height="26" fill="#c8102e"/>
+<rect x="467.1428571428571" y="379" width="408.5714285714286" height="26" fill="#f2a3ae"/>
+<rect x="875.7142857142858" y="379" width="204.2857142857143" height="26" fill="#bdbdbd"/>
+<text x="1096" y="399" font-size="18" fill="#111111" text-anchor="start" font-weight="600">74%</text>
+<text x="280" y="443" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Python</text><text x="24" y="443" font-size="16" fill="#666666" text-anchor="start" font-weight="400">70件</text>
+<rect x="300" y="423" width="111.42857142857142" height="26" fill="#c8102e"/>
+<rect x="411.42857142857144" y="423" width="456.8571428571429" height="26" fill="#f2a3ae"/>
+<rect x="868.2857142857143" y="423" width="211.7142857142857" height="26" fill="#bdbdbd"/>
+<text x="1096" y="443" font-size="18" fill="#111111" text-anchor="start" font-weight="600">73%</text>
+<text x="280" y="487" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Ruby</text><text x="24" y="487" font-size="16" fill="#666666" text-anchor="start" font-weight="400">80件</text>
+<rect x="300" y="467" width="214.50000000000003" height="26" fill="#c8102e"/>
+<rect x="514.5" y="467" width="341.25" height="26" fill="#f2a3ae"/>
+<rect x="855.75" y="467" width="224.24999999999997" height="26" fill="#bdbdbd"/>
+<text x="1096" y="487" font-size="18" fill="#111111" text-anchor="start" font-weight="600">71%</text>
+<text x="280" y="531" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Vue</text><text x="24" y="531" font-size="16" fill="#666666" text-anchor="start" font-weight="400">48件</text>
+<rect x="300" y="511" width="130" height="26" fill="#c8102e"/>
+<rect x="430" y="511" width="422.49999999999994" height="26" fill="#f2a3ae"/>
+<rect x="852.5" y="511" width="227.50000000000003" height="26" fill="#bdbdbd"/>
+<text x="1096" y="531" font-size="18" fill="#111111" text-anchor="start" font-weight="600">71%</text>
+<text x="280" y="575" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Kotlin</text><text x="24" y="575" font-size="16" fill="#666666" text-anchor="start" font-weight="400">27件</text>
+<rect x="300" y="555" width="202.2222222222222" height="26" fill="#c8102e"/>
+<rect x="502.2222222222222" y="555" width="317.77777777777777" height="26" fill="#f2a3ae"/>
+<rect x="820" y="555" width="260" height="26" fill="#bdbdbd"/>
+<text x="1096" y="575" font-size="18" fill="#111111" text-anchor="start" font-weight="600">67%</text>
+<text x="280" y="619" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Ruby on Rails</text><text x="24" y="619" font-size="16" fill="#666666" text-anchor="start" font-weight="400">73件</text>
+<rect x="300" y="599" width="224.3835616438356" height="26" fill="#c8102e"/>
+<rect x="524.3835616438356" y="599" width="288.4931506849315" height="26" fill="#f2a3ae"/>
+<rect x="812.8767123287671" y="599" width="267.12328767123284" height="26" fill="#bdbdbd"/>
+<text x="1096" y="619" font-size="18" fill="#111111" text-anchor="start" font-weight="600">66%</text>
+<text x="280" y="663" font-size="20" fill="#111111" text-anchor="end" font-weight="600">Laravel</text><text x="24" y="663" font-size="16" fill="#666666" text-anchor="start" font-weight="400">37件</text>
+<rect x="300" y="643" width="105.40540540540542" height="26" fill="#c8102e"/>
+<rect x="405.4054054054054" y="643" width="400.5405405405405" height="26" fill="#f2a3ae"/>
+<rect x="805.9459459459459" y="643" width="274.05405405405406" height="26" fill="#bdbdbd"/>
+<text x="1096" y="663" font-size="18" fill="#111111" text-anchor="start" font-weight="600">65%</text>
+<text x="280" y="707" font-size="20" fill="#111111" text-anchor="end" font-weight="600">AWS</text><text x="24" y="707" font-size="16" fill="#666666" text-anchor="start" font-weight="400">81件</text>
+<rect x="300" y="687" width="115.55555555555554" height="26" fill="#c8102e"/>
+<rect x="415.55555555555554" y="687" width="375.55555555555554" height="26" fill="#f2a3ae"/>
+<rect x="791.1111111111111" y="687" width="288.88888888888886" height="26" fill="#bdbdbd"/>
+<text x="1096" y="707" font-size="18" fill="#111111" text-anchor="start" font-weight="600">63%</text>
+<text x="280" y="751" font-size="20" fill="#111111" text-anchor="end" font-weight="600">SQL</text><text x="24" y="751" font-size="16" fill="#666666" text-anchor="start" font-weight="400">40件</text>
+<rect x="300" y="731" width="97.5" height="26" fill="#c8102e"/>
+<rect x="397.5" y="731" width="390" height="26" fill="#f2a3ae"/>
+<rect x="787.5" y="731" width="292.5" height="26" fill="#bdbdbd"/>
+<text x="1096" y="751" font-size="18" fill="#111111" text-anchor="start" font-weight="600">63%</text>
+<text x="280" y="795" font-size="20" fill="#111111" text-anchor="end" font-weight="600">JavaScript</text><text x="24" y="795" font-size="16" fill="#666666" text-anchor="start" font-weight="400">96件</text>
+<rect x="300" y="775" width="97.5" height="26" fill="#c8102e"/>
+<rect x="397.5" y="775" width="341.25" height="26" fill="#f2a3ae"/>
+<rect x="738.75" y="775" width="341.25" height="26" fill="#bdbdbd"/>
+<text x="1096" y="795" font-size="18" fill="#111111" text-anchor="start" font-weight="600">56%</text>
+<line x1="300" y1="140" x2="300" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="300" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">0%</text><line x1="495" y1="140" x2="495" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="495" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">25%</text><line x1="690" y1="140" x2="690" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="690" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">50%</text><line x1="885" y1="140" x2="885" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="885" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">75%</text><line x1="1080" y1="140" x2="1080" y2="810" stroke="#d9d9d9" stroke-width="1"/><text x="1080" y="838" font-size="16" fill="#666666" text-anchor="middle" font-weight="400">100%</text>
+<line x1="24" y1="870" x2="1176" y2="870" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="900" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-10-31時点・793件）</text>
+</svg>
