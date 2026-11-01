@@ -3264,6 +3264,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261029-pmpmo785"
         }
       ]
+    },
+    {
+      "title": "リモートで探しやすいスキルはどれか。掲載中793件の働き方をスキル別に数えた",
+      "date": "2026-10-31T23:02:44.236Z",
+      "articleId": "8d882831b11025262c8d",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n006b05f76cbe"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/8d882831b11025262c8d"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261031-793"
+        }
+      ]
     }
   ]
 }
