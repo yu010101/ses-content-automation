@@ -248,6 +248,8 @@ function assemble(cut: CutResult, p: Prose, figs: Figures, t: Target, next?: str
     `\n## ${p.headings.howTo}\n`,
     B(p.howTo),
     usage(cut).length ? `\n**自分の条件に当てはめる目安**\n\n${usage(cut).map((u, i) => `${i + 1}. ${B(u)}`).join("\n")}` : "",
+    // 2026-11-03 GA4 9/18〜11/3 で Qiita・Zenn 由来の訪問0。手本（レバテック等）は相場の直下に登録の案内を置く。数字とかぎかっこは入れない（出典ゲート）
+    `\n## 自分のスキルで確かめる\n\nスキルと働き方を選ぶと、掲載中の案件の単価の上限の目安が出るページを用意しています。登録なしで使えます。\n\n- [スキル別 単価の目安を見る](https://radineer.asia/freelance/calculator?utm_source=${t}&utm_medium=article&utm_campaign=data-cta)\n- 希望の単価や働き方を送ると、合う案件を担当者が探してお送りします（無料）: [案件の相談をする](https://radineer.asia/freelance/register?utm_source=${t}&utm_medium=article&utm_campaign=data-cta)`,
     "\n## この集計で言えないこと\n",
     callout(t, "warn", cut.limits),
     // 2026-10-30 採点で「続きものの仕組みが見えない」（K5）。次の切り口を予告する（題名でなく主題。題名の件数は今日の facts に無い。かぎかっこで囲むと出典ゲートが引用と見て止める）
