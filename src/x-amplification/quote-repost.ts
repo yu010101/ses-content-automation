@@ -5,17 +5,17 @@
  *   1. quote-targets.json からターゲット選択（priority weighting）
  *   2. Grok API で直近ツイートを検索
  *   3. quote-history.json で引用済みを除外
- *   4. Claude API で引用コメント生成
+ *   4. Claude CLI で引用コメント生成（API キーは使わない）
  *   5. XPublisher.publishQuoteRepost() で投稿
  *   6. 履歴記録
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import { config } from "../config.js";
 import { XPublisher } from "../publishers/x.js";
+import { claudeCli } from "../utils/claude-cli.js";
 
 // ── Types ────────────────────────────────────────────────
 
@@ -136,8 +136,6 @@ async function generateQuoteComment(
   targetUsername: string,
   tweetText: string,
 ): Promise<string> {
-  // Claude CLI経由で生成（AnthropicAPIクレジット不要）
-  const { execSync } = await import("node:child_process");
   const prompt = `以下のX投稿に対する引用コメントを生成してください。
 末尾は必ず読者への問いかけで締めてください。
 @${targetUsername} の投稿:
@@ -154,15 +152,13 @@ ${tweetText}
 
 140字以内の引用コメントのみを返してください。余計な説明不要。`;
 
-  try {
-    const result = execSync(
-      `claude -p ${JSON.stringify(prompt)}`,
-      { timeout: 30000, encoding: "utf-8", env: { ...process.env, PATH: `${process.env.HOME}/.local/bin:${process.env.HOME}/.nvm/versions/node/v22.21.1/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin` } }
-    ).trim();
-    return result.length > 140 ? result.slice(0, 139) + "…" : result;
-  } catch {
-    return `これは参考になる。自社でもOpenClawで似た取り組みをしているが、この視点は新しい。`;
+  // CLI のログインだけで生成する(claudeCli が ANTHROPIC_API_KEY を外す)。
+  // 生成できなければ定型文で投稿せず止める。
+  const result = claudeCli(prompt).trim();
+  if (!result) {
+    throw new Error("[quote-repost] Claude CLI で引用コメントを生成できなかったため停止");
   }
+  return result.length > 140 ? result.slice(0, 139) + "…" : result;
 }
 
 // ── Main: execute quote repost ───────────────────────────

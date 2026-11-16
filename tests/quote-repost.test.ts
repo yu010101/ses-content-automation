@@ -3,17 +3,10 @@ import { mkdtempSync, writeFileSync, readFileSync, rmSync, mkdirSync } from "nod
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 
-// Mock external dependencies - use class syntax so `new OpenAI()` / `new Anthropic()` work
-vi.mock("@anthropic-ai/sdk", () => {
-  class MockAnthropic {
-    messages = {
-      create: vi.fn().mockResolvedValue({
-        content: [{ type: "text", text: "SESエンジニアの視点から共感します。現場の実態を知る声は貴重です" }],
-      }),
-    };
-  }
-  return { default: MockAnthropic };
-});
+// Mock external dependencies - use class syntax so `new OpenAI()` works
+vi.mock("../src/utils/claude-cli.js", () => ({
+  claudeCli: vi.fn(() => "SESエンジニアの視点から共感します。現場の実態を知る声は貴重です"),
+}));
 
 vi.mock("openai", () => {
   class MockOpenAI {
@@ -164,7 +157,7 @@ describe("quote-repost module", () => {
     });
   });
 
-  describe("generateQuoteComment (mocked Anthropic)", () => {
+  describe("generateQuoteComment (mocked claudeCli)", () => {
     it("should return text within 140 chars", async () => {
       const mod = await import("../src/x-amplification/quote-repost.js");
       const result = await mod.executeQuoteRepost(true);
@@ -175,20 +168,25 @@ describe("quote-repost module", () => {
     it("should truncate long comments to 140 chars", async () => {
       vi.resetModules();
 
-      vi.doMock("@anthropic-ai/sdk", () => ({
-        default: class LongAnthropic {
-          messages = {
-            create: vi.fn().mockResolvedValue({
-              content: [{ type: "text", text: "あ".repeat(200) }],
-            }),
-          };
-        },
+      vi.doMock("../src/utils/claude-cli.js", () => ({
+        claudeCli: vi.fn(() => "あ".repeat(200)),
       }));
 
       const mod = await import("../src/x-amplification/quote-repost.js");
       const result = await mod.executeQuoteRepost(true);
       expect(result.comment).toBeDefined();
       expect(result.comment!.length).toBeLessThanOrEqual(140);
+    });
+  });
+
+  describe("CLI が使えないとき", () => {
+    it("定型文で投稿せず止まる", async () => {
+      vi.resetModules();
+      vi.doMock("../src/utils/claude-cli.js", () => ({
+        claudeCli: vi.fn(() => ""),
+      }));
+      const mod = await import("../src/x-amplification/quote-repost.js");
+      await expect(mod.executeQuoteRepost(true)).rejects.toThrow("停止");
     });
   });
 });

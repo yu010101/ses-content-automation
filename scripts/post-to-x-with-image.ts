@@ -9,7 +9,7 @@
 import crypto from "node:crypto";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { chromium } from "playwright";
-import Anthropic from "@anthropic-ai/sdk";
+import { claudeCli } from "../src/utils/claude-cli.js";
 
 const consumerKey = process.env.X_CONSUMER_KEY!;
 const consumerSecret = process.env.X_CONSUMER_SECRET!;
@@ -51,13 +51,8 @@ function oauthHeader(method: string, url: string, params: Record<string, string>
 
 // Step 1: Generate post text + image data via Claude
 async function generatePost(topic: string): Promise<{ text: string; imageHtml: string; title: string; keyPoints: string[] }> {
-  const client = new Anthropic();
-  const resp = await client.messages.create({
-    model: "claude-fable-5",
-    max_tokens: 4096,
-    messages: [{
-      role: "user",
-      content: `以下のテーマでX長文投稿を作成してください。
+  // CLI のログインだけで生成する(API キーは使わない・RB-5020)
+  const raw = claudeCli(`以下のテーマでX長文投稿を作成してください。
 
 テーマ: ${topic}
 
@@ -76,11 +71,8 @@ async function generatePost(topic: string): Promise<{ text: string; imageHtml: s
 - 「SES」は前面に出さない。AI/開発/エンジニア全般に訴求
 - FreelanceDBへの宣伝は入れない
 
-JSONのみを返してください。`
-    }]
-  });
-
-  const raw = resp.content[0].type === "text" ? resp.content[0].text : "";
+JSONのみを返してください。`);
+  if (!raw) throw new Error("Claude CLI で生成できなかったため停止(API キーには切り替えない)");
   let cleaned = raw.trim();
   if (cleaned.startsWith("```")) {
     cleaned = cleaned.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
