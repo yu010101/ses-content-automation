@@ -22,6 +22,8 @@ export interface CutResult {
   title: string;
   /** LLM に渡す「この記事で何を数えたか」 */
   subject: string;
+  /** 次回予告に使う主題。数字を入れない（予告の数字は今日の facts に無く出典ゲートで止まる・RB-5468） */
+  teaser?: string;
   /** 図解（集計の流れ）の後半2段: どう分けたか / 何を出したか */
   method: [string, string];
   keywords: string[];
@@ -222,6 +224,7 @@ const rateBands: Builder = (s) => {
     method: ["単価の上限の帯で分ける", "帯ごとの件数を数える"],
     title: `月100万円以上の案件は何件あるか。単価の上限の分布を${o.n}件で見た`,
     subject: "単価の上限の分布と、月80万円・100万円・120万円など以上の案件の件数",
+    teaser: "単価の上限の分布と、単価の高い案件の件数",
     keywords: ["フリーランス", "単価", "年収", "エンジニア", "SES"],
     tableHeading: "単価の上限が一定額以上の案件",
     table: { head: ["単価の上限", "件数", `全体（${o.n}件）に占める割合`], rows },

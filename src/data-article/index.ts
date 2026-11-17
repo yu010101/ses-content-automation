@@ -249,13 +249,17 @@ function assemble(cut: CutResult, p: Prose, figs: Figures, t: Target, next?: str
     B(p.howTo),
     usage(cut).length ? `\n**自分の条件に当てはめる目安**\n\n${usage(cut).map((u, i) => `${i + 1}. ${B(u)}`).join("\n")}` : "",
     // 2026-11-03 GA4 9/18〜11/3 で Qiita・Zenn 由来の訪問0。手本（レバテック等）は相場の直下に登録の案内を置く。数字とかぎかっこは入れない（出典ゲート）
-    `\n## 自分のスキルで確かめる\n\nスキルと働き方を選ぶと、掲載中の案件の単価の上限の目安が出るページを用意しています。登録なしで使えます。\n\n- [スキル別 単価の目安を見る](https://radineer.asia/freelance/calculator?utm_source=${t}&utm_medium=article&utm_campaign=data-cta)\n- 希望の単価や働き方を送ると、合う案件を担当者が探してお送りします（無料）: [案件の相談をする](https://radineer.asia/freelance/register?utm_source=${t}&utm_medium=article&utm_campaign=data-cta)`,
+    `\n## 自分のスキルで確かめる\n\nスキルと働き方を選ぶと、掲載中の案件の単価の上限の目安が出るページを用意しています。登録なしで使えます。\n\n- [スキル別 単価の目安を見る](${ctaUrl(t, "calculator")})\n- 希望の単価や働き方を送ると、合う案件を担当者が探してお送りします（無料）: [案件の相談をする](${ctaUrl(t, "register")})`,
     "\n## この集計で言えないこと\n",
     callout(t, "warn", cut.limits),
     // 2026-10-30 採点で「続きものの仕組みが見えない」（K5）。次の切り口を予告する（題名でなく主題。題名の件数は今日の facts に無い。かぎかっこで囲むと出典ゲートが引用と見て止める）
     next ? `\n## 次回\n\n毎朝8時に、掲載中の案件を1つの切り口で数えて出しています。次回は、${next}を数える予定です。自分のスキルの数字が出たときに見逃さないよう、フォローしておいてください。` : "",
   ].join("\n");
 }
+
+// 2026-11-18 RB-5468: CTA の URL は本文と出典の一覧で同じ文字列を使う（出典ゲートは URL の完全一致で照合する）
+const ctaUrl = (t: Target, page: "calculator" | "register") =>
+  `https://radineer.asia/freelance/${page}?utm_source=${t}&utm_medium=article&utm_campaign=data-cta`;
 
 /** 図を Zenn のリポジトリ（公開）に置き、Qiita・Zenn から読める URL を返す */
 async function pushFigures(pngs: string[]): Promise<void> {
@@ -319,7 +323,7 @@ export async function runDataArticle(flags: { dryRun?: boolean; cut?: string }) 
     ? await renderCover({ kicker: `SES案件を数える ／ ${date}`, question: cut.title.split("。")[0], item: kpiSpec.items[0], foot: source }, join(OUT_DIR, `${base}-eyecatch.png`))
     : await renderEyecatch(cut.chart, source, join(OUT_DIR, `${base}-eyecatch.png`));
   const nextCut = pickCut(stats, { ...history.lastUsed, [cut.id]: date });
-  const next = nextCut && nextCut.id !== cut.id ? nextCut.subject.replace(/（[^）]*）/g, "") : undefined;
+  const next = nextCut && nextCut.id !== cut.id ? (nextCut.teaser ?? nextCut.subject).replace(/（[^）]*）/g, "") : undefined;
   const raw = (p: string) => `https://raw.githubusercontent.com/${config.zenn.repo}/main/images/data/${basename(p)}`;
   const web: Figures = { main: raw(local.main), kpi: local.kpi && raw(local.kpi), flow: raw(local.flow), table: raw(local.table) };
   // note は本文の画像を公開時にアップロードする（ローカルの絶対パスを入れておき、NoteClient が差し替える）
@@ -327,8 +331,8 @@ export async function runDataArticle(flags: { dryRun?: boolean; cut?: string }) 
   console.log(`[3/5] 図: ${Object.values(local).filter(Boolean).join(", ")} / 見出し画像 ${eyecatch}`);
 
   // 出典は集計APIと図の置き場。数字は cut.facts（表と前提に出した文字列）だけ許す
-  const sources = [STATS_URL, ...Object.values(web).filter((u): u is string => !!u)];
   const targets: Target[] = ["qiita", "zenn", "note"];
+  const sources = [STATS_URL, ...Object.values(web).filter((u): u is string => !!u), ...targets.flatMap((t) => [ctaUrl(t, "calculator"), ctaUrl(t, "register")])];
   let prose: Prose | null = null;
   let reasons = "";
   for (let attempt = 1; attempt <= 3 && !prose; attempt++) {
