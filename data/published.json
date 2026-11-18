@@ -3286,6 +3286,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261031-793"
         }
       ]
+    },
+    {
+      "title": "一緒に求められることが多いスキルの組み合わせと、その単価の上限（821件）",
+      "date": "2026-11-17T23:01:44.460Z",
+      "articleId": "47906ce1a69c75df33d3",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nea7a6ab1b1a9"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/47906ce1a69c75df33d3"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261117-821"
+        }
+      ]
     }
   ]
 }
