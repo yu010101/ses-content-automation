@@ -3308,6 +3308,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261117-821"
         }
       ]
+    },
+    {
+      "title": "月100万円以上の案件は何件あるか。単価の上限の分布を797件で見た",
+      "date": "2026-11-18T23:02:17.898Z",
+      "articleId": "bfd926c8433d5633cd91",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n18dbb8799fc6"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/bfd926c8433d5633cd91"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261118-100797"
+        }
+      ]
     }
   ]
 }

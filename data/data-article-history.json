@@ -5,7 +5,8 @@
     "station": "2026-10-29",
     "role": "2026-10-30",
     "remote-share": "2026-11-01",
-    "skill-pairs": "2026-11-18"
+    "skill-pairs": "2026-11-18",
+    "rate-bands": "2026-11-19"
   },
   "runs": [
     {
@@ -320,6 +321,17 @@
         "https://note.com/sescore/n/nea7a6ab1b1a9",
         "https://qiita.com/sescore/items/47906ce1a69c75df33d3",
         "https://zenn.dev/ailmarketing/articles/20261117-821"
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "cut": "rate-bands",
+      "title": "月100万円以上の案件は何件あるか。単価の上限の分布を797件で見た",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n18dbb8799fc6",
+        "https://qiita.com/sescore/items/bfd926c8433d5633cd91",
+        "https://zenn.dev/ailmarketing/articles/20261118-100797"
       ]
     }
   ],
