@@ -6,7 +6,8 @@
     "role": "2026-10-30",
     "remote-share": "2026-11-01",
     "skill-pairs": "2026-11-18",
-    "rate-bands": "2026-11-19"
+    "rate-bands": "2026-11-19",
+    "skill-count": "2026-11-20"
   },
   "runs": [
     {
@@ -332,6 +333,17 @@
         "https://note.com/sescore/n/n18dbb8799fc6",
         "https://qiita.com/sescore/items/bfd926c8433d5633cd91",
         "https://zenn.dev/ailmarketing/articles/20261118-100797"
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "cut": "skill-count",
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で829件を分けた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/nfd1987bae833",
+        "https://qiita.com/sescore/items/48465d339fbdf311f03f",
+        "https://zenn.dev/ailmarketing/articles/20261119-829"
       ]
     }
   ],

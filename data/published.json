@@ -3330,6 +3330,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261118-100797"
         }
       ]
+    },
+    {
+      "title": "求められる技術が多い案件ほど単価の上限は高いのか。スキルの数で829件を分けた",
+      "date": "2026-11-19T23:02:44.717Z",
+      "articleId": "48465d339fbdf311f03f",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/nfd1987bae833"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/48465d339fbdf311f03f"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261119-829"
+        }
+      ]
     }
   ]
 }

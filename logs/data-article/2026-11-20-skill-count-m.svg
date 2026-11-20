@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="630" viewBox="0 0 760 630" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="760" height="630" fill="#ffffff"/>
+<line x1="24" y1="20" x2="736" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="44" fill="#111111" text-anchor="start" font-weight="700">案件に付いたスキルの数別 単価の</text>
+<text x="24" y="124" font-size="44" fill="#111111" text-anchor="start" font-weight="700">上限（月額）</text>
+<text x="24" y="168" font-size="25" fill="#666666" text-anchor="start" font-weight="400">点=中央値 / 線=真ん中の半分</text>
+<line x1="227.39999999999998" y1="210" x2="227.39999999999998" y2="520" stroke="#d9d9d9" stroke-width="1"/><text x="227.39999999999998" y="548" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">60万</text><line x1="325.54999999999995" y1="210" x2="325.54999999999995" y2="520" stroke="#d9d9d9" stroke-width="1"/><text x="325.54999999999995" y="548" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">70万</text><line x1="423.7" y1="210" x2="423.7" y2="520" stroke="#d9d9d9" stroke-width="1"/><text x="423.7" y="548" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">80万</text><line x1="521.85" y1="210" x2="521.85" y2="520" stroke="#d9d9d9" stroke-width="1"/><text x="521.85" y="548" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">90万</text><line x1="620" y1="210" x2="620" y2="520" stroke="#d9d9d9" stroke-width="1"/><text x="620" y="548" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">100万</text>
+<text x="207.39999999999998" y="257" font-size="28" fill="#111111" text-anchor="end" font-weight="600">スキル1個</text>
+<line x1="276.47499999999997" y1="250" x2="472.775" y2="250" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="423.7" cy="250" r="9" fill="#c8102e"/>
+<text x="636" y="257" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="207.39999999999998" y="317" font-size="28" fill="#111111" text-anchor="end" font-weight="600">スキル2個</text>
+<line x1="325.54999999999995" y1="310" x2="521.85" y2="310" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="423.7" cy="310" r="9" fill="#c8102e"/>
+<text x="636" y="317" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="207.39999999999998" y="377" font-size="28" fill="#111111" text-anchor="end" font-weight="600">スキル3個</text>
+<line x1="325.54999999999995" y1="370" x2="521.85" y2="370" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="423.7" cy="370" r="9" fill="#c8102e"/>
+<text x="636" y="377" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="207.39999999999998" y="437" font-size="28" fill="#111111" text-anchor="end" font-weight="600">スキル4個</text>
+<line x1="227.39999999999998" y1="430" x2="570.925" y2="430" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="423.7" cy="430" r="9" fill="#c8102e"/>
+<text x="636" y="437" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<text x="207.39999999999998" y="497" font-size="28" fill="#111111" text-anchor="end" font-weight="600">スキル5以上個</text>
+<line x1="374.625" y1="490" x2="570.925" y2="490" stroke="#bdbdbd" stroke-width="10" stroke-linecap="butt"/>
+<circle cx="423.7" cy="490" r="9" fill="#c8102e"/>
+<text x="636" y="497" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80万円</text>
+<line x1="24" y1="580" x2="736" y2="580" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="610" font-size="22" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-11-20時点・829件）</text>
+</svg>
