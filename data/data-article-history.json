@@ -1,6 +1,6 @@
 {
   "lastUsed": {
-    "skill-rates": "2026-10-20",
+    "skill-rates": "2026-11-21",
     "remote-gap": "2026-10-28",
     "station": "2026-10-29",
     "role": "2026-10-30",
@@ -345,7 +345,18 @@
         "https://qiita.com/sescore/items/48465d339fbdf311f03f",
         "https://zenn.dev/ailmarketing/articles/20261119-829"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "cut": "skill-rates",
+      "title": "フリーランス案件831件の単価の上限を、スキル別に集計した（2026年11月21日時点）",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/ne60e04f8a98e",
+        "https://qiita.com/sescore/items/33aeb48b3aedeab27b71",
+        "https://zenn.dev/ailmarketing/articles/20261120-83120261121"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-03T14:00:16.419Z"
+  "zennNudgedAt": "2026-11-20T23:30:09.084Z"
 }

@@ -3352,6 +3352,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261119-829"
         }
       ]
+    },
+    {
+      "title": "フリーランス案件831件の単価の上限を、スキル別に集計した（2026年11月21日時点）",
+      "date": "2026-11-20T23:01:56.860Z",
+      "articleId": "33aeb48b3aedeab27b71",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/ne60e04f8a98e"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/33aeb48b3aedeab27b71"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261120-83120261121"
+        }
+      ]
     }
   ]
 }
