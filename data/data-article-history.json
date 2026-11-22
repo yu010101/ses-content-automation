@@ -1,7 +1,7 @@
 {
   "lastUsed": {
     "skill-rates": "2026-11-21",
-    "remote-gap": "2026-10-28",
+    "remote-gap": "2026-11-22",
     "station": "2026-10-29",
     "role": "2026-10-30",
     "remote-share": "2026-11-01",
@@ -356,7 +356,18 @@
         "https://qiita.com/sescore/items/33aeb48b3aedeab27b71",
         "https://zenn.dev/ailmarketing/articles/20261120-83120261121"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "cut": "remote-gap",
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に831件を比べた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n78ba81ab0965",
+        "https://qiita.com/sescore/items/44b4ac3ba0d091155df0",
+        "https://zenn.dev/ailmarketing/articles/20261121-831"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-20T23:30:09.084Z"
+  "zennNudgedAt": "2026-11-22T00:00:11.453Z"
 }

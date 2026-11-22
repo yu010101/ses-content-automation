@@ -3374,6 +3374,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261120-83120261121"
         }
       ]
+    },
+    {
+      "title": "リモート可と出社で、単価の上限は違うのか。スキル別に831件を比べた",
+      "date": "2026-11-21T23:01:29.117Z",
+      "articleId": "44b4ac3ba0d091155df0",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n78ba81ab0965"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/44b4ac3ba0d091155df0"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261121-831"
+        }
+      ]
     }
   ]
 }
