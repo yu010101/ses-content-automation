@@ -3396,6 +3396,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261121-831"
         }
       ]
+    },
+    {
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（831件）",
+      "date": "2026-11-22T23:02:29.441Z",
+      "articleId": "4a57fdd8dd31918e3813",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n12ecd9129b2a"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/4a57fdd8dd31918e3813"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261122-831"
+        }
+      ]
     }
   ]
 }

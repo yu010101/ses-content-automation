@@ -2,7 +2,7 @@
   "lastUsed": {
     "skill-rates": "2026-11-21",
     "remote-gap": "2026-11-22",
-    "station": "2026-10-29",
+    "station": "2026-11-23",
     "role": "2026-10-30",
     "remote-share": "2026-11-01",
     "skill-pairs": "2026-11-18",
@@ -367,7 +367,18 @@
         "https://qiita.com/sescore/items/44b4ac3ba0d091155df0",
         "https://zenn.dev/ailmarketing/articles/20261121-831"
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "cut": "station",
+      "title": "出社する案件はどの駅に多いか。勤務地の駅別に案件数と単価の上限を数えた（831件）",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n12ecd9129b2a",
+        "https://qiita.com/sescore/items/4a57fdd8dd31918e3813",
+        "https://zenn.dev/ailmarketing/articles/20261122-831"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-22T00:00:11.453Z"
+  "zennNudgedAt": "2026-11-23T00:30:09.554Z"
 }
