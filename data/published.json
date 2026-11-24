@@ -3418,6 +3418,28 @@
           "url": "https://zenn.dev/ailmarketing/articles/20261122-831"
         }
       ]
+    },
+    {
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で831件を分けた",
+      "date": "2026-11-23T23:01:47.145Z",
+      "articleId": "cd71994f6cbc8886841b",
+      "platforms": [
+        {
+          "platform": "note",
+          "success": true,
+          "url": "https://note.com/sescore/n/n5310bff8407f"
+        },
+        {
+          "platform": "qiita",
+          "success": true,
+          "url": "https://qiita.com/sescore/items/cd71994f6cbc8886841b"
+        },
+        {
+          "platform": "zenn",
+          "success": true,
+          "url": "https://zenn.dev/ailmarketing/articles/20261123-pmpmo831"
+        }
+      ]
     }
   ]
 }

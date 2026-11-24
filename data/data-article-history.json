@@ -3,7 +3,7 @@
     "skill-rates": "2026-11-21",
     "remote-gap": "2026-11-22",
     "station": "2026-11-23",
-    "role": "2026-10-30",
+    "role": "2026-11-24",
     "remote-share": "2026-11-01",
     "skill-pairs": "2026-11-18",
     "rate-bands": "2026-11-19",
@@ -378,7 +378,18 @@
         "https://qiita.com/sescore/items/4a57fdd8dd31918e3813",
         "https://zenn.dev/ailmarketing/articles/20261122-831"
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "cut": "role",
+      "title": "PM・PMO・リーダーの案件は単価の上限が高いのか。題名の役割名で831件を分けた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n5310bff8407f",
+        "https://qiita.com/sescore/items/cd71994f6cbc8886841b",
+        "https://zenn.dev/ailmarketing/articles/20261123-pmpmo831"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-23T00:30:09.554Z"
+  "zennNudgedAt": "2026-11-24T01:00:11.436Z"
 }
