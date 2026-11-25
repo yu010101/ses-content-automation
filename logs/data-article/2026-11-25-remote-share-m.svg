@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1176" viewBox="0 0 760 1176" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="760" height="1176" fill="#ffffff"/>
+<line x1="24" y1="20" x2="736" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="44" fill="#111111" text-anchor="start" font-weight="700">スキル別 働き方の内訳</text>
+<text x="24" y="114" font-size="25" fill="#666666" text-anchor="start" font-weight="400">濃い赤=フルリモート / 薄い赤=一部リモート / 灰=出社</text>
+<text x="224.19999999999996" y="203" font-size="28" fill="#111111" text-anchor="end" font-weight="600">PM</text>
+<rect x="244.19999999999996" y="183" width="81.99272727272728" height="26" fill="#c8102e"/>
+<rect x="326.1927272727272" y="183" width="232.3127272727273" height="26" fill="#f2a3ae"/>
+<rect x="558.5054545454545" y="183" width="61.49454545454547" height="26" fill="#bdbdbd"/>
+<text x="636" y="203" font-size="25" fill="#111111" text-anchor="start" font-weight="600">84%</text>
+<text x="224.19999999999996" y="263" font-size="28" fill="#111111" text-anchor="end" font-weight="600">React</text>
+<rect x="244.19999999999996" y="243" width="131.093023255814" height="26" fill="#c8102e"/>
+<rect x="375.293023255814" y="243" width="179.1604651162791" height="26" fill="#f2a3ae"/>
+<rect x="554.453488372093" y="243" width="65.546511627907" height="26" fill="#bdbdbd"/>
+<text x="636" y="263" font-size="25" fill="#111111" text-anchor="start" font-weight="600">83%</text>
+<text x="224.19999999999996" y="323" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Spring</text>
+<rect x="244.19999999999996" y="303" width="102.4909090909091" height="26" fill="#c8102e"/>
+<rect x="346.69090909090903" y="303" width="204.9818181818182" height="26" fill="#f2a3ae"/>
+<rect x="551.6727272727272" y="303" width="68.32727272727274" height="26" fill="#bdbdbd"/>
+<text x="636" y="323" font-size="25" fill="#111111" text-anchor="start" font-weight="600">82%</text>
+<text x="224.19999999999996" y="383" font-size="28" fill="#111111" text-anchor="end" font-weight="600">TypeScript</text>
+<rect x="244.19999999999996" y="363" width="119.06534653465349" height="26" fill="#c8102e"/>
+<rect x="363.2653465346534" y="363" width="182.31881188118814" height="26" fill="#f2a3ae"/>
+<rect x="545.5841584158416" y="363" width="74.41584158415843" height="26" fill="#bdbdbd"/>
+<text x="636" y="383" font-size="25" fill="#111111" text-anchor="start" font-weight="600">80%</text>
+<text x="224.19999999999996" y="443" font-size="28" fill="#111111" text-anchor="end" font-weight="600">GCP</text>
+<rect x="244.19999999999996" y="423" width="86.72307692307695" height="26" fill="#c8102e"/>
+<rect x="330.9230769230769" y="423" width="202.35384615384618" height="26" fill="#f2a3ae"/>
+<rect x="533.2769230769231" y="423" width="86.72307692307695" height="26" fill="#bdbdbd"/>
+<text x="636" y="443" font-size="25" fill="#111111" text-anchor="start" font-weight="600">77%</text>
+<text x="224.19999999999996" y="503" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Go</text>
+<rect x="244.19999999999996" y="483" width="80.52857142857144" height="26" fill="#c8102e"/>
+<rect x="324.7285714285714" y="483" width="196.8476190476191" height="26" fill="#f2a3ae"/>
+<rect x="521.5761904761905" y="483" width="98.42380952380955" height="26" fill="#bdbdbd"/>
+<text x="636" y="503" font-size="25" fill="#111111" text-anchor="start" font-weight="600">74%</text>
+<text x="224.19999999999996" y="563" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Python</text>
+<rect x="244.19999999999996" y="543" width="70.14933333333335" height="26" fill="#c8102e"/>
+<rect x="314.34933333333333" y="543" width="205.43733333333336" height="26" fill="#f2a3ae"/>
+<rect x="519.7866666666666" y="543" width="100.21333333333335" height="26" fill="#bdbdbd"/>
+<text x="636" y="563" font-size="25" fill="#111111" text-anchor="start" font-weight="600">73%</text>
+<text x="224.19999999999996" y="623" font-size="28" fill="#111111" text-anchor="end" font-weight="600">上流SE</text>
+<rect x="244.19999999999996" y="603" width="45.096000000000004" height="26" fill="#c8102e"/>
+<rect x="289.29599999999994" y="603" width="225.48000000000005" height="26" fill="#f2a3ae"/>
+<rect x="514.776" y="603" width="105.22400000000003" height="26" fill="#bdbdbd"/>
+<text x="636" y="623" font-size="25" fill="#111111" text-anchor="start" font-weight="600">72%</text>
+<text x="224.19999999999996" y="683" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Vue</text>
+<rect x="244.19999999999996" y="663" width="61.355102040816334" height="26" fill="#c8102e"/>
+<rect x="305.5551020408163" y="663" width="207.07346938775513" height="26" fill="#f2a3ae"/>
+<rect x="512.6285714285714" y="663" width="107.37142857142858" height="26" fill="#bdbdbd"/>
+<text x="636" y="683" font-size="25" fill="#111111" text-anchor="start" font-weight="600">71%</text>
+<text x="224.19999999999996" y="743" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Ruby</text>
+<rect x="244.19999999999996" y="723" width="103.34500000000003" height="26" fill="#c8102e"/>
+<rect x="347.54499999999996" y="723" width="164.41250000000002" height="26" fill="#f2a3ae"/>
+<rect x="511.9575" y="723" width="108.04250000000002" height="26" fill="#bdbdbd"/>
+<text x="636" y="743" font-size="25" fill="#111111" text-anchor="start" font-weight="600">71%</text>
+<text x="224.19999999999996" y="803" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Kotlin</text>
+<rect x="244.19999999999996" y="783" width="103.6689655172414" height="26" fill="#c8102e"/>
+<rect x="347.86896551724135" y="783" width="155.5034482758621" height="26" fill="#f2a3ae"/>
+<rect x="503.3724137931034" y="783" width="116.62758620689658" height="26" fill="#bdbdbd"/>
+<text x="636" y="803" font-size="25" fill="#111111" text-anchor="start" font-weight="600">69%</text>
+<text x="224.19999999999996" y="863" font-size="28" fill="#111111" text-anchor="end" font-weight="600">AWS</text>
+<rect x="244.19999999999996" y="843" width="81.35876288659796" height="26" fill="#c8102e"/>
+<rect x="325.55876288659795" y="843" width="174.34020618556704" height="26" fill="#f2a3ae"/>
+<rect x="499.89896907216496" y="843" width="120.10103092783507" height="26" fill="#bdbdbd"/>
+<text x="636" y="863" font-size="25" fill="#111111" text-anchor="start" font-weight="600">68%</text>
+<text x="224.19999999999996" y="923" font-size="28" fill="#111111" text-anchor="end" font-weight="600">SQL</text>
+<rect x="244.19999999999996" y="903" width="51.24545454545455" height="26" fill="#c8102e"/>
+<rect x="295.4454545454545" y="903" width="196.44090909090912" height="26" fill="#f2a3ae"/>
+<rect x="491.8863636363636" y="903" width="128.11363636363637" height="26" fill="#bdbdbd"/>
+<text x="636" y="923" font-size="25" fill="#111111" text-anchor="start" font-weight="600">66%</text>
+<text x="224.19999999999996" y="983" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Laravel</text>
+<rect x="244.19999999999996" y="963" width="59.336842105263166" height="26" fill="#c8102e"/>
+<rect x="303.53684210526313" y="963" width="187.90000000000003" height="26" fill="#f2a3ae"/>
+<rect x="491.43684210526317" y="963" width="128.56315789473686" height="26" fill="#bdbdbd"/>
+<text x="636" y="983" font-size="25" fill="#111111" text-anchor="start" font-weight="600">66%</text>
+<text x="224.19999999999996" y="1043" font-size="28" fill="#111111" text-anchor="end" font-weight="600">Ruby on Rails</text>
+<rect x="244.19999999999996" y="1023" width="108.1068493150685" height="26" fill="#c8102e"/>
+<rect x="352.30684931506846" y="1023" width="138.99452054794523" height="26" fill="#f2a3ae"/>
+<rect x="491.3013698630137" y="1023" width="128.6986301369863" height="26" fill="#bdbdbd"/>
+<text x="636" y="1043" font-size="25" fill="#111111" text-anchor="start" font-weight="600">66%</text>
+<line x1="244.19999999999996" y1="156" x2="244.19999999999996" y2="1066" stroke="#d9d9d9" stroke-width="1"/><text x="244.19999999999996" y="1094" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">0%</text><line x1="338.15" y1="156" x2="338.15" y2="1066" stroke="#d9d9d9" stroke-width="1"/><text x="338.15" y="1094" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">25%</text><line x1="432.1" y1="156" x2="432.1" y2="1066" stroke="#d9d9d9" stroke-width="1"/><text x="432.1" y="1094" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">50%</text><line x1="526.05" y1="156" x2="526.05" y2="1066" stroke="#d9d9d9" stroke-width="1"/><text x="526.05" y="1094" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">75%</text><line x1="620" y1="156" x2="620" y2="1066" stroke="#d9d9d9" stroke-width="1"/><text x="620" y="1094" font-size="22" fill="#666666" text-anchor="middle" font-weight="400">100%</text>
+<line x1="24" y1="1126" x2="736" y2="1126" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="1156" font-size="22" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-11-25時点・833件）</text>
+</svg>

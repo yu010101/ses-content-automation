@@ -4,7 +4,7 @@
     "remote-gap": "2026-11-22",
     "station": "2026-11-23",
     "role": "2026-11-24",
-    "remote-share": "2026-11-01",
+    "remote-share": "2026-11-25",
     "skill-pairs": "2026-11-18",
     "rate-bands": "2026-11-19",
     "skill-count": "2026-11-20"
@@ -389,7 +389,18 @@
         "https://qiita.com/sescore/items/cd71994f6cbc8886841b",
         "https://zenn.dev/ailmarketing/articles/20261123-pmpmo831"
       ]
+    },
+    {
+      "date": "2026-11-25",
+      "cut": "remote-share",
+      "title": "リモートで探しやすいスキルはどれか。掲載中833件の働き方をスキル別に数えた",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n135d086bc675",
+        "https://qiita.com/sescore/items/f589c20d3122d0b59325",
+        "https://zenn.dev/ailmarketing/articles/20261124-833"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-24T01:00:11.436Z"
+  "zennNudgedAt": "2026-11-25T02:00:08.595Z"
 }
