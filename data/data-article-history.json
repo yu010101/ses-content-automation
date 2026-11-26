@@ -5,7 +5,7 @@
     "station": "2026-11-23",
     "role": "2026-11-24",
     "remote-share": "2026-11-25",
-    "skill-pairs": "2026-11-18",
+    "skill-pairs": "2026-11-26",
     "rate-bands": "2026-11-19",
     "skill-count": "2026-11-20"
   },
@@ -400,7 +400,18 @@
         "https://qiita.com/sescore/items/f589c20d3122d0b59325",
         "https://zenn.dev/ailmarketing/articles/20261124-833"
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "cut": "skill-pairs",
+      "title": "一緒に求められることが多いスキルの組み合わせと、その単価の上限（836件）",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/n4d2674296c55",
+        "https://qiita.com/sescore/items/f35ee9dd73711f4e8f37",
+        "https://zenn.dev/ailmarketing/articles/20261125-836"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-25T02:00:08.595Z"
+  "zennNudgedAt": "2026-11-26T02:30:31.083Z"
 }
