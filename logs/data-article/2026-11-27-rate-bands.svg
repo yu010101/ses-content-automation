@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="568" viewBox="0 0 1200 568" font-family='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif'>
+<rect width="1200" height="568" fill="#ffffff"/>
+<line x1="24" y1="20" x2="1176" y2="20" stroke="#111111" stroke-width="4"/>
+<text x="24" y="70" font-size="34" fill="#111111" text-anchor="start" font-weight="700">単価の上限の分布（月額）</text>
+<text x="24" y="108" font-size="18" fill="#666666" text-anchor="start" font-weight="400">804件</text>
+<text x="280" y="179" font-size="20" fill="#111111" text-anchor="end" font-weight="600">50万円以下</text>
+<rect x="300" y="159" width="188.87892376681614" height="26" fill="#bdbdbd"/>
+<text x="498.8789237668161" y="179" font-size="18" fill="#111111" text-anchor="start" font-weight="600">54件</text>
+<text x="280" y="223" font-size="20" fill="#111111" text-anchor="end" font-weight="600">51〜60万円</text>
+<rect x="300" y="203" width="304.304932735426" height="26" fill="#bdbdbd"/>
+<text x="614.3049327354261" y="223" font-size="18" fill="#111111" text-anchor="start" font-weight="600">87件</text>
+<text x="280" y="267" font-size="20" fill="#111111" text-anchor="end" font-weight="600">61〜70万円</text>
+<rect x="300" y="247" width="517.6681614349776" height="26" fill="#bdbdbd"/>
+<text x="827.6681614349776" y="267" font-size="18" fill="#111111" text-anchor="start" font-weight="600">148件</text>
+<text x="280" y="311" font-size="20" fill="#111111" text-anchor="end" font-weight="600">71〜80万円</text>
+<rect x="300" y="291" width="780" height="26" fill="#c8102e"/>
+<text x="1090" y="311" font-size="18" fill="#111111" text-anchor="start" font-weight="600">223件</text>
+<text x="280" y="355" font-size="20" fill="#111111" text-anchor="end" font-weight="600">81〜90万円</text>
+<rect x="300" y="335" width="391.7488789237668" height="26" fill="#bdbdbd"/>
+<text x="701.7488789237668" y="355" font-size="18" fill="#111111" text-anchor="start" font-weight="600">112件</text>
+<text x="280" y="399" font-size="20" fill="#111111" text-anchor="end" font-weight="600">91〜100万円</text>
+<rect x="300" y="379" width="311.30044843049325" height="26" fill="#bdbdbd"/>
+<text x="621.3004484304932" y="399" font-size="18" fill="#111111" text-anchor="start" font-weight="600">89件</text>
+<text x="280" y="443" font-size="20" fill="#111111" text-anchor="end" font-weight="600">100万円超</text>
+<rect x="300" y="423" width="318.29596412556054" height="26" fill="#bdbdbd"/>
+<text x="628.2959641255605" y="443" font-size="18" fill="#111111" text-anchor="start" font-weight="600">91件</text>
+<line x1="24" y1="518" x2="1176" y2="518" stroke="#d9d9d9" stroke-width="1"/>
+<text x="24" y="548" font-size="16" fill="#666666" text-anchor="start" font-weight="400">出典: FreelanceDB 掲載中の案件（2026-11-27時点・836件）</text>
+</svg>

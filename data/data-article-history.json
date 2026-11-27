@@ -6,7 +6,7 @@
     "role": "2026-11-24",
     "remote-share": "2026-11-25",
     "skill-pairs": "2026-11-26",
-    "rate-bands": "2026-11-19",
+    "rate-bands": "2026-11-27",
     "skill-count": "2026-11-20"
   },
   "runs": [
@@ -411,7 +411,18 @@
         "https://qiita.com/sescore/items/f35ee9dd73711f4e8f37",
         "https://zenn.dev/ailmarketing/articles/20261125-836"
       ]
+    },
+    {
+      "date": "2026-11-27",
+      "cut": "rate-bands",
+      "title": "月100万円以上の案件は何件あるか。単価の上限の分布を804件で見た",
+      "dryRun": false,
+      "urls": [
+        "https://note.com/sescore/n/nd4e42daef85d",
+        "https://qiita.com/sescore/items/f8edb7bd68628e35a698",
+        "https://zenn.dev/ailmarketing/articles/20261126-100804"
+      ]
     }
   ],
-  "zennNudgedAt": "2026-11-26T02:30:31.083Z"
+  "zennNudgedAt": "2026-11-27T03:00:24.774Z"
 }
